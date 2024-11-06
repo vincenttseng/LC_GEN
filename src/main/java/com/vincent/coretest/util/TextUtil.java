@@ -2,7 +2,6 @@ package com.vincent.coretest.util;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -14,6 +13,8 @@ import java.util.regex.Pattern;
 
 import com.vincent.coretest.vo.ro.ColumnDefVo;
 
+import sun.awt.SunHints.Value;
+
 public class TextUtil {
 	public static List<String> splitBrackets(String input) {
 
@@ -23,11 +24,81 @@ public class TextUtil {
 		Matcher matcher = pattern.matcher(input);
 
 		while (matcher.find()) {
-//			System.out.println(matcher.group(1)); // 提取花括号中的内容
 			tokens.add(matcher.group(1));
 		}
 
 		return tokens;
+	}
+
+	public static Map<String, String> readFileToDomainMap(File domainFile) throws IOException {
+		FileReader in = new FileReader(domainFile);
+		BufferedReader br = new BufferedReader(in);
+
+		Map<String, String> map = new HashMap<String, String>();
+
+		String line;
+		while ((line = br.readLine()) != null) {
+			String[] tokens = null;
+			if (line != null && line.length() > 0) {
+				// System.out.print(line + " =>");
+				tokens = line.split(",");
+
+				int length = tokens != null ? tokens.length : 0;
+				// System.out.println(length);
+
+				if (length == 3) {
+					String key = tokens[0];
+					if (!map.containsKey(key)) {
+						map.put(key, tokens[1] + ":" + tokens[2]);
+					} else {
+						String value = map.get(key);
+						map.put(key, value + "," + tokens[1] + ":" + tokens[2]);
+					}
+				}
+			}
+		}
+		in.close();
+
+		return map;
+	}
+
+	public static Map<String, String> readFileTypeToDomainMap(File typeToDomainFile) throws IOException {
+		if (typeToDomainFile == null || !typeToDomainFile.exists()) {
+			return new HashMap<String, String>();
+		}
+
+		Map<String, String> map = new HashMap<String, String>();
+
+		FileReader in = null;
+		try {
+			in = new FileReader(typeToDomainFile);
+			BufferedReader br = new BufferedReader(in);
+
+			String line;
+			while ((line = br.readLine()) != null) {
+				String[] tokens = line.split(" ");
+				List<String> list = new ArrayList<String>();
+				for (String token : tokens) {
+					if(token.trim().length() > 0) {
+						list.add(token.trim());
+					}
+				}
+				if(list.size() >= 2) {
+					map.put(list.get(0).trim(), list.get(1).trim());
+				}
+			}
+		} catch (IOException e) {
+
+		} finally {
+			try {
+				in.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+		return map;
 	}
 
 	/**
@@ -59,7 +130,7 @@ public class TextUtil {
 	public static Map<String, List<ColumnDefVo>> parseExcelInputOutputObject(File file) {
 		return parseExcelInputOutputObject(file, "A", "B");
 	}
-	
+
 	/**
 	 * A### C###
 	 * 
@@ -91,6 +162,11 @@ public class TextUtil {
 						String head = resultArr[0].trim();
 						if (mark0.equals(head)) { //
 							currentToken = resultArr[1].trim();
+
+							if (currentToken.endsWith(":")) {
+								currentToken = currentToken.substring(0, currentToken.length() - 2);
+							}
+
 							if (!map.containsKey(currentToken)) {
 								map.put(currentToken, new ArrayList<ColumnDefVo>());
 							}
@@ -116,6 +192,5 @@ public class TextUtil {
 
 		return map;
 	}
-
 
 }

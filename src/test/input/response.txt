@@ -77,7 +77,7 @@
 		B###period-of-sight-payment               Numeric    - Period of Sight Payment. Applicable when Tenor Type is selected as Sight, Mixed Payment ,Deferred Payment
 		B###deferred-payment-id                   Numeric    - Deferred Payment ID. Applicable and mandatory when tenor type is deferred payment
 		B###ilc-bill-lodgement-sight-amount       Numeric    - Sight Amount. Applicable and Mandatory when Tenor Type is selected as mixed payment
-		B###ilc-bill-lodgement-tenor-or-tenor-daysNumeric    - Tenor. Applicable and mandatory when tenor type is selected as Usance, Mixed Pyament and Deferred Payment
+		B###ilc-bill-lodgement-tenor-or-tenor-days Numeric    - Tenor. Applicable and mandatory when tenor type is selected as Usance, Mixed Pyament and Deferred Payment
 		B###ilc-bill-lodgement-tenor-type         Numeric    - Tenor Type. Applicable and Mandatory for ILC bill lodgement draft details
 		B###ilc-bill-lodgement-usance-amount      Numeric    - Usance Amount. Applicable and Mandatory when Tenor Type is selected as mixed payment
 		B###ilc-bill-lodgement-usance-from        Numeric    - Usance From. Applicable and mandatory when tenor type is selected as Usance, Mixed Pyament and Deferred Payment
@@ -87,7 +87,7 @@
 		B###bank-id                               String     - Bank ID
 		B###bank-name                             String     - Bank Name
 		B###elc-bill-lodgement-draft-drawn-on     Numeric    - Draft Drawn On
-		B###elc-bill-lodgement-draft-at-or-tenor-typeNumeric    - ELC Bill Lodgement Draft At or Tenor Type
+		B###elc-bill-lodgement-draft-at-or-tenor-type Numeric    - ELC Bill Lodgement Draft At or Tenor Type
 		B###elc-bill-lodgement-tenor-days         Numeric    - ELC Bill Lodgement Tenor Days. Applicable and Mandatory for ELC Bill Lodgement Draft Details
 		B###due-date                              Date       - Due Date. Applicable and Mandatory for ELC Bill Lodgement Draft Details
 		B###instructions                          String     - Instructions
@@ -99,7 +99,7 @@
 		B###mixed-payment-of-usance               String     - Mixed Payment Of Usance. Applicable and Mandatory when we select Tenor Type as Mixed Payment
 		B###tenor-description                     Numeric    - Tenor Description. Mandatory when we select Tenor Type as Mixed Payment and Deffered Payment
 		B###tenor-start-date                      Date       - Tenor Start Date. Applicable and Mandatory for ELC Bill Lodgement Draft Details
-		B###elc-bill-lodgement-draft-amount-currencyString     - Draft Amount Currency
+		B###elc-bill-lodgement-draft-amount-currency String     - Draft Amount Currency
 		B###elc-bill-lodgement-draft-amount       Numeric    - Draft Amount.
 	}   
 	A###lc-deferred-payment-details:

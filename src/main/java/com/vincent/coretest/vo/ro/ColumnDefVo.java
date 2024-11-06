@@ -1,5 +1,8 @@
 package com.vincent.coretest.vo.ro;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
@@ -38,14 +41,14 @@ public class ColumnDefVo {
 			if (result[i].trim().length() == 0) {
 				i++;
 			} else {
-				vo.type = result[i];
+				vo.type = convertType(result[i]);
 				break;
 			}
 		}
 
-		int index = tmp.indexOf(vo.type);
-		tmp = tmp.substring(index + vo.type.length());
-		
+		int index = tmp.indexOf(result[i]);
+		tmp = tmp.substring(index + result[i].length());
+
 		index = tmp.indexOf("-");
 		if (index > 0) {
 			vo.desc = tmp.substring(index + 1).trim();
@@ -57,6 +60,21 @@ public class ColumnDefVo {
 	@Override
 	public String toString() {
 		return "ColumnDefVo [name=" + name + ", type=" + type + ", desc=" + desc + "]";
+	}
+
+	static final Map<String, String> swaggerTypeMap = new HashMap<String, String>();
+	static {
+		swaggerTypeMap.put("String", "string");
+		swaggerTypeMap.put("Numeric", "number");
+		swaggerTypeMap.put("Date", "string");
+	}
+
+	public static String convertType(String type) {
+		if(swaggerTypeMap.containsKey(type)) {
+			return swaggerTypeMap.get(type);
+		} else {
+			return type;
+		}
 	}
 
 }

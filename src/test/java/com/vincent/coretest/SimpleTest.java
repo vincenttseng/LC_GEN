@@ -20,79 +20,48 @@ public class SimpleTest {
 	protected final Logger logger = LoggerFactory.getLogger(SimpleTest.class);
 
 	String domainFilename = ".\\src\\test\\input\\domainRef.csv";
+	String typeToDomainFilename = ".\\src\\test\\input\\typeToDomain.txt";
 
 	@Test
 	public void testDomain() throws IOException {
-		File file = new File(domainFilename);
-		logger.info("file " + file.getAbsolutePath() + " existed: " + file.exists());
+		File domainFile = new File(domainFilename);
+		logger.info("domainFile " + domainFile.getAbsolutePath() + " existed: " + domainFile.exists());
 
-		FileReader in = new FileReader(file);
-		BufferedReader br = new BufferedReader(in);
+		Map<String, String> map = TextUtil.readFileToDomainMap(domainFile);
 
-		Map<String, String> map = new HashMap<String, String>();
+		String name = "XXXXX";
 
-		String line;
-		while ((line = br.readLine()) != null) {
-			String[] tokens = null;
-			if (line != null && line.length() > 0) {
-				//System.out.print(line + " =>");
-				tokens = line.split(",");
-				
-				int length = tokens != null ? tokens.length : 0;
-				//System.out.println(length);
-				
-				if(length == 3) {
-					String key = tokens[0];
-					if(!map.containsKey(key)) {
-						map.put(key, tokens[1] + ":" + tokens[2]);
-					} else {
-						String value = map.get(key);
-						map.put(key, value + "," + tokens[1] + ":" + tokens[2]);
-					}
-				}
-			}
-		}
-		in.close();
-		
-		
-		String name = "XXXXX"; 
-		
-		for(String key:map.keySet()) {
+		for (String key : map.keySet()) {
 			StringBuilder sb = new StringBuilder();
 			sb.append("description: '" + key + " Allowed values:");
 			sb.append(map.get(key));
 			sb.append(";'");
-			
-			//System.out.println(sb.toString());
+
+			// System.out.println(sb.toString());
 		}
-		
+
 		name = "LC-POS-TYPE";
 		String type = "d_PosTyp";
-		
+
 		StringBuilder sb = new StringBuilder();
 		sb.append("description: '" + name + " Allowed values:");
 		sb.append(map.get(type));
 		sb.append(";'");
-		
+
 		System.out.println(sb.toString());
 	}
-	
-	
+
 	/**
-	 *         
-        - name: lc-pos-type
-          in: path
-          required: true
-          schema:
-            type: string
-          description: LC POS TYPE    
+	 * 
+	 * - name: lc-pos-type in: path required: true schema: type: string description:
+	 * LC POS TYPE
 	 */
 	@Test
 	public void getGetParamAndQuery() {
 		String path = "/letter-of-credit/{lc-pos-type}/{lc-reference}/{event-leg-id}/draft-details";
-		
+
 		List<String> tokens = TextUtil.splitBrackets(path);
-		for(String token:tokens) {
+		for (String token : tokens) {
 			StringBuilder sb = new StringBuilder();
 			sb.append("        - name: ").append(token).append("\n");
 			sb.append("          in: path").append("\n");
@@ -104,5 +73,14 @@ public class SimpleTest {
 			System.out.println(sb.toString());
 		}
 
+	}
+	
+	@Test
+	public void testTypeToDomainMap() throws IOException {
+		File typeToDomainFile = new File(typeToDomainFilename);
+		Map<String, String> map = TextUtil.readFileTypeToDomainMap(typeToDomainFile);
+		for(String key:map.keySet()) {
+			logger.info(key + "=>" + map.get(key));
+		}
 	}
 }
