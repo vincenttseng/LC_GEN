@@ -14,6 +14,8 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.vincent.coretest.util.TextUtil;
+
 public class SimpleTest {
 	protected final Logger logger = LoggerFactory.getLogger(SimpleTest.class);
 
@@ -74,5 +76,34 @@ public class SimpleTest {
 		sb.append(";'");
 		
 		System.out.println(sb.toString());
+	}
+	
+	
+	/**
+	 *         
+        - name: lc-pos-type
+          in: path
+          required: true
+          schema:
+            type: string
+          description: LC POS TYPE    
+	 */
+	@Test
+	public void getGetParamAndQuery() {
+		String path = "/letter-of-credit/{lc-pos-type}/{lc-reference}/{event-leg-id}/draft-details";
+		
+		List<String> tokens = TextUtil.splitBrackets(path);
+		for(String token:tokens) {
+			StringBuilder sb = new StringBuilder();
+			sb.append("        - name: ").append(token).append("\n");
+			sb.append("          in: path").append("\n");
+			sb.append("          required: true").append("\n");
+			sb.append("          schema:").append("\n");
+			sb.append("            type: string").append("\n");
+			String desc = TextUtil.phaseWordToDesc(token);
+			sb.append("          description: ").append(desc);
+			System.out.println(sb.toString());
+		}
+
 	}
 }
