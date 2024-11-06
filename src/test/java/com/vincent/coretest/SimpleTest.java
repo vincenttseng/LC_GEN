@@ -19,11 +19,10 @@ import com.vincent.coretest.util.TextUtil;
 public class SimpleTest {
 	protected final Logger logger = LoggerFactory.getLogger(SimpleTest.class);
 
-	String domainFilename = ".\\src\\test\\resources\\domainRef.csv";
+	String domainFilename = ".\\src\\test\\input\\domainRef.csv";
 
 	@Test
 	public void testDomain() throws IOException {
-		logger.info("test");
 		File file = new File(domainFilename);
 		logger.info("file " + file.getAbsolutePath() + " existed: " + file.exists());
 
