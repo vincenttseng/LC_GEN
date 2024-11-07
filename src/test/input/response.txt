@@ -1,12 +1,12 @@
 {
 	A###export-lc-bill-payment:
 	{
-		B###correspondence-medium*                Numeric       - Correspondence Medium
-		B###bill-reference*                       String        - Bill Reference
-		B###sender-reference-number-mt-two-zero-two* String        - Sender Ref No.MT Two Zero Two
-		B###sender-reference-number-mt-seven-five-four* String        - Sender Ref No.MT Seven Five Four
+		B###correspondence-medium                 Numeric       - Correspondence Medium
+		B###sender-reference-number-mt-two-zero-two     String        - Sender Ref No.MT Two Zero Two
+		B###sender-reference-number-mt-seven-five-four   String        - Sender Ref No.MT Seven Five Four
 		B###type-of-lc*                           Numeric       - Type of LC
-	} 
+		B###requested-status*                     Numeric       - State Transition will be OnHold, Released
+	}
 	A###payment-details:
 	{
 		B###amount                                Numeric       - Amount
@@ -28,7 +28,7 @@
 		B###account-number                        String        - Account Number
 		B###remitter-country                      String        - Remitter Country
 		B###reference-number                      String        - Reference Number
-	}   
+	}
 	A###credit-details:
 	[
 		{

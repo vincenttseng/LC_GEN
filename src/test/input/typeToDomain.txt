@@ -1,12 +1,12 @@
 	correspondence-medium         d_OrdMode
-	bill-reference                d_Alpha16
-	sender-reference-number-mt-two-zero-two d_Alpha210
-	sender-reference-number-mt-seven-five-four d_Alpha210
+	sender-reference-number-mt-two-zero-two        d_Alpha210
+	sender-reference-number-mt-seven-five-four           d_Alpha210
 	type-of-lc                    d_InterDomestic
 	bill-payment-pos-type         d_PosTyp
 	bill-payment-reference        d_SeqId
 	event-leg-id                  d_SeqId
 	status                        d_TFLCStatus
+	requested-status              d_TFLCStatus
 	amount                        d_AmountUnsigned
 	maturity-date                 d_Date
 	value-date                    d_Date
