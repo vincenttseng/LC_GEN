@@ -15,6 +15,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.vincent.coretest.util.TextUtil;
+import com.vincent.coretest.vo.ro.ColumnDefVo;
 
 public class SimpleTest {
 	protected final Logger logger = LoggerFactory.getLogger(SimpleTest.class);
@@ -58,11 +59,14 @@ public class SimpleTest {
 	 */
 	@Test
 	public void getGetParamAndQuery() {
-		String path = "/letter-of-credit/{lc-pos-type}/{lc-reference}/{event-leg-id}/draft-details";
+		String fullPath = "/export-lc-bill-payment/{from-date}/{to-date}/list?bill-payment-reference=<Numeric>&bill-reference=<String>&bill-amount-currency=<String>&bill-amount=<Numeric>&export-lc-advising-reference=<String>&maturity-date=<Date>&bill-status=<Numeric>&rate-request-status=<Numeric>&page-num=<Numeric>&page-size=<Numeric>";
 
+		int index = fullPath.indexOf("?");
+		String path = fullPath.substring(0, index);
+		logger.info("path " + path);
 		List<String> tokens = TextUtil.splitBrackets(path);
+		StringBuilder sb = new StringBuilder();
 		for (String token : tokens) {
-			StringBuilder sb = new StringBuilder();
 			sb.append("        - name: ").append(token).append("\n");
 			sb.append("          in: path").append("\n");
 			sb.append("          required: true").append("\n");
@@ -70,16 +74,39 @@ public class SimpleTest {
 			sb.append("            type: string").append("\n");
 			String desc = TextUtil.phaseWordToDesc(token);
 			sb.append("          description: ").append(desc);
-			System.out.println(sb.toString());
+			sb.append("\n");
 		}
 
+		path = fullPath.substring(index + 1);
+		path = path.replaceAll("-", "_");
+		logger.info("path " + path);
+
+		String[] queryArray = path.split("&");
+		for (String query : queryArray) {
+			String[] values = query.split("=");
+			String token = values[0];
+			String type = values[1];
+			type = type.replace("<", "");
+			type = type.replace(">", "");
+			String convertedType = ColumnDefVo.convertType(type);
+
+			sb.append("        - name: ").append(token).append("\n");
+			sb.append("          in: query").append("\n");
+			sb.append("          required: false").append("\n");
+			sb.append("          schema:").append("\n");
+			sb.append("            type: ").append(convertedType).append("\n");
+			String desc = TextUtil.phaseWordToDesc(token);
+			sb.append("          description: ").append(desc);
+			sb.append("\n");
+		}
+		System.out.println(sb.toString());
 	}
-	
+
 	@Test
 	public void testTypeToDomainMap() throws IOException {
 		File typeToDomainFile = new File(typeToDomainFilename);
 		Map<String, String> map = TextUtil.readFileTypeToDomainMap(typeToDomainFile);
-		for(String key:map.keySet()) {
+		for (String key : map.keySet()) {
 			logger.info(key + "=>" + map.get(key));
 		}
 	}

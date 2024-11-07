@@ -1,114 +1,46 @@
 {
-	A###draft-details:
+	A###export-lc-bill-payment:
 	{
-		B###entity                                String        - Entity
-		B###lc-pos-type                           Numeric       - This field will contain POS_Type - LCTxn, ELCTxn, TFBillTxn, ELCBillTxn
-		B###lc-reference                          Numeric       - This field will contain POS_ID
-		B###event-leg-id                          Numeric       - This field will contain EVNT_LEG_ID
-	}
-	A###lc-draft-details:
+		B###correspondence-medium*                Numeric       - Correspondence Medium
+		B###bill-reference*                       String        - Bill Reference
+		B###sender-reference-number-mt-two-zero-two* String        - Sender Ref No.MT Two Zero Two
+		B###sender-reference-number-mt-seven-five-four* String        - Sender Ref No.MT Seven Five Four
+		B###type-of-lc*                           Numeric       - Type of LC
+	} 
+	A###payment-details:
 	{
-		B###available-by                          Numeric    - Available By. Applicable and mandatory for ILC and ELC Draft Details
-		B###available-with-or-draft-drawn-on      Numeric    - Available With. Applicable and mandatory for ILC and ELC Draft Details
-		B###available-with-bank-id                String     - Available with Bank ID. Applicable and mandatory when available with is selected as Select
-		B###available-with-bank-name              String     - Available with Bank Name
-		B###available-with-bank-address-one       String     - Available with Bank Address One
-		B###available-with-bank-address-two       String     - Available with Bank Address Two
-		B###available-with-bank-address-three     String     - Available with Bank Address Three
-		B###mix-payment-details                   String     - Mix Payment Details.Applicable and mandatory when tenor type is selected as mixed payment. For ELC draft details, it is applicable when we select Available With as any bank and Available By as mixed payment
-		B###deferred-payment                      String     - Deferred Payment.Applicable and mandatory when tenor type is selected as deferred payment. For ELC draft details, it is Applicable when we select Available By as deferred payment
-		B###draft-at-or-tenor-type                String     - Draft At/Tenor Type. For ILC draft details, Applicable when Tenor Type is selected as Sight or Usance
+		B###amount                                Numeric       - Amount
+		B###maturity-date                         Date          - Maturity Date
+		B###value-date                            Date          - Value Date
+		B###correspondent-bank-charges            String        - Correspondent Bank Charges
+		B###payment-type                          Numeric       - Payment Type
+		B###third-party-payment                   Numeric       - Third Party Payment
+		B###our-correspondent-bank-id             String        - Our Correspondent Bank ID
+		B###close-bill                            Numeric       - Close Bill
+		B###remitting-bank-id                     String        - Remitting Bank ID
+		B###our-correspondent-bank-name           String        - Our Correspondent Bank Name
+		B###mode-of-payment                       Numeric       - Mode of Payment
+		B###remitter-name                         String        - Remitter Name
+		B###remitting-bank-name                   String        - Remitting Bank Name
+		B###country                               String        - Country
+		B###remitter-address                      String        - Remitter Address
+		B###remitting-bank-country                String        - Remitting Bank Country
+		B###account-number                        String        - Account Number
+		B###remitter-country                      String        - Remitter Country
+		B###reference-number                      String        - Reference Number
 	}   
-	A###ilc-draft-details:
-	{
-		B###charges-flag                          Numeric    - Charges Flag . This field is applicable in ILC draft
-		B###charges-narrative                     String     - Charges Narrative.This field is applicable in ILC draft and ILC amendment draft
-		B###country                               String     - Country.  This field is applicable and mandatory in ILC draft
-		B###draft-for-interest-required           Numeric    - Draft for Interest required
-		B###drawee-id                             String     - Drawee ID. Applicable when Tenor Type is selected as mixed payment and deferred payment
-		B###drawee-name                           String     - Drawee Name
-		B###drawee-address-one                    String     - Drawee Address One
-		B###drawee-address-two                    String     - Drawee Address Two
-		B###drawee-address-three                  String     - Drawee Address Three
-		B###interest-from                         Date       - Interest from
-		B###interest-rate                         Numeric    - Interest Rate
-		B###sight-amount                          Numeric    - Sight Amount. Applicable and Mandatory when Tenor Type is selected as mixed payment
-		B###tenor-or-tenor-days                   Numeric    - Tenor. Applicable and mandatory when tenor type is selected as Usance, Mixed Pyament and Deferred Payment
-		B###tenor-type                            Numeric    - Tenor Type. Applicable and Mandatory for ILC Draft
-		B###usance-amount                         Numeric    - Usance Amount. Applicable and Mandatory when Tenor Type is selected as mixed payment
-		B###usance-from                           Numeric    - Usance From. Applicable and mandatory when tenor type is selected as Usance, Mixed Pyament and Deferred Payment
-		B###upas                                  Numeric    - UPAS
-	}   
-	A###ilc-amend-draft-details:
-	{
-		B###amendment-charge-payable-by           Numeric    - Amendment Charge Payable by
-		B###revised-charges-flag                  Numeric    - Revised Charges Flag
-		B###revised-charges-narrative             String     - Revised Charges Narrative
-		B###revised-draft-for-interest-required   Numeric    - Revised Draft for Interest required 
-		B###revised-drawee-id                     String     - Revised Drawee ID
-		B###revised-drawee-name                   String     - Revised Drawee Name
-		B###revised-drawee-address-one            String     - Revised Drawee Address One
-		B###revised-drawee-address-two            String     - Revised Drawee Address Two
-		B###revised-drawee-address-three          String     - Revised Drawee Address Three
-		B###revised-interest-from                 Date       - Revised Interest From
-	}   
-	A###elc-draft-details:
-	{
-		B###drawee                                String     - Drawee
-		B###elc-draft-drawee-name                 String     - Drawee Name
-		B###elc-draft-drawee-address              String     - Drawee Address One
-		B###applicant-bank-charge-amount-currency String     - Applicant Bank Charge Amount Currency
-		B###applicant-bank-charge-amount          Numeric    - Applicant Bank Charge Amount
-		B###requested-confirmation-party          String     - Requested Confirmation Party. Applicable and Mandatory when we select Confirmation Instructions as confirm and May add
-		B###confirmation-instructions             Numeric    - Confirmation Instructions. Applicable and mandatory for ELC Draft Details
-		B###mode-of-payment                       Numeric    - Mode of Payment
-	}   
-	A###lc-bill-lodgement-draft-details:
-	{
-		B###draft-amount-currency                 String     - Draft Amount Currency.
-		B###draft-amount                          Numeric    - Draft Amount.
-		B###draft-date                            Date       - Draft Date. Applicable and mandatory for ILC and ELC Bill Lodgement Draft Details
-		B###draft-number                          String     - Draft Number. This field is Applicable and mandatory in LC bill lodgement
-	}   
-	A###ilc-bill-lodgement-draft-details:
-	{
-		B###due-date-for-sight                    Date       - Due Date for Sight
-		B###due-date-for-usance                   Date       - Due Date for Usance
-		B###period-of-sight-payment               Numeric    - Period of Sight Payment. Applicable when Tenor Type is selected as Sight, Mixed Payment ,Deferred Payment
-		B###deferred-payment-id                   Numeric    - Deferred Payment ID. Applicable and mandatory when tenor type is deferred payment
-		B###ilc-bill-lodgement-sight-amount       Numeric    - Sight Amount. Applicable and Mandatory when Tenor Type is selected as mixed payment
-		B###ilc-bill-lodgement-tenor-or-tenor-days Numeric    - Tenor. Applicable and mandatory when tenor type is selected as Usance, Mixed Pyament and Deferred Payment
-		B###ilc-bill-lodgement-tenor-type         Numeric    - Tenor Type. Applicable and Mandatory for ILC bill lodgement draft details
-		B###ilc-bill-lodgement-usance-amount      Numeric    - Usance Amount. Applicable and Mandatory when Tenor Type is selected as mixed payment
-		B###ilc-bill-lodgement-usance-from        Numeric    - Usance From. Applicable and mandatory when tenor type is selected as Usance, Mixed Pyament and Deferred Payment
-	}  
-	A###elc-bill-lodgement-draft-details:
-	{
-		B###bank-id                               String     - Bank ID
-		B###bank-name                             String     - Bank Name
-		B###elc-bill-lodgement-draft-drawn-on     Numeric    - Draft Drawn On
-		B###elc-bill-lodgement-draft-at-or-tenor-type Numeric    - ELC Bill Lodgement Draft At or Tenor Type
-		B###elc-bill-lodgement-tenor-days         Numeric    - ELC Bill Lodgement Tenor Days. Applicable and Mandatory for ELC Bill Lodgement Draft Details
-		B###due-date                              Date       - Due Date. Applicable and Mandatory for ELC Bill Lodgement Draft Details
-		B###instructions                          String     - Instructions
-		B###license-amount-currency               String     - License Amount Currency
-		B###license-amount                        Numeric    - License Amount
-		B###license-date                          Date       - License Date
-		B###license-number                        String     - License Number
-		B###mixed-payment-of-sight                String     - Mixed Payment Of Sight. Applicable and Mandatory when we select Tenor Type as Mixed Payment
-		B###mixed-payment-of-usance               String     - Mixed Payment Of Usance. Applicable and Mandatory when we select Tenor Type as Mixed Payment
-		B###tenor-description                     Numeric    - Tenor Description. Mandatory when we select Tenor Type as Mixed Payment and Deffered Payment
-		B###tenor-start-date                      Date       - Tenor Start Date. Applicable and Mandatory for ELC Bill Lodgement Draft Details
-		B###elc-bill-lodgement-draft-amount-currency String     - Draft Amount Currency
-		B###elc-bill-lodgement-draft-amount       Numeric    - Draft Amount.
-	}   
-	A###lc-deferred-payment-details:
+	A###credit-details:
 	[
 		{
-			C###date-of-presentation-of-bill          Date       - Date of Presentation of Bill. Applicable when ILC Draft tenor-type is set as deferred payment
-			C###amount-payable                        Numeric    - Amount payable. Applicable when ILC Draft tenor-type is set as deferred payment
-			C###remarks                               String     - Remarks. Applicable when ILC Draft tenor-type is set as deferred payment
-			C###bill-stat                             Numeric    - Bill Stat
+			C###deal-type*                            Numeric       - Deal Type
+			C###account-type*                         Numeric       - Account Type
+			C###settlement-currency*                  String        - Settlement Currency
+			C###settlement-account-number*            String        - Settlement Account Number
+			C###transaction-currency*                 String        - Transaction Currency
+			C###transaction-amount*                   Numeric       - Transaction Amount
+			C###exchange-rate*                        Numeric       - Exchange Rate
+			C###amount-to-be-adjusted*                Numeric       - Amount To Be Adjusted
+			C###amount-in-bill-currency*              Numeric       - Amount In Bill Currency
 		}
 	]
 }

@@ -20,6 +20,7 @@ public class ColumnDefVo {
 	public String name;
 	public String type;
 	public String desc;
+	public boolean required = false;
 
 	/**
 	 * due-date-for-sight Date - Due Date for Sigh
@@ -35,7 +36,13 @@ public class ColumnDefVo {
 		String tmp = new String(input);
 		String[] result = tmp.split(" ");
 
-		vo.name = result[0];
+		String name = result[0];
+		if(name.endsWith("*")) {
+			name = name.substring(0, name.length() - 2);
+			vo.required = true;
+		}
+		vo.name = name;
+		
 		int i = 1;
 		while (i < result.length) {
 			if (result[i].trim().length() == 0) {

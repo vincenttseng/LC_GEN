@@ -57,6 +57,8 @@ public class ParseOutputTest {
 
 	@Test
 	public void genResponseObjectAndRef() throws IOException {
+		String refKey = "export-lc-bill-payment-post-request";
+		
 		File file = new File(responseFilename);
 		logger.info("file " + file.getAbsolutePath() + " existed: " + file.exists());
 
@@ -89,12 +91,11 @@ public class ParseOutputTest {
 			}
 		}
 
-		String refKey = "letter-of-credit-draft-details-get-response";
 		System.out.println("==========================================");
 		System.out.println("=========ref in RESTFUL REQ ==============");
 		System.out.println("==========================================");
 
-		System.out.println("                  - $ref: '#/components/schemas/" + refKey + "'");
+		getRequestBody(refKey);
 
 		System.out.println("==========================================");
 		System.out.println("=========ref in components ===============");
@@ -121,7 +122,7 @@ public class ParseOutputTest {
 		for (String key : objectKeySet) {
 			List<ColumnDefVo> list = objectArrayMap.get(key);
 			if (list.size() > 0) {
-				System.out.println("        " + key + ":");
+				System.out.println("         " + key + ":");
 				System.out.println("          type: array");
 				System.out.println("          items:");
 				String subkey = refKey + "-" + key;
@@ -144,6 +145,20 @@ public class ParseOutputTest {
 			if (list.size() > 0) {
 				String subkey = refKey + "-" + key;
 				System.out.println("    " + subkey + ":");
+				
+				int cnt = 0;
+				StringBuilder sba = new StringBuilder();
+				for (ColumnDefVo vo : list) {
+					if(vo.required) {
+						cnt++;
+				        sba.append("        - " + vo.name + "\n");
+					}
+				}
+				if(cnt > 0) {
+					System.out.println("      required:");
+					System.out.print(sba.toString());
+				}
+				
 				System.out.println("      type: object");
 				System.out.println("      properties:");
 
@@ -154,6 +169,10 @@ public class ParseOutputTest {
 
 					String domainName = typeToDomainMap.get(vo.name);
 
+					if(vo.required) {
+//						System.out.println("          required: true");
+					}
+					
 					if (!domainMap.containsKey(domainName)) {
 						System.out.println("          description: " + vo.desc);
 					} else {
@@ -177,6 +196,20 @@ public class ParseOutputTest {
 			if (list.size() > 0) {
 				String subkey = refKey + "-" + key;
 				System.out.println("    " + subkey + ":");
+				
+				int cnt = 0;
+				StringBuilder sba = new StringBuilder();
+				for (ColumnDefVo vo : list) {
+					if(vo.required) {
+						cnt++;
+				        sba.append("        - " + vo.name + "\n");
+					}
+				}
+				if(cnt > 0) {
+					System.out.println("      required:");
+					System.out.print(sba.toString()); // already has \n
+				}
+				
 				System.out.println("      type: object");
 				System.out.println("      properties:");
 
@@ -186,7 +219,7 @@ public class ParseOutputTest {
 					System.out.println("          type: " + vo.type);
 
 					String domainName = typeToDomainMap.get(vo.name);
-
+					
 					if (!domainMap.containsKey(domainName)) {
 						System.out.println("          description: " + vo.desc);
 					} else {
@@ -205,4 +238,20 @@ public class ParseOutputTest {
 			}
 		}
 	}
+	
+	/**
+    requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/letter-of-credit-draft-details-request'
+    **/
+    public void getRequestBody(String refKey) {
+    	System.out.println("      requestBody:");
+    	System.out.println("        content:");
+    	System.out.println("          application/json:");
+    	System.out.println("            schema:");
+    	System.out.println("              $ref: '#/components/schemas/" + refKey + "'");
+    }
+    
 }
