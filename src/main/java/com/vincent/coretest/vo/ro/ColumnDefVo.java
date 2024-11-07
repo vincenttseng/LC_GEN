@@ -38,7 +38,7 @@ public class ColumnDefVo {
 
 		String name = result[0];
 		if(name.endsWith("*")) {
-			name = name.substring(0, name.length() - 2);
+			name = name.substring(0, name.length() - 1);
 			vo.required = true;
 		}
 		vo.name = name;

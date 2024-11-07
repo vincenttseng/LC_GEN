@@ -1004,11 +1004,11 @@ d_AccLayerStat,WaitingForRate,WaitingForRate
 d_AccLayerStat,Reversed,Reversed
 d_AccLayerStat,SentForAcntng,SentForAcntng
 d_AccLayerStat,Treasury_to_be_Processes,Treasury_to_be_Processes
-d_WorkflowStatus,OnHold             ,OnHold             
+d_WorkflowStatus,OnHold,OnHold
 d_WorkflowStatus,PendingAuthorisation,PendingAuthorisation
-d_WorkflowStatus,ActModOnHold       ,ActModOnHold       
-d_WorkflowStatus,ActModPendAuth     ,ActModPendAuth     
-d_WorkflowStatus,Active             ,Active             
+d_WorkflowStatus,ActModOnHold,ActModOnHold
+d_WorkflowStatus,ActModPendAuth,ActModPendAuth
+d_WorkflowStatus,Active,Active
 d_WorkflowStatus,Rejected     ,Rejected     
 d_WorkflowStatus,Cancelled,Cancelled
 d_WorkflowStatus,ActModOnHold,ActModOnHold

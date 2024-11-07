@@ -41,8 +41,8 @@ public class SimpleTest {
 			// System.out.println(sb.toString());
 		}
 
-		name = "LC-POS-TYPE";
-		String type = "d_PosTyp";
+		name = "aaaa";
+		String type = "d_WorkflowStatusp";
 
 		StringBuilder sb = new StringBuilder();
 		sb.append("description: '" + name + " Allowed values:");
@@ -59,7 +59,7 @@ public class SimpleTest {
 	 */
 	@Test
 	public void getGetParamAndQuery() {
-		String fullPath = "/export-lc-bill-payment/{bill-payment-reference}";
+		String fullPath = "/export-lc-post-shipment-crystallization-or-bill-recovery/{crystallization-reference}/{sequence-id}";
 
 		int index = fullPath.indexOf("?");
 		String path = fullPath;

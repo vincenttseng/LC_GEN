@@ -57,7 +57,7 @@ public class ParseOutputTest {
 
 	@Test
 	public void genResponseObjectAndRef() throws IOException {
-		String refKey = "export-lc-bill-payment-post-request";
+		String refKey = "export-lc-post-shipment-crystallization-or-bill-recovery-post-request";
 		
 		File file = new File(responseFilename);
 		logger.info("file " + file.getAbsolutePath() + " existed: " + file.exists());
@@ -100,7 +100,7 @@ public class ParseOutputTest {
 		System.out.println("==========================================");
 		System.out.println("=========ref in components ===============");
 		System.out.println("==========================================");
-		System.out.println("   " + refKey + ":");
+		System.out.println("    " + refKey + ":");
 		System.out.println("      type: object");
 		System.out.println("      properties:");
 
@@ -122,7 +122,7 @@ public class ParseOutputTest {
 		for (String key : objectKeySet) {
 			List<ColumnDefVo> list = objectArrayMap.get(key);
 			if (list.size() > 0) {
-				System.out.println("         " + key + ":");
+				System.out.println("        " + key + ":");
 				System.out.println("          type: array");
 				System.out.println("          items:");
 				String subkey = refKey + "-" + key;
