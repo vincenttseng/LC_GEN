@@ -168,7 +168,7 @@ public class TextUtil {
 							currentToken = resultArr[1].trim();
 
 							if (currentToken.endsWith(":")) {
-								currentToken = currentToken.substring(0, currentToken.length() - 2);
+								currentToken = currentToken.substring(0, currentToken.length() - 1);
 							}
 
 							if (!map.containsKey(currentToken)) {
