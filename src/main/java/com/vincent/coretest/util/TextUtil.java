@@ -11,6 +11,8 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.apache.commons.lang3.StringUtils;
+
 import com.vincent.coretest.vo.ro.ColumnDefVo;
 
 import sun.awt.SunHints.Value;
@@ -47,12 +49,14 @@ public class TextUtil {
 				// System.out.println(length);
 
 				if (length == 3) {
-					String key = tokens[0];
+					String key = StringUtils.trim(tokens[0]);
+					String value1 = StringUtils.trim(tokens[1]);
+					String value2 = StringUtils.trim(tokens[2]);
 					if (!map.containsKey(key)) {
-						map.put(key, tokens[1] + ":" + tokens[2]);
+						map.put(key, value1 + ":" + value2);
 					} else {
 						String value = map.get(key);
-						map.put(key, value + "," + tokens[1] + ":" + tokens[2]);
+						map.put(key, value + "," + value1 + ":" + value1);
 					}
 				}
 			}
@@ -79,11 +83,11 @@ public class TextUtil {
 				String[] tokens = line.split(" ");
 				List<String> list = new ArrayList<String>();
 				for (String token : tokens) {
-					if(token.trim().length() > 0) {
+					if (token.trim().length() > 0) {
 						list.add(token.trim());
 					}
 				}
-				if(list.size() >= 2) {
+				if (list.size() >= 2) {
 					map.put(list.get(0).trim(), list.get(1).trim());
 				}
 			}
