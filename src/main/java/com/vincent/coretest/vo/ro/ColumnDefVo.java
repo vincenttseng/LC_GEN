@@ -21,6 +21,7 @@ public class ColumnDefVo {
 	public String type;
 	public String desc;
 	public boolean required = false;
+	public boolean isDate = false;
 
 	/**
 	 * due-date-for-sight Date - Due Date for Sigh
@@ -48,6 +49,9 @@ public class ColumnDefVo {
 			if (result[i].trim().length() == 0) {
 				i++;
 			} else {
+				if("Date".equals(result[i])) {
+					vo.isDate = true;
+				}
 				vo.type = convertType(result[i]);
 				break;
 			}

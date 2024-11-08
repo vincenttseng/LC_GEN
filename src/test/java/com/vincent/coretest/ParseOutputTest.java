@@ -57,7 +57,7 @@ public class ParseOutputTest {
 
 	@Test
 	public void genResponseObjectAndRef() throws IOException {
-		String refKey = "export-lc-post-shipment-crystallization-or-bill-recovery-post-request";
+		String refKey = "letter-of-credit-draft-details-get-response";
 		
 		File file = new File(responseFilename);
 		logger.info("file " + file.getAbsolutePath() + " existed: " + file.exists());
@@ -169,9 +169,6 @@ public class ParseOutputTest {
 
 					String domainName = typeToDomainMap.get(vo.name);
 
-					if(vo.required) {
-//						System.out.println("          required: true");
-					}
 					
 					if (!domainMap.containsKey(domainName)) {
 						System.out.println("          description: " + vo.desc);
@@ -184,7 +181,7 @@ public class ParseOutputTest {
 
 						System.out.println("          " + sb.toString());
 					}
-					if ("Date".equals(vo.type)) {
+					if (vo.isDate) {
 						System.out.println("          format: date");
 					}
 				}
@@ -231,7 +228,7 @@ public class ParseOutputTest {
 
 						System.out.println("          " + sb.toString());
 					}
-					if ("Date".equals(vo.type)) {
+					if (vo.isDate) {
 						System.out.println("          format: date");
 					}
 				}
