@@ -1,10 +1,7 @@
 package com.vincent.coretest;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -14,6 +11,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.vincent.coretest.util.TextUtil;
+import com.vincent.coretest.vo.DomainMapUtil;
+import com.vincent.coretest.vo.TFType;
 import com.vincent.coretest.vo.ro.ColumnDefVo;
 
 public class ParseOutputTest {
@@ -22,7 +21,6 @@ public class ParseOutputTest {
 	String domainFilename = ".\\src\\test\\input\\domainRef.csv";
 
 	String responseFilename = ".\\src\\test\\input\\response.txt";
-
 
 	/**
 	 * letter-of-credit-draft-details-request: type: object properties:
@@ -55,13 +53,16 @@ public class ParseOutputTest {
 	 */
 
 	public static final String REQ = "request";
-	public static final String RESP= "response";
-	
+	public static final String RESP = "response";
+
 	@Test
 	public void genResponseObjectAndRef() throws IOException {
-		String apiName = "Draft Details";
+		String apiName = "Modify Draft Details";
 
 		String refKey = TextUtil.nameToLowerCaseAndDash(apiName + " " + RESP);
+
+		Map<String, TFType> tfTypeMap = TFType.readDTMap();
+		Map<String, String> typeToDomainMap = DomainMapUtil.readFileTypeToDomainMap();
 
 		File file = new File(responseFilename);
 		logger.info("file " + file.getAbsolutePath() + " existed: " + file.exists());
@@ -140,8 +141,6 @@ public class ParseOutputTest {
 		File domainFile = new File(domainFilename);
 		Map<String, String> domainMap = TextUtil.readFileToDomainMap(domainFile);
 
-		Map<String, String> typeToDomainMap = TextUtil.readFileTypeToDomainMap();
-
 		for (String key : keySet) {
 			List<ColumnDefVo> list = objectMap.get(key);
 			if (list.size() > 0) {
@@ -182,6 +181,15 @@ public class ParseOutputTest {
 
 						System.out.println("          " + sb.toString());
 					}
+
+					TFType tfType = tfTypeMap.get(domainName);
+					if(tfType != null) {
+						String yamlExtraString = tfType.toYamlTypeString();
+						if (yamlExtraString != null && yamlExtraString.length() > 0) {
+							System.out.println("          " + yamlExtraString);
+						}
+					}
+
 					if (vo.isDate) {
 						System.out.println("          format: date");
 					}
@@ -228,6 +236,14 @@ public class ParseOutputTest {
 						sb.append(";'");
 
 						System.out.println("          " + sb.toString());
+					}
+					
+					TFType tfType = tfTypeMap.get(domainName);
+					if(tfType != null) {
+						String yamlExtraString = tfType.toYamlTypeString();
+						if (yamlExtraString != null && yamlExtraString.length() > 0) {
+							System.out.println("          " + yamlExtraString);
+						}
 					}
 					if (vo.isDate) {
 						System.out.println("          format: date");

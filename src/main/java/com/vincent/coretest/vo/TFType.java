@@ -46,10 +46,8 @@ public class TFType {
 
 	public String toYamlTypeString() {
 		StringBuilder sb = new StringBuilder();
-		if (name != null) {
-			if(name.startsWith("d_Alpha")) {
-				sb.append("maxLength: ").append(value);
-			} else if("d_Address".equals(name)) {
+		if (type != null) {
+			if("VARCHAR2".equals(type)) {
 				sb.append("maxLength: ").append(value);
 			} 
 		} 
