@@ -57,7 +57,7 @@ public class ParseOutputTest {
 
 	@Test
 	public void genResponseObjectAndRef() throws IOException {
-		String apiName = "Modify Draft Details";
+		String apiName = "Export LC Bill Payment";
 
 		String refKey = TextUtil.nameToLowerCaseAndDash(apiName + " " + RESP);
 
