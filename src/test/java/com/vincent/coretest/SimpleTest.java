@@ -110,10 +110,16 @@ public class SimpleTest {
 
 	@Test
 	public void testTypeToDomainMap() throws IOException {
-		File typeToDomainFile = new File(typeToDomainFilename);
-		Map<String, String> map = TextUtil.readFileTypeToDomainMap(typeToDomainFile);
+		Map<String, String> map = TextUtil.readFileTypeToDomainMap();
 		for (String key : map.keySet()) {
 			logger.info(key + "=>" + map.get(key));
 		}
+	}
+	
+	@Test
+	public void testNameToLowerCaseAndDash() {
+		String name = "Draft Details";
+
+		logger.info("=>" + TextUtil.nameToLowerCaseAndDash(name));
 	}
 }

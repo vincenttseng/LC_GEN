@@ -65,8 +65,11 @@ public class TextUtil {
 
 		return map;
 	}
-
-	public static Map<String, String> readFileTypeToDomainMap(File typeToDomainFile) throws IOException {
+	
+	private static final String typeToDomainFilename = ".\\src\\test\\input\\typeToDomain.txt";
+	public static Map<String, String> readFileTypeToDomainMap() throws IOException {
+		File typeToDomainFile = new File(typeToDomainFilename);
+		
 		if (typeToDomainFile == null || !typeToDomainFile.exists()) {
 			return new HashMap<String, String>();
 		}
@@ -103,6 +106,27 @@ public class TextUtil {
 		}
 
 		return map;
+	}
+	
+	public static String nameToLowerCaseAndDash(String name) {
+		if (name == null) {
+			return "";
+		}
+
+		String[] tokens = name.split(" ");
+		StringBuilder sb = new StringBuilder();
+		boolean found = false;
+		for (String token : tokens) {
+			token = token.trim();
+			if (token != null && token.length() > 0) {
+				if (found) {
+					sb.append("-");
+				}
+				sb.append(token.toLowerCase());
+				found = true;
+			}
+		}
+		return sb.toString();
 	}
 
 	/**

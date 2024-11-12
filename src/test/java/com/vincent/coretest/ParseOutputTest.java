@@ -23,7 +23,6 @@ public class ParseOutputTest {
 
 	String responseFilename = ".\\src\\test\\input\\response.txt";
 
-	String typeToDomainFilename = ".\\src\\test\\input\\typeToDomain.txt";
 
 	/**
 	 * letter-of-credit-draft-details-request: type: object properties:
@@ -55,10 +54,15 @@ public class ParseOutputTest {
 	 * LETTER-OF-CREDIT-DRAFT-DETAILS-REQUEST-LC-DEFERRED-PAYMENT-DETAILS
 	 */
 
+	public static final String REQ = "request";
+	public static final String RESP= "response";
+	
 	@Test
 	public void genResponseObjectAndRef() throws IOException {
-		String refKey = "letter-of-credit-draft-details-get-response";
-		
+		String apiName = "Draft Details";
+
+		String refKey = TextUtil.nameToLowerCaseAndDash(apiName + " " + RESP);
+
 		File file = new File(responseFilename);
 		logger.info("file " + file.getAbsolutePath() + " existed: " + file.exists());
 
@@ -112,12 +116,10 @@ public class ParseOutputTest {
 				System.out.println("          $ref: '#/components/schemas/" + subkey + "'");
 			}
 		}
-		
+
 		/**
-          type: array
-          items:
-            $ref: >-
-              #/components/schemas/enquire-shipping-bill-details-response-shipping-bill-details
+		 * type: array items: $ref: >-
+		 * #/components/schemas/enquire-shipping-bill-details-response-shipping-bill-details
 		 */
 		for (String key : objectKeySet) {
 			List<ColumnDefVo> list = objectArrayMap.get(key);
@@ -137,28 +139,28 @@ public class ParseOutputTest {
 
 		File domainFile = new File(domainFilename);
 		Map<String, String> domainMap = TextUtil.readFileToDomainMap(domainFile);
-		File typeToDomainFile = new File(typeToDomainFilename);
-		Map<String, String> typeToDomainMap = TextUtil.readFileTypeToDomainMap(typeToDomainFile);
+
+		Map<String, String> typeToDomainMap = TextUtil.readFileTypeToDomainMap();
 
 		for (String key : keySet) {
 			List<ColumnDefVo> list = objectMap.get(key);
 			if (list.size() > 0) {
 				String subkey = refKey + "-" + key;
 				System.out.println("    " + subkey + ":");
-				
+
 				int cnt = 0;
 				StringBuilder sba = new StringBuilder();
 				for (ColumnDefVo vo : list) {
-					if(vo.required) {
+					if (vo.required) {
 						cnt++;
-				        sba.append("        - " + vo.name + "\n");
+						sba.append("        - " + vo.name + "\n");
 					}
 				}
-				if(cnt > 0) {
+				if (cnt > 0) {
 					System.out.println("      required:");
 					System.out.print(sba.toString());
 				}
-				
+
 				System.out.println("      type: object");
 				System.out.println("      properties:");
 
@@ -169,7 +171,6 @@ public class ParseOutputTest {
 
 					String domainName = typeToDomainMap.get(vo.name);
 
-					
 					if (!domainMap.containsKey(domainName)) {
 						System.out.println("          description: " + vo.desc);
 					} else {
@@ -187,26 +188,26 @@ public class ParseOutputTest {
 				}
 			}
 		}
-		
+
 		for (String key : objectKeySet) {
 			List<ColumnDefVo> list = objectArrayMap.get(key);
 			if (list.size() > 0) {
 				String subkey = refKey + "-" + key;
 				System.out.println("    " + subkey + ":");
-				
+
 				int cnt = 0;
 				StringBuilder sba = new StringBuilder();
 				for (ColumnDefVo vo : list) {
-					if(vo.required) {
+					if (vo.required) {
 						cnt++;
-				        sba.append("        - " + vo.name + "\n");
+						sba.append("        - " + vo.name + "\n");
 					}
 				}
-				if(cnt > 0) {
+				if (cnt > 0) {
 					System.out.println("      required:");
 					System.out.print(sba.toString()); // already has \n
 				}
-				
+
 				System.out.println("      type: object");
 				System.out.println("      properties:");
 
@@ -216,7 +217,7 @@ public class ParseOutputTest {
 					System.out.println("          type: " + vo.type);
 
 					String domainName = typeToDomainMap.get(vo.name);
-					
+
 					if (!domainMap.containsKey(domainName)) {
 						System.out.println("          description: " + vo.desc);
 					} else {
@@ -235,20 +236,17 @@ public class ParseOutputTest {
 			}
 		}
 	}
-	
+
 	/**
-    requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/letter-of-credit-draft-details-request'
-    **/
-    public void getRequestBody(String refKey) {
-    	System.out.println("      requestBody:");
-    	System.out.println("        content:");
-    	System.out.println("          application/json:");
-    	System.out.println("            schema:");
-    	System.out.println("              $ref: '#/components/schemas/" + refKey + "'");
-    }
-    
+	 * requestBody: content: application/json: schema: $ref:
+	 * '#/components/schemas/letter-of-credit-draft-details-request'
+	 **/
+	public void getRequestBody(String refKey) {
+		System.out.println("      requestBody:");
+		System.out.println("        content:");
+		System.out.println("          application/json:");
+		System.out.println("            schema:");
+		System.out.println("              $ref: '#/components/schemas/" + refKey + "'");
+	}
+
 }
