@@ -10,7 +10,9 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.vincent.coretest.enumeration.GenTypeEnum;
 import com.vincent.coretest.util.DomainMapUtil;
+import com.vincent.coretest.util.SchemaBodyUtil;
 import com.vincent.coretest.util.TFTypeUtil;
 import com.vincent.coretest.util.TextUtil;
 import com.vincent.coretest.vo.TFType;
@@ -53,14 +55,13 @@ public class ParseOutputTest {
 	 * LETTER-OF-CREDIT-DRAFT-DETAILS-REQUEST-LC-DEFERRED-PAYMENT-DETAILS
 	 */
 
-	public static final String REQ = "request";
-	public static final String RESP = "response";
-
 	@Test
 	public void genResponseObjectAndRef() throws IOException {
 		String apiName = "Export LC Bill Payment";
 
-		String refKey = TextUtil.nameToLowerCaseAndDash(apiName + " " + RESP);
+		GenTypeEnum type = GenTypeEnum.RESPONSE;
+
+		String refKey = TextUtil.nameToLowerCaseAndDash(apiName + " " + type.getMessage());
 
 		Map<String, TFType> tfTypeMap = TFTypeUtil.readDTMap();
 		Map<String, String> typeToDomainMap = DomainMapUtil.readFileTypeToDomainMap();
@@ -101,7 +102,7 @@ public class ParseOutputTest {
 		System.out.println("=========ref in RESTFUL REQ ==============");
 		System.out.println("==========================================");
 
-		getRequestBody(refKey);
+		System.out.println(SchemaBodyUtil.genSchemaText(type, refKey));
 
 		System.out.println("==========================================");
 		System.out.println("=========ref in components ===============");
@@ -184,7 +185,7 @@ public class ParseOutputTest {
 					}
 
 					TFType tfType = tfTypeMap.get(domainName);
-					if(tfType != null) {
+					if (tfType != null) {
 						String yamlExtraString = tfType.toYamlTypeString();
 						if (yamlExtraString != null && yamlExtraString.length() > 0) {
 							System.out.println("          " + yamlExtraString);
@@ -238,9 +239,9 @@ public class ParseOutputTest {
 
 						System.out.println("          " + sb.toString());
 					}
-					
+
 					TFType tfType = tfTypeMap.get(domainName);
-					if(tfType != null) {
+					if (tfType != null) {
 						String yamlExtraString = tfType.toYamlTypeString();
 						if (yamlExtraString != null && yamlExtraString.length() > 0) {
 							System.out.println("          " + yamlExtraString);
@@ -253,17 +254,4 @@ public class ParseOutputTest {
 			}
 		}
 	}
-
-	/**
-	 * requestBody: content: application/json: schema: $ref:
-	 * '#/components/schemas/letter-of-credit-draft-details-request'
-	 **/
-	public void getRequestBody(String refKey) {
-		System.out.println("      requestBody:");
-		System.out.println("        content:");
-		System.out.println("          application/json:");
-		System.out.println("            schema:");
-		System.out.println("              $ref: '#/components/schemas/" + refKey + "'");
-	}
-
 }
