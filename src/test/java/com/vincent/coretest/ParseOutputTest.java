@@ -10,8 +10,9 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.vincent.coretest.util.DomainMapUtil;
+import com.vincent.coretest.util.TFTypeUtil;
 import com.vincent.coretest.util.TextUtil;
-import com.vincent.coretest.vo.DomainMapUtil;
 import com.vincent.coretest.vo.TFType;
 import com.vincent.coretest.vo.ro.ColumnDefVo;
 
@@ -61,7 +62,7 @@ public class ParseOutputTest {
 
 		String refKey = TextUtil.nameToLowerCaseAndDash(apiName + " " + RESP);
 
-		Map<String, TFType> tfTypeMap = TFType.readDTMap();
+		Map<String, TFType> tfTypeMap = TFTypeUtil.readDTMap();
 		Map<String, String> typeToDomainMap = DomainMapUtil.readFileTypeToDomainMap();
 
 		File file = new File(responseFilename);

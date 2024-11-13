@@ -1,4 +1,4 @@
-package com.vincent.coretest.vo;
+package com.vincent.coretest.util;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -10,9 +10,13 @@ import java.util.List;
 import java.util.Map;
 
 public class DomainMapUtil {
-	private static final String typeToDomainFilename = ".\\src\\test\\input\\typeToDomain.txt";
+	private static final String TYPE_TO_DOMAIN_FILENAME = ".\\src\\test\\input\\typeToDomain.txt";
 	public static Map<String, String> readFileTypeToDomainMap() throws IOException {
-		File typeToDomainFile = new File(typeToDomainFilename);
+		return readFileTypeToDomainMap(TYPE_TO_DOMAIN_FILENAME);
+	}
+
+	public static Map<String, String> readFileTypeToDomainMap(String fileName) throws IOException {
+		File typeToDomainFile = new File(fileName);
 		
 		if (typeToDomainFile == null || !typeToDomainFile.exists()) {
 			return new HashMap<String, String>();

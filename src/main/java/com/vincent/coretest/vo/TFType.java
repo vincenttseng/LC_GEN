@@ -59,41 +59,4 @@ public class TFType {
 		return "DTType [name=" + name + ", type=" + type + ", value=" + value + "]";
 	}
 
-	private static final String tfDatFilename = ".\\src\\test\\input\\TF.dat";
-
-	public static final Map<String, TFType> readDTMap() throws IOException {
-		File tfDataFile = new File(tfDatFilename);
-
-		if (tfDataFile == null || !tfDataFile.exists()) {
-			return new HashMap<String, TFType>();
-		}
-
-		Map<String, TFType> map = new HashMap<String, TFType>();
-
-		FileReader in = null;
-		try {
-			in = new FileReader(tfDataFile);
-			BufferedReader br = new BufferedReader(in);
-
-			String line;
-			while ((line = br.readLine()) != null) {
-				TFType type = TFType.toTFType(line);
-				if (type != null) {
-					map.put(type.name, type);
-				}
-			}
-		} catch (IOException e) {
-
-		} finally {
-			try {
-				in.close();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-
-		return map;
-	}
-
 }

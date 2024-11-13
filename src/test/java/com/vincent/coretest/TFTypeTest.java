@@ -8,6 +8,7 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.vincent.coretest.util.TFTypeUtil;
 import com.vincent.coretest.vo.TFType;
 
 public class TFTypeTest {
@@ -15,7 +16,7 @@ public class TFTypeTest {
 
 	@Test
 	public void testReadDTType() throws IOException {
-		Map<String, TFType> map = TFType.readDTMap();
+		Map<String, TFType> map = TFTypeUtil.readDTMap();
 		Set<String> keySet = map.keySet();
 		for (String key : keySet) {
 			TFType type = map.get(key);
