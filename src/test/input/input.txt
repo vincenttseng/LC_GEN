@@ -1,0 +1,7 @@
+{
+	A###export-lc-pre-post-shipment-loan-registration:
+	{
+		B###user-action*                          Numeric       - Approve, Reject.
+		B###remarks                               String        - Qualifying remarks if any. Mandatory, in case of Reject, Cancel and Submit for Cancellation
+	}
+}

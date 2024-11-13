@@ -8,7 +8,7 @@ import lombok.ToString;
 public enum GenTypeEnum {
 
 	//@formatter:off
-	REQUEST("srequest"), 
+	REQUEST("request"), 
 	RESPONSE("response");
 	//@formatter:on
 
