@@ -10,14 +10,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.vincent.coretest.enumeration.GenTypeEnum;
-import com.vincent.coretest.util.DomainMapUtil;
+import com.vincent.coretest.reader.DomainMapUtil;
+import com.vincent.coretest.reader.ReqRespParserUtil;
+import com.vincent.coretest.reader.TFTypeUtil;
 import com.vincent.coretest.util.RefDefDetailUtil;
-import com.vincent.coretest.util.ReqRespParserUtil;
 import com.vincent.coretest.util.SchemaBodyUtil;
-import com.vincent.coretest.util.TFTypeUtil;
 import com.vincent.coretest.util.TextUtil;
+import com.vincent.coretest.vo.ColumnDefVo;
 import com.vincent.coretest.vo.TFType;
-import com.vincent.coretest.vo.ro.ColumnDefVo;
 
 public class ParseOutputTest {
 	protected final Logger logger = LoggerFactory.getLogger(ParseOutputTest.class);
@@ -70,11 +70,7 @@ public class ParseOutputTest {
 
 		// domain mapping
 		File domainFile = new File(domainFilename);
-		domainMap = TextUtil.readFileToDomainMap(domainFile);
-
-		GenTypeEnum type = GenTypeEnum.RESPONSE;
-
-		String refKey = TextUtil.nameToLowerCaseAndDash(apiName + " " + type.getMessage());
+		domainMap = DomainMapUtil.readFileToDomainMap(domainFile);
 
 		File inputFile = new File(inputFilename);
 		logger.info("inputFile " + inputFile.getAbsolutePath() + " existed: " + inputFile.exists());

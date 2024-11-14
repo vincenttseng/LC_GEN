@@ -1,13 +1,7 @@
 package com.vincent.coretest.vo;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class TFType {
 	public String name;
@@ -47,10 +41,10 @@ public class TFType {
 	public String toYamlTypeString() {
 		StringBuilder sb = new StringBuilder();
 		if (type != null) {
-			if("VARCHAR2".equals(type)) {
+			if ("VARCHAR2".equals(type)) {
 				sb.append("maxLength: ").append(value);
-			} 
-		} 
+			}
+		}
 		return sb.toString();
 	}
 

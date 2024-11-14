@@ -24,7 +24,7 @@ import org.slf4j.LoggerFactory;
  * @author vincenttseng 2019年8月30日
  */
 public class HttpUtils {
-	protected static final Logger log = LoggerFactory.getLogger(ApiUtilize.class);
+	protected static final Logger log = LoggerFactory.getLogger(HttpUtils.class);
 
 	public static HttpGet makeHttpGet(String callPath) {
 		HttpGet get = new HttpGet(callPath);

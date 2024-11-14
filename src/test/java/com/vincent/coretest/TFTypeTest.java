@@ -8,7 +8,7 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.vincent.coretest.util.TFTypeUtil;
+import com.vincent.coretest.reader.TFTypeUtil;
 import com.vincent.coretest.vo.TFType;
 
 public class TFTypeTest {

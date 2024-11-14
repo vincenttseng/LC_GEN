@@ -1,4 +1,4 @@
-package com.vincent.coretest.util;
+package com.vincent.coretest.reader;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -13,7 +13,8 @@ import java.util.Set;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.vincent.coretest.vo.ro.ColumnDefVo;
+import com.vincent.coretest.util.TextUtil;
+import com.vincent.coretest.vo.ColumnDefVo;
 
 public class ReqRespParserUtil {
 	protected static final Logger logger = LoggerFactory.getLogger(TextUtil.class);
@@ -70,9 +71,10 @@ public class ReqRespParserUtil {
 		Map<String, List<ColumnDefVo>> map = new HashMap<String, List<ColumnDefVo>>();
 
 		FileReader in = null;
+		BufferedReader br = null;
 		try {
 			in = new FileReader(file);
-			BufferedReader br = new BufferedReader(in);
+			br = new BufferedReader(in);
 
 			String currentToken = null;
 			String line;
@@ -103,6 +105,12 @@ public class ReqRespParserUtil {
 		} catch (IOException e) {
 
 		} finally {
+			try {
+				br.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			try {
 				in.close();
 			} catch (IOException e) {

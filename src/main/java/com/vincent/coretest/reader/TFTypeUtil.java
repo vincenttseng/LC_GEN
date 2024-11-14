@@ -1,4 +1,4 @@
-package com.vincent.coretest.util;
+package com.vincent.coretest.reader;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -26,9 +26,10 @@ public class TFTypeUtil {
 		Map<String, TFType> map = new HashMap<String, TFType>();
 
 		FileReader in = null;
+		BufferedReader br = null;
 		try {
 			in = new FileReader(tfDataFile);
-			BufferedReader br = new BufferedReader(in);
+			br = new BufferedReader(in);
 
 			String line;
 			while ((line = br.readLine()) != null) {
@@ -40,6 +41,12 @@ public class TFTypeUtil {
 		} catch (IOException e) {
 
 		} finally {
+			try {
+				br.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			try {
 				in.close();
 			} catch (IOException e) {

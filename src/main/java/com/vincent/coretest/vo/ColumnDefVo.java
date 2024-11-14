@@ -1,4 +1,4 @@
-package com.vincent.coretest.vo.ro;
+package com.vincent.coretest.vo;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -66,11 +66,6 @@ public class ColumnDefVo {
 		}
 
 		return vo;
-	}
-
-	@Override
-	public String toString() {
-		return "ColumnDefVo [name=" + name + ", type=" + type + ", desc=" + desc + "]";
 	}
 
 	static final Map<String, String> swaggerTypeMap = new HashMap<String, String>();

@@ -3,8 +3,8 @@ package com.vincent.coretest.util;
 import java.util.List;
 import java.util.Map;
 
+import com.vincent.coretest.vo.ColumnDefVo;
 import com.vincent.coretest.vo.TFType;
-import com.vincent.coretest.vo.ro.ColumnDefVo;
 
 public class RefDefDetailUtil {
 

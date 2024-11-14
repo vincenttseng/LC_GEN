@@ -1,4 +1,4 @@
-package com.vincent.coretest.util;
+package com.vincent.coretest.reader;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -9,15 +9,18 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.lang3.StringUtils;
+
 public class DomainMapUtil {
 	private static final String TYPE_TO_DOMAIN_FILENAME = ".\\src\\test\\input\\typeToDomain.txt";
+
 	public static Map<String, String> readFileTypeToDomainMap() throws IOException {
 		return readFileTypeToDomainMap(TYPE_TO_DOMAIN_FILENAME);
 	}
 
 	public static Map<String, String> readFileTypeToDomainMap(String fileName) throws IOException {
 		File typeToDomainFile = new File(fileName);
-		
+
 		if (typeToDomainFile == null || !typeToDomainFile.exists()) {
 			return new HashMap<String, String>();
 		}
@@ -25,9 +28,10 @@ public class DomainMapUtil {
 		Map<String, String> map = new HashMap<String, String>();
 
 		FileReader in = null;
+		BufferedReader br = null;
 		try {
 			in = new FileReader(typeToDomainFile);
-			BufferedReader br = new BufferedReader(in);
+			br = new BufferedReader(in);
 
 			String line;
 			while ((line = br.readLine()) != null) {
@@ -46,6 +50,12 @@ public class DomainMapUtil {
 
 		} finally {
 			try {
+				br.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			try {
 				in.close();
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
@@ -56,4 +66,37 @@ public class DomainMapUtil {
 		return map;
 	}
 
+	public static Map<String, String> readFileToDomainMap(File domainFile) throws IOException {
+		FileReader in = new FileReader(domainFile);
+		BufferedReader br = new BufferedReader(in);
+
+		Map<String, String> map = new HashMap<String, String>();
+
+		String line;
+		while ((line = br.readLine()) != null) {
+			String[] tokens = null;
+			if (line != null && line.length() > 0) {
+				// System.out.print(line + " =>");
+				tokens = line.split(",");
+
+				int length = tokens != null ? tokens.length : 0;
+				// System.out.println(length);
+
+				if (length == 3) {
+					String key = StringUtils.trim(tokens[0]);
+					String value1 = StringUtils.trim(tokens[1]);
+					String value2 = StringUtils.trim(tokens[2]);
+					if (!map.containsKey(key)) {
+						map.put(key, value1 + ":" + value2);
+					} else {
+						String value = map.get(key);
+						map.put(key, value + "," + value1 + ":" + value1);
+					}
+				}
+			}
+		}
+		in.close();
+
+		return map;
+	}
 }
