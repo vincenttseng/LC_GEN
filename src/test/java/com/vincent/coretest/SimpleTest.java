@@ -49,9 +49,21 @@ public class SimpleTest {
 	}
 
 	/**
-	 * 
-	 * - name: lc-pos-type in: path required: true schema: type: string description:
-	 * LC POS TYPE
+	 * #formatter:off
+        - name: from-date
+          in: path
+          required: true
+          schema:
+            type: string
+          description: FROM DATE
+          
+        - name: page_num
+          in: query
+          required: false
+          schema:
+            type: number
+          description: PAGE_NUM
+	 * #formatter:on
 	 */
 	@Test
 	public void getGetParamAndQuery() {
@@ -104,6 +116,23 @@ public class SimpleTest {
 		System.out.println(sb.toString());
 	}
 
+	/**
+	 * #formatter:off
+        - name: from-date
+          in: path
+          required: true
+          schema:
+            type: string
+          description: FROM DATE
+          
+        - name: page_num
+          in: query
+          required: false
+          schema:
+            type: number
+          description: PAGE_NUM
+	 * #formatter:on
+	 */
 	@Test
 	public void getGetParamAndQuery1() {
 		String fullPath = "/export-lc-bill-payment/{from-date}/{to-date-}/list?bill-payment-reference=<Numeric>&bill-reference=<String>&bill-amount-currency=<String>&bill-amount=<Numeric>&export-lc-advising-reference=<String>&maturity-date=<Date>&bill-status=<Numeric>&rate-request-status=<Numeric>&page-num=<Numeric>&page-size=<Numeric>";

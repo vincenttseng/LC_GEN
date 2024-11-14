@@ -12,6 +12,17 @@ public class SchemaBodyUtil {
 		}
 	}
 
+	/**
+	 * #formatter:off
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/test-refactor2-request'
+	 * #formatter:on
+	 * @param refKey
+	 * @return
+	 */
 	public static final String genRequestSchemaText(String refKey) {
 		StringBuilder sb = new StringBuilder();
 		sb.append("      requestBody:").append("\n");
@@ -23,6 +34,16 @@ public class SchemaBodyUtil {
 		return sb.toString();
 	}
 
+	/**
+	 * #formatter:off
+              schema:
+                anyOf:
+                  - $ref: '#/components/schemas/test-refactor2-response'
+                  - $ref: '#/components/schemas/api-messages'
+	 * #formatter:on
+	 * @param refKey
+	 * @return
+	 */
 	public static final String genResponseSchemaText(String refKey) {
 		StringBuilder sb = new StringBuilder();
 		sb.append("              schema:").append("\n");
