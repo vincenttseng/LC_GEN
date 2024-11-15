@@ -123,8 +123,8 @@ public class ParseOutputTest {
 		genRefDetailObject(GenTypeEnum.RESPONSE, respObjectMap, respObjectArrayMap);
 	}
 
-	public void genRefDefObject(GenTypeEnum type, Map<String, List<ColumnDefVo>> respObjectMap,
-			Map<String, List<ColumnDefVo>> respObjectArrayMap) {
+	public void genRefDefObject(GenTypeEnum type, Map<String, List<ColumnDefVo>> objectMap,
+			Map<String, List<ColumnDefVo>> objectArrayMap) {
 
 		String refKey = TextUtil.nameToLowerCaseAndDash(apiName + " " + type.getMessage());
 
@@ -132,8 +132,8 @@ public class ParseOutputTest {
 		System.out.println("      type: object");
 		System.out.println("      properties:");
 
-		for (String key : respObjectMap.keySet()) {
-			List<ColumnDefVo> list = respObjectMap.get(key);
+		for (String key : objectMap.keySet()) {
+			List<ColumnDefVo> list = objectMap.get(key);
 			if (list.size() > 0) {
 				System.out.println("        " + key + ":");
 				String subkey = refKey + "-" + key;
@@ -145,8 +145,8 @@ public class ParseOutputTest {
 		 * type: array items: $ref: >-
 		 * #/components/schemas/enquire-shipping-bill-details-response-shipping-bill-details
 		 */
-		for (String key : respObjectArrayMap.keySet()) {
-			List<ColumnDefVo> list = respObjectArrayMap.get(key);
+		for (String key : objectArrayMap.keySet()) {
+			List<ColumnDefVo> list = objectArrayMap.get(key);
 			if (list.size() > 0) {
 				System.out.println("        " + key + ":");
 				System.out.println("          type: array");
