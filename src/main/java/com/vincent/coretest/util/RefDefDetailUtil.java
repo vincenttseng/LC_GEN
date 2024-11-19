@@ -9,7 +9,7 @@ import com.vincent.coretest.vo.TFType;
 public class RefDefDetailUtil {
 
 	public static void printRefDefDetail(String refKey, Map<String, List<ColumnDefVo>> objectMap,
-			Map<String, String> domainMap, Map<String, String> typeToDomainMap, Map<String, TFType> tfTypeMap) {
+			Map<String, String> domainToTypesMap, Map<String, String> typeToDomainMap, Map<String, TFType> tfTypeMap) {
 		for (String key : objectMap.keySet()) {
 			List<ColumnDefVo> list = objectMap.get(key);
 			if (list.size() > 0) {
@@ -39,13 +39,13 @@ public class RefDefDetailUtil {
 
 					String domainName = typeToDomainMap.get(vo.name);
 
-					if (!domainMap.containsKey(domainName)) {
+					if (!domainToTypesMap.containsKey(domainName)) {
 						System.out.println("          description: " + vo.desc);
 					} else {
 						String showName = vo.name.toUpperCase();
 						StringBuilder sb = new StringBuilder();
 						sb.append("description: '" + showName + " Allowed values:");
-						sb.append(domainMap.get(domainName));
+						sb.append(domainToTypesMap.get(domainName));
 						sb.append(";'");
 
 						System.out.println("          " + sb.toString());

@@ -13,6 +13,7 @@ import org.apache.commons.lang3.StringUtils;
 
 public class DomainMapUtil {
 	private static final String TYPE_TO_DOMAIN_FILENAME = ".\\src\\test\\input\\typeToDomain.txt";
+	private static final String DOMAINNAME_TO_DBTYPES_FILE = ".\\src\\test\\input\\domainRef.csv";
 
 	public static Map<String, String> readFileTypeToDomainMap() throws IOException {
 		return readFileTypeToDomainMap(TYPE_TO_DOMAIN_FILENAME);
@@ -66,7 +67,12 @@ public class DomainMapUtil {
 		return map;
 	}
 
-	public static Map<String, String> readFileToDomainMap(File domainFile) throws IOException {
+	public static Map<String, String> readDomainNameToTypesMap() throws IOException {
+		File file = new File(DOMAINNAME_TO_DBTYPES_FILE);
+		return readDomainNameToTypesMap(file);
+	}
+	
+	public static Map<String, String> readDomainNameToTypesMap(File domainFile) throws IOException {
 		FileReader in = new FileReader(domainFile);
 		BufferedReader br = new BufferedReader(in);
 

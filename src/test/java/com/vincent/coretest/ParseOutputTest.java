@@ -22,8 +22,6 @@ import com.vincent.coretest.vo.TFType;
 public class ParseOutputTest {
 	protected final Logger logger = LoggerFactory.getLogger(ParseOutputTest.class);
 
-	String domainFilename = ".\\src\\test\\input\\domainRef.csv";
-
 	String inputFilename = ".\\src\\test\\input\\input.txt";
 	String responseFilename = ".\\src\\test\\input\\response.txt";
 
@@ -61,23 +59,23 @@ public class ParseOutputTest {
 
 	Map<String, TFType> tfTypeMap = null;
 	Map<String, String> typeToDomainMap = null;
-	Map<String, String> domainMap = null;
+	Map<String, String> domainToTypesMap = null;
 
 	@Test
 	public void genResponseObjectAndRef() throws IOException {
 		tfTypeMap = TFTypeUtil.readDTMap();
 		typeToDomainMap = DomainMapUtil.readFileTypeToDomainMap();
+		domainToTypesMap = DomainMapUtil.readDomainNameToTypesMap();
 
-		// domain mapping
-		File domainFile = new File(domainFilename);
-		domainMap = DomainMapUtil.readFileToDomainMap(domainFile);
-
+		// input part
 		File inputFile = new File(inputFilename);
 		logger.info("inputFile " + inputFile.getAbsolutePath() + " existed: " + inputFile.exists());
 
-		// input part
+		System.out.println("==========================================");
+		System.out.println("=========INPUT INPUT INPUT ===============");
+		System.out.println("==========================================");
+		
 		Map<String, List<ColumnDefVo>> inputObjectMap = ReqRespParserUtil.parseExcelInputOutputObject(inputFile);
-		logger.info("array");
 		Map<String, List<ColumnDefVo>> inputObjectArrayMap = ReqRespParserUtil
 				.parseExcelInputOutputObjectArray(inputFile);
 
@@ -85,8 +83,11 @@ public class ParseOutputTest {
 		File responseFile = new File(responseFilename);
 		logger.info("responseFile " + responseFile.getAbsolutePath() + " existed: " + responseFile.exists());
 
+		System.out.println("==========================================");
+		System.out.println("=========RESPONSE RESPONSE ===============");
+		System.out.println("==========================================");
+		
 		Map<String, List<ColumnDefVo>> respObjectMap = ReqRespParserUtil.parseExcelInputOutputObject(responseFile);
-		logger.info("array");
 		Map<String, List<ColumnDefVo>> respObjectArrayMap = ReqRespParserUtil
 				.parseExcelInputOutputObjectArray(responseFile);
 
@@ -162,7 +163,7 @@ public class ParseOutputTest {
 			Map<String, List<ColumnDefVo>> objectArrayMap) {
 		String refKey = TextUtil.nameToLowerCaseAndDash(apiName + " " + type.getMessage());
 		
-		RefDefDetailUtil.printRefDefDetail(refKey, objectMap, domainMap, typeToDomainMap, tfTypeMap);
-		RefDefDetailUtil.printRefDefDetail(refKey, objectArrayMap, domainMap, typeToDomainMap, tfTypeMap);
+		RefDefDetailUtil.printRefDefDetail(refKey, objectMap, domainToTypesMap, typeToDomainMap, tfTypeMap);
+		RefDefDetailUtil.printRefDefDetail(refKey, objectArrayMap, domainToTypesMap, typeToDomainMap, tfTypeMap);
 	}
 }

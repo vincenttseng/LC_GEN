@@ -24,7 +24,7 @@ public class SimpleTest {
 		File domainFile = new File(domainFilename);
 		logger.info("domainFile " + domainFile.getAbsolutePath() + " existed: " + domainFile.exists());
 
-		Map<String, String> map = DomainMapUtil.readFileToDomainMap(domainFile);
+		Map<String, String> map = DomainMapUtil.readDomainNameToTypesMap(domainFile);
 
 		String name = "XXXXX";
 
