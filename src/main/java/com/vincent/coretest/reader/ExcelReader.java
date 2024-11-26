@@ -35,15 +35,17 @@ public class ExcelReader {
 			int rowIndex = 1;
 			while (rowIterator.hasNext()) {
 				logger.debug("row {}", rowIndex);
+				Row row = rowIterator.next();
 				if (rowIndex == 1 && !includeHeader) {
 					rowIndex++;
 					continue;
 				}
-				Row row = rowIterator.next();
+
 				// For each row, iterate through all the columns
 				Iterator<Cell> cellIterator = row.cellIterator();
 
 				List<Object> rowData = new ArrayList<Object>();
+				rowData.add(rowIndex);
 
 				boolean withData = false;
 				while (cellIterator.hasNext()) {
@@ -62,15 +64,17 @@ public class ExcelReader {
 						withData = true;
 						rowData.add(Boolean.valueOf(cell.getBooleanCellValue()));
 						break;
-					case Cell.CELL_TYPE_BLANK:
 					default:
-						rowData.add("");
+						rowData.add(" ");
 						break;
 					}
 				}
 				if (withData) {
 					rowList.add(rowData);
+				} else {
+					logger.debug("rowIndex {} is void", rowIndex);
 				}
+
 				rowIndex++;
 			}
 
