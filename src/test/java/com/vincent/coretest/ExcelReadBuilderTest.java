@@ -14,6 +14,7 @@ import org.slf4j.LoggerFactory;
 
 import com.vincent.coretest.reader.ExcelReader;
 import com.vincent.coretest.reader.HeaderUtil;
+import com.vincent.coretest.reader.PathUtil;
 import com.vincent.coretest.vo.MVPScopeVO;
 
 public class ExcelReadBuilderTest {
@@ -21,12 +22,14 @@ public class ExcelReadBuilderTest {
 
 	String xlsxFile = ".\\src\\test\\input\\MVP3 scope for TF_LC_B4_001.xlsx";
 
+	Map<String, List<MVPScopeVO>> apiNameToApiDataMap = new HashMap<String, List<MVPScopeVO>>();
+
+	Map<String, List<String>> mapForSamePath = new HashMap<String, List<String>>();
+
 	@Test
 	public void buildYamlFromExcelForNew() throws FileNotFoundException, IOException {
 		logger.info("buildYamlFromExcelForNew");
 		List<List<Object>> rows = ExcelReader.getActiveRow(xlsxFile, "B4-001", false);
-
-		Map<String, List<MVPScopeVO>> apiNameToApiDataMap = new HashMap<String, List<MVPScopeVO>>();
 
 		int index = 1;
 		for (List<Object> rowData : rows) {
@@ -60,12 +63,13 @@ public class ExcelReadBuilderTest {
 			logger.info("=================================================");
 		}
 
-		checkData(apiNameToApiDataMap);
+		checkData();
+		groupingSameReqPath();
 
 		printStartOfOutput();
 		HeaderUtil.printHeader();
-		showDefOfApi(apiNameToApiDataMap);
-		showDefOfReference(apiNameToApiDataMap);
+		showDefOfApi();
+		showDefOfReference();
 	}
 
 	public static void printStartOfOutput() {
@@ -73,15 +77,19 @@ public class ExcelReadBuilderTest {
 				"============================================= start of YAML =============================================");
 	}
 
-	public static void showDefOfApi(Map<String, List<MVPScopeVO>> apiNameToApiDataMap) {
+	public void showDefOfApi() {
+		System.out.println("paths:");
+		Set<String> keySet = mapForSamePath.keySet();
+		keySet.stream().forEach(reqPath -> {
+			showDefApiByKey(reqPath);
+		});
+	}
+
+	public void showDefOfReference() {
 
 	}
 
-	public static void showDefOfReference(Map<String, List<MVPScopeVO>> apiNameToApiDataMap) {
-
-	}
-
-	public void checkData(Map<String, List<MVPScopeVO>> apiNameToApiDataMap) {
+	public void checkData() {
 		boolean error = false;
 
 		// check url same for same group
@@ -110,5 +118,55 @@ public class ExcelReadBuilderTest {
 		}
 
 		logger.info("checkData pass");
+	}
+
+	public void groupingSameReqPath() {
+		Set<String> keySet = apiNameToApiDataMap.keySet();
+		for (String key : keySet) {
+			List<MVPScopeVO> params = apiNameToApiDataMap.get(key);
+
+			if (params.size() > 0) {
+				MVPScopeVO vo = params.get(0);
+				String reqPath = vo.getReqPath();
+				String httpMethod = vo.getHttpMethod();
+				logger.info(key + " " + httpMethod + " " + reqPath);
+
+				if (!mapForSamePath.containsKey(reqPath)) {
+					mapForSamePath.put(reqPath, new ArrayList<String>());
+				}
+				mapForSamePath.get(reqPath).add(key);
+			}
+		}
+		mapForSamePath.keySet().forEach(key -> {
+			logger.info("for ===== " + key);
+			List<String> values = mapForSamePath.get(key);
+			values.forEach(value -> {
+				logger.info(key + " " + value);
+			});
+		});
+	}
+
+	public void showDefApiByKey(String reqPath) {
+		System.out.println("  " + reqPath + ":");
+
+		List<String> keySet = mapForSamePath.get(reqPath);
+		for (String key : keySet) {
+			System.out.println("######## " + key);
+			List<MVPScopeVO> params = apiNameToApiDataMap.get(key);
+			if (params.size() > 0) {
+				MVPScopeVO vo = params.get(0);
+				String method = vo.getHttpMethod().toLowerCase();
+				System.out.println("    " + method + ":");
+				System.out.println("      tags:");
+				System.out.println("        - " + vo.getApiNode());
+				System.out.println("      summary: " + vo.getApiName());
+				System.out.println("      description: " + vo.getApiName().toUpperCase());
+				System.out.println("      operationId: " + vo.getApiName().toUpperCase());
+				System.out.println("      parameters:");
+				System.out.print(HeaderUtil.getMethodHeadersString());
+				System.out.println(PathUtil.getPathParamString(vo.getReqPath()));
+			}
+		}
+
 	}
 }

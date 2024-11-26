@@ -13,9 +13,14 @@ public class MVPScopeVO {
 	int rowIndex = 0;
 	String type = "";
 	String apiType = "";
-	List<Object> data = null;
 	String apiName = "";
+	String apiNode = "";
 	String path = "";
+	
+	String httpMethod = null;
+	String reqPath = null;
+	
+	List<Object> data = null;
 
 	public MVPScopeVO(List<Object> source) {
 		data = source;
@@ -27,8 +32,12 @@ public class MVPScopeVO {
 			type = source.get(1).toString();
 			apiType = source.get(2).toString();
 			apiName = source.get(3).toString();
+			apiNode = source.get(4).toString();
 			
 			path = source.get(13).toString();
+			int offset = path.indexOf("/");
+			httpMethod = path.substring(0, offset);
+			reqPath = path.substring(offset);
 		}
 	}
 

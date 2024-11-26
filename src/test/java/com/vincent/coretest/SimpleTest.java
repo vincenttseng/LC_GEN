@@ -10,6 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.vincent.coretest.reader.DomainMapUtil;
+import com.vincent.coretest.reader.PathUtil;
 import com.vincent.coretest.util.TextUtil;
 import com.vincent.coretest.vo.ColumnDefVo;
 
@@ -137,51 +138,7 @@ public class SimpleTest {
 	public void getGetParamAndQuery1() {
 		String fullPath = "/export-lc-bill-payment/{from-date}/{to-date-}/list?bill-payment-reference=<Numeric>&bill-reference=<String>&bill-amount-currency=<String>&bill-amount=<Numeric>&export-lc-advising-reference=<String>&maturity-date=<Date>&bill-status=<Numeric>&rate-request-status=<Numeric>&page-num=<Numeric>&page-size=<Numeric>";
 
-		int index = fullPath.indexOf("?");
-		String path = fullPath;
-		if(index >= 0) {
-			path = fullPath.substring(0, index);
-		}
-		logger.info("path " + path);
-		List<String> tokens = TextUtil.splitBrackets(path);
-		logger.info("tokens " + tokens);
-		StringBuilder sb = new StringBuilder();
-		for (String token : tokens) {
-			sb.append("        - name: ").append(token).append("\n");
-			sb.append("          in: path").append("\n");
-			sb.append("          required: true").append("\n");
-			sb.append("          schema:").append("\n");
-			sb.append("            type: string").append("\n");
-			String desc = TextUtil.phaseWordToDesc(token);
-			sb.append("          description: ").append(desc);
-			sb.append("\n");
-		}
-		
-		if(index >= 0) {
-			path = fullPath.substring(index + 1);
-			path = path.replaceAll("-", "_");
-			logger.info("path " + path);
-	
-			String[] queryArray = path.split("&");
-			for (String query : queryArray) {
-				String[] values = query.split("=");
-				String token = values[0];
-				String type = values[1];
-				type = type.replace("<", "");
-				type = type.replace(">", "");
-				String convertedType = ColumnDefVo.convertType(type);
-	
-				sb.append("        - name: ").append(token).append("\n");
-				sb.append("          in: query").append("\n");
-				sb.append("          required: false").append("\n");
-				sb.append("          schema:").append("\n");
-				sb.append("            type: ").append(convertedType).append("\n");
-				String desc = TextUtil.phaseWordToDesc(token);
-				sb.append("          description: ").append(desc);
-				sb.append("\n");
-			}
-		}
-		System.out.println(sb.toString());
+		System.out.println(PathUtil.getPathParamString(fullPath));
 	}
 	
 	@Test

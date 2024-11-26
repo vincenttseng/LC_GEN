@@ -4,29 +4,26 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 public class HeaderUtil {
 	private static final String headerFileSrc = ".\\src\\test\\resources\\header.txt";
+	private static final String methodHeaderFileSrc = ".\\src\\test\\resources\\methodHeaders.txt";
 
 	public static void printHeader() throws IOException {
 		printHeader(headerFileSrc);
 	}
 
 	public static void printHeader(String fileName) throws IOException {
-		File typeToDomainFile = new File(fileName);
+		File headerFile = new File(fileName);
 
-		if (typeToDomainFile == null || !typeToDomainFile.exists()) {
+		if (headerFile == null || !headerFile.exists()) {
 			return;
 		}
 
 		FileReader in = null;
 		BufferedReader br = null;
 		try {
-			in = new FileReader(typeToDomainFile);
+			in = new FileReader(headerFile);
 			br = new BufferedReader(in);
 
 			String line;
@@ -49,6 +46,47 @@ public class HeaderUtil {
 				e.printStackTrace();
 			}
 		}
+	}
+
+	private static String methodHeadersString = null;
+
+	public static String getMethodHeadersString() {
+		StringBuilder sb = new StringBuilder();
+		if (methodHeadersString == null) {
+			File methodHeaderFile = new File(methodHeaderFileSrc);
+
+			if (methodHeaderFile == null || !methodHeaderFile.exists()) {
+				return "";
+			}
+
+			FileReader in = null;
+			BufferedReader br = null;
+			try {
+				in = new FileReader(methodHeaderFile);
+				br = new BufferedReader(in);
+
+				String line;
+				while ((line = br.readLine()) != null) {
+					sb.append(line).append("\n");
+				}
+			} catch (IOException e) {
+
+			} finally {
+				try {
+					br.close();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				try {
+					in.close();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}
+		return sb.toString();
 	}
 
 }
