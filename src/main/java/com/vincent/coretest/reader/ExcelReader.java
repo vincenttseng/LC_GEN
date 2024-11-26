@@ -16,7 +16,6 @@ import org.slf4j.LoggerFactory;
 public class ExcelReader {
 	protected static final Logger logger = LoggerFactory.getLogger(ExcelReader.class);
 
-	@SuppressWarnings("removal")
 	public static List<List<Object>> getActiveRow(String xlsxFile, String sheetName, boolean includeHeader) {
 		List<List<Object>> rowList = new ArrayList<List<Object>>();
 
@@ -65,7 +64,7 @@ public class ExcelReader {
 						rowData.add(Boolean.valueOf(cell.getBooleanCellValue()));
 						break;
 					default:
-						rowData.add(" ");
+						rowData.add("");
 						break;
 					}
 				}

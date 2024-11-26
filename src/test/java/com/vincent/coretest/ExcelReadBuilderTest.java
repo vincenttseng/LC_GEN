@@ -13,6 +13,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.vincent.coretest.reader.ExcelReader;
+import com.vincent.coretest.reader.HeaderUtil;
 import com.vincent.coretest.vo.MVPScopeVO;
 
 public class ExcelReadBuilderTest {
@@ -25,25 +26,25 @@ public class ExcelReadBuilderTest {
 		logger.info("buildYamlFromExcelForNew");
 		List<List<Object>> rows = ExcelReader.getActiveRow(xlsxFile, "B4-001", false);
 
-		Map<String, List<List<Object>>> apiNameToApiDataMap = new HashMap<String, List<List<Object>>>();
+		Map<String, List<MVPScopeVO>> apiNameToApiDataMap = new HashMap<String, List<MVPScopeVO>>();
 
 		int index = 1;
 		for (List<Object> rowData : rows) {
 			MVPScopeVO vo = new MVPScopeVO(rowData);
-			// logger.info("vo {} ", vo);
+
 			if ("new".equalsIgnoreCase(vo.getApiType())) {
 				// logger.info("new =>{} => vo {}", vo.getApiName(), vo);
 				String apiName = vo.getApiName();
 				if (!apiNameToApiDataMap.containsKey(apiName)) {
-					apiNameToApiDataMap.put(apiName, new ArrayList<List<Object>>());
+					apiNameToApiDataMap.put(apiName, new ArrayList<MVPScopeVO>());
 				}
-				apiNameToApiDataMap.get(apiName).add(rowData);
+				apiNameToApiDataMap.get(apiName).add(vo);
 			} else if ("Existing".equalsIgnoreCase(vo.getApiType())) {
 
 			} else {
 				logger.info("error");
 				for (Object obj : rowData) {
-					logger.info("ignore>{}", vo);
+					// logger.info("ignore>{}", vo);
 				}
 			}
 		}
@@ -51,24 +52,63 @@ public class ExcelReadBuilderTest {
 		Set<String> keySet = apiNameToApiDataMap.keySet();
 		for (String key : keySet) {
 			logger.info("workinig on ===================" + key);
-			List<List<Object>> params = apiNameToApiDataMap.get(key);
+			List<MVPScopeVO> params = apiNameToApiDataMap.get(key);
 
-			for (List<Object> param : params) {
-				logger.info(" =====> {}", param);
+			for (MVPScopeVO vo : params) {
+				// logger.info(" =====> {}", vo);
 			}
 			logger.info("=================================================");
 		}
 
+		checkData(apiNameToApiDataMap);
+
+		printStartOfOutput();
+		HeaderUtil.printHeader();
 		showDefOfApi(apiNameToApiDataMap);
 		showDefOfReference(apiNameToApiDataMap);
 	}
-	
-	public static void showDefOfApi(Map<String, List<List<Object>>> apiNameToApiDataMap) {
-		
-	}
-	
-	public static void showDefOfReference(Map<String, List<List<Object>>> apiNameToApiDataMap) {
-		
+
+	public static void printStartOfOutput() {
+		System.out.println(
+				"============================================= start of YAML =============================================");
 	}
 
+	public static void showDefOfApi(Map<String, List<MVPScopeVO>> apiNameToApiDataMap) {
+
+	}
+
+	public static void showDefOfReference(Map<String, List<MVPScopeVO>> apiNameToApiDataMap) {
+
+	}
+
+	public void checkData(Map<String, List<MVPScopeVO>> apiNameToApiDataMap) {
+		boolean error = false;
+
+		// check url same for same group
+		Set<String> keySet = apiNameToApiDataMap.keySet();
+		for (String key : keySet) {
+			List<MVPScopeVO> params = apiNameToApiDataMap.get(key);
+
+			boolean found = false;
+			String targetPath = null;
+			// should have same url
+			for (MVPScopeVO vo : params) {
+				if (!found) {
+					targetPath = vo.getPath();
+					found = true;
+				} else {
+					String path = vo.getPath();
+					if (!path.equals(targetPath)) {
+						error = true;
+						logger.error("path diff " + vo + targetPath + " vs " + path);
+					}
+				}
+			}
+		}
+		if (error) {
+			System.exit(0);
+		}
+
+		logger.info("checkData pass");
+	}
 }

@@ -1,0 +1,11 @@
+openapi: 3.0.1
+info:
+  title: TCS BaNCS Letter of Credit Microservice
+  description: This service supports issuance and maintenance of inland and foreign import LC and its related life cycle events like amendment, shipping guarantee, bill registration, payment either by import Loan or by customer own funding.  Also based on the events, the related SWIFT messages will be generated.
+  contact:
+    name: TCS BaNCS
+    url: https://www.tcs.com/bancs
+  version: 1.0.0
+servers:
+  - url: http://10.170.23.166:9700/letter-of-credit/swagger-ui.html
+    description: Generated server url

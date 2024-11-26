@@ -15,10 +15,11 @@ public class MVPScopeVO {
 	String apiType = "";
 	List<Object> data = null;
 	String apiName = "";
+	String path = "";
 
 	public MVPScopeVO(List<Object> source) {
 		data = source;
-		if (source.size() >= 4) {
+		if (source.size() >= 14) {
 			Object obj = source.get(0);
 			if (obj instanceof Integer) {
 				rowIndex = ((Integer) obj).intValue();
@@ -26,6 +27,23 @@ public class MVPScopeVO {
 			type = source.get(1).toString();
 			apiType = source.get(2).toString();
 			apiName = source.get(3).toString();
+			
+			path = source.get(13).toString();
 		}
+	}
+
+	public String getDataDetail() {
+		int index = 0;
+		StringBuilder sb = new StringBuilder();
+
+		boolean found = false;
+		for (Object obj : data) {
+			if (found) {
+				sb.append(",");
+			}
+			sb.append(index++).append(obj.toString());
+			found = true;
+		}
+		return sb.toString();
 	}
 }
