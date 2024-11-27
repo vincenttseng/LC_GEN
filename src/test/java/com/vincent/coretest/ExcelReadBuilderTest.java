@@ -15,16 +15,22 @@ import org.slf4j.LoggerFactory;
 import com.vincent.coretest.reader.ExcelReader;
 import com.vincent.coretest.reader.HeaderUtil;
 import com.vincent.coretest.reader.PathUtil;
+import com.vincent.coretest.util.ReqRespParamVOUtil;
 import com.vincent.coretest.vo.MVPScopeVO;
+import com.vincent.coretest.vo.ReqRespParamVO;
 
 public class ExcelReadBuilderTest {
 	protected final Logger logger = LoggerFactory.getLogger(ExcelReadBuilderTest.class);
 
 	String xlsxFile = ".\\src\\test\\input\\MVP3 scope for TF_LC_B4_001.xlsx";
 
+	// group map for all attributes of same function
 	Map<String, List<MVPScopeVO>> apiNameToApiDataMap = new HashMap<String, List<MVPScopeVO>>();
 
+	// group map for same path different httpMethod
 	Map<String, List<String>> mapForSamePath = new HashMap<String, List<String>>();
+
+	Map<String, ReqRespParamVO> reqRespParamVOMap = new HashMap<String, ReqRespParamVO>();
 
 	@Test
 	public void buildYamlFromExcelForNew() throws FileNotFoundException, IOException {
@@ -65,6 +71,7 @@ public class ExcelReadBuilderTest {
 
 		checkData();
 		groupingSameReqPath();
+		groupingReqRespObject();
 
 		printStartOfOutput();
 		HeaderUtil.printHeader();
@@ -143,6 +150,19 @@ public class ExcelReadBuilderTest {
 			values.forEach(value -> {
 				logger.info(key + " " + value);
 			});
+		});
+	}
+
+	public void groupingReqRespObject() {
+		logger.info("====================groupingReqRespObject==========================");
+		Set<String> keySet = apiNameToApiDataMap.keySet();
+		keySet.stream().forEach(key -> {
+			logger.info("groupingReqRespObject key {}", key);
+			List<MVPScopeVO> attributes = apiNameToApiDataMap.get(key);
+			ReqRespParamVO vo = ReqRespParamVOUtil.getReqRespParamVO(key, attributes);
+			
+			logger.info("api " + key);
+			vo.showContent();
 		});
 	}
 

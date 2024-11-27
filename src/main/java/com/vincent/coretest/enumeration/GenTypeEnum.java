@@ -21,7 +21,7 @@ public enum GenTypeEnum {
 
 	public static GenTypeEnum of(String message) {
 		for (GenTypeEnum entity : values()) {
-			if (entity.getMessage() == message) {
+			if (entity.getMessage().toLowerCase().equals(message != null?message.trim().toLowerCase():"")) {
 				return entity;
 			}
 		}

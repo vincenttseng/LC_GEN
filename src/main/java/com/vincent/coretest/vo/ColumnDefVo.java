@@ -1,7 +1,10 @@
 package com.vincent.coretest.vo;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+
+import com.vincent.coretest.util.TextUtil;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -22,6 +25,8 @@ public class ColumnDefVo {
 	public String desc;
 	public boolean required = false;
 	public boolean isDate = false;
+	public int maxLength;
+	public String format;
 
 	/**
 	 * due-date-for-sight Date - Due Date for Sigh
@@ -38,18 +43,18 @@ public class ColumnDefVo {
 		String[] result = tmp.split(" ");
 
 		String name = result[0];
-		if(name.endsWith("*")) {
+		if (name.endsWith("*")) {
 			name = name.substring(0, name.length() - 1);
 			vo.required = true;
 		}
 		vo.name = name;
-		
+
 		int i = 1;
 		while (i < result.length) {
 			if (result[i].trim().length() == 0) {
 				i++;
 			} else {
-				if("Date".equals(result[i])) {
+				if ("Date".equals(result[i])) {
 					vo.isDate = true;
 				}
 				vo.type = convertType(result[i]);
@@ -76,11 +81,54 @@ public class ColumnDefVo {
 	}
 
 	public static String convertType(String type) {
-		if(swaggerTypeMap.containsKey(type)) {
+		if (swaggerTypeMap.containsKey(type)) {
 			return swaggerTypeMap.get(type);
 		} else {
 			return type;
 		}
+	}
+
+	public static ColumnDefVo toColumnDefVo(MVPScopeVO cellVO) {
+		ColumnDefVo vo = new ColumnDefVo();
+
+		vo.setRequired(cellVO.isRequired());
+
+		vo.setName(cellVO.getBusinessName());
+		String type = cellVO.getDataType();
+
+		if (type != null) {
+			if (type.toLowerCase().equals("date")) {
+				vo.setType("String"); // format: date
+				vo.setDate(true);
+				vo.setFormat("date");
+			} else if (type.toLowerCase().startsWith("varchar") || type.toLowerCase().startsWith("string")) {
+				List<Integer> data = TextUtil.getNumberFromParentheses(type);
+				if (data != null && data.size() > 1) {
+					vo.setMaxLength(data.get(0));
+				}
+				vo.setType("String");
+			} else if (type.toLowerCase().startsWith("numberic") || type.toLowerCase().startsWith("number")) {
+				List<Integer> data = TextUtil.getNumberFromParentheses(type);
+				if (data == null) {
+					vo.setType("integer"); // format: int32
+					vo.setFormat("int32");
+				} else {
+					if (data.size() == 1) {
+						vo.setType("integer"); // format: int32
+						vo.setMaxLength(data.get(0));
+						vo.setFormat("int32");
+					} else if (data.size() == 2) {
+						vo.setType("number");
+						vo.setFormat("double");
+						vo.setMaxLength(data.get(0));
+					}
+				}
+			}
+		}
+
+		vo.setDesc(cellVO.getDescription());
+
+		return vo;
 	}
 
 }

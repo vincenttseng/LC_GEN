@@ -2,6 +2,8 @@ package com.vincent.coretest.vo;
 
 import java.util.List;
 
+import com.vincent.coretest.enumeration.GenTypeEnum;
+
 import lombok.Data;
 import lombok.Getter;
 import lombok.ToString;
@@ -16,10 +18,19 @@ public class MVPScopeVO {
 	String apiName = "";
 	String apiNode = "";
 	String path = "";
+	GenTypeEnum direction = null;
+
+	String groupName = "";
 	
+	boolean required = false;
+	
+	String businessName = null;
+	String dataType = null;
+	String description = null;
+
 	String httpMethod = null;
 	String reqPath = null;
-	
+
 	List<Object> data = null;
 
 	public MVPScopeVO(List<Object> source) {
@@ -33,11 +44,24 @@ public class MVPScopeVO {
 			apiType = source.get(2).toString();
 			apiName = source.get(3).toString();
 			apiNode = source.get(4).toString();
+
+			groupName = source.get(5).toString();
 			
+			description = source.get(6).toString();
+			dataType = source.get(8).toString();
+			businessName = source.get(11).toString();
+			
+			String mo = source.get(9).toString();
+			if(mo != null&&mo.equalsIgnoreCase("m")) {
+				required = true;
+			}
+
 			path = source.get(13).toString();
 			int offset = path.indexOf("/");
 			httpMethod = path.substring(0, offset);
 			reqPath = path.substring(offset);
+
+			direction = GenTypeEnum.of(source.get(10).toString());
 		}
 	}
 

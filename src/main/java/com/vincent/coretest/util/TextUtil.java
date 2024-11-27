@@ -66,4 +66,26 @@ public class TextUtil {
 		return sb.toString();
 	}
 
+	public static List<Integer> getNumberFromParentheses(String type) {
+		List<Integer> list = new ArrayList<Integer>();
+
+		if (type != null) {
+			int index0 = type.indexOf("(");
+			int index1 = type.indexOf(")");
+			if (index0 > 0 && index1 > 0 && index0 < index1) {
+				String subString = type.substring(index0+1, index1);
+				String[] tokens = subString.split(",");
+				for (String token : tokens) {
+					try {
+						int value = Integer.parseInt(token.trim());
+						list.add(value);
+					} catch (Exception e) {
+					}
+				}
+			}
+		}
+
+		return list;
+	}
+
 }
