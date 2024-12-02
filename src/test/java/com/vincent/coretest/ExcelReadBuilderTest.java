@@ -79,8 +79,9 @@ public class ExcelReadBuilderTest {
 		// STARTING YAML OUTPUT
 		printStartOfOutput();
 		HeaderUtil.printHeader();
-		showDefOfApi();
-		showDefOfReference();
+		printDefOfApi();
+		printBasicOutputComponent();
+		printDefOfReference();
 	}
 
 	public static void printStartOfOutput() {
@@ -88,7 +89,7 @@ public class ExcelReadBuilderTest {
 				"============================================= start of YAML =============================================");
 	}
 
-	public void showDefOfApi() {
+	public void printDefOfApi() {
 		System.out.println("paths:");
 		Set<String> keySet = mapForSamePath.keySet();
 		keySet.stream().forEach(reqPath -> {
@@ -96,9 +97,6 @@ public class ExcelReadBuilderTest {
 		});
 	}
 
-	public void showDefOfReference() {
-
-	}
 
 	public void checkData() {
 		boolean error = false;
@@ -197,7 +195,6 @@ public class ExcelReadBuilderTest {
 			showRequestRefDeclaration(refKey, vo);
 			showResponseRefDeclaration(refKey, vo);
 		}
-
 	}
 
 	private void showRequestRefDeclaration(String refKey, ReqRespParamVO vo) {
@@ -209,4 +206,99 @@ public class ExcelReadBuilderTest {
 	private void showResponseRefDeclaration(String refKey, ReqRespParamVO vo) {
 		System.out.println(SchemaBodyUtil.genResponseSchemaText(refKey));
 	}
+	
+	/**
+	 * #formatter:off
+components:
+  schemas:
+    api-message-error:
+      type: object
+      properties:
+        severity-code:
+          type: integer
+          format: int32
+        description:
+          type: string
+        id:
+          type: integer
+          format: int64
+    api-messages:
+      type: object
+      properties:
+        max-severity-code:
+          type: integer
+          format: int32
+        max-severity-desc:
+          type: string
+        message-list:
+          type: array
+          items:
+            $ref: '#/components/schemas/api-message-error'
+	 * #formatter:on
+	 */
+	private void printBasicOutputComponent() {
+		System.out.println("######## components");
+		System.out.println("components:");
+		System.out.println("  schemas:");
+		// api-message-error
+		System.out.println("    api-message-error:");
+		System.out.println("      type: object");
+		System.out.println("      properties:");
+		System.out.println("        severity-code:");
+		System.out.println("          type: integer");
+		System.out.println("          format: int32");
+		System.out.println("        description:");
+		System.out.println("          type: string");
+		System.out.println("        id:");
+		System.out.println("          type: integer");
+		System.out.println("          format: int64");
+		// api-messages
+		System.out.println("    api-messages:");
+		System.out.println("      type: object");
+		System.out.println("      properties:");
+		System.out.println("        max-severity-code:");
+		System.out.println("          type: integer");
+		System.out.println("          format: int32");
+		System.out.println("        max-severity-desc:");
+		System.out.println("          type: string");
+		System.out.println("        message-list:");
+		System.out.println("          type: array");
+		System.out.println("          items:");
+		System.out.println("            $ref: '#/components/schemas/api-message-error'");
+	}
+	
+	public void printDefOfReference() {
+		Set<String> keySet = mapForSamePath.keySet();
+		keySet.stream().forEach(reqPath -> {
+			printObjectDefinition(reqPath);
+		});
+	}
+	
+	public void printObjectDefinition(String reqPath) {
+		List<String> keySet = mapForSamePath.get(reqPath);
+		for (String key : keySet) {
+			System.out.println("######## " + key);
+//			List<MVPScopeVO> params = apiNameToApiDataMap.get(key);
+//			if (params.size() > 0) {
+//				MVPScopeVO vo = params.get(0);
+//				String method = vo.getHttpMethod().toLowerCase();
+//				System.out.println("    " + method + ":");
+//				System.out.println("      tags:");
+//				System.out.println("        - " + vo.getApiNode());
+//				System.out.println("      summary: " + vo.getApiName());
+//				System.out.println("      description: " + vo.getApiName().toUpperCase());
+//				System.out.println("      operationId: " + vo.getApiName().toUpperCase());
+//				System.out.println("      parameters:");
+//				System.out.print(HeaderUtil.getMethodHeadersString());
+//				System.out.println(PathUtil.getPathParamString(vo.getReqPath()));
+//			}
+//
+//			String refKey = TextUtil.nameToLowerCaseAndDash(key + " " + GenTypeEnum.REQUEST.getMessage());
+//			List<MVPScopeVO> attributes = apiNameToApiDataMap.get(key);
+//			ReqRespParamVO vo = ReqRespParamVOUtil.getReqRespParamVO(key, attributes);
+//			showRequestRefDeclaration(refKey, vo);
+//			showResponseRefDeclaration(refKey, vo);
+		}
+	}
+
 }
