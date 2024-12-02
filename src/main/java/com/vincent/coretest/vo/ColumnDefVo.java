@@ -77,6 +77,7 @@ public class ColumnDefVo {
 	static {
 		swaggerTypeMap.put("String", "string");
 		swaggerTypeMap.put("Numeric", "number");
+		swaggerTypeMap.put("Number", "number");
 		swaggerTypeMap.put("Date", "string");
 	}
 

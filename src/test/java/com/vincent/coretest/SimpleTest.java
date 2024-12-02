@@ -35,18 +35,26 @@ public class SimpleTest {
 			sb.append(map.get(key));
 			sb.append(";'");
 
-			// System.out.println(sb.toString());
+			//System.out.println(sb.toString());
 		}
 
-		name = "adf";
-		String type = "d_TFAvlblBy";
+		name = "twct-personal-guarantee";
+		String type = "d_YesNoFlg";
 
-		StringBuilder sb = new StringBuilder();
-		sb.append("description: '" + name + " Allowed values:");
-		sb.append(map.get(type));
-		sb.append(";'");
 
-		System.out.println(sb.toString());
+
+//		d_YesNoFlg
+		
+		if(map.containsKey(type)) {
+			StringBuilder sb = new StringBuilder();
+			sb.append("description: '" + name + " Allowed values:");
+			sb.append(map.get(type));
+			sb.append(";'");
+	
+			System.out.println(sb.toString());
+		} else {
+			System.out.println("not enum");
+		}
 	}
 
 	/**
@@ -68,7 +76,7 @@ public class SimpleTest {
 	 */
 	@Test
 	public void getGetParamAndQuery() {
-		String fullPath = "/export-lc-post-shipment-crystallization-or-bill-recovery/{crystallization-reference}/{sequence-id}";
+		String fullPath = "/v2/collateral-insurance/{collateral-id}/insurance-renewal";
 
 		int index = fullPath.indexOf("?");
 		String path = fullPath;
