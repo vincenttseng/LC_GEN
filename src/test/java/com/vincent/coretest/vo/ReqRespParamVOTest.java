@@ -48,8 +48,9 @@ public class ReqRespParamVOTest {
 		
 		logger.info("====================groupingReqRespObject==========================");
 		Set<String> keySet = apiNameToApiDataMap.keySet();
+		logger.info("keys {}", keySet);
 		keySet.stream().forEach(key -> {
-			logger.info("groupingReqRespObject key {}", key);
+			logger.info("groupingReqRespObject key: {}", key);
 			List<MVPScopeVO> attributes = apiNameToApiDataMap.get(key);
 			ReqRespParamVO vo = ReqRespParamVOUtil.getReqRespParamVO(key, attributes);
 			

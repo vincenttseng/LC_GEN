@@ -120,7 +120,7 @@ public class ColumnDefVo {
 						vo.setFormat("int32");
 					} else if (data.size() == 2) {
 						vo.setType("number");
-						vo.setFormat("double");
+						vo.setFormat("float");
 						vo.setMaxLength(data.get(0));
 					}
 				}

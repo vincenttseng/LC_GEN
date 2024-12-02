@@ -36,20 +36,57 @@ public class SchemaBodyUtil {
 
 	/**
 	 * #formatter:off
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
               schema:
                 anyOf:
-                  - $ref: '#/components/schemas/test-refactor2-response'
+                  - $ref: '#/components/schemas/draft-details-response'
                   - $ref: '#/components/schemas/api-messages'
+        '400':
+          description: INVALID INPUT
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api-messages'
+        '500':
+          description: FAILURE
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api-messages'
 	 * #formatter:on
 	 * @param refKey
 	 * @return
 	 */
 	public static final String genResponseSchemaText(String refKey) {
 		StringBuilder sb = new StringBuilder();
+		sb.append("      responses:").append("\n");
+		sb.append("        '200':").append("\n");
+		sb.append("          description: OK").append("\n");
+		sb.append("          content:").append("\n");
+		sb.append("            application/json:").append("\n");
+		
 		sb.append("              schema:").append("\n");
 		sb.append("                anyOf:").append("\n");
 		sb.append("                  - $ref: '#/components/schemas/").append(refKey).append("'").append("\n");
 		sb.append("                  - $ref: '#/components/schemas/api-messages'").append("\n");
+		
+		sb.append("        '400':").append("\n");
+		sb.append("          description: INVALID INPUT").append("\n");
+		sb.append("          content:").append("\n");
+		sb.append("            application/json:").append("\n");
+		sb.append("              schema:").append("\n");
+		sb.append("                $ref: '#/components/schemas/api-messages'").append("\n");
+		
+		sb.append("        '500':").append("\n");
+		sb.append("          description: FAILURE").append("\n");
+		sb.append("          content:").append("\n");
+		sb.append("            application/json:").append("\n");
+		sb.append("              schema:").append("\n");
+		sb.append("                $ref: '#/components/schemas/api-messages'").append("\n");
 
 		return sb.toString();
 	}

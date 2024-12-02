@@ -12,10 +12,13 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.vincent.coretest.enumeration.GenTypeEnum;
 import com.vincent.coretest.reader.ExcelReader;
 import com.vincent.coretest.reader.HeaderUtil;
 import com.vincent.coretest.reader.PathUtil;
 import com.vincent.coretest.util.ReqRespParamVOUtil;
+import com.vincent.coretest.util.SchemaBodyUtil;
+import com.vincent.coretest.util.TextUtil;
 import com.vincent.coretest.vo.MVPScopeVO;
 import com.vincent.coretest.vo.ReqRespParamVO;
 
@@ -73,6 +76,7 @@ public class ExcelReadBuilderTest {
 		groupingSameReqPath();
 		groupingReqRespObject();
 
+		// STARTING YAML OUTPUT
 		printStartOfOutput();
 		HeaderUtil.printHeader();
 		showDefOfApi();
@@ -160,14 +164,14 @@ public class ExcelReadBuilderTest {
 			logger.info("groupingReqRespObject key {}", key);
 			List<MVPScopeVO> attributes = apiNameToApiDataMap.get(key);
 			ReqRespParamVO vo = ReqRespParamVOUtil.getReqRespParamVO(key, attributes);
-			
+
 			logger.info("api " + key);
 			vo.showContent();
 		});
 	}
 
 	public void showDefApiByKey(String reqPath) {
-		System.out.println("  " + reqPath + ":");
+		System.out.println("  '" + reqPath + "':");
 
 		List<String> keySet = mapForSamePath.get(reqPath);
 		for (String key : keySet) {
@@ -186,7 +190,23 @@ public class ExcelReadBuilderTest {
 				System.out.print(HeaderUtil.getMethodHeadersString());
 				System.out.println(PathUtil.getPathParamString(vo.getReqPath()));
 			}
+
+			String refKey = TextUtil.nameToLowerCaseAndDash(key + " " + GenTypeEnum.REQUEST.getMessage());
+			List<MVPScopeVO> attributes = apiNameToApiDataMap.get(key);
+			ReqRespParamVO vo = ReqRespParamVOUtil.getReqRespParamVO(key, attributes);
+			showRequestRefDeclaration(refKey, vo);
+			showResponseRefDeclaration(refKey, vo);
 		}
 
+	}
+
+	private void showRequestRefDeclaration(String refKey, ReqRespParamVO vo) {
+		if (vo.getMapOfInputObjectArrayList().size() > 0 || vo.getMapOfInputObjectList().size() > 0) {
+			System.out.println(SchemaBodyUtil.genRequestSchemaText(refKey));
+		}
+	}
+
+	private void showResponseRefDeclaration(String refKey, ReqRespParamVO vo) {
+		System.out.println(SchemaBodyUtil.genResponseSchemaText(refKey));
 	}
 }
