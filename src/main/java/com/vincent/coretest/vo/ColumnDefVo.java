@@ -99,16 +99,17 @@ public class ColumnDefVo {
 
 		if (type != null) {
 			if (type.toLowerCase().equals("date")) {
-				vo.setType("String"); // format: date
+				vo.setType("string"); // format: date
 				vo.setDate(true);
 				vo.setFormat("date");
 			} else if (type.toLowerCase().startsWith("varchar") || type.toLowerCase().startsWith("string")) {
 				List<Integer> data = TextUtil.getNumberFromParentheses(type);
-				if (data != null && data.size() > 1) {
+				if (data != null && data.size() > 0) {
 					vo.setMaxLength(data.get(0));
 				}
-				vo.setType("String");
-			} else if (type.toLowerCase().startsWith("numberic") || type.toLowerCase().startsWith("number")) {
+				vo.setType("string");
+				vo.setFormat("string");
+			} else if (type.toLowerCase().startsWith("numeric") || type.toLowerCase().startsWith("number")) {
 				List<Integer> data = TextUtil.getNumberFromParentheses(type);
 				if (data == null) {
 					vo.setType("integer"); // format: int32
@@ -118,13 +119,22 @@ public class ColumnDefVo {
 						vo.setType("integer"); // format: int32
 						vo.setMaxLength(data.get(0));
 						vo.setFormat("int32");
-					} else if (data.size() == 2) {
+					} else if (data.size() >= 2) {
 						vo.setType("number");
 						vo.setFormat("float");
 						vo.setMaxLength(data.get(0));
+					} else {
+						vo.setType("integer"); // format: int32
+						vo.setFormat("int32");
 					}
 				}
+			} else {
+				vo.setType("string");
+				vo.setFormat("string");
 			}
+		} else {
+			vo.setType("string");
+			vo.setFormat("string");
 		}
 
 		vo.setDesc(cellVO.getDescription());

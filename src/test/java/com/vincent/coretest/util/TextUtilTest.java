@@ -23,4 +23,10 @@ public class TextUtilTest {
 		logger.info("=> " + result);
 	}
 	
+	@Test
+	public void testGetNumberFromParentheses2() {
+		List<Integer> result = TextUtil.getNumberFromParentheses("Varchar2(3)");
+		logger.info("=> " + result);
+	}
+	
 }

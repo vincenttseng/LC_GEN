@@ -6,10 +6,12 @@ import com.vincent.coretest.enumeration.GenTypeEnum;
 
 import lombok.Data;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @Data
 @Getter
+@NoArgsConstructor
 @ToString
 public class MVPScopeVO {
 	int rowIndex = 0;
