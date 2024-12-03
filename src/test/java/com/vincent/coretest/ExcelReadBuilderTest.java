@@ -347,6 +347,7 @@ components:
 					System.out.println("          maxLength: " + defVO.getMaxLength());
 				}
 				System.out.println("          format: " + defVO.getFormat());
+				System.out.println("          description: \"" + defVO.getDesc() + "\"");
 			}
 		}
 	}
