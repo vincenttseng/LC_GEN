@@ -24,10 +24,11 @@ public class ReqRespParamVOTest {
 	@Test
 	public void testListing() {
 		logger.info("buildYamlFromExcelForNew");
-		List<List<Object>> rows = ExcelReader.getActiveRow(xlsxFile, "B4-001", false);
+		Map<String, Integer> headerMap = ExcelReader.getHeaderIndex(xlsxFile, "B4-001");
+		List<Map<Integer, Object>> rows = ExcelReader.getActiveRow(xlsxFile, "B4-001", false);
 
-		for (List<Object> rowData : rows) {
-			MVPScopeVO vo = new MVPScopeVO(rowData);
+		for (Map<Integer, Object> rowData : rows) {
+			MVPScopeVO vo = new MVPScopeVO(headerMap, rowData);
 
 			if ("new".equalsIgnoreCase(vo.getApiType())) {
 				// logger.info("new =>{} => vo {}", vo.getApiName(), vo);
@@ -39,10 +40,7 @@ public class ReqRespParamVOTest {
 			} else if ("Existing".equalsIgnoreCase(vo.getApiType())) {
 
 			} else {
-				logger.info("error");
-				for (Object obj : rowData) {
-					// logger.info("ignore>{}", vo);
-				}
+				logger.info("error " + rowData);
 			}
 		}
 

@@ -3,8 +3,10 @@ package com.vincent.coretest.reader;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
@@ -16,8 +18,8 @@ import org.slf4j.LoggerFactory;
 public class ExcelReader {
 	protected static final Logger logger = LoggerFactory.getLogger(ExcelReader.class);
 
-	public static List<List<Object>> getActiveRow(String xlsxFile, String sheetName, boolean includeHeader) {
-		List<List<Object>> rowList = new ArrayList<List<Object>>();
+	public static List<Map<Integer, Object>> getActiveRow(String xlsxFile, String sheetName, boolean includeHeader) {
+		List<Map<Integer, Object>> rowMapList = new ArrayList<Map<Integer, Object>>();
 
 		InputStream excelFileToRead = null;
 		XSSFWorkbook wb = null;
@@ -43,33 +45,36 @@ public class ExcelReader {
 				// For each row, iterate through all the columns
 				Iterator<Cell> cellIterator = row.cellIterator();
 
-				List<Object> rowData = new ArrayList<Object>();
-				rowData.add(rowIndex);
+				Map<Integer, Object> rowDataMap = new HashMap<Integer, Object>();
 
 				boolean withData = false;
 				while (cellIterator.hasNext()) {
 					Cell cell = cellIterator.next();
+					if (!rowDataMap.containsKey(-1)) {
+						rowDataMap.put(-1, cell.getRowIndex());
+					}
+					int columnIndex = cell.getColumnIndex();
 					// Check the cell type and format accordingly
 					switch (cell.getCellType()) {
 					case Cell.CELL_TYPE_NUMERIC:
-						rowData.add(Double.valueOf(cell.getNumericCellValue()));
+						rowDataMap.put(columnIndex, Double.valueOf(cell.getNumericCellValue()));
 						withData = true;
 						break;
 					case Cell.CELL_TYPE_STRING:
-						rowData.add(cell.getStringCellValue());
+						rowDataMap.put(columnIndex, cell.getStringCellValue());
 						withData = true;
 						break;
 					case Cell.CELL_TYPE_BOOLEAN:
 						withData = true;
-						rowData.add(Boolean.valueOf(cell.getBooleanCellValue()));
+						rowDataMap.put(columnIndex, Boolean.valueOf(cell.getBooleanCellValue()));
 						break;
 					default:
-						rowData.add("");
+						rowDataMap.put(columnIndex, "");
 						break;
 					}
 				}
 				if (withData) {
-					rowList.add(rowData);
+					rowMapList.add(rowDataMap);
 				} else {
 					logger.debug("rowIndex {} is void", rowIndex);
 				}
@@ -86,7 +91,58 @@ public class ExcelReader {
 			}
 		}
 
-		return rowList;
+		return rowMapList;
+	}
 
+	public static Map<String, Integer> getHeaderIndex(String xlsxFile, String sheetName) {
+		Map<String, Integer> result = new HashMap<String, Integer>();
+
+		InputStream excelFileToRead = null;
+		XSSFWorkbook wb = null;
+		try {
+			excelFileToRead = new FileInputStream(xlsxFile);
+			wb = new XSSFWorkbook(excelFileToRead);
+
+			XSSFSheet sheet = wb.getSheet(sheetName);
+			int totalRows = sheet.getPhysicalNumberOfRows();
+			logger.info("row count {}", totalRows);
+
+			// Iterate through each rows one by one
+			Iterator<Row> rowIterator = sheet.iterator();
+			int rowIndex = 1;
+			if (rowIterator.hasNext()) {
+				logger.debug("row {}", rowIndex);
+				Row row = rowIterator.next();
+
+				Iterator<Cell> cellIterator = row.cellIterator();
+				while (cellIterator.hasNext()) {
+					Cell cell = cellIterator.next();
+					int columnIndex = cell.getColumnIndex();
+					// Check the cell type and format accordingly
+					switch (cell.getCellType()) {
+					case Cell.CELL_TYPE_NUMERIC:
+						break;
+					case Cell.CELL_TYPE_STRING:
+						result.put(cell.getStringCellValue(), columnIndex);
+						break;
+					case Cell.CELL_TYPE_BOOLEAN:
+						break;
+					default:
+						break;
+					}
+				}
+
+			}
+
+		} catch (Exception e) {
+
+		} finally {
+			try {
+				excelFileToRead.close();
+			} catch (Exception e) {
+			}
+		}
+
+		return result;
 	}
 }

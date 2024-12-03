@@ -1,6 +1,7 @@
 package com.vincent.coretest.vo;
 
 import java.util.List;
+import java.util.Map;
 
 import com.vincent.coretest.enumeration.GenTypeEnum;
 
@@ -36,53 +37,89 @@ public class MVPScopeVO {
 
 	String domainValue = null;
 
-	List<Object> data = null;
+	Map<Integer, Object> rowData = null;
 
-	public MVPScopeVO(List<Object> source) {
-		data = source;
-		if (source.size() >= 14) {
-			Object obj = source.get(0);
-			if (obj instanceof Integer) {
-				rowIndex = ((Integer) obj).intValue();
-			}
-			type = source.get(1).toString();
-			apiType = source.get(2).toString();
-			apiName = source.get(3).toString();
-			apiNode = source.get(4).toString();
+	public MVPScopeVO(Map<String, Integer> headerMap, Map<Integer, Object> rowData) {
+		this.rowData = rowData;
 
-			groupName = source.get(5).toString();
+		Object obj = rowData.get(-1);
+		if (obj instanceof Integer) {
+			rowIndex = ((Integer) obj).intValue();
+		}
+		
+		Integer index = headerMap.get("LC");
+		if (index != null) {
+			type = getValueFromMap(rowData, index, "");
+		}
+		
+		index = headerMap.get("API type(N/E)");
+		if (index != null) {
+			apiType = getValueFromMap(rowData, index, "");
+		}
+		
+		index = headerMap.get("Impacted API Name");
+		if (index != null) {
+			apiName = getValueFromMap(rowData, index, "");
+		}
+		
+		index = headerMap.get("API Node");
+		if (index != null) {
+			apiNode = getValueFromMap(rowData, index, "");
+		}
 
-			description = source.get(6).toString();
-			dataType = source.get(8).toString();
-			String mo = source.get(9).toString();
+		index = headerMap.get("Group Name");
+		if (index != null) {
+			groupName = getValueFromMap(rowData, index, "");
+		}
+
+		index = headerMap.get("Field Name");
+		if (index != null) {
+			description = getValueFromMap(rowData, index, "");
+		}
+		
+		index = headerMap.get("Data type");
+		if (index != null) {
+			dataType = getValueFromMap(rowData, index, "");
+		}
+		
+		index = headerMap.get("M/O");
+		if (index != null) {
+			String mo = getValueFromMap(rowData, index, "");
 			if (mo != null && mo.trim().toLowerCase().equalsIgnoreCase("m")) {
 				required = true;
 			}
-
-			businessName = source.get(11).toString();
-			domainValue = source.get(12).toString();
-			path = source.get(13).toString();
-			int offset = path.indexOf("/");
-			httpMethod = path.substring(0, offset);
-			reqPath = path.substring(offset);
-
-			direction = GenTypeEnum.of(source.get(10).toString());
 		}
 
+		index = headerMap.get("Business Names");
+		if (index != null) {
+			businessName = getValueFromMap(rowData, index, "");
+		}
+
+		index = headerMap.get("Domain values");
+		if (index != null) {
+			domainValue = getValueFromMap(rowData, index, "");
+		}
+		
+		index = headerMap.get("New API URL");
+		if (index != null) {
+			path = getValueFromMap(rowData, index, "");
+		}
+		int offset = path.indexOf("/");
+		httpMethod = path.substring(0, offset);
+		reqPath = path.substring(offset);
+
+		index = headerMap.get("Request/Response");
+		if (index != null) {
+			direction = GenTypeEnum.of(getValueFromMap(rowData, index, ""));
+		}
 	}
+	
+	public static final String getValueFromMap(Map<Integer, Object> map, Integer key, String defaultVal) {
+		if (map.containsKey(key)) {
+			return map.get(key) != null ? map.get(key).toString().trim() : defaultVal;
 
-	public String getDataDetail() {
-		int index = 0;
-		StringBuilder sb = new StringBuilder();
-
-		boolean found = false;
-		for (Object obj : data) {
-			if (found) {
-				sb.append(",");
-			}
-			sb.append(index++).append(obj.toString());
-			found = true;
+		} else {
+			return defaultVal;
 		}
-		return sb.toString();
 	}
 }

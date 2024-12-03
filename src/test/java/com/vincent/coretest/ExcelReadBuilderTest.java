@@ -41,25 +41,25 @@ public class ExcelReadBuilderTest {
 	@Test
 	public void buildYamlFromExcelForNew() throws FileNotFoundException, IOException {
 		logger.info("buildYamlFromExcelForNew");
-		List<List<Object>> rows = ExcelReader.getActiveRow(xlsxFile, "B4-001", false);
+		Map<String, Integer> headerMap = ExcelReader.getHeaderIndex(xlsxFile, "B4-001");
+		List<Map<Integer, Object>> rowMapList = ExcelReader.getActiveRow(xlsxFile, "B4-001", false);
 
-		int index = 1;
-		for (List<Object> rowData : rows) {
-			MVPScopeVO vo = new MVPScopeVO(rowData);
+//		String target = "new";
+		String target = "Existing";
+		for (Map<Integer, Object> rowData : rowMapList) {
+			MVPScopeVO vo = new MVPScopeVO(headerMap, rowData);
 			String desc = DomainTypeUtil.getDescriptionByDomainValue(vo.getBusinessName(), vo.getDomainValue());
 			if (StringUtils.isNotBlank(desc)) {
 				logger.info("changing desc {}", desc);
 				vo.setDescription(desc);
 			}
-			if ("new".equalsIgnoreCase(vo.getApiType())) {
-				//logger.info("{}", vo);
+			if (target.equalsIgnoreCase(vo.getApiType())) {
+				// logger.info("{}", vo);
 				String apiName = vo.getApiName();
 				if (!apiNameToApiDataMapFromExcel.containsKey(apiName)) {
 					apiNameToApiDataMapFromExcel.put(apiName, new ArrayList<MVPScopeVO>());
 				}
 				apiNameToApiDataMapFromExcel.get(apiName).add(vo);
-			} else if ("Existing".equalsIgnoreCase(vo.getApiType())) {
-
 			} else {
 				logger.info("error");
 //				for (Object obj : rowData) {

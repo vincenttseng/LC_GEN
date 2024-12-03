@@ -1,6 +1,7 @@
 package com.vincent.coretest.vo;
 
 import java.util.List;
+import java.util.Map;
 
 import org.junit.Test;
 import org.slf4j.Logger;
@@ -15,13 +16,25 @@ public class MVPScopeVOTest {
 
 	@Test
 	public void testListing() {
-		logger.info("buildYamlFromExcelForNew");
-		List<List<Object>> rows = ExcelReader.getActiveRow(xlsxFile, "B4-001", false);
+		logger.info("testListing");
+		Map<String, Integer> headerMap = ExcelReader.getHeaderIndex(xlsxFile, "B4-001");
+		List<Map<Integer, Object>> rows = ExcelReader.getActiveRow(xlsxFile, "B4-001", false);
 
-		for (List<Object> rowData : rows) {
-			MVPScopeVO vo = new MVPScopeVO(rowData);
-			logger.info("vo required {} source {} {}", vo.isRequired(), rowData.get(8), rowData.get(9));
+		for (Map<Integer, Object> rowData : rows) {
+			MVPScopeVO vo = new MVPScopeVO(headerMap, rowData);
+			logger.info("vo required {} source {} {} {} {}", vo.isRequired(), vo.getPath(), vo.getHttpMethod(), vo.getReqPath(), vo.getDirection());
+			logger.info("{}", rowData);
 		}
+	}
+
+	@Test
+	public void testHeader() {
+		logger.info("testHeader");
+		Map<String, Integer> map = ExcelReader.getHeaderIndex(xlsxFile, "B4-001");
+
+		map.keySet().stream().forEach(key -> {
+			logger.info("key {} => {}", key, map.get(key));
+		});
 	}
 
 }
