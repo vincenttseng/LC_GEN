@@ -8,6 +8,7 @@ import java.util.Set;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,6 +17,7 @@ import com.vincent.coretest.enumeration.GenTypeEnum;
 import com.vincent.coretest.reader.ExcelReader;
 import com.vincent.coretest.reader.HeaderUtil;
 import com.vincent.coretest.reader.PathUtil;
+import com.vincent.coretest.util.DomainTypeUtil;
 import com.vincent.coretest.util.ReqRespParamVOUtil;
 import com.vincent.coretest.util.SchemaBodyUtil;
 import com.vincent.coretest.util.TextUtil;
@@ -44,8 +46,13 @@ public class ExcelReadBuilderTest {
 		int index = 1;
 		for (List<Object> rowData : rows) {
 			MVPScopeVO vo = new MVPScopeVO(rowData);
+			String desc = DomainTypeUtil.getDescriptionByDomainValue(vo.getBusinessName(), vo.getDomainValue());
+			if (StringUtils.isNotBlank(desc)) {
+				logger.info("changing desc {}", desc);
+				vo.setDescription(desc);
+			}
 			if ("new".equalsIgnoreCase(vo.getApiType())) {
-				logger.info("{}", vo);
+				//logger.info("{}", vo);
 				String apiName = vo.getApiName();
 				if (!apiNameToApiDataMapFromExcel.containsKey(apiName)) {
 					apiNameToApiDataMapFromExcel.put(apiName, new ArrayList<MVPScopeVO>());
@@ -66,9 +73,9 @@ public class ExcelReadBuilderTest {
 			logger.info("workinig on ===================" + key);
 			List<MVPScopeVO> params = apiNameToApiDataMapFromExcel.get(key);
 
-//			for (MVPScopeVO vo : params) {
-//				// logger.info(" =====> {}", vo);
-//			}
+			for (MVPScopeVO vo : params) {
+				// logger.info(" =====> {}", vo);
+			}
 			logger.info("=================================================");
 		}
 
@@ -169,7 +176,7 @@ public class ExcelReadBuilderTest {
 	}
 
 	public void showDefApiByKey(String reqPath) {
-		System.out.println("  '" + reqPath + "':");
+		System.out.println("  " + reqPath + ":");
 
 		List<String> keySet = mapForSameURLPath.get(reqPath);
 		for (String key : keySet) {
@@ -271,6 +278,7 @@ components:
 	public void printDefOfReference() {
 		Set<String> keySet = reqRespParamVOMap.keySet();
 		for (String key : keySet) {
+			System.out.println("######## " + key);
 			ReqRespParamVO reqRespParamVO = reqRespParamVOMap.get(key);
 			String refKey = null;
 			if (reqRespParamVO.getMapOfInputObjectArrayList().size() > 0 || reqRespParamVO.getMapOfInputObjectList().size() > 0) {

@@ -14,6 +14,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 public class MVPScopeVO {
+
 	int rowIndex = 0;
 	String type = "";
 	String apiType = "";
@@ -32,6 +33,8 @@ public class MVPScopeVO {
 
 	String httpMethod = null;
 	String reqPath = null;
+
+	String domainValue = null;
 
 	List<Object> data = null;
 
@@ -57,6 +60,7 @@ public class MVPScopeVO {
 			}
 
 			businessName = source.get(11).toString();
+			domainValue = source.get(12).toString();
 			path = source.get(13).toString();
 			int offset = path.indexOf("/");
 			httpMethod = path.substring(0, offset);
@@ -64,6 +68,7 @@ public class MVPScopeVO {
 
 			direction = GenTypeEnum.of(source.get(10).toString());
 		}
+
 	}
 
 	public String getDataDetail() {
