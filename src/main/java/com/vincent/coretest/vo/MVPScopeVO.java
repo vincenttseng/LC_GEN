@@ -23,9 +23,9 @@ public class MVPScopeVO {
 	GenTypeEnum direction = null;
 
 	String groupName = "";
-	
+
 	boolean required = false;
-	
+
 	String businessName = null;
 	String dataType = null;
 	String description = null;
@@ -48,16 +48,15 @@ public class MVPScopeVO {
 			apiNode = source.get(4).toString();
 
 			groupName = source.get(5).toString();
-			
+
 			description = source.get(6).toString();
 			dataType = source.get(8).toString();
-			businessName = source.get(11).toString();
-			
 			String mo = source.get(9).toString();
-			if(mo != null&&mo.equalsIgnoreCase("m")) {
+			if (mo != null && mo.trim().toLowerCase().equalsIgnoreCase("m")) {
 				required = true;
 			}
 
+			businessName = source.get(11).toString();
 			path = source.get(13).toString();
 			int offset = path.indexOf("/");
 			httpMethod = path.substring(0, offset);

@@ -46,7 +46,6 @@ public class ExcelReadBuilderTest {
 			MVPScopeVO vo = new MVPScopeVO(rowData);
 			if ("new".equalsIgnoreCase(vo.getApiType())) {
 				logger.info("{}", vo);
-				// logger.info("new =>{} => vo {}", vo.getApiName(), vo);
 				String apiName = vo.getApiName();
 				if (!apiNameToApiDataMapFromExcel.containsKey(apiName)) {
 					apiNameToApiDataMapFromExcel.put(apiName, new ArrayList<MVPScopeVO>());
@@ -56,9 +55,9 @@ public class ExcelReadBuilderTest {
 
 			} else {
 				logger.info("error");
-				for (Object obj : rowData) {
-					// logger.info("ignore>{}", vo);
-				}
+//				for (Object obj : rowData) {
+//					// logger.info("ignore>{}", vo);
+//				}
 			}
 		}
 
@@ -67,9 +66,9 @@ public class ExcelReadBuilderTest {
 			logger.info("workinig on ===================" + key);
 			List<MVPScopeVO> params = apiNameToApiDataMapFromExcel.get(key);
 
-			for (MVPScopeVO vo : params) {
-				// logger.info(" =====> {}", vo);
-			}
+//			for (MVPScopeVO vo : params) {
+//				// logger.info(" =====> {}", vo);
+//			}
 			logger.info("=================================================");
 		}
 
@@ -301,6 +300,7 @@ components:
 				System.out.println("        " + subNode + ":");
 				System.out.println("          $ref: '#/components/schemas/" + obj + "-" + subNode.toLowerCase() + "'");
 			}
+
 		}
 
 		if (mapOfObjArrList != null && mapOfObjArrList.size() > 0) {
@@ -316,10 +316,24 @@ components:
 		if (mapOfObjList != null && mapOfObjList.size() > 0) {
 			for (String subNode : mapOfObjList.keySet()) {
 				List<ColumnDefVo> variables = mapOfObjList.get(subNode);
+				List<String> requiredNameList = new ArrayList<String>();
+				for (ColumnDefVo vo : variables) {
+					if (vo.isRequired()) {
+						requiredNameList.add(vo.getName());
+					}
+				}
+
 				if (variables != null && variables.size() > 0) {
 					System.out.println("    " + obj + "-" + subNode.toLowerCase() + ":");
+					if (requiredNameList.size() > 0) {
+						System.out.println("      required:");
+						for (String name : requiredNameList) {
+							System.out.println("        - " + name);
+						}
+					}
 					System.out.println("      type: object");
 					System.out.println("      properties:");
+
 					printObjectVariables(variables);
 				}
 			}
@@ -328,8 +342,21 @@ components:
 		if (mapOfObjArrList != null && mapOfObjArrList.size() > 0) {
 			for (String subNode : mapOfObjArrList.keySet()) {
 				List<ColumnDefVo> variables = mapOfObjList.get(subNode);
+				List<String> requiredNameList = new ArrayList<String>();
+				for (ColumnDefVo vo : variables) {
+					if (vo.isRequired()) {
+						requiredNameList.add(vo.getName());
+					}
+				}
+
 				if (variables != null && variables.size() > 0) {
 					System.out.println("    " + obj + "-" + subNode.toLowerCase() + ":");
+					if (requiredNameList.size() > 0) {
+						System.out.println("      required:");
+						for (String name : requiredNameList) {
+							System.out.println("        - " + name);
+						}
+					}
 					System.out.println("      type: object");
 					System.out.println("      properties:");
 					printObjectVariables(variables);

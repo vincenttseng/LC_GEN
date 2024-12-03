@@ -138,6 +138,7 @@ public class ColumnDefVo {
 		}
 
 		vo.setDesc(cellVO.getDescription());
+		vo.setRequired(cellVO.isRequired());
 
 		return vo;
 	}
