@@ -19,6 +19,7 @@ import com.vincent.coretest.reader.PathUtil;
 import com.vincent.coretest.util.ReqRespParamVOUtil;
 import com.vincent.coretest.util.SchemaBodyUtil;
 import com.vincent.coretest.util.TextUtil;
+import com.vincent.coretest.vo.ColumnDefVo;
 import com.vincent.coretest.vo.MVPScopeVO;
 import com.vincent.coretest.vo.ReqRespParamVO;
 
@@ -27,11 +28,11 @@ public class ExcelReadBuilderTest {
 
 	String xlsxFile = ".\\src\\test\\input\\MVP3 scope for TF_LC_B4_001.xlsx";
 
-	// group map for all attributes of same function
-	Map<String, List<MVPScopeVO>> apiNameToApiDataMap = new HashMap<String, List<MVPScopeVO>>();
-
 	// group map for same path different httpMethod
-	Map<String, List<String>> mapForSamePath = new HashMap<String, List<String>>();
+	Map<String, List<String>> mapForSameURLPath = new HashMap<String, List<String>>();
+
+	// group map for all attributes of same function
+	Map<String, List<MVPScopeVO>> apiNameToApiDataMapFromExcel = new HashMap<String, List<MVPScopeVO>>();
 
 	Map<String, ReqRespParamVO> reqRespParamVOMap = new HashMap<String, ReqRespParamVO>();
 
@@ -43,14 +44,14 @@ public class ExcelReadBuilderTest {
 		int index = 1;
 		for (List<Object> rowData : rows) {
 			MVPScopeVO vo = new MVPScopeVO(rowData);
-
 			if ("new".equalsIgnoreCase(vo.getApiType())) {
+				logger.info("{}", vo);
 				// logger.info("new =>{} => vo {}", vo.getApiName(), vo);
 				String apiName = vo.getApiName();
-				if (!apiNameToApiDataMap.containsKey(apiName)) {
-					apiNameToApiDataMap.put(apiName, new ArrayList<MVPScopeVO>());
+				if (!apiNameToApiDataMapFromExcel.containsKey(apiName)) {
+					apiNameToApiDataMapFromExcel.put(apiName, new ArrayList<MVPScopeVO>());
 				}
-				apiNameToApiDataMap.get(apiName).add(vo);
+				apiNameToApiDataMapFromExcel.get(apiName).add(vo);
 			} else if ("Existing".equalsIgnoreCase(vo.getApiType())) {
 
 			} else {
@@ -61,10 +62,10 @@ public class ExcelReadBuilderTest {
 			}
 		}
 
-		Set<String> keySet = apiNameToApiDataMap.keySet();
+		Set<String> keySet = apiNameToApiDataMapFromExcel.keySet();
 		for (String key : keySet) {
 			logger.info("workinig on ===================" + key);
-			List<MVPScopeVO> params = apiNameToApiDataMap.get(key);
+			List<MVPScopeVO> params = apiNameToApiDataMapFromExcel.get(key);
 
 			for (MVPScopeVO vo : params) {
 				// logger.info(" =====> {}", vo);
@@ -85,26 +86,24 @@ public class ExcelReadBuilderTest {
 	}
 
 	public static void printStartOfOutput() {
-		System.out.println(
-				"============================================= start of YAML =============================================");
+		System.out.println("============================================= start of YAML =============================================");
 	}
 
 	public void printDefOfApi() {
 		System.out.println("paths:");
-		Set<String> keySet = mapForSamePath.keySet();
+		Set<String> keySet = mapForSameURLPath.keySet();
 		keySet.stream().forEach(reqPath -> {
 			showDefApiByKey(reqPath);
 		});
 	}
 
-
 	public void checkData() {
 		boolean error = false;
 
 		// check url same for same group
-		Set<String> keySet = apiNameToApiDataMap.keySet();
+		Set<String> keySet = apiNameToApiDataMapFromExcel.keySet();
 		for (String key : keySet) {
-			List<MVPScopeVO> params = apiNameToApiDataMap.get(key);
+			List<MVPScopeVO> params = apiNameToApiDataMapFromExcel.get(key);
 
 			boolean found = false;
 			String targetPath = null;
@@ -130,9 +129,9 @@ public class ExcelReadBuilderTest {
 	}
 
 	public void groupingSameReqPath() {
-		Set<String> keySet = apiNameToApiDataMap.keySet();
+		Set<String> keySet = apiNameToApiDataMapFromExcel.keySet();
 		for (String key : keySet) {
-			List<MVPScopeVO> params = apiNameToApiDataMap.get(key);
+			List<MVPScopeVO> params = apiNameToApiDataMapFromExcel.get(key);
 
 			if (params.size() > 0) {
 				MVPScopeVO vo = params.get(0);
@@ -140,15 +139,16 @@ public class ExcelReadBuilderTest {
 				String httpMethod = vo.getHttpMethod();
 				logger.info(key + " " + httpMethod + " " + reqPath);
 
-				if (!mapForSamePath.containsKey(reqPath)) {
-					mapForSamePath.put(reqPath, new ArrayList<String>());
+				if (!mapForSameURLPath.containsKey(reqPath)) {
+					mapForSameURLPath.put(reqPath, new ArrayList<String>());
 				}
-				mapForSamePath.get(reqPath).add(key);
+				mapForSameURLPath.get(reqPath).add(key);
 			}
 		}
-		mapForSamePath.keySet().forEach(key -> {
+
+		mapForSameURLPath.keySet().forEach(key -> {
 			logger.info("for ===== " + key);
-			List<String> values = mapForSamePath.get(key);
+			List<String> values = mapForSameURLPath.get(key);
 			values.forEach(value -> {
 				logger.info(key + " " + value);
 			});
@@ -157,24 +157,25 @@ public class ExcelReadBuilderTest {
 
 	public void groupingReqRespObject() {
 		logger.info("====================groupingReqRespObject==========================");
-		Set<String> keySet = apiNameToApiDataMap.keySet();
+		Set<String> keySet = apiNameToApiDataMapFromExcel.keySet();
 		keySet.stream().forEach(key -> {
 			logger.info("groupingReqRespObject key {}", key);
-			List<MVPScopeVO> attributes = apiNameToApiDataMap.get(key);
+			List<MVPScopeVO> attributes = apiNameToApiDataMapFromExcel.get(key);
 			ReqRespParamVO vo = ReqRespParamVOUtil.getReqRespParamVO(key, attributes);
 
 			logger.info("api " + key);
 			vo.showContent();
+			reqRespParamVOMap.put(key, vo);
 		});
 	}
 
 	public void showDefApiByKey(String reqPath) {
 		System.out.println("  '" + reqPath + "':");
 
-		List<String> keySet = mapForSamePath.get(reqPath);
+		List<String> keySet = mapForSameURLPath.get(reqPath);
 		for (String key : keySet) {
 			System.out.println("######## " + key);
-			List<MVPScopeVO> params = apiNameToApiDataMap.get(key);
+			List<MVPScopeVO> params = apiNameToApiDataMapFromExcel.get(key);
 			if (params.size() > 0) {
 				MVPScopeVO vo = params.get(0);
 				String method = vo.getHttpMethod().toLowerCase();
@@ -189,26 +190,27 @@ public class ExcelReadBuilderTest {
 				System.out.println(PathUtil.getPathParamString(vo.getReqPath()));
 			}
 
-			String refKey = TextUtil.nameToLowerCaseAndDash(key + " " + GenTypeEnum.REQUEST.getMessage());
-			List<MVPScopeVO> attributes = apiNameToApiDataMap.get(key);
+			List<MVPScopeVO> attributes = apiNameToApiDataMapFromExcel.get(key);
 			ReqRespParamVO vo = ReqRespParamVOUtil.getReqRespParamVO(key, attributes);
-			showRequestRefDeclaration(refKey, vo);
-			showResponseRefDeclaration(refKey, vo);
+			showRequestRefDeclaration(key, vo);
+			showResponseRefDeclaration(key, vo);
 		}
 	}
 
-	private void showRequestRefDeclaration(String refKey, ReqRespParamVO vo) {
+	private void showRequestRefDeclaration(String key, ReqRespParamVO vo) {
+		String refKey = TextUtil.nameToLowerCaseAndDash(key + " " + GenTypeEnum.REQUEST.getMessage());
 		if (vo.getMapOfInputObjectArrayList().size() > 0 || vo.getMapOfInputObjectList().size() > 0) {
 			System.out.println(SchemaBodyUtil.genRequestSchemaText(refKey));
 		}
 	}
 
-	private void showResponseRefDeclaration(String refKey, ReqRespParamVO vo) {
+	private void showResponseRefDeclaration(String key, ReqRespParamVO vo) {
+		String refKey = TextUtil.nameToLowerCaseAndDash(key + " " + GenTypeEnum.RESPONSE.getMessage());
 		System.out.println(SchemaBodyUtil.genResponseSchemaText(refKey));
 	}
-	
+
 	/**
-	 * #formatter:off
+	 * @formatter:off 
 components:
   schemas:
     api-message-error:
@@ -234,7 +236,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/api-message-error'
-	 * #formatter:on
+	 * @formatter:on
 	 */
 	private void printBasicOutputComponent() {
 		System.out.println("######## components");
@@ -266,39 +268,86 @@ components:
 		System.out.println("          items:");
 		System.out.println("            $ref: '#/components/schemas/api-message-error'");
 	}
-	
+
 	public void printDefOfReference() {
-		Set<String> keySet = mapForSamePath.keySet();
-		keySet.stream().forEach(reqPath -> {
-			printObjectDefinition(reqPath);
-		});
-	}
-	
-	public void printObjectDefinition(String reqPath) {
-		List<String> keySet = mapForSamePath.get(reqPath);
+		Set<String> keySet = reqRespParamVOMap.keySet();
 		for (String key : keySet) {
-			System.out.println("######## " + key);
-//			List<MVPScopeVO> params = apiNameToApiDataMap.get(key);
-//			if (params.size() > 0) {
-//				MVPScopeVO vo = params.get(0);
-//				String method = vo.getHttpMethod().toLowerCase();
-//				System.out.println("    " + method + ":");
-//				System.out.println("      tags:");
-//				System.out.println("        - " + vo.getApiNode());
-//				System.out.println("      summary: " + vo.getApiName());
-//				System.out.println("      description: " + vo.getApiName().toUpperCase());
-//				System.out.println("      operationId: " + vo.getApiName().toUpperCase());
-//				System.out.println("      parameters:");
-//				System.out.print(HeaderUtil.getMethodHeadersString());
-//				System.out.println(PathUtil.getPathParamString(vo.getReqPath()));
-//			}
-//
-//			String refKey = TextUtil.nameToLowerCaseAndDash(key + " " + GenTypeEnum.REQUEST.getMessage());
-//			List<MVPScopeVO> attributes = apiNameToApiDataMap.get(key);
-//			ReqRespParamVO vo = ReqRespParamVOUtil.getReqRespParamVO(key, attributes);
-//			showRequestRefDeclaration(refKey, vo);
-//			showResponseRefDeclaration(refKey, vo);
+			ReqRespParamVO reqRespParamVO = reqRespParamVOMap.get(key);
+			String refKey = null;
+			if (reqRespParamVO.getMapOfInputObjectArrayList().size() > 0 || reqRespParamVO.getMapOfInputObjectList().size() > 0) {
+				refKey = TextUtil.nameToLowerCaseAndDash(key + " " + GenTypeEnum.REQUEST.getMessage());
+				printRefObject(refKey, reqRespParamVO.getMapOfInputObjectList(), reqRespParamVO.getMapOfInputObjectArrayList());
+			}
+			refKey = TextUtil.nameToLowerCaseAndDash(key + " " + GenTypeEnum.RESPONSE.getMessage());
+			printRefObject(refKey, reqRespParamVO.getMapOfRespObjectList(), reqRespParamVO.getMapOfRespObjectArrayList());
 		}
 	}
 
+	private void printRefObject(String obj, Map<String, List<ColumnDefVo>> mapOfObjList, Map<String, List<ColumnDefVo>> mapOfObjArrList) {
+		int total = 0;
+		total += mapOfObjList != null ? mapOfObjList.size() : 0;
+		total += mapOfObjArrList != null ? mapOfObjArrList.size() : 0;
+
+		if (total == 0) {
+			return; // nothing to show
+		}
+
+		System.out.println("    " + obj + ":");
+		System.out.println("      type: object");
+		System.out.println("      properties:");
+		// Request Response Object Definition
+		if (mapOfObjList != null && mapOfObjList.size() > 0) {
+			for (String subNode : mapOfObjList.keySet()) {
+				System.out.println("        " + subNode + ":");
+				System.out.println("          $ref: '#/components/schemas/" + obj + "-" + subNode.toLowerCase() + "'");
+			}
+		}
+
+		if (mapOfObjArrList != null && mapOfObjArrList.size() > 0) {
+			for (String subNode : mapOfObjArrList.keySet()) {
+				System.out.println("        " + subNode + ":");
+				System.out.println("          type: array");
+				System.out.println("          items:");
+				System.out.println("            $ref: '#/components/schemas/" + obj + "-" + subNode.toLowerCase() + "'");
+			}
+		}
+
+		// object inside Request/Response Definition
+		if (mapOfObjList != null && mapOfObjList.size() > 0) {
+			for (String subNode : mapOfObjList.keySet()) {
+				List<ColumnDefVo> variables = mapOfObjList.get(subNode);
+				if (variables != null && variables.size() > 0) {
+					System.out.println("    " + obj + "-" + subNode.toLowerCase() + ":");
+					System.out.println("      type: object");
+					System.out.println("      properties:");
+					printObjectVariables(variables);
+				}
+			}
+		}
+
+		if (mapOfObjArrList != null && mapOfObjArrList.size() > 0) {
+			for (String subNode : mapOfObjArrList.keySet()) {
+				List<ColumnDefVo> variables = mapOfObjList.get(subNode);
+				if (variables != null && variables.size() > 0) {
+					System.out.println("    " + obj + "-" + subNode.toLowerCase() + ":");
+					System.out.println("      type: object");
+					System.out.println("      properties:");
+					printObjectVariables(variables);
+				}
+			}
+		}
+	}
+
+	private void printObjectVariables(List<ColumnDefVo> variables) {
+		if (variables != null && variables.size() > 0) {
+			for (ColumnDefVo defVO : variables) {
+				System.out.println("        " + defVO.getName() + ":");
+				System.out.println("          type: " + defVO.getType());
+				if (defVO.getMaxLength() > 0) {
+					System.out.println("          maxLength: " + defVO.getMaxLength());
+				}
+				System.out.println("          format: " + defVO.getFormat());
+			}
+		}
+	}
 }
