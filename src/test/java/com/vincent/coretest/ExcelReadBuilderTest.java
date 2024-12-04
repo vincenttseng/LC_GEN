@@ -2,9 +2,11 @@ package com.vincent.coretest;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
@@ -28,8 +30,6 @@ import com.vincent.coretest.vo.ReqRespParamVO;
 public class ExcelReadBuilderTest {
 	protected final Logger logger = LoggerFactory.getLogger(ExcelReadBuilderTest.class);
 
-	String xlsxFile = ".\\src\\test\\input\\MVP3 scope for TF_LC_B4_001 2.xlsx";
-
 	// group map for same path different httpMethod
 	Map<String, List<String>> mapForSameURLPath = new HashMap<String, List<String>>();
 
@@ -39,40 +39,108 @@ public class ExcelReadBuilderTest {
 	Map<String, ReqRespParamVO> reqRespParamVOMap = new HashMap<String, ReqRespParamVO>();
 
 	@Test
-	public void buildYamlFromExcelForNew() throws FileNotFoundException, IOException {
+	public void buildYamlFromFolder() throws FileNotFoundException, IOException {
 		logger.info("buildYamlFromExcelForNew");
+
+		String root = "";
+		File rootDir = new File(root);
+		logger.info("root1 {}", rootDir.getAbsolutePath());
+
+		String targetPath = rootDir.getAbsolutePath() + "\\src\\test\\input\\group\\";
+		File targetFolderFile = new File(targetPath);
+		logger.info("targetFolderFile {} existed {} dir {}", targetFolderFile.getAbsolutePath(), targetFolderFile.exists(), targetFolderFile.isDirectory());
+		if (targetFolderFile == null || !targetFolderFile.isDirectory()) {
+			return;
+		}
+
+//		String target = "e";
+//		String ignoreTarget = "n";
+
+		String target = "n";
+		String ignoreTarget = "e";
+
+		File[] dirFiles = targetFolderFile.listFiles();
+
+		for (File xlsxFile : dirFiles) {
+			if (!xlsxFile.getAbsolutePath().toLowerCase().endsWith("xlsx")) { // not xlsx => ignore
+				continue;
+			}
+
+			logger.info("handling {}", xlsxFile);
+			Map<String, Integer> headerMap = ExcelReader.getHeaderIndex(xlsxFile.getAbsolutePath(), "B4-001");
+			logger.info("header {}", headerMap);
+			List<Map<Integer, Object>> rowMapList = ExcelReader.getActiveRow(xlsxFile.getAbsolutePath(), "B4-001", false);
+			logger.info("size {}", rowMapList.size());
+
+			int activeCnt = 0;
+			for (Map<Integer, Object> rowData : rowMapList) {
+				MVPScopeVO vo = new MVPScopeVO(headerMap, rowData);
+
+				if (vo.getApiType() != null && vo.getApiType().toLowerCase().startsWith(target)) {
+					logger.info("{}", vo);
+					String apiName = vo.getApiName();
+					if (!apiNameToApiDataMapFromExcel.containsKey(apiName)) {
+						apiNameToApiDataMapFromExcel.put(apiName, new ArrayList<MVPScopeVO>());
+					}
+					apiNameToApiDataMapFromExcel.get(apiName).add(vo);
+					activeCnt++;
+				} else if (vo.getApiType() != null && vo.getApiType().toLowerCase().startsWith(ignoreTarget)) {
+					logger.debug("ignored {}", vo);
+				} else {
+					logger.debug("error " + vo);
+				}
+
+				String desc = DomainTypeUtil.getDescriptionByDomainValue(vo.getBusinessName(), vo.getDomainValue());
+				if (StringUtils.isNotBlank(desc)) {
+					// logger.info("changing desc {}", desc);
+					vo.setDescription(desc);
+				}
+			}
+			logger.info("=====>{} active line {}", xlsxFile, activeCnt);
+		}
+		logger.info("START handleData");
+		handleData();
+	}
+
+	@Test
+	public void buildYamlFromOneExcel() throws FileNotFoundException, IOException {
+		logger.info("buildYamlFromExcelForNew");
+
+		String xlsxFile = ".\\src\\test\\input\\MVP3 scope for TF_LC_B4_001 2.xlsx";
 		Map<String, Integer> headerMap = ExcelReader.getHeaderIndex(xlsxFile, "B4-001");
 		List<Map<Integer, Object>> rowMapList = ExcelReader.getActiveRow(xlsxFile, "B4-001", false);
 
-		String target = "new";
-		String ignoreTarget = "Existing";
+//		String target = "n";
+//		String ignoreTarget = "e";
 
-//		String target = "Existing";
-//		String ignoreTarget = "new";
+		String target = "e";
+		String ignoreTarget = "n";
 		for (Map<Integer, Object> rowData : rowMapList) {
 			MVPScopeVO vo = new MVPScopeVO(headerMap, rowData);
-			String desc = DomainTypeUtil.getDescriptionByDomainValue(vo.getBusinessName(), vo.getDomainValue());
-			if (StringUtils.isNotBlank(desc)) {
-				// logger.info("changing desc {}", desc);
-				vo.setDescription(desc);
-			}
-			if (target.equalsIgnoreCase(vo.getApiType())) {
-				// logger.info("{}", vo);
+
+			if (vo.getApiType() != null && vo.getApiType().toLowerCase().startsWith(target)) {
+				logger.info("{}", vo);
 				String apiName = vo.getApiName();
 				if (!apiNameToApiDataMapFromExcel.containsKey(apiName)) {
 					apiNameToApiDataMapFromExcel.put(apiName, new ArrayList<MVPScopeVO>());
 				}
 				apiNameToApiDataMapFromExcel.get(apiName).add(vo);
-			} else if (ignoreTarget.equalsIgnoreCase(vo.getApiType())) {
+			} else if (vo.getApiType() != null && vo.getApiType().toLowerCase().startsWith(ignoreTarget)) {
 				logger.debug("ignored {}", vo);
 			} else {
 				logger.info("error " + vo);
-//				for (Object obj : rowData) {
-//					// logger.info("ignore>{}", vo);
-//				}
+			}
+
+			String desc = DomainTypeUtil.getDescriptionByDomainValue(vo.getBusinessName(), vo.getDomainValue());
+			if (StringUtils.isNotBlank(desc)) {
+				// logger.info("changing desc {}", desc);
+				vo.setDescription(desc);
 			}
 		}
+		handleData();
+	}
 
+	private void handleData() {
 		checkData();
 		groupingSameReqPath();
 		groupingReqRespObject();
@@ -116,14 +184,14 @@ public class ExcelReadBuilderTest {
 					String path = vo.getPath();
 					if (!path.equals(targetPath)) {
 						error = true;
-						logger.error("path diff " + vo + targetPath + " vs " + path);
+						logger.error("path diff " + targetPath + " vs " + path + " ref" + vo);
 					}
 				}
 			}
 		}
-		if (error) {
-			System.exit(0);
-		}
+//		if (error) {
+//			System.exit(0);
+//		}
 
 		logger.info("checkData pass");
 	}
@@ -375,15 +443,19 @@ components:
 	}
 
 	private void printObjectVariables(List<ColumnDefVo> variables) {
+		Set<String> useNameSet = new HashSet<String>();
 		if (variables != null && variables.size() > 0) {
 			for (ColumnDefVo defVO : variables) {
-				System.out.println("        " + defVO.getName() + ":");
-				System.out.println("          type: " + defVO.getType());
-				if (defVO.getMaxLength() > 0) {
-					System.out.println("          maxLength: " + defVO.getMaxLength());
+				if (useNameSet.contains(defVO.getName()) == false) {
+					System.out.println("        " + defVO.getName() + ":");
+					System.out.println("          type: " + defVO.getType());
+					if (defVO.getMaxLength() > 0) {
+						System.out.println("          maxLength: " + defVO.getMaxLength());
+					}
+					System.out.println("          format: " + defVO.getFormat());
+					System.out.println("          description: \"" + defVO.getDesc() + "\"");
+					useNameSet.add(defVO.getName());
 				}
-				System.out.println("          format: " + defVO.getFormat());
-				System.out.println("          description: \"" + defVO.getDesc() + "\"");
 			}
 		}
 	}

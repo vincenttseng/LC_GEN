@@ -27,7 +27,13 @@ public class ExcelReader {
 			excelFileToRead = new FileInputStream(xlsxFile);
 			wb = new XSSFWorkbook(excelFileToRead);
 
-			XSSFSheet sheet = wb.getSheet(sheetName);
+			XSSFSheet sheet = readSheet(wb);
+
+			if (sheet == null) {
+				logger.info("no sheet found");
+				return rowMapList;
+			}
+
 			int totalRows = sheet.getPhysicalNumberOfRows();
 			logger.info("row count {}", totalRows);
 
@@ -69,7 +75,7 @@ public class ExcelReader {
 						rowDataMap.put(columnIndex, Boolean.valueOf(cell.getBooleanCellValue()));
 						break;
 					default:
-						rowDataMap.put(columnIndex, "");
+						rowDataMap.put(columnIndex, cell.getStringCellValue());
 						break;
 					}
 				}
@@ -103,9 +109,15 @@ public class ExcelReader {
 			excelFileToRead = new FileInputStream(xlsxFile);
 			wb = new XSSFWorkbook(excelFileToRead);
 
-			XSSFSheet sheet = wb.getSheet(sheetName);
+			XSSFSheet sheet = readSheet(wb);
+
+			if (sheet == null) {
+				logger.info("no sheet found");
+				return result;
+			}
+
 			int totalRows = sheet.getPhysicalNumberOfRows();
-			logger.info("row count {}", totalRows);
+			logger.debug("row count {}", totalRows);
 
 			// Iterate through each rows one by one
 			Iterator<Row> rowIterator = sheet.iterator();
@@ -135,7 +147,7 @@ public class ExcelReader {
 			}
 
 		} catch (Exception e) {
-
+			e.printStackTrace();
 		} finally {
 			try {
 				excelFileToRead.close();
@@ -144,5 +156,29 @@ public class ExcelReader {
 		}
 
 		return result;
+	}
+
+	private static XSSFSheet readSheet(XSSFWorkbook wb) {
+		XSSFSheet sheet = null;
+		try {
+			int sheetCnt = wb.getNumberOfSheets();
+			String sheetName = "";
+			for (int i = 0; i < sheetCnt; i++) {
+				XSSFSheet tmp = wb.getSheetAt(i);
+				String name = tmp.getSheetName();
+				if (name != null && name.toLowerCase().startsWith("b4")) {
+					sheetName = name;
+				}
+			}
+			sheet = wb.getSheet(sheetName);
+			if (sheet == null) {
+				throw new Exception("no sheet in name " + sheetName);
+			}
+			return sheet;
+		} catch (Exception e) {
+			logger.info("no sheet for b4");
+
+		}
+		return null;
 	}
 }

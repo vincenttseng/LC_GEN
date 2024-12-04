@@ -9,8 +9,13 @@ public class HeaderUtil {
 	private static final String headerFileSrc = ".\\src\\test\\resources\\header.txt";
 	private static final String methodHeaderFileSrc = ".\\src\\test\\resources\\methodHeaders.txt";
 
-	public static void printHeader() throws IOException {
-		printHeader(headerFileSrc);
+	public static void printHeader()  {
+		try {
+			printHeader(headerFileSrc);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public static void printHeader(String fileName) throws IOException {

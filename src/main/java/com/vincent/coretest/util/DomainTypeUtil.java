@@ -33,7 +33,7 @@ public class DomainTypeUtil {
 					if (existed) {
 						sb.append(",");
 					}
-					sb.append(domainValueArr[i]);
+					sb.append(domainValueArr[i]).append(":").append(domainValueArr[i]);
 					existed = true;
 				}
 				sb.append(";");

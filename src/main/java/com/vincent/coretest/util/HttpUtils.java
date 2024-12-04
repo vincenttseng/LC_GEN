@@ -87,4 +87,13 @@ public class HttpUtils {
 		}
 
 	}
+
+	public static String getPathRemovingifHttpMethod(String path) {
+		int index = path.indexOf("/");
+		if (index >= 0) {
+			return StringUtils.trim(path.substring(index));
+		} else {
+			return StringUtils.trim(path);
+		}
+	}
 }

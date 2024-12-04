@@ -13,4 +13,25 @@ public class HttpUtilsTest {
 		String uri = HttpUtils.showURIWithoutQuery(path);
 		logger.info("{}", uri);
 	}
+
+	@Test
+	public void testgetPathRemovingifHttpMethody0() {
+		String path = "GET /v2/afsdfasadf/adsf/adsf";
+		path = HttpUtils.getPathRemovingifHttpMethod(path);
+		logger.info("=>{}<=", path);
+	}
+	
+	@Test
+	public void testgetPathRemovingifHttpMethody1() {
+		String path = " /v2/afsdfasadf/adsf/adsf";
+		path = HttpUtils.getPathRemovingifHttpMethod(path);
+		logger.info("=>{}<=", path);
+	}
+	
+	@Test
+	public void testgetPathRemovingifHttpMethody2() {
+		String path = "POST/v2/afsdfasadf/adsf/adsf";
+		path = HttpUtils.getPathRemovingifHttpMethod(path);
+		logger.info("=>{}<=", path);
+	}
 }

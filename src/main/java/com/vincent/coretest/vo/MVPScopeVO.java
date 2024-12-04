@@ -1,7 +1,10 @@
 package com.vincent.coretest.vo;
 
-import java.util.List;
 import java.util.Map;
+
+import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.vincent.coretest.enumeration.GenTypeEnum;
 import com.vincent.coretest.util.HttpUtils;
@@ -16,6 +19,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 public class MVPScopeVO {
+	protected final Logger logger = LoggerFactory.getLogger(MVPScopeVO.class);
 
 	int rowIndex = 0;
 	String type = "";
@@ -48,22 +52,22 @@ public class MVPScopeVO {
 		if (obj instanceof Integer) {
 			rowIndex = ((Integer) obj).intValue();
 		}
-		
+
 		Integer index = headerMap.get("LC");
 		if (index != null) {
 			type = getValueFromMap(rowData, index, "");
 		}
-		
+
 		index = headerMap.get("API type(N/E)");
 		if (index != null) {
 			apiType = getValueFromMap(rowData, index, "");
 		}
-		
+
 		index = headerMap.get("Impacted API Name");
 		if (index != null) {
 			apiName = getValueFromMap(rowData, index, "");
 		}
-		
+
 		index = headerMap.get("API Node");
 		if (index != null) {
 			apiNode = getValueFromMap(rowData, index, "");
@@ -78,12 +82,12 @@ public class MVPScopeVO {
 		if (index != null) {
 			description = getValueFromMap(rowData, index, "");
 		}
-		
+
 		index = headerMap.get("Data type");
 		if (index != null) {
 			dataType = getValueFromMap(rowData, index, "");
 		}
-		
+
 		index = headerMap.get("M/O");
 		if (index != null) {
 			String mo = getValueFromMap(rowData, index, "");
@@ -101,15 +105,38 @@ public class MVPScopeVO {
 		if (index != null) {
 			domainValue = getValueFromMap(rowData, index, "");
 		}
-		
+
+		// method part
+		Integer methodIndex = headerMap.get("method");
+		if (methodIndex == null) {
+			methodIndex = headerMap.get("Method");
+		}
+
+		if (methodIndex != null) {
+			httpMethod = getValueFromMap(rowData, methodIndex, "GET");
+		}
+
 		index = headerMap.get("New API URL");
 		if (index != null) {
-			path = getValueFromMap(rowData, index, "");
+			String tmp = getValueFromMap(rowData, index, "");
+			if (methodIndex != null) {
+				path = HttpUtils.getPathRemovingifHttpMethod(tmp);
+			} else {
+				path = tmp;
+			}
 		}
+
 		int offset = path.indexOf("/");
-		httpMethod = path.substring(0, offset);
-		originalPathWithQuery = path.substring(offset);
-		
+		try {
+			if (StringUtils.isBlank(httpMethod)) {
+				httpMethod = path.substring(0, offset);
+			}
+			originalPathWithQuery = path.substring(offset);
+			path = originalPathWithQuery;
+		} catch (Exception e) {
+			// logger.info("path {}", path);
+		}
+
 		reqPath = HttpUtils.showURIWithoutQuery(originalPathWithQuery);
 
 		index = headerMap.get("Request/Response");
@@ -117,7 +144,7 @@ public class MVPScopeVO {
 			direction = GenTypeEnum.of(getValueFromMap(rowData, index, ""));
 		}
 	}
-	
+
 	public static final String getValueFromMap(Map<Integer, Object> map, Integer key, String defaultVal) {
 		if (map.containsKey(key)) {
 			return map.get(key) != null ? map.get(key).toString().trim() : defaultVal;
