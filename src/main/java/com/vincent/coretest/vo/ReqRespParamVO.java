@@ -29,16 +29,16 @@ public class ReqRespParamVO {
 	Map<String, List<ColumnDefVo>> mapOfRespObjectArrayList = new HashMap<String, List<ColumnDefVo>>();
 
 	public void showContent() {
-		logger.info("===== mapOfInputObjectList");
+		logger.info("   ===== mapOfInputObjectList");
 		showMap(mapOfInputObjectList);
 
-		logger.info("===== mapOfInputObjectArrayList");
+		logger.info("   ===== mapOfInputObjectArrayList");
 		showMap(mapOfInputObjectArrayList);
 
-		logger.info("===== mapOfRespObjectList");
+		logger.info("   ===== mapOfRespObjectList");
 		showMap(mapOfRespObjectList);
 		
-		logger.info("===== mapOfRespObjectArrayList");
+		logger.info("   ===== mapOfRespObjectArrayList");
 		showMap(mapOfRespObjectArrayList);
 	}
 

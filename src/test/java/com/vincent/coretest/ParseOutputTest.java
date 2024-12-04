@@ -99,11 +99,12 @@ public class ParseOutputTest {
 		System.out.println("===> request");
 		if (inputObjectMap.size() > 0 || inputObjectArrayMap.size() > 0) {
 			System.out.println(SchemaBodyUtil.genSchemaText(GenTypeEnum.REQUEST, apiName));
-
 		}
 		System.out.println("------------------------------------------------------------------------------------");
 		System.out.println("===> response");
-		System.out.println(SchemaBodyUtil.genSchemaText(GenTypeEnum.RESPONSE, apiName));
+		if (respObjectMap.size() > 0 || respObjectArrayMap.size() > 0) {
+			System.out.println(SchemaBodyUtil.genSchemaText(GenTypeEnum.RESPONSE, apiName));
+		}
 		System.out.println("------------------------------------------------------------------------------------");
 
 		// Reference Part

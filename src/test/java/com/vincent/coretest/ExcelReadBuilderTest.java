@@ -28,7 +28,7 @@ import com.vincent.coretest.vo.ReqRespParamVO;
 public class ExcelReadBuilderTest {
 	protected final Logger logger = LoggerFactory.getLogger(ExcelReadBuilderTest.class);
 
-	String xlsxFile = ".\\src\\test\\input\\MVP3 scope for TF_LC_B4_001.xlsx";
+	String xlsxFile = ".\\src\\test\\input\\MVP3 scope for TF_LC_B4_001 2.xlsx";
 
 	// group map for same path different httpMethod
 	Map<String, List<String>> mapForSameURLPath = new HashMap<String, List<String>>();
@@ -44,13 +44,16 @@ public class ExcelReadBuilderTest {
 		Map<String, Integer> headerMap = ExcelReader.getHeaderIndex(xlsxFile, "B4-001");
 		List<Map<Integer, Object>> rowMapList = ExcelReader.getActiveRow(xlsxFile, "B4-001", false);
 
-//		String target = "new";
-		String target = "Existing";
+		String target = "new";
+		String ignoreTarget = "Existing";
+
+//		String target = "Existing";
+//		String ignoreTarget = "new";
 		for (Map<Integer, Object> rowData : rowMapList) {
 			MVPScopeVO vo = new MVPScopeVO(headerMap, rowData);
 			String desc = DomainTypeUtil.getDescriptionByDomainValue(vo.getBusinessName(), vo.getDomainValue());
 			if (StringUtils.isNotBlank(desc)) {
-				logger.info("changing desc {}", desc);
+				// logger.info("changing desc {}", desc);
 				vo.setDescription(desc);
 			}
 			if (target.equalsIgnoreCase(vo.getApiType())) {
@@ -60,23 +63,14 @@ public class ExcelReadBuilderTest {
 					apiNameToApiDataMapFromExcel.put(apiName, new ArrayList<MVPScopeVO>());
 				}
 				apiNameToApiDataMapFromExcel.get(apiName).add(vo);
+			} else if (ignoreTarget.equalsIgnoreCase(vo.getApiType())) {
+				logger.debug("ignored {}", vo);
 			} else {
-				logger.info("error");
+				logger.info("error " + vo);
 //				for (Object obj : rowData) {
 //					// logger.info("ignore>{}", vo);
 //				}
 			}
-		}
-
-		Set<String> keySet = apiNameToApiDataMapFromExcel.keySet();
-		for (String key : keySet) {
-			logger.info("workinig on ===================" + key);
-			List<MVPScopeVO> params = apiNameToApiDataMapFromExcel.get(key);
-
-			for (MVPScopeVO vo : params) {
-				// logger.info(" =====> {}", vo);
-			}
-			logger.info("=================================================");
 		}
 
 		checkData();
@@ -152,24 +146,25 @@ public class ExcelReadBuilderTest {
 			}
 		}
 
+		logger.info("==============:showing different path");
 		mapForSameURLPath.keySet().forEach(key -> {
-			logger.info("for ===== " + key);
+			logger.info("path " + key);
 			List<String> values = mapForSameURLPath.get(key);
 			values.forEach(value -> {
-				logger.info(key + " " + value);
+				logger.info("pathmethod : " + key + " method:" + value);
 			});
 		});
+		logger.info("==============:ending different path");
 	}
 
 	public void groupingReqRespObject() {
 		logger.info("====================groupingReqRespObject==========================");
 		Set<String> keySet = apiNameToApiDataMapFromExcel.keySet();
 		keySet.stream().forEach(key -> {
-			logger.info("groupingReqRespObject key {}", key);
+			logger.info("groupingReqRespObject key : {}", key);
 			List<MVPScopeVO> attributes = apiNameToApiDataMapFromExcel.get(key);
 			ReqRespParamVO vo = ReqRespParamVOUtil.getReqRespParamVO(key, attributes);
 
-			logger.info("api " + key);
 			vo.showContent();
 			reqRespParamVOMap.put(key, vo);
 		});
@@ -193,7 +188,7 @@ public class ExcelReadBuilderTest {
 				System.out.println("      operationId: " + vo.getApiName().toUpperCase());
 				System.out.println("      parameters:");
 				System.out.print(HeaderUtil.getMethodHeadersString());
-				System.out.println(PathUtil.getPathParamString(vo.getReqPath()));
+				System.out.println(PathUtil.getPathParamString(vo.getOriginalPathWithQuery()));
 			}
 
 			List<MVPScopeVO> attributes = apiNameToApiDataMapFromExcel.get(key);
@@ -212,7 +207,11 @@ public class ExcelReadBuilderTest {
 
 	private void showResponseRefDeclaration(String key, ReqRespParamVO vo) {
 		String refKey = TextUtil.nameToLowerCaseAndDash(key + " " + GenTypeEnum.RESPONSE.getMessage());
-		System.out.println(SchemaBodyUtil.genResponseSchemaText(refKey));
+		boolean withRespObj = false;
+		if (vo.getMapOfRespObjectArrayList().size() > 0 || vo.getMapOfRespObjectList().size() > 0) {
+			withRespObj = true;
+		}
+		System.out.println(SchemaBodyUtil.genResponseSchemaText(refKey, withRespObj));
 	}
 
 	/**
@@ -285,8 +284,10 @@ components:
 				refKey = TextUtil.nameToLowerCaseAndDash(key + " " + GenTypeEnum.REQUEST.getMessage());
 				printRefObject(refKey, reqRespParamVO.getMapOfInputObjectList(), reqRespParamVO.getMapOfInputObjectArrayList());
 			}
-			refKey = TextUtil.nameToLowerCaseAndDash(key + " " + GenTypeEnum.RESPONSE.getMessage());
-			printRefObject(refKey, reqRespParamVO.getMapOfRespObjectList(), reqRespParamVO.getMapOfRespObjectArrayList());
+			if (reqRespParamVO.getMapOfRespObjectList().size() > 0 || reqRespParamVO.getMapOfRespObjectArrayList().size() > 0) {
+				refKey = TextUtil.nameToLowerCaseAndDash(key + " " + GenTypeEnum.RESPONSE.getMessage());
+				printRefObject(refKey, reqRespParamVO.getMapOfRespObjectList(), reqRespParamVO.getMapOfRespObjectArrayList());
+			}
 		}
 	}
 

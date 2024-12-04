@@ -8,18 +8,19 @@ public class SchemaBodyUtil {
 		if (type == GenTypeEnum.REQUEST) {
 			return genRequestSchemaText(refKey);
 		} else {
-			return genResponseSchemaText(refKey);
+			return genResponseSchemaText(refKey, true);
 		}
 	}
 
 	/**
-	 * #formatter:off
+	 * @formatter:off 
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/test-refactor2-request'
-	 * #formatter:on
+              $ref: '#/components/schemas/new-ilc-reception-modify-request'
+	 * @formatter:on
+	 * 
 	 * @param refKey
 	 * @return
 	 */
@@ -35,7 +36,7 @@ public class SchemaBodyUtil {
 	}
 
 	/**
-	 * #formatter:off
+	 * @formatter:off 
       responses:
         '200':
           description: OK
@@ -43,7 +44,7 @@ public class SchemaBodyUtil {
             application/json:
               schema:
                 anyOf:
-                  - $ref: '#/components/schemas/draft-details-response'
+                  - $ref: '#/components/schemas/new-ilc-reception-enquire-response'
                   - $ref: '#/components/schemas/api-messages'
         '400':
           description: INVALID INPUT
@@ -57,30 +58,33 @@ public class SchemaBodyUtil {
             application/json:
               schema:
                 $ref: '#/components/schemas/api-messages'
-	 * #formatter:on
+	 * $formatter:on
+	 * 
 	 * @param refKey
 	 * @return
 	 */
-	public static final String genResponseSchemaText(String refKey) {
+	public static final String genResponseSchemaText(String refKey, boolean showResponseObj) {
 		StringBuilder sb = new StringBuilder();
 		sb.append("      responses:").append("\n");
 		sb.append("        '200':").append("\n");
 		sb.append("          description: OK").append("\n");
 		sb.append("          content:").append("\n");
 		sb.append("            application/json:").append("\n");
-		
+
 		sb.append("              schema:").append("\n");
 		sb.append("                anyOf:").append("\n");
-		sb.append("                  - $ref: '#/components/schemas/").append(refKey).append("'").append("\n");
+		if (showResponseObj) {
+			sb.append("                  - $ref: '#/components/schemas/").append(refKey).append("'").append("\n");
+		}
 		sb.append("                  - $ref: '#/components/schemas/api-messages'").append("\n");
-		
+
 		sb.append("        '400':").append("\n");
 		sb.append("          description: INVALID INPUT").append("\n");
 		sb.append("          content:").append("\n");
 		sb.append("            application/json:").append("\n");
 		sb.append("              schema:").append("\n");
 		sb.append("                $ref: '#/components/schemas/api-messages'").append("\n");
-		
+
 		sb.append("        '500':").append("\n");
 		sb.append("          description: FAILURE").append("\n");
 		sb.append("          content:").append("\n");

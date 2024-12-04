@@ -8,9 +8,12 @@ import com.vincent.coretest.reader.HeaderUtil;
 
 public class HeaderUtilTest {
 	protected final Logger logger = LoggerFactory.getLogger(HeaderUtilTest.class);
+
 	@Test
 	public void testMethodHeader() {
 		String methodHeader = HeaderUtil.getMethodHeadersString();
 		logger.info("{}", methodHeader);
 	}
+
+
 }

@@ -38,7 +38,6 @@ public class DomainTypeUtil {
 				}
 				sb.append(";");
 				description = sb.toString();
-				logger.info("desc AAAAA {}", description);
 			} else if (domainValueArr.length == 1) {
 				String key = domainValueArr[0].trim();
 				if (domainToTypesMap.containsKey(key)) {
@@ -47,7 +46,6 @@ public class DomainTypeUtil {
 					sb.append(" Allowed values:");
 					sb.append(domainToTypesMap.get(key));
 					description = sb.toString();
-					logger.info("desc BBBBB {}", description);
 				}
 			}
 		}

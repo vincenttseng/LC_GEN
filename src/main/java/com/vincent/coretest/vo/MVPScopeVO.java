@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.vincent.coretest.enumeration.GenTypeEnum;
+import com.vincent.coretest.util.HttpUtils;
 
 import lombok.Data;
 import lombok.Getter;
@@ -34,6 +35,7 @@ public class MVPScopeVO {
 
 	String httpMethod = null;
 	String reqPath = null;
+	String originalPathWithQuery = null;
 
 	String domainValue = null;
 
@@ -106,7 +108,9 @@ public class MVPScopeVO {
 		}
 		int offset = path.indexOf("/");
 		httpMethod = path.substring(0, offset);
-		reqPath = path.substring(offset);
+		originalPathWithQuery = path.substring(offset);
+		
+		reqPath = HttpUtils.showURIWithoutQuery(originalPathWithQuery);
 
 		index = headerMap.get("Request/Response");
 		if (index != null) {

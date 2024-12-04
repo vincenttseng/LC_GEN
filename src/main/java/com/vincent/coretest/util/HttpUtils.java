@@ -8,6 +8,7 @@ import java.net.NetworkInterface;
 import java.net.SocketException;
 import java.util.Enumeration;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
@@ -75,5 +76,15 @@ public class HttpUtils {
 			}
 		}
 		return "";
+	}
+
+	public static String showURIWithoutQuery(String path) {
+		if (StringUtils.isNotBlank(path)) {
+			int index = path.indexOf("?");
+			return (index > 0) ? path.substring(0, index) : path;
+		} else {
+			return path;
+		}
+
 	}
 }
