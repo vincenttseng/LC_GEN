@@ -200,36 +200,42 @@
 			<artifactId>httpclient</artifactId>
 			<version>4.5.6</version>
 		</dependency>
-      <dependency>
-             <groupId>org.apache.poi</groupId>
-             <artifactId>poi</artifactId>
-             <version>3.9</version>
-      </dependency>
-      <dependency>
-             <groupId>org.apache.poi</groupId>
-             <artifactId>poi-ooxml</artifactId>
-             <version>3.9</version>
-      </dependency>
-      <dependency>
-             <groupId>org.apache.poi</groupId>
-             <artifactId>poi-ooxml-schemas</artifactId>
-             <version>3.9</version>
-      </dependency>
-      <dependency>
-             <groupId>org.apache.poi</groupId>
-             <artifactId>poi-scratchpad</artifactId>
-             <version>3.9</version>
-      </dependency>
-      <dependency>
-             <groupId>org.apache.poi</groupId>
-             <artifactId>ooxml-schemas</artifactId>
-             <version>1.1</version>
-      </dependency>
-      <dependency>
-             <groupId>org.apache.poi</groupId>
-             <artifactId>openxml4j</artifactId>
-             <version>1.0-beta</version>
-      </dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>3.9</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>3.9</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml-schemas</artifactId>
+			<version>3.9</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-scratchpad</artifactId>
+			<version>3.9</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>ooxml-schemas</artifactId>
+			<version>1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>openxml4j</artifactId>
+			<version>1.0-beta</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.yaml/snakeyaml -->
+		<dependency>
+			<groupId>org.yaml</groupId>
+			<artifactId>snakeyaml</artifactId>
+			<version>2.3</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>

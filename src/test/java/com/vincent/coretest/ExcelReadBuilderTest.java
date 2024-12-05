@@ -110,7 +110,7 @@ public class ExcelReadBuilderTest {
 		Map<String, Integer> headerMap = ExcelReader.getHeaderIndex(xlsxFile);
 		List<Map<Integer, Object>> rowMapList = ExcelReader.getActiveRow(xlsxFile, false);
 
-		FuncGenEnum genEnum = FuncGenEnum.EXISTED; // NEW
+		FuncGenEnum genEnum = FuncGenEnum.NEW; // NEW EXISTED
 		String target = genEnum.getPrefix();
 		String ignoreTarget = genEnum.getIgnorePrefix();
 

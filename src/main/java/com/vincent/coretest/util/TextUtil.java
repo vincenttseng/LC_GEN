@@ -73,7 +73,7 @@ public class TextUtil {
 			int index0 = type.indexOf("(");
 			int index1 = type.indexOf(")");
 			if (index0 > 0 && index1 > 0 && index0 < index1) {
-				String subString = type.substring(index0+1, index1);
+				String subString = type.substring(index0 + 1, index1);
 				String[] tokens = subString.split(",");
 				for (String token : tokens) {
 					try {
@@ -86,6 +86,18 @@ public class TextUtil {
 		}
 
 		return list;
+	}
+
+	public static int objectToInt(Object obj, int defaultVal) {
+		try {
+			return Integer.parseInt(obj != null ? obj.toString() : null);
+		} catch (Exception e) {
+			return defaultVal;
+		}
+	}
+
+	public static String objectToString(Object obj, String defaultVal) {
+		return (obj != null) ? obj.toString() : defaultVal;
 	}
 
 }
