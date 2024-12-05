@@ -6,6 +6,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.vincent.coretest.enumeration.FuncGenEnum;
 import com.vincent.coretest.enumeration.GenTypeEnum;
 import com.vincent.coretest.util.HttpUtils;
 
@@ -20,6 +21,8 @@ import lombok.ToString;
 @ToString
 public class MVPScopeVO {
 	protected final Logger logger = LoggerFactory.getLogger(MVPScopeVO.class);
+
+	FuncGenEnum genEnum = FuncGenEnum.EXISTED;
 
 	int rowIndex = 0;
 	String type = "";
@@ -43,11 +46,26 @@ public class MVPScopeVO {
 
 	String domainValue = null;
 
+	Map<String, Integer> headerMap = null;
 	Map<Integer, Object> rowData = null;
 
-	public MVPScopeVO(Map<String, Integer> headerMap, Map<Integer, Object> rowData) {
+	public MVPScopeVO(FuncGenEnum genEnum, Map<String, Integer> headerMap, Map<Integer, Object> rowData) {
+		this.genEnum = genEnum;
+		this.headerMap = headerMap;
 		this.rowData = rowData;
 
+		handleInitData();
+	}
+
+	public MVPScopeVO(Map<String, Integer> headerMap, Map<Integer, Object> rowData) {
+		this.genEnum = FuncGenEnum.EXISTED;
+		this.headerMap = headerMap;
+		this.rowData = rowData;
+
+		handleInitData();
+	}
+
+	private void handleInitData() {
 		Object obj = rowData.get(-1);
 		if (obj instanceof Integer) {
 			rowIndex = ((Integer) obj).intValue();
@@ -138,6 +156,10 @@ public class MVPScopeVO {
 		}
 
 		reqPath = HttpUtils.showURIWithoutQuery(originalPathWithQuery);
+
+		if (genEnum == FuncGenEnum.NEW && reqPath.toLowerCase().contains("v2")) {
+			apiName = "V2 " + apiName;
+		}
 
 		index = headerMap.get("Request/Response");
 		if (index != null) {

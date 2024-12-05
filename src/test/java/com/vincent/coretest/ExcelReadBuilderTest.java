@@ -15,6 +15,7 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.vincent.coretest.enumeration.FuncGenEnum;
 import com.vincent.coretest.enumeration.GenTypeEnum;
 import com.vincent.coretest.reader.ExcelReader;
 import com.vincent.coretest.reader.HeaderUtil;
@@ -53,11 +54,10 @@ public class ExcelReadBuilderTest {
 			return;
 		}
 
-		String target = "e";
-		String ignoreTarget = "n";
+		FuncGenEnum genEnum = FuncGenEnum.NEW; // NEW
 
-//		String target = "n";
-//		String ignoreTarget = "e";
+		String target = genEnum.getPrefix();
+		String ignoreTarget = genEnum.getIgnorePrefix();
 
 		File[] dirFiles = targetFolderFile.listFiles();
 
@@ -74,7 +74,7 @@ public class ExcelReadBuilderTest {
 
 			int activeCnt = 0;
 			for (Map<Integer, Object> rowData : rowMapList) {
-				MVPScopeVO vo = new MVPScopeVO(headerMap, rowData);
+				MVPScopeVO vo = new MVPScopeVO(genEnum, headerMap, rowData);
 
 				if (vo.getApiType() != null && vo.getApiType().toLowerCase().startsWith(target)) {
 					logger.info("{}", vo);
@@ -110,11 +110,10 @@ public class ExcelReadBuilderTest {
 		Map<String, Integer> headerMap = ExcelReader.getHeaderIndex(xlsxFile);
 		List<Map<Integer, Object>> rowMapList = ExcelReader.getActiveRow(xlsxFile, false);
 
-//		String target = "n";
-//		String ignoreTarget = "e";
+		FuncGenEnum genEnum = FuncGenEnum.EXISTED; // NEW
+		String target = genEnum.getPrefix();
+		String ignoreTarget = genEnum.getIgnorePrefix();
 
-		String target = "e";
-		String ignoreTarget = "n";
 		for (Map<Integer, Object> rowData : rowMapList) {
 			MVPScopeVO vo = new MVPScopeVO(headerMap, rowData);
 
