@@ -53,11 +53,11 @@ public class ExcelReadBuilderTest {
 			return;
 		}
 
-//		String target = "e";
-//		String ignoreTarget = "n";
+		String target = "e";
+		String ignoreTarget = "n";
 
-		String target = "n";
-		String ignoreTarget = "e";
+//		String target = "n";
+//		String ignoreTarget = "e";
 
 		File[] dirFiles = targetFolderFile.listFiles();
 
@@ -67,9 +67,9 @@ public class ExcelReadBuilderTest {
 			}
 
 			logger.info("handling {}", xlsxFile);
-			Map<String, Integer> headerMap = ExcelReader.getHeaderIndex(xlsxFile.getAbsolutePath(), "B4-001");
+			Map<String, Integer> headerMap = ExcelReader.getHeaderIndex(xlsxFile.getAbsolutePath());
 			logger.info("header {}", headerMap);
-			List<Map<Integer, Object>> rowMapList = ExcelReader.getActiveRow(xlsxFile.getAbsolutePath(), "B4-001", false);
+			List<Map<Integer, Object>> rowMapList = ExcelReader.getActiveRow(xlsxFile.getAbsolutePath(), false);
 			logger.info("size {}", rowMapList.size());
 
 			int activeCnt = 0;
@@ -107,8 +107,8 @@ public class ExcelReadBuilderTest {
 		logger.info("buildYamlFromExcelForNew");
 
 		String xlsxFile = ".\\src\\test\\input\\MVP3 scope for TF_LC_B4_001 2.xlsx";
-		Map<String, Integer> headerMap = ExcelReader.getHeaderIndex(xlsxFile, "B4-001");
-		List<Map<Integer, Object>> rowMapList = ExcelReader.getActiveRow(xlsxFile, "B4-001", false);
+		Map<String, Integer> headerMap = ExcelReader.getHeaderIndex(xlsxFile);
+		List<Map<Integer, Object>> rowMapList = ExcelReader.getActiveRow(xlsxFile, false);
 
 //		String target = "n";
 //		String ignoreTarget = "e";

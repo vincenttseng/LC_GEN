@@ -24,8 +24,8 @@ public class ReqRespParamVOTest {
 	@Test
 	public void testListing() {
 		logger.info("buildYamlFromExcelForNew");
-		Map<String, Integer> headerMap = ExcelReader.getHeaderIndex(xlsxFile, "B4-001");
-		List<Map<Integer, Object>> rows = ExcelReader.getActiveRow(xlsxFile, "B4-001", false);
+		Map<String, Integer> headerMap = ExcelReader.getHeaderIndex(xlsxFile);
+		List<Map<Integer, Object>> rows = ExcelReader.getActiveRow(xlsxFile, false);
 
 		for (Map<Integer, Object> rowData : rows) {
 			MVPScopeVO vo = new MVPScopeVO(headerMap, rowData);

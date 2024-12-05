@@ -17,8 +17,8 @@ public class MVPScopeVOTest {
 	@Test
 	public void testListing() {
 		logger.info("testListing");
-		Map<String, Integer> headerMap = ExcelReader.getHeaderIndex(xlsxFile, "B4-001");
-		List<Map<Integer, Object>> rows = ExcelReader.getActiveRow(xlsxFile, "B4-001", false);
+		Map<String, Integer> headerMap = ExcelReader.getHeaderIndex(xlsxFile);
+		List<Map<Integer, Object>> rows = ExcelReader.getActiveRow(xlsxFile, false);
 
 		for (Map<Integer, Object> rowData : rows) {
 			MVPScopeVO vo = new MVPScopeVO(headerMap, rowData);
@@ -30,7 +30,7 @@ public class MVPScopeVOTest {
 	@Test
 	public void testHeader() {
 		logger.info("testHeader");
-		Map<String, Integer> map = ExcelReader.getHeaderIndex(xlsxFile, "B4-001");
+		Map<String, Integer> map = ExcelReader.getHeaderIndex(xlsxFile);
 
 		map.keySet().stream().forEach(key -> {
 			logger.info("key {} => {}", key, map.get(key));

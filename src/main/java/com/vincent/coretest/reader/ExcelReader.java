@@ -18,7 +18,7 @@ import org.slf4j.LoggerFactory;
 public class ExcelReader {
 	protected static final Logger logger = LoggerFactory.getLogger(ExcelReader.class);
 
-	public static List<Map<Integer, Object>> getActiveRow(String xlsxFile, String sheetName, boolean includeHeader) {
+	public static List<Map<Integer, Object>> getActiveRow(String xlsxFile, boolean includeHeader) {
 		List<Map<Integer, Object>> rowMapList = new ArrayList<Map<Integer, Object>>();
 
 		InputStream excelFileToRead = null;
@@ -27,7 +27,7 @@ public class ExcelReader {
 			excelFileToRead = new FileInputStream(xlsxFile);
 			wb = new XSSFWorkbook(excelFileToRead);
 
-			XSSFSheet sheet = readSheet(wb);
+			XSSFSheet sheet = readB4Sheet(wb);
 
 			if (sheet == null) {
 				logger.info("no sheet found");
@@ -100,7 +100,7 @@ public class ExcelReader {
 		return rowMapList;
 	}
 
-	public static Map<String, Integer> getHeaderIndex(String xlsxFile, String sheetName) {
+	public static Map<String, Integer> getHeaderIndex(String xlsxFile) {
 		Map<String, Integer> result = new HashMap<String, Integer>();
 
 		InputStream excelFileToRead = null;
@@ -109,7 +109,7 @@ public class ExcelReader {
 			excelFileToRead = new FileInputStream(xlsxFile);
 			wb = new XSSFWorkbook(excelFileToRead);
 
-			XSSFSheet sheet = readSheet(wb);
+			XSSFSheet sheet = readB4Sheet(wb);
 
 			if (sheet == null) {
 				logger.info("no sheet found");
@@ -158,7 +158,7 @@ public class ExcelReader {
 		return result;
 	}
 
-	private static XSSFSheet readSheet(XSSFWorkbook wb) {
+	private static XSSFSheet readB4Sheet(XSSFWorkbook wb) {
 		XSSFSheet sheet = null;
 		try {
 			int sheetCnt = wb.getNumberOfSheets();

@@ -37,10 +37,10 @@ public class ExcelReaderSampleTest {
 				continue;
 			}
 			logger.info("handling {}", xlsxFile);
-			Map<String, Integer> headerMap = ExcelReader.getHeaderIndex(xlsxFile.getAbsolutePath(), "B4-001");
+			Map<String, Integer> headerMap = ExcelReader.getHeaderIndex(xlsxFile.getAbsolutePath());
 			logger.info("header {}", headerMap);
-			
-			List<Map<Integer, Object>> rowMapList = ExcelReader.getActiveRow(xlsxFile.getAbsolutePath(), "B4-001", false);
+
+			List<Map<Integer, Object>> rowMapList = ExcelReader.getActiveRow(xlsxFile.getAbsolutePath(), false);
 			logger.info("size {}", rowMapList.size());
 		}
 	}
