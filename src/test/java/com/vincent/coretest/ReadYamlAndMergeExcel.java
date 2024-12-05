@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import org.junit.Test;
@@ -15,14 +16,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.yaml.snakeyaml.Yaml;
 
+import com.vincent.coretest.util.ComponentsUtil;
 import com.vincent.coretest.yamlvo.HttpMethodDetailsVO;
 
 public class ReadYamlAndMergeExcel {
 	protected final Logger logger = LoggerFactory.getLogger(ReadYamlAndMergeExcel.class);
-
-	String path = "";
-
-	String[] httpMethods = { "get", "post", "put", "patch" };
 
 	@Test
 	public void testReadYamlAndMergeExcelThenGenNew() throws FileNotFoundException {
@@ -41,7 +39,7 @@ public class ReadYamlAndMergeExcel {
 		HashMap yamlMap = yaml.load(inputStream);
 		HashMap pathsMap = (HashMap) yamlMap.get("paths");
 
-		List<HttpMethodDetailsVO> result = new ArrayList<HttpMethodDetailsVO>();
+		List<HttpMethodDetailsVO> theHttpMethodDetailsVO = new ArrayList<HttpMethodDetailsVO>();
 
 		@SuppressWarnings("unchecked")
 		Set<String> pathSet = pathsMap.keySet();
@@ -50,9 +48,18 @@ public class ReadYamlAndMergeExcel {
 			LinkedHashMap methodDefMap = (LinkedHashMap) pathsMap.get(path);
 			HttpMethodDetailsVO vo = HttpMethodDetailsVO.of(path, methodDefMap);
 			if (vo != null) {
-				result.add(vo);
+				theHttpMethodDetailsVO.add(vo);
 			}
 		}
-		logger.info("list result {}", result);
+		logger.info("list result {}", theHttpMethodDetailsVO);
+		for (HttpMethodDetailsVO vo : theHttpMethodDetailsVO) {
+			logger.info("vo {} {}", vo.getPath(), vo.getHttpMethod());
+			logger.info("req {}", vo.getReqRef());
+			logger.info("resp {}", vo.getResponseList());
+		}
+
+		HashMap componentsMap = (HashMap) yamlMap.get("components");
+		logger.info("{}", componentsMap);
+		Map map = ComponentsUtil.parseComponents(componentsMap);
 	}
 }
