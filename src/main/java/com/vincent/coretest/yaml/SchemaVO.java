@@ -1,4 +1,4 @@
-package com.vincent.coretest.yamlvo;
+package com.vincent.coretest.yaml;
 
 import java.util.LinkedHashMap;
 import java.util.List;

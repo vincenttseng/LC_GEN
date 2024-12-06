@@ -1,4 +1,4 @@
-package com.vincent.coretest.yamlvo;
+package com.vincent.coretest.yaml;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -23,8 +23,6 @@ import lombok.ToString;
 @Setter
 @ToString
 public class HttpMethodDetailsVO {
-	protected static final Logger logger = LoggerFactory.getLogger(HttpMethodDetailsVO.class);
-
 	String path;
 	String httpMethod;
 
@@ -50,7 +48,6 @@ public class HttpMethodDetailsVO {
 		HttpMethodDetailsVO vo = new HttpMethodDetailsVO();
 		vo.path = path;
 		for (String key : keySet) {
-			logger.info(key);
 			vo.httpMethod = key;
 			LinkedHashMap linkedMap = (LinkedHashMap) methodDetails.get(key);
 			setValue(vo, linkedMap);
@@ -63,7 +60,6 @@ public class HttpMethodDetailsVO {
 
 	@SuppressWarnings("unchecked")
 	public static void setValue(HttpMethodDetailsVO vo, LinkedHashMap linkedMap) {
-		logger.info("map {}", linkedMap);
 		linkedMap.forEach((key, value) -> {
 			if ("tags".equals(key)) {
 				if (value instanceof ArrayList) {
@@ -82,7 +78,7 @@ public class HttpMethodDetailsVO {
 			} else if ("responses".equals(key)) {
 				setResponses(vo, value);
 			} else {
-				logger.info("ignore {} {}", key, value);
+
 			}
 
 		});
@@ -169,7 +165,6 @@ public class HttpMethodDetailsVO {
 										obj = map.get("schema");
 										if (obj instanceof LinkedHashMap) {
 											map = (LinkedHashMap) obj;
-											logger.info("map {}", map);
 											if (map.containsKey("$ref")) {
 												String path = TextUtil.objectToString(map.get("$ref"), null);
 												if (path != null) {
