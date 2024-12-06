@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -98,6 +99,46 @@ public class TextUtil {
 
 	public static String objectToString(Object obj, String defaultVal) {
 		return (obj != null) ? obj.toString() : defaultVal;
+	}
+
+	public static final int countLeadSpace(String line) {
+		if (StringUtils.isBlank(line)) {
+			return 0;
+		}
+		for (int i = 0; i < line.length(); i++) {
+			if (line.charAt(i) != ' ') {
+				return i;
+			}
+		}
+		return -1;
+	}
+
+	public static String removeEndingSemicolon(String line) {
+		if (StringUtils.isBlank(line) || !line.endsWith(":")) {
+			return StringUtils.trim(line);
+		} else {
+			return StringUtils.trim(line.substring(0, line.length() - 1));
+		}
+	}
+
+	public static String getHttpMethodFromYamlWithComments(String line) {
+		int indexSemi = line.indexOf(":");
+		int indexComment = line.indexOf("#");
+		if (indexComment > indexSemi) {
+			return removeEndingSemicolon(StringUtils.trim(line.substring(0, indexSemi)));
+		} else {
+			return removeEndingSemicolon(line);
+		}
+	}
+
+	public static String getCommentsFromYamlWithMethodComments(String line) {
+		int indexSemi = line.indexOf(":");
+		int indexComment = line.indexOf("#");
+		if (indexComment > indexSemi) {
+			return StringUtils.trim(line.substring(indexComment));
+		} else {
+			return "";
+		}
 	}
 
 }

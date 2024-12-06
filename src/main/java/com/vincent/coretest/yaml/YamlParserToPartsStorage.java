@@ -26,6 +26,7 @@ public class YamlParserToPartsStorage {
 
 	List<HttpMethodDetailsVO> theHttpMethodDetailsVOList = new ArrayList<HttpMethodDetailsVO>();
 	ComponentsDataStorage componentsStorage = null;
+	List<String> rootEleList = new ArrayList<String>();
 
 	public void readYamlAndMergeExcelThenGenNew(String targetPath) throws FileNotFoundException {
 		logger.info("readYamlAndMergeExcelThenGenNew");
@@ -35,6 +36,8 @@ public class YamlParserToPartsStorage {
 		System.out.println(inputStream);
 
 		HashMap yamlMap = yaml.load(inputStream);
+		rootEleList.addAll(yamlMap.keySet());
+
 		HashMap pathsMap = (HashMap) yamlMap.get("paths");
 
 		@SuppressWarnings("unchecked")

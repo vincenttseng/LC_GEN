@@ -1,23 +1,13 @@
 package com.vincent.coretest;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
 
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.yaml.snakeyaml.Yaml;
 
-import com.vincent.coretest.yaml.ComponentsDataStorage;
-import com.vincent.coretest.yaml.HttpMethodDetailsVO;
+import com.vincent.coretest.yaml.PathDataStorage;
 import com.vincent.coretest.yaml.YamlParserToPartsStorage;
 
 public class ReadYamlAndMergeExcelTest {
@@ -36,10 +26,17 @@ public class ReadYamlAndMergeExcelTest {
 		YamlParserToPartsStorage yamlData = new YamlParserToPartsStorage();
 		yamlData.readYamlAndMergeExcelThenGenNew(targetPath);
 
-		logger.info("================>show RESTFul Data");
-		yamlData.showData();
+//		yamlData.getRootEleList().stream().forEach(element -> {
+//			logger.info(element);
+//		});
 
-		logger.info("================>show components");
-		yamlData.getComponentsStorage().showData();
+//		logger.info("================>show RESTFul Data");
+//		yamlData.showData();
+//
+//		logger.info("================>show components");
+//		yamlData.getComponentsStorage().showData();
+
+		PathDataStorage pathData = new PathDataStorage();
+		pathData.split(targetPath, yamlData.getRootEleList(), yamlData.getTheHttpMethodDetailsVOList());
 	}
 }
