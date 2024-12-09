@@ -16,5 +16,10 @@ import lombok.ToString;
 public class RESTFulDataVO {
 	String path;
 	String httpMethod;
+	String comments;
 	List<String> content;
+
+	public RESTFulKey getKey() {
+		return new RESTFulKey(path, httpMethod);
+	}
 }

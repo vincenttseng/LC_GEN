@@ -54,7 +54,7 @@ public class ExcelReadBuilderTest {
 			return;
 		}
 
-		FuncGenEnum genEnum = FuncGenEnum.NEW; // NEW
+		FuncGenEnum genEnum = FuncGenEnum.EXISTED; // NEW EXISTED
 
 		String target = genEnum.getPrefix();
 		String ignoreTarget = genEnum.getIgnorePrefix();

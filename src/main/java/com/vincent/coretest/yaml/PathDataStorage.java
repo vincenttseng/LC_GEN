@@ -7,6 +7,8 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -29,22 +31,26 @@ import lombok.ToString;
 public class PathDataStorage {
 	protected final Logger logger = LoggerFactory.getLogger(PathDataStorage.class);
 
-	Map<String, List<String>> pathContentMap;
+	Map<RESTFulKey, RESTFulDataVO> restfulReqYamlContentMap = new HashMap<RESTFulKey, RESTFulDataVO>();
 
-	public void split(String filePath, List<String> rootList, List<HttpMethodDetailsVO> theHttpMethodDetailsVOList) {
+	public void splitFromYaml(String filePath, List<String> rootList, List<HttpMethodDetailsVO> theHttpMethodDetailsVOList) {
 		logger.info("rootList " + rootList);
 		List<String> pathContentList = getPathsContent(filePath, rootList);
 		List<PathContentVO> pathContentVOList = splitByUrlRequest(pathContentList);
 		List<RESTFulDataVO> restFulDataVOList = spreadOutMethodContent(pathContentVOList);
 
 		restFulDataVOList.stream().forEach(data -> {
-			logger.info("#######################################");
-			logger.info("!!!!!" + data.getPath() + "====" + data.getHttpMethod());
-			data.getContent().stream().forEach(line -> {
-				logger.info(line);
-			});
+			restfulReqYamlContentMap.put(data.getKey(), data);
 		});
 
+		restfulReqYamlContentMap.forEach((key, value) -> {
+			logger.info("RESTFulKey key {} {}", key.getClass());
+			logger.info("RESTFulKeyValue: key {} {} {}", value.getPath(), value.getHttpMethod(), value.getComments());
+			List<String> contents = value.getContent();
+			contents.stream().forEach(line -> {
+				System.out.println(line);
+			});
+		});
 	}
 
 	private List<RESTFulDataVO> spreadOutMethodContent(List<PathContentVO> pathContentVOList) {
@@ -55,6 +61,7 @@ public class PathDataStorage {
 			List<String> theContentList = aPathContentVO.getContentList();
 
 			String currentMethod = null;
+			String currentComments = null;
 			List<String> tmpContentList = new ArrayList<String>();
 			for (String line : theContentList) {
 				int spaceCnt = countLeadSpace(line);
@@ -63,18 +70,19 @@ public class PathDataStorage {
 						List<String> contentList = new ArrayList<String>();
 						contentList.addAll(tmpContentList);
 						if (contentList == null || contentList.size() > 0) {
-							RESTFulDataVO aRESTFulDataVO = new RESTFulDataVO(theUrl, currentMethod, contentList);
+							RESTFulDataVO aRESTFulDataVO = new RESTFulDataVO(theUrl, currentMethod, currentComments, contentList);
 							restFulDataVOList.add(aRESTFulDataVO);
 						}
 					}
 					tmpContentList.clear();
-					currentMethod = TextUtil.getHttpMethodFromYamlWithComments(line.substring(4));
+					currentMethod = TextUtil.getHttpMethodFromYamlMethodComments(line.substring(4));
+					currentComments = TextUtil.getCommentsFromYamlMethodComments(line.substring(4));
 				} else {
 					tmpContentList.add(line);
 				}
 			}
 			if (currentMethod != null && tmpContentList.size() > 0) {
-				RESTFulDataVO aRESTFulDataVO = new RESTFulDataVO(theUrl, currentMethod, tmpContentList);
+				RESTFulDataVO aRESTFulDataVO = new RESTFulDataVO(theUrl, currentMethod, currentComments, tmpContentList);
 				restFulDataVOList.add(aRESTFulDataVO);
 			}
 		}

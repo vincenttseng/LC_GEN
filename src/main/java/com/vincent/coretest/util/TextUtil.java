@@ -121,7 +121,7 @@ public class TextUtil {
 		}
 	}
 
-	public static String getHttpMethodFromYamlWithComments(String line) {
+	public static String getHttpMethodFromYamlMethodComments(String line) {
 		int indexSemi = line.indexOf(":");
 		int indexComment = line.indexOf("#");
 		if (indexComment > indexSemi) {
@@ -131,7 +131,7 @@ public class TextUtil {
 		}
 	}
 
-	public static String getCommentsFromYamlWithMethodComments(String line) {
+	public static String getCommentsFromYamlMethodComments(String line) {
 		int indexSemi = line.indexOf(":");
 		int indexComment = line.indexOf("#");
 		if (indexComment > indexSemi) {

@@ -32,7 +32,8 @@ public class TextUtilTest {
 	@Test
 	public void testSemiComment() {
 		String tmp = "    patch: #LC75 path";
-		logger.info(TextUtil.getCommentsFromYamlWithMethodComments(tmp));
-		logger.info(TextUtil.getHttpMethodFromYamlWithComments(tmp));
+		logger.info(TextUtil.getHttpMethodFromYamlMethodComments(tmp));
+		logger.info(TextUtil.getCommentsFromYamlMethodComments(tmp));
+		
 	}
 }

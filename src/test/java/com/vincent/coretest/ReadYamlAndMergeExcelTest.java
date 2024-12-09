@@ -37,6 +37,6 @@ public class ReadYamlAndMergeExcelTest {
 //		yamlData.getComponentsStorage().showData();
 
 		PathDataStorage pathData = new PathDataStorage();
-		pathData.split(targetPath, yamlData.getRootEleList(), yamlData.getTheHttpMethodDetailsVOList());
+		pathData.splitFromYaml(targetPath, yamlData.getRootEleList(), yamlData.getTheHttpMethodDetailsVOList());
 	}
 }
