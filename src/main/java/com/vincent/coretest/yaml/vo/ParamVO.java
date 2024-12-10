@@ -1,4 +1,4 @@
-package com.vincent.coretest.yaml;
+package com.vincent.coretest.yaml.vo;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;

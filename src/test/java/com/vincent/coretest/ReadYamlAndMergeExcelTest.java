@@ -7,8 +7,8 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.vincent.coretest.yaml.PathDataStorage;
 import com.vincent.coretest.yaml.YamlParserToPartsStorage;
+import com.vincent.coretest.yaml.textvo.PathDataStorage;
 
 public class ReadYamlAndMergeExcelTest {
 	protected final Logger logger = LoggerFactory.getLogger(ReadYamlAndMergeExcelTest.class);
@@ -36,7 +36,8 @@ public class ReadYamlAndMergeExcelTest {
 //		logger.info("================>show components");
 //		yamlData.getComponentsStorage().showData();
 
-		PathDataStorage pathData = new PathDataStorage();
-		pathData.splitFromYaml(targetPath, yamlData.getRootEleList(), yamlData.getTheHttpMethodDetailsVOList());
+		PathDataStorage pathDataStorage = new PathDataStorage();
+		pathDataStorage.splitFromYaml(targetPath, yamlData.getRootEleList(), yamlData.getTheHttpMethodDetailsVOList());
+		pathDataStorage.separateHeaderReqResponse();
 	}
 }

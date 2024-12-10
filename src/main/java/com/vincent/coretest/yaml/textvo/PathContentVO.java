@@ -1,4 +1,4 @@
-package com.vincent.coretest.yaml;
+package com.vincent.coretest.yaml.textvo;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.vincent.coretest.yaml;
+package com.vincent.coretest.yaml.textvo;
 
 import static com.vincent.coretest.util.TextUtil.countLeadSpace;
 import static com.vincent.coretest.util.TextUtil.removeEndingSemicolon;
@@ -8,14 +8,15 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.vincent.coretest.util.TextUtil;
+import com.vincent.coretest.yaml.vo.HttpMethodDetailsVO;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -34,7 +35,7 @@ public class PathDataStorage {
 	Map<RESTFulKey, RESTFulDataVO> restfulReqYamlContentMap = new HashMap<RESTFulKey, RESTFulDataVO>();
 
 	public void splitFromYaml(String filePath, List<String> rootList, List<HttpMethodDetailsVO> theHttpMethodDetailsVOList) {
-		logger.info("rootList " + rootList);
+		logger.info("splitFromYaml rootList " + rootList);
 		List<String> pathContentList = getPathsContent(filePath, rootList);
 		List<PathContentVO> pathContentVOList = splitByUrlRequest(pathContentList);
 		List<RESTFulDataVO> restFulDataVOList = spreadOutMethodContent(pathContentVOList);
@@ -43,14 +44,34 @@ public class PathDataStorage {
 			restfulReqYamlContentMap.put(data.getKey(), data);
 		});
 
-		restfulReqYamlContentMap.forEach((key, value) -> {
-			logger.info("RESTFulKey key {} {}", key.getClass());
-			logger.info("RESTFulKeyValue: key {} {} {}", value.getPath(), value.getHttpMethod(), value.getComments());
-			List<String> contents = value.getContent();
-			contents.stream().forEach(line -> {
-				System.out.println(line);
-			});
-		});
+//		AtomicBoolean found = new AtomicBoolean();
+//		found.set(false);
+//		restfulReqYamlContentMap.forEach((key, value) -> {
+//			logger.debug("RESTFulKey key {} {}", key.getClass());
+//			logger.debug("RESTFulKeyValue: key {} {} {}", value.getPath(), value.getHttpMethod(), value.getComments());
+//			List<String> contents = value.getContent();
+//			contents.stream().forEach(line -> {
+//				if (found.get() == false) {
+//					System.out.println(line);
+//				}
+//			});
+//			found.set(true);
+//		});
+	}
+
+	public void separateHeaderReqResponse() {
+		for (RESTFulDataVO vo : restfulReqYamlContentMap.values()) {
+			separateHeaderReqRespons(vo);
+		}
+	}
+
+	private void separateHeaderReqRespons(RESTFulDataVO vo) {
+		logger.info("separateHeaderReqRespons show data " + vo.getKey());
+		List<String> contentList = vo.getContent();
+		for (String line : contentList) {
+			int spaceCnt = countLeadSpace(line);
+			logger.info(spaceCnt + " =" + line);
+		}
 	}
 
 	private List<RESTFulDataVO> spreadOutMethodContent(List<PathContentVO> pathContentVOList) {
@@ -107,7 +128,10 @@ public class PathDataStorage {
 				tmpContentList.clear();
 				currentUrl = removeEndingSemicolon(line.substring(2));
 			} else {
-				tmpContentList.add(line);
+				int spaceNo = countLeadSpace(line);
+				if (spaceNo > 0) {
+					tmpContentList.add(line);
+				}
 			}
 		}
 		if (currentUrl != null && tmpContentList.size() > 0) {

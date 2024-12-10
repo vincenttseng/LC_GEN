@@ -14,6 +14,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.yaml.snakeyaml.Yaml;
 
+import com.vincent.coretest.yaml.vo.HttpMethodDetailsVO;
+
 import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -33,7 +35,7 @@ public class YamlParserToPartsStorage {
 
 		Yaml yaml = new Yaml();
 		InputStream inputStream = new FileInputStream(targetPath);
-		System.out.println(inputStream);
+		logger.info("{} {}", targetPath, inputStream);
 
 		HashMap yamlMap = yaml.load(inputStream);
 		rootEleList.addAll(yamlMap.keySet());
