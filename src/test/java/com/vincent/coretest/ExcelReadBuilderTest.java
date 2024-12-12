@@ -54,7 +54,7 @@ public class ExcelReadBuilderTest {
 			return;
 		}
 
-		FuncGenEnum genEnum = FuncGenEnum.EXISTED; // NEW EXISTED
+		FuncGenEnum genEnum = FuncGenEnum.NEW; // NEW EXISTED
 
 		String target = genEnum.getPrefix();
 		String ignoreTarget = genEnum.getIgnorePrefix();
@@ -134,6 +134,12 @@ public class ExcelReadBuilderTest {
 			if (StringUtils.isNotBlank(desc)) {
 				// logger.info("changing desc {}", desc);
 				vo.setDescription(desc);
+			}
+			if (StringUtils.isNotBlank(vo.getDescription())) {
+				int index = desc.indexOf(DomainTypeUtil.ALLOWED_VALUES);
+				if (index >= 0) {
+					vo.setDataType("number");
+				}
 			}
 		}
 		handleData();

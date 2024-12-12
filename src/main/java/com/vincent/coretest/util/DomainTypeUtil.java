@@ -19,6 +19,8 @@ public class DomainTypeUtil {
 		}
 	}
 
+	public static final String ALLOWED_VALUES = "Allowed values";
+	
 	public static String getDescriptionByDomainValue(String businessName, String domainValue) {
 		String description = null;
 		if (domainValue != null) {
@@ -27,7 +29,7 @@ public class DomainTypeUtil {
 			if (domainValueArr.length > 1) {
 				StringBuilder sb = new StringBuilder();
 				sb.append(businessName);
-				sb.append(" Allowed values:");
+				sb.append(" ").append(ALLOWED_VALUES).append(":");
 				boolean existed = false;
 				for (int i = 1; i < domainValueArr.length; i++) {
 					if (existed) {
@@ -43,7 +45,7 @@ public class DomainTypeUtil {
 				if (domainToTypesMap.containsKey(key)) {
 					StringBuilder sb = new StringBuilder();
 					sb.append(businessName);
-					sb.append(" Allowed values:");
+					sb.append(" ").append(ALLOWED_VALUES).append(":");
 					sb.append(domainToTypesMap.get(key));
 					description = sb.toString();
 				}
