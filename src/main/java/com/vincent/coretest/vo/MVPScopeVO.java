@@ -157,8 +157,8 @@ public class MVPScopeVO {
 
 		reqPath = HttpUtils.showURIWithoutQuery(originalPathWithQuery);
 
-		if (reqPath.toLowerCase().contains("v2")) {
-			apiName = "V2 " + apiName;
+		if (genEnum == FuncGenEnum.NEW && reqPath.toLowerCase().contains("v2")) {
+			apiName = new StringBuilder().append("V2 ").append(apiName).toString();
 		}
 
 		index = headerMap.get("Request/Response");
