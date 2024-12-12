@@ -157,7 +157,7 @@ public class MVPScopeVO {
 
 		reqPath = HttpUtils.showURIWithoutQuery(originalPathWithQuery);
 
-		if (genEnum == FuncGenEnum.NEW && reqPath.toLowerCase().contains("v2")) {
+		if (reqPath.toLowerCase().contains("v2")) {
 			apiName = "V2 " + apiName;
 		}
 
