@@ -14,6 +14,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.yaml.snakeyaml.Yaml;
 
+import com.vincent.coretest.vo.CVSVO;
 import com.vincent.coretest.yaml.vo.HttpMethodDetailsVO;
 
 import lombok.Data;
@@ -46,9 +47,9 @@ public class YamlParserToPartsStorage {
 		Set<String> pathSet = pathsMap.keySet();
 		for (String path : pathSet) {
 			LinkedHashMap methodDefMap = (LinkedHashMap) pathsMap.get(path);
-			HttpMethodDetailsVO vo = HttpMethodDetailsVO.of(path, methodDefMap);
-			if (vo != null) {
-				theHttpMethodDetailsVOList.add(vo);
+			List<HttpMethodDetailsVO> list = HttpMethodDetailsVO.of(path, methodDefMap);
+			if (list != null) {
+				theHttpMethodDetailsVOList.addAll(list);
 			}
 		}
 
@@ -59,9 +60,19 @@ public class YamlParserToPartsStorage {
 
 	public void showData() {
 		for (HttpMethodDetailsVO vo : theHttpMethodDetailsVOList) {
+			
 			logger.info("vo path:{} method:{}", vo.getPath(), vo.getHttpMethod());
+			logger.info("param {}", vo.getParams());
 			logger.info("req {}", vo.getReqRef());
-			logger.info("resp {}", vo.getResponseList());
+			logger.info("resp {} {}", vo.getRespType(), vo.getResponseList());
+		}
+	}
+	
+	public void printCVS() {
+		for (HttpMethodDetailsVO vo : theHttpMethodDetailsVOList) {
+			CVSVO csv = new CVSVO();
+			csv.setApiName(vo.getDescription());
+			
 		}
 	}
 }

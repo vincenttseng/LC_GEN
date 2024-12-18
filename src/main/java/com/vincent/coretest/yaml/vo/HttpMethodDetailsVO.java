@@ -10,6 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.vincent.coretest.util.TextUtil;
+import com.vincent.coretest.yaml.YamlParserToPartsStorage;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -23,6 +24,7 @@ import lombok.ToString;
 @Setter
 @ToString
 public class HttpMethodDetailsVO {
+	protected static final Logger logger = LoggerFactory.getLogger(HttpMethodDetailsVO.class);
 	String path;
 	String httpMethod;
 
@@ -34,28 +36,31 @@ public class HttpMethodDetailsVO {
 	LinkedHashMap requestBody;
 	String reqRef;
 	LinkedHashMap responses;
+	String respType = "";
 	List<String> responseList = new ArrayList<String>();
 
-	public static HttpMethodDetailsVO of(String path, LinkedHashMap methodDetails) {
+	public static List<HttpMethodDetailsVO> of(String path, LinkedHashMap methodDetails) {
+		final List<HttpMethodDetailsVO> methodVOList = new ArrayList<HttpMethodDetailsVO>();
 		if (methodDetails == null) {
-			return null;
+			return methodVOList;
 		}
 		Set<String> keySet = methodDetails.keySet();
 		if (keySet == null || keySet.size() == 0) {
-			return null;
+			return methodVOList;
 		}
 
-		HttpMethodDetailsVO vo = new HttpMethodDetailsVO();
-		vo.path = path;
 		for (String key : keySet) {
+			HttpMethodDetailsVO vo = new HttpMethodDetailsVO();
+			vo.path = path;
 			vo.httpMethod = key;
 			LinkedHashMap linkedMap = (LinkedHashMap) methodDetails.get(key);
 			setValue(vo, linkedMap);
+			vo.prepareReqRef();
+			vo.prepareResponseObj();
+			methodVOList.add(vo);
 		}
 
-		vo.prepareReqRef();
-		vo.prepareResponseObj();
-		return vo;
+		return methodVOList;
 	}
 
 	@SuppressWarnings("unchecked")
@@ -98,6 +103,44 @@ public class HttpMethodDetailsVO {
 			}
 		}
 		vo.setParams(paramList);
+	}
+
+//	public String getNodeName(LinkedHashMap map) {
+//		String nodeName = null;
+//		Object obj = null;
+//		if (requestBody != null) {
+//			logger.info("requestBody");
+//			if (requestBody.containsKey("content")) {
+//				nodeName = getNodeNameFromReq((LinkedHashMap) requestBody.get("content"));
+//			}
+//		}
+//		return nodeName;
+//	}
+
+	private static final String getNodeNameFromReq(LinkedHashMap map) {
+		if (map == null) {
+			return null;
+		}
+		LinkedHashMap tmpMap = new LinkedHashMap();
+		tmpMap.putAll(map);
+		Object tmpObj = null;
+		if (tmpMap.containsKey("application/json")) {
+			tmpObj = map.get("application/json");
+			if (tmpObj instanceof LinkedHashMap) {
+				tmpMap = (LinkedHashMap) tmpObj;
+				if (tmpMap.containsKey("schema")) {
+					tmpObj = map.get("schema");
+					if (tmpObj instanceof LinkedHashMap) {
+						tmpMap = (LinkedHashMap) tmpObj;
+						if (tmpMap.containsKey("$ref")) {
+							String value = map.get("$ref").toString();
+							logger.info("value {}", value);
+						}
+					}
+				}
+			}
+		}
+		return "";
 	}
 
 	@SuppressWarnings("rawtypes")
@@ -170,8 +213,14 @@ public class HttpMethodDetailsVO {
 												if (path != null) {
 													responseList.add(path);
 												}
-											} else if (map.containsKey("anyOf")) {
+											} else if (map.containsKey("anyOf") || map.containsKey("oneOf")) {
 												obj = map.get("anyOf");
+												if (obj != null) {
+													respType = "anyOf";
+												} else {
+													respType = "anyOf";
+													obj = map.get("oneOf");
+												}
 												if (obj instanceof ArrayList) {
 													ArrayList<?> list = (ArrayList) obj;
 													list.stream().forEach(value -> {

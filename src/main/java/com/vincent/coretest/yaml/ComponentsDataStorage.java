@@ -27,6 +27,9 @@ public class ComponentsDataStorage {
 	Set<String> baseRefSet = new ListOrderedSet<String>();
 	Set<String> scanedRefSet = new ListOrderedSet<String>();
 
+	Map<String, Object> basedRefMap = new HashMap<String, Object>();
+	Map<String, Object> scanedRefMap = new HashMap<String, Object>();
+
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public void parseComponents(final HashMap componentsMap) {
 		Map map = new HashMap();
@@ -37,16 +40,22 @@ public class ComponentsDataStorage {
 			obj = componentsMap.get("schemas");
 			if (obj instanceof LinkedHashMap) {
 				contentMap = (LinkedHashMap) obj;
-				contentMap.forEach((key, value) -> {
-					logger.debug("key {} {} value {} {}", key.getClass(), key, value.getClass(), value);
-					baseRefSet.add(key.toString());
-					if (value instanceof LinkedHashMap) {
-						LinkedHashMap dataMap = (LinkedHashMap) value;
-						findAllRef(1, scanedRefSet, dataMap);
-					}
-				});
+
+				handleSchemas(contentMap);
 			}
 		}
+	}
+
+	private void handleSchemas(LinkedHashMap contentMap) {
+		contentMap.forEach((key, value) -> {
+			logger.debug("key {} value {}", key, value);
+			baseRefSet.add(key.toString());
+			basedRefMap.put(key.toString(), value);
+			if (value instanceof LinkedHashMap) {
+				LinkedHashMap dataMap = (LinkedHashMap) value;
+				findAllRef(1, scanedRefSet, dataMap);
+			}
+		});
 	}
 
 	@SuppressWarnings("unchecked")
@@ -60,6 +69,7 @@ public class ComponentsDataStorage {
 
 				if ("$ref".equals(key)) {
 					scanedRefSet.add(value.toString());
+					scanedRefMap.put(value.toString(), value);
 					logger.debug("===>find ref " + value + " " + scanedRefSet.size());
 				}
 			});
@@ -68,13 +78,23 @@ public class ComponentsDataStorage {
 
 	public void showData() {
 		logger.info("**********");
-		logger.info("based ********** " + baseRefSet.size());
-		baseRefSet.stream().forEach(ref -> {
-			logger.info(" based =>" + ref + "<=");
+//		logger.info("based ********** " + baseRefSet.size());
+//		baseRefSet.stream().forEach(ref -> {
+//			logger.info(" based =>" + ref + "<=");
+//		});
+//		logger.info("scaned ********** " + scanedRefSet.size());
+//		scanedRefSet.stream().forEach(ref -> {
+//			logger.info(" scaned =>" + ref + "<=");
+//		});
+
+		logger.info("basedRefMap ********** " + scanedRefSet.size());
+		basedRefMap.forEach((key, value) -> {
+			logger.info("    key {} value {}", key, value);
 		});
-		logger.info("scaned ********** " + scanedRefSet.size());
-		scanedRefSet.stream().forEach(ref -> {
-			logger.info(" scaned =>" + ref + "<=");
+
+		logger.info("scanedRefMap ********** " + scanedRefSet.size());
+		scanedRefMap.forEach((key, value) -> {
+			logger.info("    key {} value {}", key, value);
 		});
 	}
 }

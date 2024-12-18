@@ -21,7 +21,7 @@ public class ReadYamlAndMergeExcelTest {
 		File rootDir = new File(root);
 		logger.info("root1 {}", rootDir.getAbsolutePath());
 
-		String targetPath = rootDir.getAbsolutePath() + "\\src\\test\\input\\OpenAPI_LC_ALL.yaml";
+		String targetPath = rootDir.getAbsolutePath() + "\\src\\test\\input\\ec\\sample1.yaml";
 
 		YamlParserToPartsStorage yamlData = new YamlParserToPartsStorage();
 		yamlData.readYamlAndMergeExcelThenGenNew(targetPath);
@@ -30,14 +30,17 @@ public class ReadYamlAndMergeExcelTest {
 //			logger.info(element);
 //		});
 
-//		logger.info("================>show RESTFul Data");
+		logger.info("================>show RESTFul Data");
 //		yamlData.showData();
-//
+		yamlData.printCVS();
+
 //		logger.info("================>show components");
 //		yamlData.getComponentsStorage().showData();
+		
+		
 
-		PathDataStorage pathDataStorage = new PathDataStorage();
-		pathDataStorage.splitFromYaml(targetPath, yamlData.getRootEleList(), yamlData.getTheHttpMethodDetailsVOList());
-		pathDataStorage.separateHeaderReqResponse();
+//		PathDataStorage pathDataStorage = new PathDataStorage();
+//		pathDataStorage.splitFromYaml(targetPath, yamlData.getRootEleList(), yamlData.getTheHttpMethodDetailsVOList());
+//		pathDataStorage.separateHeaderReqResponse();
 	}
 }
