@@ -19,4 +19,12 @@ public class DomainMapUtilTest {
 			logger.info(key + "=>" + map.get(key));
 		}
 	}
+	
+	@Test
+	public void testReadDomainNameToTypesMap() throws IOException {
+		Map<String, String> map = DomainMapUtil.readDomainNameToTypesMap();
+		for (String key : map.keySet()) {
+			logger.info(key + "=>" + map.get(key));
+		}
+	}
 }

@@ -10,7 +10,7 @@ import java.util.Map;
 import com.vincent.coretest.vo.TFType;
 
 public class TFTypeUtil {
-	private static final String TF_DAT_FILENAME = ".\\src\\test\\input\\TF.dat";
+	private static final String TF_DAT_FILENAME = ".\\src\\test\\input\\ref\\TF.dat";
 
 	public static final Map<String, TFType> readDTMap() throws IOException {
 		return readDTMap(TF_DAT_FILENAME);

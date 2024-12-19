@@ -12,8 +12,8 @@ import java.util.Map;
 import org.apache.commons.lang3.StringUtils;
 
 public class DomainMapUtil {
-	private static final String TYPE_TO_DOMAIN_FILENAME = ".\\src\\test\\input\\typeToDomain.txt";
-	private static final String DOMAINNAME_TO_DBTYPES_FILE = ".\\src\\test\\input\\domainRef.csv";
+	private static final String TYPE_TO_DOMAIN_FILENAME = ".\\src\\test\\input\\ref\\typeToDomain.txt";
+	private static final String DOMAINNAME_TO_DBTYPES_FILE = ".\\src\\test\\input\\ref\\domainRef.csv";
 
 	public static Map<String, String> readFileTypeToDomainMap() throws IOException {
 		return readFileTypeToDomainMap(TYPE_TO_DOMAIN_FILENAME);
