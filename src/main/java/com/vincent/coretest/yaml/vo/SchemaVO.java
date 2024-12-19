@@ -1,7 +1,6 @@
 package com.vincent.coretest.yaml.vo;
 
 import java.util.LinkedHashMap;
-import java.util.List;
 
 import com.vincent.coretest.util.TextUtil;
 
@@ -19,6 +18,7 @@ import lombok.ToString;
 public class SchemaVO {
 	int maxLength = 0;
 	int minLength = 0;
+	int minimum = 0;
 	String type = "";
 	String format = "";
 
@@ -33,6 +33,8 @@ public class SchemaVO {
 					vo.minLength = TextUtil.objectToInt(value, 0);
 				} else if ("type".equals(key)) {
 					vo.type = TextUtil.objectToString(value, "string");
+				} else if ("minimum".equals(key)) {
+					vo.minimum = TextUtil.objectToInt(value, 0);
 				} else if ("format".equals(key)) {
 					vo.format = TextUtil.objectToString(value, null);
 				} else {

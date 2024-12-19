@@ -142,7 +142,7 @@ public class HttpMethodDetailsVO {
 				} else {
 					sb.append("&");
 				}
-				logger.info("query " + paramVO);
+				logger.debug("query " + paramVO);
 				
 				sb.append(paramVO.getName()).append("=").append("<");
 				

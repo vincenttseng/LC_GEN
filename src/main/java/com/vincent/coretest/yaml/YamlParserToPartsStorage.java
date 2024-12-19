@@ -1,6 +1,5 @@
 package com.vincent.coretest.yaml;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
@@ -15,7 +14,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.yaml.snakeyaml.Yaml;
 
-import com.vincent.coretest.enumeration.GenTypeEnum;
+import com.vincent.coretest.util.RefDefDetailUtil;
 import com.vincent.coretest.vo.CVSVO;
 import com.vincent.coretest.yaml.vo.HttpMethodDetailsVO;
 import com.vincent.coretest.yaml.vo.ParamVO;
@@ -75,7 +74,7 @@ public class YamlParserToPartsStorage {
 
 	public void printCVS() {
 		logger.info(CVSVO.headerLine());
-		//printParams();
+		printParams();
 		printRequest();
 		printResponse();
 	}
@@ -121,7 +120,10 @@ public class YamlParserToPartsStorage {
 			csv.setMethod(StringUtils.upperCase(vo.getHttpMethod()));
 
 			String reqRef = vo.getReqRef();
-			logger.info("reqRef =>{}", reqRef);
+			String componentName = RefDefDetailUtil.getComponentNameFromReqRef(reqRef);
+			if (StringUtils.isNotBlank(componentName)) {
+				logger.info("reqRef {} comp {}", reqRef, componentName);
+			}
 
 		}
 	}

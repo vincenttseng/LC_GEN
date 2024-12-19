@@ -3,13 +3,15 @@ package com.vincent.coretest.util;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.lang3.StringUtils;
+
 import com.vincent.coretest.vo.ColumnDefVo;
 import com.vincent.coretest.vo.TFType;
 
 public class RefDefDetailUtil {
 
-	public static void printRefDefDetail(String refKey, Map<String, List<ColumnDefVo>> objectMap,
-			Map<String, String> domainToTypesMap, Map<String, String> typeToDomainMap, Map<String, TFType> tfTypeMap) {
+	public static void printRefDefDetail(String refKey, Map<String, List<ColumnDefVo>> objectMap, Map<String, String> domainToTypesMap, Map<String, String> typeToDomainMap,
+			Map<String, TFType> tfTypeMap) {
 		for (String key : objectMap.keySet()) {
 			List<ColumnDefVo> list = objectMap.get(key);
 			if (list.size() > 0) {
@@ -64,5 +66,21 @@ public class RefDefDetailUtil {
 				}
 			}
 		}
+	}
+
+	/**
+	 * #/components/schemas/BALMSControllerAMEBTCrDrUpdSrvcAPIInObjec
+	 * 
+	 * @param value
+	 * @return ambt0303modinternalacntsrvcapi-v2-inobject-v10013406
+	 */
+	public static String getComponentNameFromReqRef(String value) {
+		if (StringUtils.isNotBlank(value)) {
+			int offset = value.lastIndexOf("/");
+			if (offset > 0) {
+				return value.substring(offset + 1);
+			}
+		}
+		return null;
 	}
 }

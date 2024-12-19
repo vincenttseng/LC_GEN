@@ -8,7 +8,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.vincent.coretest.yaml.YamlParserToPartsStorage;
-import com.vincent.coretest.yaml.textvo.PathDataStorage;
 
 public class ReadYamlAndMergeExcelTest {
 	protected final Logger logger = LoggerFactory.getLogger(ReadYamlAndMergeExcelTest.class);
@@ -21,7 +20,7 @@ public class ReadYamlAndMergeExcelTest {
 		File rootDir = new File(root);
 		logger.info("root1 {}", rootDir.getAbsolutePath());
 
-		String targetPath = rootDir.getAbsolutePath() + "\\src\\test\\input\\ec\\sample1.yaml";
+		String targetPath = rootDir.getAbsolutePath() + "\\src\\test\\input\\sample\\TCS BaNCS MS for Balance Management v1.0 OpenAPI Spec.yaml";
 
 		YamlParserToPartsStorage yamlData = new YamlParserToPartsStorage();
 		yamlData.readYamlAndMergeExcelThenGenNew(targetPath);

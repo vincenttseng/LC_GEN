@@ -1,7 +1,6 @@
 package com.vincent.coretest.yaml;
 
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
@@ -9,10 +8,6 @@ import java.util.Set;
 import org.apache.commons.collections4.set.ListOrderedSet;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import com.vincent.coretest.enumeration.FuncGenEnum;
-import com.vincent.coretest.enumeration.GenTypeEnum;
-import com.vincent.coretest.vo.MVPScopeVO;
 
 import lombok.Data;
 import lombok.Getter;
