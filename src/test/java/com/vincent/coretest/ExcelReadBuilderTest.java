@@ -41,7 +41,7 @@ public class ExcelReadBuilderTest {
 
 	@Test
 	public void buildYamlFromFolder() throws FileNotFoundException, IOException {
-		logger.info("buildYamlFromExcelForNew");
+		logger.info("buildYamlFromFolder");
 
 		String root = "";
 		File rootDir = new File(root);
@@ -54,7 +54,8 @@ public class ExcelReadBuilderTest {
 			return;
 		}
 
-		FuncGenEnum genEnum = FuncGenEnum.NEW; // NEW EXISTED
+		FuncGenEnum genEnum = FuncGenEnum.EXISTED; // NEW EXISTED
+		logger.info("working on {}", genEnum);
 
 		String target = genEnum.getPrefix();
 		String ignoreTarget = genEnum.getIgnorePrefix();

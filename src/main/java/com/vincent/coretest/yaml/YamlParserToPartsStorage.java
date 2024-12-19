@@ -75,6 +75,12 @@ public class YamlParserToPartsStorage {
 
 	public void printCVS() {
 		logger.info(CVSVO.headerLine());
+		//printParams();
+		printRequest();
+		printResponse();
+	}
+
+	private void printParams() {
 		for (HttpMethodDetailsVO vo : theHttpMethodDetailsVOList) {
 			CVSVO csv = new CVSVO();
 			csv.setApiName(vo.getDescription());
@@ -97,12 +103,31 @@ public class YamlParserToPartsStorage {
 						}
 						csv.setDataType(sb.toString());
 					}
+					csv.setFieldDesc(paramVO.getDescription());
 					csv.setMo("M");
 					csv.setReqResp("Path");
 					logger.info("cvs {}", csv.toCsvLine());
 				}
 			}
+		}
+	}
+
+	private void printRequest() {
+		for (HttpMethodDetailsVO vo : theHttpMethodDetailsVOList) {
+			CVSVO csv = new CVSVO();
+			csv.setApiName(vo.getDescription());
+			csv.setApiNode(vo.getApiNode());
+			csv.setFullUrl(vo.getFullPathUrl());
+			csv.setMethod(StringUtils.upperCase(vo.getHttpMethod()));
+
+			String reqRef = vo.getReqRef();
+			logger.info("reqRef =>{}", reqRef);
 
 		}
 	}
+
+	private void printResponse() {
+
+	}
+
 }
