@@ -92,4 +92,16 @@ public class ComponentsDataStorage {
 			logger.info("    key {} value {}", key, value);
 		});
 	}
+
+	@SuppressWarnings("rawtypes")
+	public LinkedHashMap getComponentNodeByComponentName(String componentName) {
+		if (basedRefMap.containsKey(componentName)) {
+			Object object = basedRefMap.get(componentName);
+			if (object != null&&object instanceof LinkedHashMap) {
+				return (LinkedHashMap) object;
+			}
+			logger.info("obj {} {}", object.getClass(), object);
+		}
+		return null;
+	}
 }

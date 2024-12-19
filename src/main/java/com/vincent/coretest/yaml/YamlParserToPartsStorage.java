@@ -123,6 +123,8 @@ public class YamlParserToPartsStorage {
 			String componentName = RefDefDetailUtil.getComponentNameFromReqRef(reqRef);
 			if (StringUtils.isNotBlank(componentName)) {
 				logger.info("reqRef {} comp {}", reqRef, componentName);
+				LinkedHashMap map = componentsStorage.getComponentNodeByComponentName(componentName);
+				logger.info("obj {}", map);
 			}
 
 		}
