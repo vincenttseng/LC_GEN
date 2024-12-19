@@ -39,4 +39,19 @@ public class CVSVO {
 		sb.append("\"").append(mo).append("\"").append(",");
 		return sb.toString();
 	}
+	
+	public static String headerLine() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("\"").append("Impacted API Name").append("\"").append(",");
+		sb.append("\"").append("API Node").append("\"").append(",");
+		sb.append("\"").append("Group Name").append("\"").append(",");
+		sb.append("\"").append("Field Name").append("\"").append(",");
+		sb.append("\"").append("Field description").append("\"").append(",");
+		sb.append("\"").append("Data type").append("\"").append(",");
+		sb.append("\"").append("Methods").append("\"").append(",");
+		sb.append("\"").append("New API URL").append("\"").append(",");
+		sb.append("\"").append("Request/Response").append("\"").append(",");
+		sb.append("\"").append("Mandatory/Optional").append("\"").append(",");
+		return sb.toString();
+	}
 }

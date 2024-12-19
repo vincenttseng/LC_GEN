@@ -10,6 +10,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Set;
 
+import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.yaml.snakeyaml.Yaml;
@@ -73,11 +74,13 @@ public class YamlParserToPartsStorage {
 	}
 
 	public void printCVS() {
+		logger.info(CVSVO.headerLine());
 		for (HttpMethodDetailsVO vo : theHttpMethodDetailsVOList) {
 			CVSVO csv = new CVSVO();
 			csv.setApiName(vo.getDescription());
 			csv.setApiNode(vo.getApiNode());
 			csv.setFullUrl(vo.getFullPathUrl());
+			csv.setMethod(StringUtils.upperCase(vo.getHttpMethod()));
 
 			List<ParamVO> paramList = vo.getParams();
 			for (ParamVO paramVO : paramList) {
