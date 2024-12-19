@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.apache.commons.lang3.StringUtils;
+import org.apache.poi.util.StringUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -57,6 +59,7 @@ public class HttpMethodDetailsVO {
 			setValue(vo, linkedMap);
 			vo.prepareReqRef();
 			vo.prepareResponseObj();
+			vo.prepareValue();
 			methodVOList.add(vo);
 		}
 
@@ -105,17 +108,57 @@ public class HttpMethodDetailsVO {
 		vo.setParams(paramList);
 	}
 
-//	public String getNodeName(LinkedHashMap map) {
-//		String nodeName = null;
-//		Object obj = null;
-//		if (requestBody != null) {
-//			logger.info("requestBody");
-//			if (requestBody.containsKey("content")) {
-//				nodeName = getNodeNameFromReq((LinkedHashMap) requestBody.get("content"));
-//			}
-//		}
-//		return nodeName;
-//	}
+	private String apiNode;
+
+	public void prepareValue() {
+		setApiNode();
+		setApiUrl();
+	}
+
+	public void setApiNode() {
+		String nodeName = null;
+		Object obj = null;
+		if (tags != null && tags.size() > 0) {
+			nodeName = tags.get(0);
+		}
+		apiNode = nodeName;
+	}
+
+	private String fullPathUrl;
+
+	public void setApiUrl() {
+		StringBuilder sb = new StringBuilder();
+
+		if (StringUtils.isNotBlank(httpMethod)) {
+			sb.append(StringUtils.trim(StringUtils.upperCase(httpMethod)));
+			sb.append(" ").append(StringUtils.trim(path));
+
+		}
+		boolean found = false;
+		for (ParamVO paramVO : params) {
+			if ("query".equals(paramVO.getIn())) {
+				if(found == false) {
+					sb.append("?");
+				} else {
+					sb.append("&");
+				}
+				logger.info("query " + paramVO);
+				
+				sb.append(paramVO.getName()).append("=").append("<");
+				
+				SchemaVO schema = paramVO.getSchema();
+				if("number".equalsIgnoreCase(schema.getType())||"integer".equalsIgnoreCase(schema.getType())) {
+					sb.append("Numeric");
+				} else {
+					sb.append("String");
+				}
+				sb.append(">");
+				
+				found = true;
+			}
+		}
+		fullPathUrl = sb.toString();
+	}
 
 	private static final String getNodeNameFromReq(LinkedHashMap map) {
 		if (map == null) {

@@ -43,4 +43,12 @@ public class SchemaVO {
 		}
 		return null;
 	}
+
+	public static String convertTypeExceptDate(String type) {
+		if ("number".equalsIgnoreCase(type) || "integer".equalsIgnoreCase(type) || "float".equalsIgnoreCase(type)) {
+			return "Numeric";
+		} else {
+			return "String";
+		}
+	}
 }

@@ -88,7 +88,7 @@ public class ColumnDefVo {
 			return type;
 		}
 	}
-
+	
 	public static ColumnDefVo toColumnDefVo(MVPScopeVO cellVO) {
 		ColumnDefVo vo = new ColumnDefVo();
 

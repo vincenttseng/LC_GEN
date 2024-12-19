@@ -14,8 +14,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.yaml.snakeyaml.Yaml;
 
+import com.vincent.coretest.enumeration.GenTypeEnum;
 import com.vincent.coretest.vo.CVSVO;
 import com.vincent.coretest.yaml.vo.HttpMethodDetailsVO;
+import com.vincent.coretest.yaml.vo.ParamVO;
+import com.vincent.coretest.yaml.vo.SchemaVO;
 
 import lombok.Data;
 import lombok.Getter;
@@ -48,6 +51,7 @@ public class YamlParserToPartsStorage {
 		for (String path : pathSet) {
 			LinkedHashMap methodDefMap = (LinkedHashMap) pathsMap.get(path);
 			List<HttpMethodDetailsVO> list = HttpMethodDetailsVO.of(path, methodDefMap);
+
 			if (list != null) {
 				theHttpMethodDetailsVOList.addAll(list);
 			}
@@ -60,19 +64,42 @@ public class YamlParserToPartsStorage {
 
 	public void showData() {
 		for (HttpMethodDetailsVO vo : theHttpMethodDetailsVOList) {
-			
+
 			logger.info("vo path:{} method:{}", vo.getPath(), vo.getHttpMethod());
 			logger.info("param {}", vo.getParams());
 			logger.info("req {}", vo.getReqRef());
 			logger.info("resp {} {}", vo.getRespType(), vo.getResponseList());
 		}
 	}
-	
+
 	public void printCVS() {
 		for (HttpMethodDetailsVO vo : theHttpMethodDetailsVOList) {
 			CVSVO csv = new CVSVO();
 			csv.setApiName(vo.getDescription());
-			
+			csv.setApiNode(vo.getApiNode());
+			csv.setFullUrl(vo.getFullPathUrl());
+
+			List<ParamVO> paramList = vo.getParams();
+			for (ParamVO paramVO : paramList) {
+				if ("query".equalsIgnoreCase(paramVO.getIn())) {
+					csv.setFieldName(paramVO.getName());
+					if ("date".equalsIgnoreCase(paramVO.getSchema().getFormat())) {
+						csv.setDataType("Date");
+					} else {
+						SchemaVO schemaVO = paramVO.getSchema();
+						StringBuilder sb = new StringBuilder();
+						sb.append(SchemaVO.convertTypeExceptDate(paramVO.getSchema().getType()));
+						if (schemaVO.getMaxLength() > 0) {
+							sb.append("(").append(schemaVO.getMaxLength()).append(")");
+						}
+						csv.setDataType(sb.toString());
+					}
+					csv.setMo("M");
+					csv.setReqResp("Path");
+					logger.info("cvs {}", csv.toCsvLine());
+				}
+			}
+
 		}
 	}
 }
