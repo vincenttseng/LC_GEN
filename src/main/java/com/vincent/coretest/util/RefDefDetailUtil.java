@@ -74,8 +74,8 @@ public class RefDefDetailUtil {
 	 * @param value
 	 * @return ambt0303modinternalacntsrvcapi-v2-inobject-v10013406
 	 */
-	public static String getComponentNameFromReqRef(String value) {
-		if (StringUtils.isNotBlank(value)) {
+	public static String getComponentNameFromCompSchema(String value) {
+		if (StringUtils.isNotBlank(value) && StringUtils.startsWith(value, "#/components/schemas")) {
 			int offset = value.lastIndexOf("/");
 			if (offset > 0) {
 				return value.substring(offset + 1);

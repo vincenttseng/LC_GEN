@@ -5,8 +5,10 @@ import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import org.apache.commons.lang.StringUtils;
@@ -14,6 +16,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.yaml.snakeyaml.Yaml;
 
+import com.vincent.coretest.enumeration.GenTypeEnum;
+import com.vincent.coretest.util.FileOutputUtil;
+import com.vincent.coretest.util.ObjCastUtil;
 import com.vincent.coretest.util.RefDefDetailUtil;
 import com.vincent.coretest.vo.CVSVO;
 import com.vincent.coretest.yaml.vo.HttpMethodDetailsVO;
@@ -33,6 +38,7 @@ public class YamlParserToPartsStorage {
 	List<HttpMethodDetailsVO> theHttpMethodDetailsVOList = new ArrayList<HttpMethodDetailsVO>();
 	ComponentsDataStorage componentsStorage = null;
 	List<String> rootEleList = new ArrayList<String>();
+	String outputFileName = "temp.csv";
 
 	public void readYamlAndMergeExcelThenGenNew(String targetPath) throws FileNotFoundException {
 		logger.info("readYamlAndMergeExcelThenGenNew");
@@ -73,7 +79,7 @@ public class YamlParserToPartsStorage {
 	}
 
 	public void printCVS() {
-		logger.info(CVSVO.headerLine());
+		FileOutputUtil.printOut(outputFileName, CVSVO.headerLine(), false);
 		printParams();
 		printRequest();
 		printResponse();
@@ -105,11 +111,14 @@ public class YamlParserToPartsStorage {
 					csv.setFieldDesc(paramVO.getDescription());
 					csv.setMo("M");
 					csv.setReqResp("Path");
-					logger.info("cvs {}", csv.toCsvLine());
+					FileOutputUtil.printOut(outputFileName, csv.toCsvLine());
 				}
 			}
 		}
 	}
+
+	int count = 0;
+	final Integer MAX = 100;
 
 	private void printRequest() {
 		for (HttpMethodDetailsVO vo : theHttpMethodDetailsVOList) {
@@ -120,18 +129,64 @@ public class YamlParserToPartsStorage {
 			csv.setMethod(StringUtils.upperCase(vo.getHttpMethod()));
 
 			String reqRef = vo.getReqRef();
-			String componentName = RefDefDetailUtil.getComponentNameFromReqRef(reqRef);
+			csv.setReqResp(GenTypeEnum.REQUEST.getMessage());
+			String componentName = RefDefDetailUtil.getComponentNameFromCompSchema(reqRef);
 			if (StringUtils.isNotBlank(componentName)) {
-				logger.info("reqRef {} comp {}", reqRef, componentName);
+				// logger.info("reqRef {} comp {}", reqRef, componentName);
 				LinkedHashMap map = componentsStorage.getComponentNodeByComponentName(componentName);
-				logger.info("obj {}", map);
+				// logger.info("obj {}", map);
+				spanComponentForRoot(componentName, csv, map);
+				count++;
+				if (count > MAX) {
+					break;
+				}
 			}
 
 		}
 	}
 
+	private void spanComponentForRoot(String name, CVSVO csv, LinkedHashMap map) {
+		logger.info("{} spanComponent {}", name, map);
+		Set<String> requiredFieldSet = new HashSet<String>();
+		if (map.containsKey("required")) {
+			Object obj = map.get("required");
+			if (obj != null && obj instanceof ArrayList) {
+				requiredFieldSet.addAll(ObjCastUtil.convertObjToSet(obj, String.class));
+			}
+		}
+		logger.debug("requiredFieldSet {}", requiredFieldSet);
+
+		if (map.containsKey("type")) {
+			logger.info("type {}", map.get("type"));
+		}
+
+		if (map.containsKey("properties")) {
+			Object obj = map.get("properties");
+			LinkedHashMap rootMap = (LinkedHashMap) ObjCastUtil.convertObjToMap(obj);
+
+			rootMap.forEach((groupName, properties) -> {
+				if (requiredFieldSet.contains(groupName)) {
+					csv.setMo("M");
+				} else {
+					csv.setMo("O");
+				}
+				csv.setGroupName(groupName.toString());
+				Map<Object, Object> valueMap = ObjCastUtil.convertObjToMap(properties);
+				if (valueMap.containsKey("$ref")) {
+					Object reqRefObj = valueMap.get("$ref");
+					String rootRef = RefDefDetailUtil.getComponentNameFromCompSchema(reqRefObj.toString());
+					scanRootRef(csv, rootRef);
+				}
+			});
+		}
+	}
+
 	private void printResponse() {
 
+	}
+
+	private void scanRootRef(CVSVO csv, String refName) {
+		FileOutputUtil.printOut(outputFileName, csv.toCsvLine() + "," + refName);
 	}
 
 }

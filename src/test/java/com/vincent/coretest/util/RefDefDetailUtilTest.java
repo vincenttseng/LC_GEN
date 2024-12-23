@@ -10,14 +10,14 @@ public class RefDefDetailUtilTest {
 	@Test
 	public void testGetComponentNameFromReqRef0() {
 		String reqRef = "#/components/schemas/BALMSControllerFABT0302ModBSPLSrvcAPIInObject";
-		String componentName = RefDefDetailUtil.getComponentNameFromReqRef(reqRef);
+		String componentName = RefDefDetailUtil.getComponentNameFromCompSchema(reqRef);
 		logger.info("{}=>{}<=", reqRef, componentName);
 	}
 
 	@Test
 	public void testGetComponentNameFromReqRef1() {
 		String reqRef = "#/components/schemas/BALMSControllerAMEBTCrDrUpdSrvcAPIInObject";
-		String componentName = RefDefDetailUtil.getComponentNameFromReqRef(reqRef);
+		String componentName = RefDefDetailUtil.getComponentNameFromCompSchema(reqRef);
 		logger.info("{}=>{}<=", reqRef, componentName);
 	}
 }
