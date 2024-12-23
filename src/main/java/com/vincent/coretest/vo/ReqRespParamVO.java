@@ -1,5 +1,6 @@
 package com.vincent.coretest.vo;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -27,6 +28,8 @@ public class ReqRespParamVO {
 	// for each key as variable node, list constains fields of the node
 	Map<String, List<ColumnDefVo>> mapOfRespObjectList = new HashMap<String, List<ColumnDefVo>>();
 	Map<String, List<ColumnDefVo>> mapOfRespObjectArrayList = new HashMap<String, List<ColumnDefVo>>();
+	
+	List<ColumnDefVo> queryObjectList = new ArrayList<ColumnDefVo>();
 
 	public void showContent() {
 		logger.info("   ===== mapOfInputObjectList");

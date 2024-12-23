@@ -11,6 +11,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import org.apache.commons.lang3.StringUtils;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -54,7 +55,7 @@ public class ExcelReadBuilderTest {
 			return;
 		}
 
-		FuncGenEnum genEnum = FuncGenEnum.EXISTED; // NEW EXISTED
+		FuncGenEnum genEnum = FuncGenEnum.NEW; // NEW EXISTED
 		logger.info("working on {}", genEnum);
 
 		String target = genEnum.getPrefix();
@@ -103,6 +104,7 @@ public class ExcelReadBuilderTest {
 		handleData();
 	}
 
+	@Ignore
 	@Test
 	public void buildYamlFromOneExcel() throws FileNotFoundException, IOException {
 		logger.info("buildYamlFromExcelForNew");
@@ -265,6 +267,9 @@ public class ExcelReadBuilderTest {
 				System.out.println(PathUtil.getPathParamString(vo.getOriginalPathWithQuery()));
 			}
 
+			ReqRespParamVO queryVo = reqRespParamVOMap.get(key);
+			System.out.println(PathUtil.showQueryFromExcel(queryVo.getQueryObjectList()));
+
 			List<MVPScopeVO> attributes = apiNameToApiDataMapFromExcel.get(key);
 			ReqRespParamVO vo = ReqRespParamVOUtil.getReqRespParamVO(key, attributes);
 			showRequestRefDeclaration(key, vo);
@@ -399,7 +404,7 @@ components:
 		if (mapOfObjList != null && mapOfObjList.size() > 0) {
 			for (String subNode : mapOfObjList.keySet()) {
 				List<ColumnDefVo> variables = mapOfObjList.get(subNode);
-				List<String> requiredNameList = new ArrayList<String>();
+				Set<String> requiredNameList = new HashSet<String>();
 				for (ColumnDefVo vo : variables) {
 					if (vo.isRequired()) {
 						requiredNameList.add(vo.getName());
@@ -425,7 +430,7 @@ components:
 		if (mapOfObjArrList != null && mapOfObjArrList.size() > 0) {
 			for (String subNode : mapOfObjArrList.keySet()) {
 				List<ColumnDefVo> variables = mapOfObjList.get(subNode);
-				List<String> requiredNameList = new ArrayList<String>();
+				Set<String> requiredNameList = new HashSet<String>();
 				for (ColumnDefVo vo : variables) {
 					if (vo.isRequired()) {
 						requiredNameList.add(vo.getName());

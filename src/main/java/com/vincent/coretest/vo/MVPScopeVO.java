@@ -20,7 +20,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 public class MVPScopeVO {
-	protected final Logger logger = LoggerFactory.getLogger(MVPScopeVO.class);
+	protected static final Logger logger = LoggerFactory.getLogger(MVPScopeVO.class);
 
 	FuncGenEnum genEnum = FuncGenEnum.EXISTED;
 
@@ -95,6 +95,7 @@ public class MVPScopeVO {
 		if (index != null) {
 			groupName = getValueFromMap(rowData, index, "");
 		}
+		groupName = correctGroupName(groupName);
 
 		index = headerMap.get("Field Name");
 		if (index != null) {
@@ -131,7 +132,7 @@ public class MVPScopeVO {
 		}
 
 		if (methodIndex != null) {
-			httpMethod = getValueFromMap(rowData, methodIndex, "GET");
+			httpMethod = getValueFromMap(rowData, methodIndex, "");
 		}
 
 		index = headerMap.get("New API URL");
@@ -169,10 +170,22 @@ public class MVPScopeVO {
 
 	public static final String getValueFromMap(Map<Integer, Object> map, Integer key, String defaultVal) {
 		if (map.containsKey(key)) {
-			return map.get(key) != null ? map.get(key).toString().trim() : defaultVal;
+			String value = map.get(key) != null ? StringUtils.trim(map.get(key).toString()).trim() : defaultVal;
+			value = value.replace("\u00A0", "");
+
+			return value;
 
 		} else {
 			return defaultVal;
 		}
+	}
+
+	public static final String correctGroupName(String value) {
+		value = value.replace(" ", "-");
+		if (value.endsWith("(new)") || value.endsWith("(new-node)")) {
+			int index = value.indexOf("(");
+			value = value.substring(0, index);
+		}
+		return value;
 	}
 }

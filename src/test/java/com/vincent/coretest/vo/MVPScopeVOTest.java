@@ -37,4 +37,10 @@ public class MVPScopeVOTest {
 		});
 	}
 
+	@Test
+	public void testGroupName() {
+		String value = "elc-bill-swift(new)";
+		value = MVPScopeVO.correctGroupName(value);
+		logger.info("value {}", value);
+	}
 }

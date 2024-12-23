@@ -1,7 +1,9 @@
 package com.vincent.coretest.util;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -20,9 +22,11 @@ public class RefDefDetailUtil {
 
 				int cnt = 0;
 				StringBuilder sba = new StringBuilder();
+				Set<String> requiredSet = new HashSet<String>();
 				for (ColumnDefVo vo : list) {
-					if (vo.required) {
+					if (vo.required&&requiredSet.contains(vo.name) == false) {
 						cnt++;
+						requiredSet.add(vo.name);
 						sba.append("        - " + vo.name + "\n");
 					}
 				}

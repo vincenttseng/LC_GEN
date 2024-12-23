@@ -9,7 +9,8 @@ public enum GenTypeEnum {
 
 	//@formatter:off
 	REQUEST("Request"), 
-	RESPONSE("Response");
+	RESPONSE("Response"),
+	Query("Query");
 	//@formatter:on
 
 	private String message;

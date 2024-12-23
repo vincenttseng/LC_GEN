@@ -25,6 +25,8 @@ public class ReqRespParamVOUtil {
 		Map<String, List<ColumnDefVo>> mapForRespObjectList = new HashMap<String, List<ColumnDefVo>>();
 		Map<String, List<ColumnDefVo>> mapForRespObjectArrayList = new HashMap<String, List<ColumnDefVo>>();
 
+		Map<String, List<ColumnDefVo>> mapForQueryList = new HashMap<String, List<ColumnDefVo>>();
+
 		Map<String, List<ColumnDefVo>> theMap = null;
 
 		if (attributes != null) {
@@ -43,11 +45,18 @@ public class ReqRespParamVOUtil {
 					} else {
 						theMap = mapForRespObjectList;
 					}
+				} else if (GenTypeEnum.Query == cellVO.getDirection()) {
+					theMap = mapForQueryList;
 				}
 
-				String nodeName = cellVO.getGroupName();
-				if (!theMap.containsKey(nodeName)) {
-					theMap.put(nodeName, new ArrayList<ColumnDefVo>());
+				String nodeName = null;
+				try {
+					nodeName = cellVO.getGroupName();
+					if (!theMap.containsKey(nodeName)) {
+						theMap.put(nodeName, new ArrayList<ColumnDefVo>());
+					}
+				} catch (Exception e) {
+					e.printStackTrace();
 				}
 
 				ColumnDefVo columnDefVo = ColumnDefVo.toColumnDefVo(cellVO);
@@ -60,6 +69,14 @@ public class ReqRespParamVOUtil {
 
 		vo.setMapOfRespObjectList(mapForRespObjectList);
 		vo.setMapOfRespObjectArrayList(mapForRespObjectArrayList);
+
+		List<ColumnDefVo> queryList = new ArrayList<ColumnDefVo>();
+
+		mapForQueryList.forEach((k, v) -> {
+			queryList.addAll(v);
+
+		});
+		vo.setQueryObjectList(queryList);
 
 		return vo;
 	}
