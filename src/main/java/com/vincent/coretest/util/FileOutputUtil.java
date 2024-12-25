@@ -34,7 +34,7 @@ public class FileOutputUtil {
 			writer = new BufferedWriter(fw);
 			writer.write(line);
 			writer.newLine();
-			logger.info("append " + line);
+			logger.debug("append " + line);
 		} catch (FileNotFoundException e) {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
