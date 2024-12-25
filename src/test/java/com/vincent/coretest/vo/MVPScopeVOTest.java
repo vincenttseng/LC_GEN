@@ -15,7 +15,7 @@ public class MVPScopeVOTest {
 	String xlsxFile = ".\\src\\test\\input\\MVP3 scope for TF_LC_B4_001.xlsx";
 
 	@Test
-	public void testListing() {
+	public void testListing() throws Exception {
 		logger.info("testListing");
 		Map<String, Integer> headerMap = ExcelReader.getHeaderIndex(xlsxFile);
 		List<Map<Integer, Object>> rows = ExcelReader.getActiveRow(xlsxFile, false);

@@ -1,5 +1,7 @@
 package com.vincent.coretest.vo;
 
+import java.io.IOException;
+import java.util.Collection;
 import java.util.Map;
 
 import org.apache.commons.lang3.StringUtils;
@@ -49,24 +51,33 @@ public class MVPScopeVO {
 	Map<String, Integer> headerMap = null;
 	Map<Integer, Object> rowData = null;
 
-	public MVPScopeVO(FuncGenEnum genEnum, Map<String, Integer> headerMap, Map<Integer, Object> rowData) {
+	public MVPScopeVO(FuncGenEnum genEnum, Map<String, Integer> headerMap, Map<Integer, Object> rowData) throws Exception {
 		this.genEnum = genEnum;
 		this.headerMap = headerMap;
 		this.rowData = rowData;
 
+		if (!isValidDataCount(rowData, 5)) {
+			throw new Exception(rowData.toString());
+		}
+		
 		handleInitData();
 	}
 
-	public MVPScopeVO(Map<String, Integer> headerMap, Map<Integer, Object> rowData) {
+	public MVPScopeVO(Map<String, Integer> headerMap, Map<Integer, Object> rowData) throws Exception {
 		this.genEnum = FuncGenEnum.EXISTED;
 		this.headerMap = headerMap;
 		this.rowData = rowData;
+
+		if (!isValidDataCount(rowData, 5)) {
+			throw new Exception(rowData.toString());
+		}
 
 		handleInitData();
 	}
 
 	private void handleInitData() {
 		Object obj = rowData.get(-1);
+
 		if (obj instanceof Integer) {
 			rowIndex = ((Integer) obj).intValue();
 		}
@@ -187,5 +198,22 @@ public class MVPScopeVO {
 			value = value.substring(0, index);
 		}
 		return value;
+	}
+
+	public static final boolean isValidDataCount(Map<Integer, Object> map, int min) {
+		Collection values = map.values();
+		int cnt = 0;
+		for (Object o : values) {
+			String tmp = o != null ? o.toString() : "";
+			if (StringUtils.isNotBlank(tmp)) {
+				cnt++;
+			}
+			if (cnt > min) {
+//				logger.info("AAA{} {}", cnt, map);
+				return true;
+			}
+		}
+//		logger.info("BBB{} {}", cnt, map);
+		return (cnt > min);
 	}
 }

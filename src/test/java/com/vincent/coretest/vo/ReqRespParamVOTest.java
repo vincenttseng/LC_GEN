@@ -22,7 +22,7 @@ public class ReqRespParamVOTest {
 	Map<String, List<MVPScopeVO>> apiNameToApiDataMap = new HashMap<String, List<MVPScopeVO>>();
 
 	@Test
-	public void testListing() {
+	public void testListing() throws Exception {
 		logger.info("buildYamlFromExcelForNew");
 		Map<String, Integer> headerMap = ExcelReader.getHeaderIndex(xlsxFile);
 		List<Map<Integer, Object>> rows = ExcelReader.getActiveRow(xlsxFile, false);

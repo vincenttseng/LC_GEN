@@ -76,7 +76,13 @@ public class ExcelReadBuilderTest {
 
 			int activeCnt = 0;
 			for (Map<Integer, Object> rowData : rowMapList) {
-				MVPScopeVO vo = new MVPScopeVO(genEnum, headerMap, rowData);
+				MVPScopeVO vo = null;
+				try {
+					vo = new MVPScopeVO(genEnum, headerMap, rowData);
+				} catch (Exception e) {
+					logger.info("cnt wrong {} {} {}", e.toString(), headerMap, rowData);
+					continue;
+				}
 
 				if (vo.getApiType() != null && vo.getApiType().toLowerCase().startsWith(target)) {
 					logger.info("{}", vo);
@@ -118,7 +124,12 @@ public class ExcelReadBuilderTest {
 		String ignoreTarget = genEnum.getIgnorePrefix();
 
 		for (Map<Integer, Object> rowData : rowMapList) {
-			MVPScopeVO vo = new MVPScopeVO(headerMap, rowData);
+			MVPScopeVO vo = null;
+			try {
+				vo = new MVPScopeVO(headerMap, rowData);
+			} catch (Exception e) {
+				continue;
+			}
 
 			if (vo.getApiType() != null && vo.getApiType().toLowerCase().startsWith(target)) {
 				logger.info("{}", vo);
