@@ -5,35 +5,34 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
+import org.apache.commons.lang3.StringUtils;
+
+import com.vincent.coretest.util.FileOutputUtil;
+
 public class HeaderUtil {
 	private static final String headerFileSrc = ".\\src\\test\\resources\\header.txt";
 	private static final String methodHeaderFileSrc = ".\\src\\test\\resources\\methodHeaders.txt";
 
-	public static void printHeader()  {
-		try {
-			printHeader(headerFileSrc);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-
-	public static void printHeader(String fileName) throws IOException {
-		File headerFile = new File(fileName);
+	public static void printHeader(String outputFile) {
+		File headerFile = new File(headerFileSrc);
 
 		if (headerFile == null || !headerFile.exists()) {
 			return;
 		}
 
+		FileOutputUtil.printOut(outputFile, "", false);
 		FileReader in = null;
 		BufferedReader br = null;
+		boolean firstLine = true;
 		try {
 			in = new FileReader(headerFile);
 			br = new BufferedReader(in);
 
 			String line;
 			while ((line = br.readLine()) != null) {
-				System.out.println(line);
+				boolean append = firstLine ? false : true; // first line is not append. it is new file
+				FileOutputUtil.printOut(outputFile, line, append);
+				firstLine = false;
 			}
 		} catch (IOException e) {
 
@@ -72,7 +71,9 @@ public class HeaderUtil {
 
 				String line;
 				while ((line = br.readLine()) != null) {
-					sb.append(line).append("\n");
+					if (StringUtils.isNotBlank(line)) {
+						sb.append(line).append("\n");
+					}
 				}
 			} catch (IOException e) {
 

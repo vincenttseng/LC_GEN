@@ -12,8 +12,8 @@ import com.vincent.coretest.vo.TFType;
 
 public class RefDefDetailUtil {
 
-	public static void printRefDefDetail(String refKey, Map<String, List<ColumnDefVo>> objectMap, Map<String, String> domainToTypesMap, Map<String, String> typeToDomainMap,
-			Map<String, TFType> tfTypeMap) {
+	public static void printRefDefDetail(String outputFileName, String refKey, Map<String, List<ColumnDefVo>> objectMap, Map<String, String> domainToTypesMap,
+			Map<String, String> typeToDomainMap, Map<String, TFType> tfTypeMap) {
 		for (String key : objectMap.keySet()) {
 			List<ColumnDefVo> list = objectMap.get(key);
 			if (list.size() > 0) {
@@ -24,24 +24,24 @@ public class RefDefDetailUtil {
 				StringBuilder sba = new StringBuilder();
 				Set<String> requiredSet = new HashSet<String>();
 				for (ColumnDefVo vo : list) {
-					if (vo.required&&requiredSet.contains(vo.name) == false) {
+					if (vo.required && requiredSet.contains(vo.name) == false) {
 						cnt++;
 						requiredSet.add(vo.name);
 						sba.append("        - " + vo.name + "\n");
 					}
 				}
 				if (cnt > 0) {
-					System.out.println("      required:");
-					System.out.print(sba.toString());
+					FileOutputUtil.printOut(outputFileName, "      required:");
+					FileOutputUtil.printOut(outputFileName, sba.toString());
 				}
 
-				System.out.println("      type: object");
-				System.out.println("      properties:");
+				FileOutputUtil.printOut(outputFileName, "      type: object");
+				FileOutputUtil.printOut(outputFileName, "      properties:");
 
 				for (ColumnDefVo vo : list) {
 					String objKey = vo.name;
-					System.out.println("        " + objKey + ":");
-					System.out.println("          type: " + vo.type);
+					FileOutputUtil.printOut(outputFileName, "        " + objKey + ":");
+					FileOutputUtil.printOut(outputFileName, "          type: " + vo.type);
 
 					String domainName = typeToDomainMap.get(vo.name);
 
@@ -54,18 +54,18 @@ public class RefDefDetailUtil {
 						sb.append(domainToTypesMap.get(domainName));
 						sb.append(";'");
 
-						System.out.println("          " + sb.toString());
+						FileOutputUtil.printOut(outputFileName, "          " + sb.toString());
 					}
 
 					TFType tfType = tfTypeMap.get(domainName);
 					if (tfType != null) {
 						String yamlExtraString = tfType.toYamlTypeString();
 						if (yamlExtraString != null && yamlExtraString.length() > 0) {
-							System.out.println("          " + yamlExtraString);
+							FileOutputUtil.printOut(outputFileName, "          " + yamlExtraString);
 						}
 					}
 					if (vo.isDate) {
-						System.out.println("          format: date");
+						FileOutputUtil.printOut(outputFileName, "          format: date");
 					}
 				}
 			}

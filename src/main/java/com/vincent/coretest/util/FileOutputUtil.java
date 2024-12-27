@@ -5,8 +5,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
 
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -27,6 +27,9 @@ public class FileOutputUtil {
 	}
 
 	public static void printOut(String fileName, String line, boolean append) {
+		if (StringUtils.isBlank(line)) {
+			return;
+		}
 		FileWriter fw = null;
 		BufferedWriter writer = null;
 		try {

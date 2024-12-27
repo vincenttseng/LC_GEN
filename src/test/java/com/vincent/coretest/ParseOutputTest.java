@@ -24,6 +24,7 @@ public class ParseOutputTest {
 
 	String inputFilename = ".\\src\\test\\input\\input.txt";
 	String responseFilename = ".\\src\\test\\input\\response.txt";
+	String outputFileName = ".\\src\\test\\output\\out.yaml";
 
 	/**
 	 * letter-of-credit-draft-details-request: type: object properties:
@@ -74,10 +75,9 @@ public class ParseOutputTest {
 		System.out.println("==========================================");
 		System.out.println("=========INPUT INPUT INPUT ===============");
 		System.out.println("==========================================");
-		
+
 		Map<String, List<ColumnDefVo>> inputObjectMap = ReqRespParserUtil.parseExcelInputOutputObject(inputFile);
-		Map<String, List<ColumnDefVo>> inputObjectArrayMap = ReqRespParserUtil
-				.parseExcelInputOutputObjectArray(inputFile);
+		Map<String, List<ColumnDefVo>> inputObjectArrayMap = ReqRespParserUtil.parseExcelInputOutputObjectArray(inputFile);
 
 		// response part
 		File responseFile = new File(responseFilename);
@@ -86,10 +86,9 @@ public class ParseOutputTest {
 		System.out.println("==========================================");
 		System.out.println("=========RESPONSE RESPONSE ===============");
 		System.out.println("==========================================");
-		
+
 		Map<String, List<ColumnDefVo>> respObjectMap = ReqRespParserUtil.parseExcelInputOutputObject(responseFile);
-		Map<String, List<ColumnDefVo>> respObjectArrayMap = ReqRespParserUtil
-				.parseExcelInputOutputObjectArray(responseFile);
+		Map<String, List<ColumnDefVo>> respObjectArrayMap = ReqRespParserUtil.parseExcelInputOutputObjectArray(responseFile);
 
 		System.out.println("==========================================");
 		System.out.println("=========ref in RESTFUL REQ ==============");
@@ -125,8 +124,7 @@ public class ParseOutputTest {
 		genRefDetailObject(GenTypeEnum.RESPONSE, respObjectMap, respObjectArrayMap);
 	}
 
-	public void genRefDefObject(GenTypeEnum type, Map<String, List<ColumnDefVo>> objectMap,
-			Map<String, List<ColumnDefVo>> objectArrayMap) {
+	public void genRefDefObject(GenTypeEnum type, Map<String, List<ColumnDefVo>> objectMap, Map<String, List<ColumnDefVo>> objectArrayMap) {
 
 		String refKey = TextUtil.nameToLowerCaseAndDash(apiName + " " + type.getMessage());
 
@@ -160,11 +158,10 @@ public class ParseOutputTest {
 		System.out.println("      description: " + refKey.toUpperCase());
 	}
 
-	public void genRefDetailObject(GenTypeEnum type, Map<String, List<ColumnDefVo>> objectMap,
-			Map<String, List<ColumnDefVo>> objectArrayMap) {
+	public void genRefDetailObject(GenTypeEnum type, Map<String, List<ColumnDefVo>> objectMap, Map<String, List<ColumnDefVo>> objectArrayMap) {
 		String refKey = TextUtil.nameToLowerCaseAndDash(apiName + " " + type.getMessage());
-		
-		RefDefDetailUtil.printRefDefDetail(refKey, objectMap, domainToTypesMap, typeToDomainMap, tfTypeMap);
-		RefDefDetailUtil.printRefDefDetail(refKey, objectArrayMap, domainToTypesMap, typeToDomainMap, tfTypeMap);
+
+		RefDefDetailUtil.printRefDefDetail(outputFileName, refKey, objectMap, domainToTypesMap, typeToDomainMap, tfTypeMap);
+		RefDefDetailUtil.printRefDefDetail(outputFileName, refKey, objectArrayMap, domainToTypesMap, typeToDomainMap, tfTypeMap);
 	}
 }

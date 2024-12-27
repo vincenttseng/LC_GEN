@@ -2,6 +2,8 @@ package com.vincent.coretest.reader;
 
 import java.util.List;
 
+import org.apache.commons.lang3.StringUtils;
+
 import com.vincent.coretest.util.TextUtil;
 import com.vincent.coretest.vo.ColumnDefVo;
 
@@ -22,7 +24,7 @@ public class PathUtil {
 			sb.append("          schema:").append("\n");
 			sb.append("            type: string").append("\n");
 			String desc = TextUtil.phaseWordToDesc(token);
-			sb.append("          description: ").append(desc);
+			sb.append("          description: ").append(StringUtils.trim(desc));
 			sb.append("\n");
 		}
 
@@ -45,7 +47,7 @@ public class PathUtil {
 				sb.append("          schema:").append("\n");
 				sb.append("            type: ").append(convertedType).append("\n");
 				String desc = TextUtil.phaseWordToDesc(token);
-				sb.append("          description: ").append(desc);
+				sb.append("          description: ").append(StringUtils.trim(desc));
 				sb.append("\n");
 			}
 		}

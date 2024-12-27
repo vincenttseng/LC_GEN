@@ -22,6 +22,7 @@ import com.vincent.coretest.reader.ExcelReader;
 import com.vincent.coretest.reader.HeaderUtil;
 import com.vincent.coretest.reader.PathUtil;
 import com.vincent.coretest.util.DomainTypeUtil;
+import com.vincent.coretest.util.FileOutputUtil;
 import com.vincent.coretest.util.ReqRespParamVOUtil;
 import com.vincent.coretest.util.SchemaBodyUtil;
 import com.vincent.coretest.util.TextUtil;
@@ -40,6 +41,8 @@ public class ExcelReadBuilderTest {
 
 	Map<String, ReqRespParamVO> reqRespParamVOMap = new HashMap<String, ReqRespParamVO>();
 
+	String outputFileName = null;
+
 	@Test
 	public void buildYamlFromFolder() throws FileNotFoundException, IOException {
 		logger.info("buildYamlFromFolder");
@@ -56,6 +59,9 @@ public class ExcelReadBuilderTest {
 		}
 
 		FuncGenEnum genEnum = FuncGenEnum.NEW; // NEW EXISTED
+
+		outputFileName = "20241225_" + genEnum.name() + ".yaml";
+
 		logger.info("working on {}", genEnum);
 
 		String target = genEnum.getPrefix();
@@ -107,7 +113,7 @@ public class ExcelReadBuilderTest {
 			logger.info("=====>{} active line {}", xlsxFile, activeCnt);
 		}
 		logger.info("START handleData");
-		handleData();
+		doJob();
 	}
 
 	@Ignore
@@ -120,6 +126,8 @@ public class ExcelReadBuilderTest {
 		List<Map<Integer, Object>> rowMapList = ExcelReader.getActiveRow(xlsxFile, false);
 
 		FuncGenEnum genEnum = FuncGenEnum.NEW; // NEW EXISTED
+		outputFileName = "20241225_" + genEnum.getMessage() + ".yaml";
+
 		String target = genEnum.getPrefix();
 		String ignoreTarget = genEnum.getIgnorePrefix();
 
@@ -156,28 +164,30 @@ public class ExcelReadBuilderTest {
 				}
 			}
 		}
-		handleData();
+		doJob();
 	}
 
-	private void handleData() {
+	private void doJob() {
+		prepareData();
+		outputData();
+	}
+
+	private void prepareData() {
 		checkData();
 		groupingSameReqPath();
 		groupingReqRespObject();
+	}
 
-		// STARTING YAML OUTPUT
-		printStartOfOutput();
-		HeaderUtil.printHeader();
+	private void outputData() {
+		logger.info("======================== start of YAML ========================");
+		HeaderUtil.printHeader(outputFileName);
 		printDefOfApi();
 		printBasicOutputComponent();
 		printDefOfReference();
 	}
 
-	public static void printStartOfOutput() {
-		System.out.println("============================================= start of YAML =============================================");
-	}
-
 	public void printDefOfApi() {
-		System.out.println("paths:");
+		appendOutputToFile("paths:");
 		Set<String> keySet = mapForSameURLPath.keySet();
 		keySet.stream().forEach(reqPath -> {
 			showDefApiByKey(reqPath);
@@ -258,28 +268,28 @@ public class ExcelReadBuilderTest {
 	}
 
 	public void showDefApiByKey(String reqPath) {
-		System.out.println("  " + reqPath + ":");
+		appendOutputToFile("  " + reqPath + ":");
 
 		List<String> keySet = mapForSameURLPath.get(reqPath);
 		for (String key : keySet) {
-			System.out.println("######## " + key);
+			appendOutputToFile("######## " + key);
 			List<MVPScopeVO> params = apiNameToApiDataMapFromExcel.get(key);
 			if (params.size() > 0) {
 				MVPScopeVO vo = params.get(0);
 				String method = vo.getHttpMethod().toLowerCase();
-				System.out.println("    " + method + ":");
-				System.out.println("      tags:");
-				System.out.println("        - " + vo.getApiNode());
-				System.out.println("      summary: " + vo.getApiName());
-				System.out.println("      description: " + vo.getApiName().toUpperCase());
-				System.out.println("      operationId: " + vo.getApiName().toUpperCase());
-				System.out.println("      parameters:");
-				System.out.print(HeaderUtil.getMethodHeadersString());
-				System.out.println(PathUtil.getPathParamString(vo.getOriginalPathWithQuery()));
+				appendOutputToFile("    " + method + ":");
+				appendOutputToFile("      tags:");
+				appendOutputToFile("        - " + vo.getApiNode());
+				appendOutputToFile("      summary: " + vo.getApiName());
+				appendOutputToFile("      description: " + vo.getApiName().toUpperCase());
+				appendOutputToFile("      operationId: " + vo.getApiName().toUpperCase());
+				appendOutputToFile("      parameters:");
+				appendOutputToFile(HeaderUtil.getMethodHeadersString());
+				appendOutputToFile(PathUtil.getPathParamString(vo.getOriginalPathWithQuery()));
 			}
 
 			ReqRespParamVO queryVo = reqRespParamVOMap.get(key);
-			System.out.println(PathUtil.showQueryFromExcel(queryVo.getQueryObjectList()));
+			appendOutputToFile(PathUtil.showQueryFromExcel(queryVo.getQueryObjectList()));
 
 			List<MVPScopeVO> attributes = apiNameToApiDataMapFromExcel.get(key);
 			ReqRespParamVO vo = ReqRespParamVOUtil.getReqRespParamVO(key, attributes);
@@ -291,7 +301,7 @@ public class ExcelReadBuilderTest {
 	private void showRequestRefDeclaration(String key, ReqRespParamVO vo) {
 		String refKey = TextUtil.nameToLowerCaseAndDash(key + " " + GenTypeEnum.REQUEST.getMessage());
 		if (vo.getMapOfInputObjectArrayList().size() > 0 || vo.getMapOfInputObjectList().size() > 0) {
-			System.out.println(SchemaBodyUtil.genRequestSchemaText(refKey));
+			appendOutputToFile(SchemaBodyUtil.genRequestSchemaText(refKey));
 		}
 	}
 
@@ -301,7 +311,11 @@ public class ExcelReadBuilderTest {
 		if (vo.getMapOfRespObjectArrayList().size() > 0 || vo.getMapOfRespObjectList().size() > 0) {
 			withRespObj = true;
 		}
-		System.out.println(SchemaBodyUtil.genResponseSchemaText(refKey, withRespObj));
+		appendOutputToFile(SchemaBodyUtil.genResponseSchemaText(refKey, withRespObj));
+	}
+
+	private void appendOutputToFile(String line) {
+		FileOutputUtil.printOut(outputFileName, line);
 	}
 
 	/**
@@ -334,40 +348,40 @@ components:
 	 * @formatter:on
 	 */
 	private void printBasicOutputComponent() {
-		System.out.println("######## components");
-		System.out.println("components:");
-		System.out.println("  schemas:");
+		appendOutputToFile("######## components");
+		appendOutputToFile("components:");
+		appendOutputToFile("  schemas:");
 		// api-message-error
-		System.out.println("    api-message-error:");
-		System.out.println("      type: object");
-		System.out.println("      properties:");
-		System.out.println("        severity-code:");
-		System.out.println("          type: integer");
-		System.out.println("          format: int32");
-		System.out.println("        description:");
-		System.out.println("          type: string");
-		System.out.println("        id:");
-		System.out.println("          type: integer");
-		System.out.println("          format: int64");
+		appendOutputToFile("    api-message-error:");
+		appendOutputToFile("      type: object");
+		appendOutputToFile("      properties:");
+		appendOutputToFile("        severity-code:");
+		appendOutputToFile("          type: integer");
+		appendOutputToFile("          format: int32");
+		appendOutputToFile("        description:");
+		appendOutputToFile("          type: string");
+		appendOutputToFile("        id:");
+		appendOutputToFile("          type: integer");
+		appendOutputToFile("          format: int64");
 		// api-messages
-		System.out.println("    api-messages:");
-		System.out.println("      type: object");
-		System.out.println("      properties:");
-		System.out.println("        max-severity-code:");
-		System.out.println("          type: integer");
-		System.out.println("          format: int32");
-		System.out.println("        max-severity-desc:");
-		System.out.println("          type: string");
-		System.out.println("        message-list:");
-		System.out.println("          type: array");
-		System.out.println("          items:");
-		System.out.println("            $ref: '#/components/schemas/api-message-error'");
+		appendOutputToFile("    api-messages:");
+		appendOutputToFile("      type: object");
+		appendOutputToFile("      properties:");
+		appendOutputToFile("        max-severity-code:");
+		appendOutputToFile("          type: integer");
+		appendOutputToFile("          format: int32");
+		appendOutputToFile("        max-severity-desc:");
+		appendOutputToFile("          type: string");
+		appendOutputToFile("        message-list:");
+		appendOutputToFile("          type: array");
+		appendOutputToFile("          items:");
+		appendOutputToFile("            $ref: '#/components/schemas/api-message-error'");
 	}
 
 	public void printDefOfReference() {
 		Set<String> keySet = reqRespParamVOMap.keySet();
 		for (String key : keySet) {
-			System.out.println("######## " + key);
+			appendOutputToFile("######## " + key);
 			ReqRespParamVO reqRespParamVO = reqRespParamVOMap.get(key);
 			String refKey = null;
 			if (reqRespParamVO.getMapOfInputObjectArrayList().size() > 0 || reqRespParamVO.getMapOfInputObjectList().size() > 0) {
@@ -390,24 +404,24 @@ components:
 			return; // nothing to show
 		}
 
-		System.out.println("    " + obj + ":");
-		System.out.println("      type: object");
-		System.out.println("      properties:");
+		appendOutputToFile("    " + obj + ":");
+		appendOutputToFile("      type: object");
+		appendOutputToFile("      properties:");
 		// Request Response Object Definition
 		if (mapOfObjList != null && mapOfObjList.size() > 0) {
 			for (String subNode : mapOfObjList.keySet()) {
-				System.out.println("        " + subNode + ":");
-				System.out.println("          $ref: '#/components/schemas/" + obj + "-" + subNode.toLowerCase() + "'");
+				appendOutputToFile("        " + subNode + ":");
+				appendOutputToFile("          $ref: '#/components/schemas/" + obj + "-" + subNode.toLowerCase() + "'");
 			}
 
 		}
 
 		if (mapOfObjArrList != null && mapOfObjArrList.size() > 0) {
 			for (String subNode : mapOfObjArrList.keySet()) {
-				System.out.println("        " + subNode + ":");
-				System.out.println("          type: array");
-				System.out.println("          items:");
-				System.out.println("            $ref: '#/components/schemas/" + obj + "-" + subNode.toLowerCase() + "'");
+				appendOutputToFile("        " + subNode + ":");
+				appendOutputToFile("          type: array");
+				appendOutputToFile("          items:");
+				appendOutputToFile("            $ref: '#/components/schemas/" + obj + "-" + subNode.toLowerCase() + "'");
 			}
 		}
 
@@ -423,15 +437,15 @@ components:
 				}
 
 				if (variables != null && variables.size() > 0) {
-					System.out.println("    " + obj + "-" + subNode.toLowerCase() + ":");
+					appendOutputToFile("    " + obj + "-" + subNode.toLowerCase() + ":");
 					if (requiredNameList.size() > 0) {
-						System.out.println("      required:");
+						appendOutputToFile("      required:");
 						for (String name : requiredNameList) {
-							System.out.println("        - " + name);
+							appendOutputToFile("        - " + name);
 						}
 					}
-					System.out.println("      type: object");
-					System.out.println("      properties:");
+					appendOutputToFile("      type: object");
+					appendOutputToFile("      properties:");
 
 					printObjectVariables(variables);
 				}
@@ -449,15 +463,15 @@ components:
 				}
 
 				if (variables != null && variables.size() > 0) {
-					System.out.println("    " + obj + "-" + subNode.toLowerCase() + ":");
+					appendOutputToFile("    " + obj + "-" + subNode.toLowerCase() + ":");
 					if (requiredNameList.size() > 0) {
-						System.out.println("      required:");
+						appendOutputToFile("      required:");
 						for (String name : requiredNameList) {
-							System.out.println("        - " + name);
+							appendOutputToFile("        - " + name);
 						}
 					}
-					System.out.println("      type: object");
-					System.out.println("      properties:");
+					appendOutputToFile("      type: object");
+					appendOutputToFile("      properties:");
 					printObjectVariables(variables);
 				}
 			}
@@ -469,13 +483,13 @@ components:
 		if (variables != null && variables.size() > 0) {
 			for (ColumnDefVo defVO : variables) {
 				if (useNameSet.contains(defVO.getName()) == false) {
-					System.out.println("        " + defVO.getName() + ":");
-					System.out.println("          type: " + defVO.getType());
+					appendOutputToFile("        " + defVO.getName() + ":");
+					appendOutputToFile("          type: " + defVO.getType());
 					if (defVO.getMaxLength() > 0) {
-						System.out.println("          maxLength: " + defVO.getMaxLength());
+						appendOutputToFile("          maxLength: " + defVO.getMaxLength());
 					}
-					System.out.println("          format: " + defVO.getFormat());
-					System.out.println("          description: \"" + defVO.getDesc() + "\"");
+					appendOutputToFile("          format: " + defVO.getFormat());
+					appendOutputToFile("          description: \"" + defVO.getDesc() + "\"");
 					useNameSet.add(defVO.getName());
 				}
 			}

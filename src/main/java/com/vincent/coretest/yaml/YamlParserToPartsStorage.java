@@ -40,6 +40,7 @@ public class YamlParserToPartsStorage {
 	List<String> rootEleList = new ArrayList<String>();
 	String outputFileName = "temp.csv";
 
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public void readYamlAndMergeExcelThenGenNew(String targetPath) throws FileNotFoundException {
 		logger.info("readYamlAndMergeExcelThenGenNew");
 
@@ -52,7 +53,6 @@ public class YamlParserToPartsStorage {
 
 		HashMap pathsMap = (HashMap) yamlMap.get("paths");
 
-		@SuppressWarnings("unchecked")
 		Set<String> pathSet = pathsMap.keySet();
 		for (String path : pathSet) {
 			LinkedHashMap methodDefMap = (LinkedHashMap) pathsMap.get(path);
@@ -120,6 +120,7 @@ public class YamlParserToPartsStorage {
 	int count = 0;
 	final Integer MAX = 100;
 
+	@SuppressWarnings("rawtypes")
 	private void printRequest() {
 		for (HttpMethodDetailsVO vo : theHttpMethodDetailsVOList) {
 			CVSVO csv = new CVSVO();
@@ -145,6 +146,7 @@ public class YamlParserToPartsStorage {
 		}
 	}
 
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	private void spanComponentForRoot(String name, CVSVO csv, LinkedHashMap map) {
 		logger.info("{} spanComponent {}", name, map);
 		Set<String> requiredFieldSet = new HashSet<String>();
