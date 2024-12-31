@@ -6,22 +6,12 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 
-import org.apache.commons.lang3.StringUtils;
-import org.junit.Ignore;
-import org.junit.Test;
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
-import com.vincent.coretest.enumeration.FuncGenEnum;
 import com.vincent.coretest.enumeration.GenTypeEnum;
-import com.vincent.coretest.reader.ExcelReader;
 import com.vincent.coretest.reader.HeaderUtil;
 import com.vincent.coretest.reader.PathUtil;
-import com.vincent.coretest.util.DomainTypeUtil;
 import com.vincent.coretest.util.FileOutputUtil;
 import com.vincent.coretest.util.ReqRespParamVOUtil;
 import com.vincent.coretest.util.SchemaBodyUtil;
@@ -30,8 +20,9 @@ import com.vincent.coretest.vo.ColumnDefVo;
 import com.vincent.coretest.vo.MVPScopeVO;
 import com.vincent.coretest.vo.ReqRespParamVO;
 
-public class ExcelReadBuilderTest {
-	protected final Logger logger = LoggerFactory.getLogger(ExcelReadBuilderTest.class);
+public abstract class AbstractExcelReadBuilder {
+
+	public abstract Logger getLogger();
 
 	// group map for same path different httpMethod
 	Map<String, List<String>> mapForSameURLPath = new HashMap<String, List<String>>();
@@ -41,157 +32,30 @@ public class ExcelReadBuilderTest {
 
 	Map<String, ReqRespParamVO> reqRespParamVOMap = new HashMap<String, ReqRespParamVO>();
 
-	String outputFileName = null;
+	protected String outputFileName = null;
 
-	@Test
-	public void buildYamlFromFolder() throws FileNotFoundException, IOException {
-		logger.info("buildYamlFromFolder");
-
-		String root = "";
-		File rootDir = new File(root);
-		logger.info("root1 {}", rootDir.getAbsolutePath());
-
-		String targetPath = rootDir.getAbsolutePath() + "\\src\\test\\input\\group\\";
-		File targetFolderFile = new File(targetPath);
-		logger.info("targetFolderFile {} existed {} dir {}", targetFolderFile.getAbsolutePath(), targetFolderFile.exists(), targetFolderFile.isDirectory());
-		if (targetFolderFile == null || !targetFolderFile.isDirectory()) {
-			return;
-		}
-
-		FuncGenEnum genEnum = FuncGenEnum.NEW; // NEW EXISTED
-
-		outputFileName = "202412BG_" + genEnum.name() + ".yaml";
-
-		logger.info("working on {}", genEnum);
-
-		String target = genEnum.getPrefix();
-		String ignoreTarget = genEnum.getIgnorePrefix();
-
-		File[] dirFiles = targetFolderFile.listFiles();
-
-		for (File xlsxFile : dirFiles) {
-			if (!xlsxFile.getAbsolutePath().toLowerCase().endsWith("xlsx")) { // not xlsx => ignore
-				continue;
-			}
-
-			logger.info("handling {}", xlsxFile);
-			Map<String, Integer> headerMap = ExcelReader.getHeaderIndex(xlsxFile.getAbsolutePath());
-			logger.info("header {}", headerMap);
-			List<Map<Integer, Object>> rowMapList = ExcelReader.getActiveRow(xlsxFile.getAbsolutePath(), false);
-			logger.info("size {}", rowMapList.size());
-
-			int activeCnt = 0;
-			for (Map<Integer, Object> rowData : rowMapList) {
-				MVPScopeVO vo = null;
-				try {
-					vo = new MVPScopeVO(genEnum, headerMap, rowData);
-				} catch (Exception e) {
-					logger.info("cnt wrong {} {} {}", e.toString(), headerMap, rowData);
-					continue;
-				}
-
-				if (vo.getApiType() != null && vo.getApiType().toLowerCase().startsWith(target)) {
-					logger.info("{}", vo);
-					String apiName = vo.getApiName();
-					if (!apiNameToApiDataMapFromExcel.containsKey(apiName)) {
-						apiNameToApiDataMapFromExcel.put(apiName, new ArrayList<MVPScopeVO>());
-					}
-					apiNameToApiDataMapFromExcel.get(apiName).add(vo);
-					activeCnt++;
-				} else if (vo.getApiType() != null && vo.getApiType().toLowerCase().startsWith(ignoreTarget)) {
-					logger.debug("ignored {}", vo);
-				} else {
-					logger.debug("error " + vo);
-				}
-
-				String desc = DomainTypeUtil.getDescriptionByDomainValue(vo.getBusinessName(), vo.getDomainValue());
-				if (StringUtils.isNotBlank(desc)) {
-					// logger.info("changing desc {}", desc);
-					vo.setDescription(desc);
-				}
-			}
-			logger.info("=====>{} active line {}", xlsxFile, activeCnt);
-		}
-		logger.info("START handleData");
-		doJob();
+	private void appendOutputToFile(String line) {
+		FileOutputUtil.printOut(outputFileName, line);
 	}
 
-	@Ignore
-	@Test
-	public void buildYamlFromOneExcel() throws FileNotFoundException, IOException {
-		logger.info("buildYamlFromExcelForNew");
-
-		String xlsxFile = ".\\src\\test\\input\\MVP3 scope for TF_LC_B4_001 2.xlsx";
-		Map<String, Integer> headerMap = ExcelReader.getHeaderIndex(xlsxFile);
-		List<Map<Integer, Object>> rowMapList = ExcelReader.getActiveRow(xlsxFile, false);
-
-		FuncGenEnum genEnum = FuncGenEnum.NEW; // NEW EXISTED
-		outputFileName = "20241225_" + genEnum.getMessage() + ".yaml";
-
-		String target = genEnum.getPrefix();
-		String ignoreTarget = genEnum.getIgnorePrefix();
-
-		for (Map<Integer, Object> rowData : rowMapList) {
-			MVPScopeVO vo = null;
-			try {
-				vo = new MVPScopeVO(headerMap, rowData);
-			} catch (Exception e) {
-				continue;
-			}
-
-			if (vo.getApiType() != null && vo.getApiType().toLowerCase().startsWith(target)) {
-				logger.info("{}", vo);
-				String apiName = vo.getApiName();
-				if (!apiNameToApiDataMapFromExcel.containsKey(apiName)) {
-					apiNameToApiDataMapFromExcel.put(apiName, new ArrayList<MVPScopeVO>());
-				}
-				apiNameToApiDataMapFromExcel.get(apiName).add(vo);
-			} else if (vo.getApiType() != null && vo.getApiType().toLowerCase().startsWith(ignoreTarget)) {
-				logger.debug("ignored {}", vo);
-			} else {
-				logger.info("error " + vo);
-			}
-
-			String desc = DomainTypeUtil.getDescriptionByDomainValue(vo.getBusinessName(), vo.getDomainValue());
-			if (StringUtils.isNotBlank(desc)) {
-				// logger.info("changing desc {}", desc);
-				vo.setDescription(desc);
-			}
-			if (StringUtils.isNotBlank(vo.getDescription())) {
-				int index = desc.indexOf(DomainTypeUtil.ALLOWED_VALUES);
-				if (index >= 0) {
-					vo.setDataType("number");
-				}
-			}
-		}
-		doJob();
-	}
-
-	private void doJob() {
+	protected void doJob() {
 		prepareData();
 		outputData();
 	}
 
-	private void prepareData() {
+	protected void prepareData() {
 		checkData();
 		groupingSameReqPath();
 		groupingReqRespObject();
 	}
 
-	private void outputData() {
-		logger.info("======================== start of YAML ========================");
+	protected void outputData() {
+		getLogger().info("======================== start of YAML ========================");
 		HeaderUtil.printHeader(outputFileName);
 		printDefOfApi();
 		printBasicOutputComponent();
 		printDefOfReference();
-	}
-
-	public void printDefOfApi() {
-		appendOutputToFile("paths:");
-		Set<String> keySet = mapForSameURLPath.keySet();
-		keySet.stream().forEach(reqPath -> {
-			showDefApiByKey(reqPath);
-		});
+		getLogger().info("======================== end YAML =====" + outputFileName + "===========");
 	}
 
 	public void checkData() {
@@ -213,7 +77,7 @@ public class ExcelReadBuilderTest {
 					String path = vo.getPath();
 					if (!path.equals(targetPath)) {
 						error = true;
-						logger.error("path diff " + targetPath + " vs " + path + " ref" + vo);
+						getLogger().error("path diff " + targetPath + " vs " + path + " ref" + vo);
 					}
 				}
 			}
@@ -222,7 +86,7 @@ public class ExcelReadBuilderTest {
 //			System.exit(0);
 //		}
 
-		logger.info("checkData pass");
+		getLogger().info("checkData pass");
 	}
 
 	public void groupingSameReqPath() {
@@ -234,7 +98,7 @@ public class ExcelReadBuilderTest {
 				MVPScopeVO vo = params.get(0);
 				String reqPath = vo.getReqPath();
 				String httpMethod = vo.getHttpMethod();
-				logger.info(key + " " + httpMethod + " " + reqPath);
+				getLogger().info(key + " " + httpMethod + " " + reqPath);
 
 				if (!mapForSameURLPath.containsKey(reqPath)) {
 					mapForSameURLPath.put(reqPath, new ArrayList<String>());
@@ -243,27 +107,36 @@ public class ExcelReadBuilderTest {
 			}
 		}
 
-		logger.info("==============:showing different path");
+		getLogger().info("==============:showing different path");
 		mapForSameURLPath.keySet().forEach(key -> {
-			logger.info("path " + key);
+			getLogger().info("path " + key);
 			List<String> values = mapForSameURLPath.get(key);
 			values.forEach(value -> {
-				logger.info("pathmethod : " + key + " method:" + value);
+				getLogger().info("pathmethod : " + key + " method:" + value);
 			});
 		});
-		logger.info("==============:ending different path");
+		getLogger().info("==============:ending different path");
 	}
 
 	public void groupingReqRespObject() {
-		logger.info("====================groupingReqRespObject==========================");
+		getLogger().info("====================groupingReqRespObject==========================");
 		Set<String> keySet = apiNameToApiDataMapFromExcel.keySet();
 		keySet.stream().forEach(key -> {
-			logger.info("groupingReqRespObject key : {}", key);
+			getLogger().info("groupingReqRespObject key : {}", key);
 			List<MVPScopeVO> attributes = apiNameToApiDataMapFromExcel.get(key);
 			ReqRespParamVO vo = ReqRespParamVOUtil.getReqRespParamVO(key, attributes);
 
 			vo.showContent();
 			reqRespParamVOMap.put(key, vo);
+		});
+	}
+
+	// output block
+	public void printDefOfApi() {
+		appendOutputToFile("paths:");
+		Set<String> keySet = mapForSameURLPath.keySet();
+		keySet.stream().forEach(reqPath -> {
+			showDefApiByKey(reqPath);
 		});
 	}
 
@@ -312,10 +185,6 @@ public class ExcelReadBuilderTest {
 			withRespObj = true;
 		}
 		appendOutputToFile(SchemaBodyUtil.genResponseSchemaText(refKey, withRespObj));
-	}
-
-	private void appendOutputToFile(String line) {
-		FileOutputUtil.printOut(outputFileName, line);
 	}
 
 	/**
@@ -454,7 +323,7 @@ components:
 
 		if (mapOfObjArrList != null && mapOfObjArrList.size() > 0) {
 			for (String subNode : mapOfObjArrList.keySet()) {
-				List<ColumnDefVo> variables = mapOfObjList.get(subNode);
+				List<ColumnDefVo> variables = mapOfObjArrList.get(subNode);
 				Set<String> requiredNameList = new HashSet<String>();
 				for (ColumnDefVo vo : variables) {
 					if (vo.isRequired()) {
@@ -495,4 +364,5 @@ components:
 			}
 		}
 	}
+
 }

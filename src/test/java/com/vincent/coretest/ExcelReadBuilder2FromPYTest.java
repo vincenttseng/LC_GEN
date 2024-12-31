@@ -59,7 +59,7 @@ public class ExcelReadBuilder2FromPYTest {
 		String target = null;
 		String ignoreTarget = null;
 
-		outputFileName = "202412_BG_all.yaml";
+		outputFileName = "20241230_BG_all.yaml";
 
 		logger.info("working on all");
 
@@ -399,7 +399,7 @@ components:
 
 		if (mapOfObjArrList != null && mapOfObjArrList.size() > 0) {
 			for (String subNode : mapOfObjArrList.keySet()) {
-				List<ColumnDefVo> variables = mapOfObjList.get(subNode);
+				List<ColumnDefVo> variables = mapOfObjArrList.get(subNode);
 				Set<String> requiredNameList = new HashSet<String>();
 				if (variables != null && variables.size() > 0) {
 					for (ColumnDefVo vo : variables) {

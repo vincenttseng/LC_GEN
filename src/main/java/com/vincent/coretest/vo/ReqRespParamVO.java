@@ -32,16 +32,16 @@ public class ReqRespParamVO {
 	List<ColumnDefVo> queryObjectList = new ArrayList<ColumnDefVo>();
 
 	public void showContent() {
-		logger.info("   ===== mapOfInputObjectList");
+		logger.info("   input object map");
 		showMap(mapOfInputObjectList);
 
-		logger.info("   ===== mapOfInputObjectArrayList");
+		logger.info("   input array map");
 		showMap(mapOfInputObjectArrayList);
 
-		logger.info("   ===== mapOfRespObjectList");
+		logger.info("   output object map");
 		showMap(mapOfRespObjectList);
 		
-		logger.info("   ===== mapOfRespObjectArrayList");
+		logger.info("   output array map");
 		showMap(mapOfRespObjectArrayList);
 	}
 

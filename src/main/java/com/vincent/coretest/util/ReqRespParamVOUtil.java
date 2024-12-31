@@ -31,7 +31,7 @@ public class ReqRespParamVOUtil {
 
 		if (attributes != null) {
 			for (MVPScopeVO cellVO : attributes) {
-				boolean isArray = false;
+				boolean isArray = cellVO.isArray();
 				// check isArray
 				if (GenTypeEnum.REQUEST == cellVO.getDirection()) {
 					if (isArray) {

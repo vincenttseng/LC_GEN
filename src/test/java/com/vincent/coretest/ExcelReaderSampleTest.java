@@ -13,7 +13,7 @@ import org.slf4j.LoggerFactory;
 import com.vincent.coretest.reader.ExcelReader;
 
 public class ExcelReaderSampleTest {
-	protected final Logger logger = LoggerFactory.getLogger(ExcelReadBuilderTest.class);
+	protected final Logger logger = LoggerFactory.getLogger(ExcelReaderSampleTest.class);
 
 	@Test
 	public void buildYamlFromFolder() throws FileNotFoundException, IOException {
