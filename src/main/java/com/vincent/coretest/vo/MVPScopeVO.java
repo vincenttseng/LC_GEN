@@ -1,6 +1,5 @@
 package com.vincent.coretest.vo;
 
-import java.io.IOException;
 import java.util.Collection;
 import java.util.Map;
 
@@ -51,6 +50,8 @@ public class MVPScopeVO {
 	Map<String, Integer> headerMap = null;
 	Map<Integer, Object> rowData = null;
 
+	boolean isArray = false;
+
 	public MVPScopeVO(FuncGenEnum genEnum, Map<String, Integer> headerMap, Map<Integer, Object> rowData) throws Exception {
 		this.genEnum = genEnum;
 		this.headerMap = headerMap;
@@ -59,12 +60,12 @@ public class MVPScopeVO {
 		if (!isValidDataCount(rowData, 5)) {
 			throw new Exception(rowData.toString());
 		}
-		
+
 		handleInitData();
 	}
 
 	public MVPScopeVO(Map<String, Integer> headerMap, Map<Integer, Object> rowData) throws Exception {
-		this.genEnum = FuncGenEnum.EXISTED;
+		this.genEnum = FuncGenEnum.All;
 		this.headerMap = headerMap;
 		this.rowData = rowData;
 
@@ -176,6 +177,12 @@ public class MVPScopeVO {
 		index = headerMap.get("Request/Response");
 		if (index != null) {
 			direction = GenTypeEnum.of(getValueFromMap(rowData, index, ""));
+		}
+
+		index = headerMap.get("Is Array");
+		if (index != null) {
+			String tmp = getValueFromMap(rowData, index, "");
+			isArray = Boolean.parseBoolean(tmp);
 		}
 	}
 

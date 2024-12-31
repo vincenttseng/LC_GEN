@@ -8,7 +8,8 @@ import lombok.ToString;
 public enum FuncGenEnum {
 	//@formatter:off
 	NEW("n"), 
-	EXISTED("e");
+	EXISTED("e"),
+	All("all");
 	//@formatter:on
 
 	private String message;
