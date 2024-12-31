@@ -55,7 +55,7 @@ public abstract class AbstractExcelReadBuilder {
 		printDefOfApi();
 		printBasicOutputComponent();
 		printDefOfReference();
-		getLogger().info("======================== end YAML =====" + outputFileName + "===========");
+		getLogger().info("=========== end YAML =====" + outputFileName + " ===========");
 	}
 
 	public void checkData() {
