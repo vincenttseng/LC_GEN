@@ -141,4 +141,8 @@ public class TextUtil {
 		}
 	}
 
+	public static String filterAPIName(String apiName) {
+		return apiName.replaceAll("[^a-zA-Z0-9 ]", "");
+	}
+
 }

@@ -23,6 +23,7 @@ public class ColumnDefVo {
 	public String name;
 	public String type;
 	public String desc;
+	public boolean groupRequired = false;
 	public boolean required = false;
 	public boolean isDate = false;
 	public int maxLength;
@@ -88,10 +89,11 @@ public class ColumnDefVo {
 			return type;
 		}
 	}
-	
+
 	public static ColumnDefVo toColumnDefVo(MVPScopeVO cellVO) {
 		ColumnDefVo vo = new ColumnDefVo();
 
+		vo.setGroupRequired(cellVO.isGroupRequired());
 		vo.setRequired(cellVO.isRequired());
 
 		vo.setName(cellVO.getBusinessName());

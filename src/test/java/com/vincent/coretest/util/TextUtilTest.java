@@ -36,4 +36,10 @@ public class TextUtilTest {
 		logger.info(TextUtil.getCommentsFromYamlMethodComments(tmp));
 		
 	}
+	
+	@Test
+	public void testEnsureApiNameLogic() {
+		String apiName = "Simulate trial closure of term deposit / recurring deposit accounts";
+		logger.info(TextUtil.filterAPIName(apiName));
+	}
 }

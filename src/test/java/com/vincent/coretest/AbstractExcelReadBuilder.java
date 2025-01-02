@@ -273,7 +273,16 @@ components:
 			return; // nothing to show
 		}
 
+		Set<String> requiredSet = collectGroupRequired(mapOfObjList, mapOfObjArrList);
+
 		appendOutputToFile("    " + obj + ":");
+		if (requiredSet != null && requiredSet.size() > 0) {
+			appendOutputToFile("      required:");
+			for (String node : requiredSet) {
+				getLogger().info("requiredFiled " + node);
+				appendOutputToFile("        - " + node);
+			}
+		}
 		appendOutputToFile("      type: object");
 		appendOutputToFile("      properties:");
 		// Request Response Object Definition
@@ -345,6 +354,34 @@ components:
 				}
 			}
 		}
+	}
+
+	private Set<String> collectGroupRequired(Map<String, List<ColumnDefVo>> mapOfObjList, Map<String, List<ColumnDefVo>> mapOfObjArrList) {
+		Set<String> requiredGroup = new HashSet<String>();
+		if (mapOfObjList != null && mapOfObjList.size() > 0) {
+			for (String subNode : mapOfObjList.keySet()) {
+				List<ColumnDefVo> list = mapOfObjList.get(subNode);
+				if (list != null && list.size() > 0) {
+					ColumnDefVo vo = list.get(0);
+					if (vo.isGroupRequired()) {
+						requiredGroup.add(subNode.toLowerCase());
+					}
+				}
+			}
+		}
+
+		if (mapOfObjArrList != null && mapOfObjArrList.size() > 0) {
+			for (String subNode : mapOfObjArrList.keySet()) {
+				List<ColumnDefVo> list = mapOfObjArrList.get(subNode);
+				if (list != null && list.size() > 0) {
+					ColumnDefVo vo = list.get(0);
+					if (vo.isGroupRequired()) {
+						requiredGroup.add(subNode.toLowerCase());
+					}
+				}
+			}
+		}
+		return requiredGroup;
 	}
 
 	private void printObjectVariables(List<ColumnDefVo> variables) {

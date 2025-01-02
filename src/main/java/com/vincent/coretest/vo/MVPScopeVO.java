@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import com.vincent.coretest.enumeration.FuncGenEnum;
 import com.vincent.coretest.enumeration.GenTypeEnum;
 import com.vincent.coretest.util.HttpUtils;
+import com.vincent.coretest.util.TextUtil;
 
 import lombok.Data;
 import lombok.Getter;
@@ -34,6 +35,7 @@ public class MVPScopeVO {
 	GenTypeEnum direction = null;
 
 	String groupName = "";
+	boolean isGroupRequired = false;
 
 	boolean required = false;
 
@@ -97,6 +99,7 @@ public class MVPScopeVO {
 		if (index != null) {
 			apiName = getValueFromMap(rowData, index, "");
 		}
+		apiName = TextUtil.filterAPIName(apiName);
 
 		index = headerMap.get("API Node");
 		if (index != null) {
@@ -106,6 +109,10 @@ public class MVPScopeVO {
 		index = headerMap.get("Group Name");
 		if (index != null) {
 			groupName = getValueFromMap(rowData, index, "");
+		}
+		if (groupName.endsWith("*")) {
+			isGroupRequired = true;
+			groupName = groupName.substring(0, groupName.length() - 1);
 		}
 		groupName = correctGroupName(groupName);
 
@@ -204,6 +211,7 @@ public class MVPScopeVO {
 			int index = value.indexOf("(");
 			value = value.substring(0, index);
 		}
+
 		return value;
 	}
 
