@@ -220,7 +220,7 @@ public class MVPScopeVO {
 	}
 
 	public static final boolean isValidDataCount(Map<Integer, Object> map, int min) {
-		Collection values = map.values();
+		Collection<?> values = map.values();
 		int cnt = 0;
 		for (Object o : values) {
 			String tmp = o != null ? o.toString() : "";

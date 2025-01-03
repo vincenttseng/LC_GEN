@@ -7,12 +7,10 @@ import java.util.Map;
 import java.util.Set;
 
 import org.apache.commons.lang3.StringUtils;
-import org.apache.poi.util.StringUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.vincent.coretest.util.TextUtil;
-import com.vincent.coretest.yaml.YamlParserToPartsStorage;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -35,12 +33,15 @@ public class HttpMethodDetailsVO {
 	String description;
 	String operationId;
 	private List<ParamVO> params;
+	@SuppressWarnings("rawtypes")
 	LinkedHashMap requestBody;
 	String reqRef;
+	@SuppressWarnings("rawtypes")
 	LinkedHashMap responses;
 	String respType = "";
 	List<String> responseList = new ArrayList<String>();
 
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public static List<HttpMethodDetailsVO> of(String path, LinkedHashMap methodDetails) {
 		final List<HttpMethodDetailsVO> methodVOList = new ArrayList<HttpMethodDetailsVO>();
 		if (methodDetails == null) {
@@ -66,7 +67,7 @@ public class HttpMethodDetailsVO {
 		return methodVOList;
 	}
 
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public static void setValue(HttpMethodDetailsVO vo, LinkedHashMap linkedMap) {
 		linkedMap.forEach((key, value) -> {
 			if ("tags".equals(key)) {
@@ -117,7 +118,6 @@ public class HttpMethodDetailsVO {
 
 	public void setApiNode() {
 		String nodeName = null;
-		Object obj = null;
 		if (tags != null && tags.size() > 0) {
 			nodeName = tags.get(0);
 		}
@@ -160,6 +160,7 @@ public class HttpMethodDetailsVO {
 		fullPathUrl = sb.toString();
 	}
 
+	@SuppressWarnings({ "unused", "rawtypes", "unchecked" })
 	private static final String getNodeNameFromReq(LinkedHashMap map) {
 		if (map == null) {
 			return null;

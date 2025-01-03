@@ -25,7 +25,7 @@ public class ComponentsDataStorage {
 	Map<String, Object> basedRefMap = new HashMap<String, Object>();
 	Map<String, Object> scanedRefMap = new HashMap<String, Object>();
 
-	@SuppressWarnings({ "rawtypes", "unchecked" })
+	@SuppressWarnings({ "rawtypes" })
 	public void parseComponents(final HashMap componentsMap) {
 		Map map = new HashMap();
 		Object obj = null;
@@ -97,7 +97,7 @@ public class ComponentsDataStorage {
 	public LinkedHashMap getComponentNodeByComponentName(String componentName) {
 		if (basedRefMap.containsKey(componentName)) {
 			Object object = basedRefMap.get(componentName);
-			if (object != null&&object instanceof LinkedHashMap) {
+			if (object != null && object instanceof LinkedHashMap) {
 				return (LinkedHashMap) object;
 			}
 			logger.info("obj {} {}", object.getClass(), object);

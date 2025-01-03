@@ -1,8 +1,6 @@
 package com.vincent.coretest.yaml.vo;
 
-import java.util.ArrayList;
 import java.util.LinkedHashMap;
-import java.util.List;
 
 import com.vincent.coretest.util.TextUtil;
 
@@ -24,7 +22,7 @@ public class ParamVO {
 	boolean required;
 	SchemaVO schema;
 
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public static ParamVO of(LinkedHashMap map) {
 		if (map != null) {
 			ParamVO vo = new ParamVO();
