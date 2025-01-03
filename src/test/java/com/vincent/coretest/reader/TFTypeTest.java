@@ -1,4 +1,4 @@
-package com.vincent.coretest;
+package com.vincent.coretest.reader;
 
 import java.io.IOException;
 import java.util.Map;
@@ -8,7 +8,6 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.vincent.coretest.reader.TFTypeUtil;
 import com.vincent.coretest.vo.TFType;
 
 public class TFTypeTest {

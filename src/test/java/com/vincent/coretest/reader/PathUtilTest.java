@@ -1,4 +1,4 @@
-package com.vincent.coretest;
+package com.vincent.coretest.reader;
 
 import java.io.File;
 import java.io.IOException;
@@ -14,8 +14,8 @@ import com.vincent.coretest.reader.PathUtil;
 import com.vincent.coretest.util.TextUtil;
 import com.vincent.coretest.vo.ColumnDefVo;
 
-public class SimpleTest {
-	protected final Logger logger = LoggerFactory.getLogger(SimpleTest.class);
+public class PathUtilTest {
+	protected final Logger logger = LoggerFactory.getLogger(PathUtilTest.class);
 
 	String domainFilename = ".\\src\\test\\input\\domainRef.csv";
 	String typeToDomainFilename = ".\\src\\test\\input\\typeToDomain.txt";

@@ -1,4 +1,4 @@
-package com.vincent.coretest;
+package com.vincent.coretest.yaml;
 
 import java.io.File;
 import java.io.FileNotFoundException;

@@ -1,4 +1,4 @@
-package com.vincent.coretest;
+package com.vincent.coretest.reader;
 
 import org.junit.Test;
 import org.slf4j.Logger;
