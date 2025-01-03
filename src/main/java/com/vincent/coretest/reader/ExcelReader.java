@@ -18,7 +18,7 @@ import org.slf4j.LoggerFactory;
 public class ExcelReader {
 	protected static final Logger logger = LoggerFactory.getLogger(ExcelReader.class);
 
-	private static String TAB_PREFIX_NAME;
+	private static String TAB_PREFIX_NAME = "api details";
 
 	public static void setDataTabPrefix(String tabPrefix) {
 		TAB_PREFIX_NAME = tabPrefix;

@@ -171,7 +171,7 @@ public class MVPScopeVO {
 		int offset = path.indexOf("/");
 		try {
 			if (StringUtils.isBlank(httpMethod)) {
-				httpMethod = path.substring(0, offset);
+				httpMethod = StringUtils.trim(path.substring(0, offset));
 			}
 			originalPathWithQuery = path.substring(offset);
 			path = originalPathWithQuery;
