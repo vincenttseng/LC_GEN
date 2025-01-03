@@ -279,6 +279,7 @@ components:
 		if (requiredSet != null && requiredSet.size() > 0) {
 			appendOutputToFile("      required:");
 			for (String node : requiredSet) {
+//				getLogger().info("required node {}", node);
 				appendOutputToFile("        - " + node);
 			}
 		}

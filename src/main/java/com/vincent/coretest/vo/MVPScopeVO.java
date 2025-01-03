@@ -110,10 +110,6 @@ public class MVPScopeVO {
 		if (index != null) {
 			groupName = getValueFromMap(rowData, index, "");
 		}
-		if (groupName.endsWith("*")) {
-			isGroupRequired = true;
-			groupName = groupName.substring(0, groupName.length() - 1);
-		}
 		groupName = correctGroupName(groupName);
 
 		index = headerMap.get("Field Name");
@@ -161,6 +157,14 @@ public class MVPScopeVO {
 				path = HttpUtils.getPathRemovingifHttpMethod(tmp);
 			} else {
 				path = tmp;
+			}
+		}
+
+		index = headerMap.get("Group Mandatory/Optional");
+		if (index != null) {
+			String tmp = getValueFromMap(rowData, index, "");
+			if ("m".equalsIgnoreCase(tmp)) {
+				isGroupRequired = true;
 			}
 		}
 
@@ -224,11 +228,9 @@ public class MVPScopeVO {
 				cnt++;
 			}
 			if (cnt > min) {
-//				logger.info("AAA{} {}", cnt, map);
 				return true;
 			}
 		}
-//		logger.info("BBB{} {}", cnt, map);
 		return (cnt > min);
 	}
 }
