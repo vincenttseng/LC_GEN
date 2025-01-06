@@ -21,7 +21,7 @@ import lombok.ToString;
 @Getter
 @NoArgsConstructor
 @ToString
-public class MVPScopeVO {
+public class MVPScopeVO implements Cloneable {
 	protected static final Logger logger = LoggerFactory.getLogger(MVPScopeVO.class);
 
 	FuncGenEnum genEnum = FuncGenEnum.EXISTED;
@@ -195,6 +195,12 @@ public class MVPScopeVO {
 			String tmp = getValueFromMap(rowData, index, "");
 			isArray = Boolean.parseBoolean(tmp);
 		}
+	}
+
+	// Override clone method
+	@Override
+	public MVPScopeVO clone() throws CloneNotSupportedException {
+		return (MVPScopeVO) super.clone(); // Perform shallow copy
 	}
 
 	public static final String getValueFromMap(Map<Integer, Object> map, Integer key, String defaultVal) {

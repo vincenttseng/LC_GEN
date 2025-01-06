@@ -24,7 +24,7 @@ public class ExcelReadFolderBuilderTest extends AbstractExcelReadBuilder {
 	public void buildYamlFromFolder() throws FileNotFoundException, IOException {
 		logger.info("buildYamlFromFolder");
 
-		ExcelReader.setDataTabPrefix("api details"); // b4, api details
+		ExcelReader.setDataTabPrefix("b4"); // b4, api details
 
 		String root = "";
 		File rootDir = new File(root);
@@ -39,7 +39,7 @@ public class ExcelReadFolderBuilderTest extends AbstractExcelReadBuilder {
 
 		FuncGenEnum genEnum = FuncGenEnum.All; // NEW EXISTED
 
-		outputFileName = "20250105_DDA_" + genEnum.name() + ".yaml";
+		outputFileName = "20250105_2_LC_" + genEnum.name() + ".yaml";
 
 		logger.info("working on {}", genEnum);
 

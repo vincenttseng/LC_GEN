@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 
 import com.vincent.coretest.enumeration.GenTypeEnum;
@@ -400,6 +401,17 @@ components:
 				}
 			}
 		}
+	}
+
+	protected static boolean isV2(String path) {
+		return StringUtils.isNotBlank(path) && path.toLowerCase().startsWith("/v2");
+	}
+
+	protected static String v2GetParentPath(String path) {
+		if (!isV2(path)) {
+			return null;
+		}
+		return path.substring("/v2".length());
 	}
 
 }
