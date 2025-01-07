@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -51,7 +52,7 @@ public class ReadCoreExcelMergeWithNewFuncTest extends AbstractExcelReadBuilder 
 
 		FuncGenEnum genEnum = FuncGenEnum.All; // NEW EXISTED
 
-		outputFileName = "20250105_WHOLE_LC_" + genEnum.name() + ".yaml";
+		outputFileName = "20250106_WHOLE_LC1_" + genEnum.name() + ".yaml";
 
 		logger.info("working on {}", genEnum);
 
@@ -106,6 +107,9 @@ public class ReadCoreExcelMergeWithNewFuncTest extends AbstractExcelReadBuilder 
 
 		apiNameToApiDataMapFromExcel.forEach((key, list) -> {
 			if (list != null && list.size() > 0) {
+				if("Margin Details".equals(key)) {
+					logger.info("AAA");
+				}
 				MVPScopeVO vo = list.get(0);
 				String parentPath = v2GetParentPath(vo.getPath());
 				logger.debug("key {} path {} root {} ", key, vo.getPath(), parentPath);
@@ -114,23 +118,59 @@ public class ReadCoreExcelMergeWithNewFuncTest extends AbstractExcelReadBuilder 
 				RESTfulKey aRESTfulKey = new RESTfulKey(parentPath, method);
 				logger.debug("  {} RESTfulKey {} existed {}", method, aRESTfulKey, coreApiNameToApiDataMapFromExcel.containsKey(aRESTfulKey));
 
+				Set<String> arrayGroupNameSet = new HashSet<String>();
+				for (MVPScopeVO aMVPScopeVO : list) {
+					if (aMVPScopeVO.isArray()) {
+						arrayGroupNameSet.add(aMVPScopeVO.getGroupName());
+					}
+				}
+				for(MVPScopeVO aMVPScopeVO:list) {
+					if(arrayGroupNameSet.contains(aMVPScopeVO.getGroupName())) {
+						aMVPScopeVO.setArray(true);
+					} else {
+						aMVPScopeVO.setArray(false);
+					}
+				}
+				
 				if (coreApiNameToApiDataMapFromExcel.containsKey(aRESTfulKey)) {
-					logger.info("found old ===> {} value {}", key, list);
 					List<MVPScopeVO> v1List = coreApiNameToApiDataMapFromExcel.get(aRESTfulKey);
-					for (MVPScopeVO v1MVPScopeVO : v1List) {
+
+					// 收集這個 API 所有是陣列的 GROUP
+					for (MVPScopeVO aMVPScopeVO : v1List) {
+						if (aMVPScopeVO.isArray()) {
+							arrayGroupNameSet.add(aMVPScopeVO.getGroupName());
+						}
+					}
+
+					if(arrayGroupNameSet.contains("margin-details")) {
+						logger.info("DEBUG");
+					}
+					
+					for (MVPScopeVO aMVPScopeVO : list) {
+						if (arrayGroupNameSet.contains(aMVPScopeVO.getGroupName())) {
+							// 不論新的 GROUP 是不是 ARRAY，如果他的舊的是 ARRAY，也把它變成 ARRAY
+							aMVPScopeVO.setArray(true);
+						} else {
+							aMVPScopeVO.setArray(false);
+						}
+					}
+
+					for (int i = v1List.size() - 1; i >= 0; i--) {
 						try {
+							MVPScopeVO v1MVPScopeVO = v1List.get(i);
 							MVPScopeVO clone = v1MVPScopeVO.clone();
 							clone.setPath(vo.getPath()); // 給新的 V2 PATH
 							clone.setOriginalPathWithQuery(vo.getOriginalPathWithQuery());
 							clone.setReqPath(vo.getReqPath());
+							if(arrayGroupNameSet.contains(clone.getGroupName())) {
+								clone.setArray(true);
+							}
 							list.add(0, clone);
-							logger.info("found old ===> {} adding {}", key, clone);
 						} catch (CloneNotSupportedException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
 						}
 					}
-					logger.info("found old ===> {} result {}", key, v1List);
 				} else { // check if it is new
 					if (vo.getApiType().toLowerCase().startsWith("e")) { // 找不到V1 但是是EXISTED
 						logger.warn("v1 not found BUT IT IS existed ==> {} ", vo);
