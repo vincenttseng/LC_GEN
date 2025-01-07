@@ -36,9 +36,6 @@ public class ReadCoreExcelMergeWithNewFuncTest extends AbstractExcelReadBuilder 
 		coreApiNameToApiDataMapFromExcel = readCoreApiMap();
 		showMap(coreApiNameToApiDataMapFromExcel);
 
-		// old code for handling onlly v2
-		ExcelReader.setDataTabPrefix("b4"); // b4, api details
-
 		String root = "";
 		File rootDir = new File(root);
 		logger.info("root1 {}", rootDir.getAbsolutePath());
@@ -108,9 +105,6 @@ public class ReadCoreExcelMergeWithNewFuncTest extends AbstractExcelReadBuilder 
 
 		apiNameToApiDataMapFromExcel.forEach((key, list) -> {
 			if (list != null && list.size() > 0) {
-				if("Margin Details".equals(key)) {
-					logger.info("AAA");
-				}
 				MVPScopeVO vo = list.get(0);
 				String parentPath = v2GetParentPath(vo.getPath());
 				logger.debug("key {} path {} root {} ", key, vo.getPath(), parentPath);
@@ -132,7 +126,7 @@ public class ReadCoreExcelMergeWithNewFuncTest extends AbstractExcelReadBuilder 
 //						aMVPScopeVO.setArray(false);
 //					}
 //				}
-				
+
 				if (coreApiNameToApiDataMapFromExcel.containsKey(aRESTfulKey)) {
 					List<MVPScopeVO> v1List = coreApiNameToApiDataMapFromExcel.get(aRESTfulKey);
 
@@ -143,10 +137,6 @@ public class ReadCoreExcelMergeWithNewFuncTest extends AbstractExcelReadBuilder 
 						}
 					}
 
-					if(arrayGroupNameSet.contains("margin-details")) {
-						logger.info("DEBUG");
-					}
-					
 					for (MVPScopeVO aMVPScopeVO : list) {
 						if (arrayGroupNameSet.contains(aMVPScopeVO.getGroupName())) {
 							// 不論新的 GROUP 是不是 ARRAY，如果他的舊的是 ARRAY，也把它變成 ARRAY
@@ -163,7 +153,7 @@ public class ReadCoreExcelMergeWithNewFuncTest extends AbstractExcelReadBuilder 
 							clone.setPath(vo.getPath()); // 給新的 V2 PATH
 							clone.setOriginalPathWithQuery(vo.getOriginalPathWithQuery());
 							clone.setReqPath(vo.getReqPath());
-							if(arrayGroupNameSet.contains(clone.getGroupName())) {
+							if (arrayGroupNameSet.contains(clone.getGroupName())) {
 								clone.setArray(true);
 							}
 							list.add(0, clone);
@@ -196,11 +186,10 @@ public class ReadCoreExcelMergeWithNewFuncTest extends AbstractExcelReadBuilder 
 	}
 
 	private Map<RESTfulKey, List<MVPScopeVO>> readCoreApiMap() {
-		ExcelReader.setDataTabPrefix("api details"); // b4, api details
 		HashMap<RESTfulKey, List<MVPScopeVO>> map = new HashMap<RESTfulKey, List<MVPScopeVO>>();
 
-		Map<String, Integer> headerMap = ExcelReader.getHeaderIndex(coreCategoryXlsxFromPYFile);
-		List<Map<Integer, Object>> rowMapList = ExcelReader.getActiveRow(coreCategoryXlsxFromPYFile, false);
+		Map<String, Integer> headerMap = ExcelReader.getHeaderIndex("api details", coreCategoryXlsxFromPYFile);
+		List<Map<Integer, Object>> rowMapList = ExcelReader.getActiveRow("api details", coreCategoryXlsxFromPYFile, false);
 
 		logger.info("rowCount {}", rowMapList.size());
 		for (Map<Integer, Object> rowData : rowMapList) {

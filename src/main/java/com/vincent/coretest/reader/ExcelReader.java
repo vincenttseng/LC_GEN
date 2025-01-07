@@ -18,13 +18,13 @@ import org.slf4j.LoggerFactory;
 public class ExcelReader {
 	protected static final Logger logger = LoggerFactory.getLogger(ExcelReader.class);
 
-	private static String TAB_PREFIX_NAME = "api details";
-
-	public static void setDataTabPrefix(String tabPrefix) {
-		TAB_PREFIX_NAME = tabPrefix;
-	}
+	private static String DEFAULT_TAB_PREFIX = "b4";
 
 	public static List<Map<Integer, Object>> getActiveRow(String xlsxFile, boolean includeHeader) {
+		return getActiveRow(DEFAULT_TAB_PREFIX, xlsxFile, includeHeader);
+	}
+
+	public static List<Map<Integer, Object>> getActiveRow(String tabPrefix, String xlsxFile, boolean includeHeader) {
 		List<Map<Integer, Object>> rowMapList = new ArrayList<Map<Integer, Object>>();
 
 		InputStream excelFileToRead = null;
@@ -33,7 +33,7 @@ public class ExcelReader {
 			excelFileToRead = new FileInputStream(xlsxFile);
 			wb = new XSSFWorkbook(excelFileToRead);
 
-			XSSFSheet sheet = readTargetSheet(wb);
+			XSSFSheet sheet = getTargetSheet(tabPrefix, wb);
 
 			if (sheet == null) {
 				logger.info("no sheet found");
@@ -107,6 +107,10 @@ public class ExcelReader {
 	}
 
 	public static Map<String, Integer> getHeaderIndex(String xlsxFile) {
+		return getHeaderIndex(DEFAULT_TAB_PREFIX, xlsxFile);
+	}
+
+	public static Map<String, Integer> getHeaderIndex(String tabPrefix, String xlsxFile) {
 		Map<String, Integer> result = new HashMap<String, Integer>();
 
 		InputStream excelFileToRead = null;
@@ -115,7 +119,7 @@ public class ExcelReader {
 			excelFileToRead = new FileInputStream(xlsxFile);
 			wb = new XSSFWorkbook(excelFileToRead);
 
-			XSSFSheet sheet = readTargetSheet(wb);
+			XSSFSheet sheet = getTargetSheet(tabPrefix, wb);
 
 			if (sheet == null) {
 				logger.info("no sheet found");
@@ -164,7 +168,7 @@ public class ExcelReader {
 		return result;
 	}
 
-	private static XSSFSheet readTargetSheet(XSSFWorkbook wb) {
+	private static XSSFSheet getTargetSheet(String tabPrefix, XSSFWorkbook wb) {
 		XSSFSheet sheet = null;
 		try {
 			int sheetCnt = wb.getNumberOfSheets();
@@ -172,7 +176,7 @@ public class ExcelReader {
 			for (int i = 0; i < sheetCnt; i++) {
 				XSSFSheet tmp = wb.getSheetAt(i);
 				String name = tmp.getSheetName();
-				if (name != null && name.toLowerCase().startsWith(TAB_PREFIX_NAME)) {
+				if (name != null && name.toLowerCase().startsWith(tabPrefix != null ? tabPrefix.toLowerCase() : DEFAULT_TAB_PREFIX)) {
 					sheetName = name;
 				}
 			}
@@ -182,7 +186,7 @@ public class ExcelReader {
 			}
 			return sheet;
 		} catch (Exception e) {
-			logger.info("no sheet for " + TAB_PREFIX_NAME);
+			logger.info("no sheet for " + tabPrefix);
 
 		}
 		return null;

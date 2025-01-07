@@ -24,8 +24,6 @@ public class ExcelReadFolderBuilderTest extends AbstractExcelReadBuilder {
 	public void buildYamlFromFolder() throws FileNotFoundException, IOException {
 		logger.info("buildYamlFromFolder");
 
-		ExcelReader.setDataTabPrefix("b4"); // b4, api details
-
 		String root = "";
 		File rootDir = new File(root);
 		logger.info("root1 {}", rootDir.getAbsolutePath());
