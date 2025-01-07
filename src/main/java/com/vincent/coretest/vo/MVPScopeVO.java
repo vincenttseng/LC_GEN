@@ -53,6 +53,8 @@ public class MVPScopeVO implements Cloneable {
 	Map<Integer, Object> rowData = null;
 
 	boolean isArray = false;
+	
+	String fileName = null;
 
 	public MVPScopeVO(FuncGenEnum genEnum, Map<String, Integer> headerMap, Map<Integer, Object> rowData) throws Exception {
 		this.genEnum = genEnum;

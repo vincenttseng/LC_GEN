@@ -82,6 +82,7 @@ public class ReadCoreExcelMergeWithNewFuncTest extends AbstractExcelReadBuilder 
 					continue;
 				}
 
+				vo.setFileName(xlsxFile.getAbsolutePath());
 				if (target == null || (vo.getApiType() != null && vo.getApiType().toLowerCase().startsWith(target))) {
 					logger.debug("{}", vo);
 					String apiName = vo.getApiName();
@@ -119,18 +120,18 @@ public class ReadCoreExcelMergeWithNewFuncTest extends AbstractExcelReadBuilder 
 				logger.debug("  {} RESTfulKey {} existed {}", method, aRESTfulKey, coreApiNameToApiDataMapFromExcel.containsKey(aRESTfulKey));
 
 				Set<String> arrayGroupNameSet = new HashSet<String>();
-				for (MVPScopeVO aMVPScopeVO : list) {
-					if (aMVPScopeVO.isArray()) {
-						arrayGroupNameSet.add(aMVPScopeVO.getGroupName());
-					}
-				}
-				for(MVPScopeVO aMVPScopeVO:list) {
-					if(arrayGroupNameSet.contains(aMVPScopeVO.getGroupName())) {
-						aMVPScopeVO.setArray(true);
-					} else {
-						aMVPScopeVO.setArray(false);
-					}
-				}
+//				for (MVPScopeVO aMVPScopeVO : list) {
+//					if (aMVPScopeVO.isArray()) {
+//						arrayGroupNameSet.add(aMVPScopeVO.getGroupName());
+//					}
+//				}
+//				for(MVPScopeVO aMVPScopeVO:list) {
+//					if(arrayGroupNameSet.contains(aMVPScopeVO.getGroupName())) {
+//						aMVPScopeVO.setArray(true);
+//					} else {
+//						aMVPScopeVO.setArray(false);
+//					}
+//				}
 				
 				if (coreApiNameToApiDataMapFromExcel.containsKey(aRESTfulKey)) {
 					List<MVPScopeVO> v1List = coreApiNameToApiDataMapFromExcel.get(aRESTfulKey);
