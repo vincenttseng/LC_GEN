@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 
 import com.vincent.coretest.enumeration.GenTypeEnum;
@@ -130,7 +131,7 @@ public abstract class AbstractExcelReadBuilder {
 			reqRespParamVOMap.put(key, vo);
 		});
 	}
-
+	
 	// output block
 	public void printDefOfApi() {
 		appendOutputToFile("paths:");
@@ -143,13 +144,19 @@ public abstract class AbstractExcelReadBuilder {
 	public void showDefApiByKey(String reqPath) {
 		appendOutputToFile("  " + reqPath + ":");
 
+		Set<String> existedMethodSet = new HashSet<String>();
 		List<String> keySet = mapForSameURLPath.get(reqPath);
 		for (String key : keySet) {
 			appendOutputToFile("######## " + key);
 			List<MVPScopeVO> params = apiNameToApiDataMapFromExcel.get(key);
+			MVPScopeVO vo = null;
 			if (params.size() > 0) {
-				MVPScopeVO vo = params.get(0);
-				String method = vo.getHttpMethod().toLowerCase();
+				vo = params.get(0);
+			}
+
+			String method = vo.getHttpMethod().toLowerCase();
+			if (!existedMethodSet.contains(method)) {
+				existedMethodSet.add(method); // one method only print once
 				appendOutputToFile("    " + method + ":");
 				appendOutputToFile("      tags:");
 				appendOutputToFile("        - " + vo.getApiNode());
@@ -159,15 +166,15 @@ public abstract class AbstractExcelReadBuilder {
 				appendOutputToFile("      parameters:");
 				appendOutputToFile(HeaderUtil.getMethodHeadersString());
 				appendOutputToFile(PathUtil.getPathParamString(vo.getOriginalPathWithQuery()));
+
+				ReqRespParamVO queryVo = reqRespParamVOMap.get(key);
+				appendOutputToFile(PathUtil.showQueryFromExcel(queryVo.getQueryObjectList()));
+
+				List<MVPScopeVO> attributes = apiNameToApiDataMapFromExcel.get(key);
+				ReqRespParamVO reqRespParamVO = ReqRespParamVOUtil.getReqRespParamVO(key, attributes);
+				showRequestRefDeclaration(key, reqRespParamVO);
+				showResponseRefDeclaration(key, reqRespParamVO);
 			}
-
-			ReqRespParamVO queryVo = reqRespParamVOMap.get(key);
-			appendOutputToFile(PathUtil.showQueryFromExcel(queryVo.getQueryObjectList()));
-
-			List<MVPScopeVO> attributes = apiNameToApiDataMapFromExcel.get(key);
-			ReqRespParamVO vo = ReqRespParamVOUtil.getReqRespParamVO(key, attributes);
-			showRequestRefDeclaration(key, vo);
-			showResponseRefDeclaration(key, vo);
 		}
 	}
 
@@ -247,6 +254,8 @@ components:
 		appendOutputToFile("            $ref: '#/components/schemas/api-message-error'");
 	}
 
+	Set<String> componentNameSet = new HashSet<String>();
+
 	public void printDefOfReference() {
 		Set<String> keySet = reqRespParamVOMap.keySet();
 		for (String key : keySet) {
@@ -255,11 +264,17 @@ components:
 			String refKey = null;
 			if (reqRespParamVO.getMapOfInputObjectArrayList().size() > 0 || reqRespParamVO.getMapOfInputObjectList().size() > 0) {
 				refKey = TextUtil.nameToLowerCaseAndDash(key + " " + GenTypeEnum.REQUEST.getMessage());
-				printRefObject(refKey, reqRespParamVO.getMapOfInputObjectList(), reqRespParamVO.getMapOfInputObjectArrayList());
+				if (!componentNameSet.contains(refKey)) {
+					printRefObject(refKey, reqRespParamVO.getMapOfInputObjectList(), reqRespParamVO.getMapOfInputObjectArrayList());
+					componentNameSet.add(refKey);
+				}
 			}
 			if (reqRespParamVO.getMapOfRespObjectList().size() > 0 || reqRespParamVO.getMapOfRespObjectArrayList().size() > 0) {
 				refKey = TextUtil.nameToLowerCaseAndDash(key + " " + GenTypeEnum.RESPONSE.getMessage());
-				printRefObject(refKey, reqRespParamVO.getMapOfRespObjectList(), reqRespParamVO.getMapOfRespObjectArrayList());
+				if (!componentNameSet.contains(refKey)) {
+					printRefObject(refKey, reqRespParamVO.getMapOfRespObjectList(), reqRespParamVO.getMapOfRespObjectArrayList());
+					componentNameSet.add(refKey);
+				}
 			}
 		}
 	}
@@ -400,6 +415,17 @@ components:
 				}
 			}
 		}
+	}
+
+	protected static boolean isV2(String path) {
+		return StringUtils.isNotBlank(path) && path.toLowerCase().startsWith("/v2");
+	}
+
+	protected static String v2GetParentPath(String path) {
+		if (!isV2(path)) {
+			return null;
+		}
+		return path.substring("/v2".length());
 	}
 
 }
