@@ -10,7 +10,8 @@ public enum GenTypeEnum {
 	//@formatter:off
 	REQUEST("Request"), 
 	RESPONSE("Response"),
-	Query("Query");
+	Query("Query"),
+	Path("Path");
 	//@formatter:on
 
 	private String message;
@@ -18,11 +19,10 @@ public enum GenTypeEnum {
 	private GenTypeEnum(String message) {
 		this.message = message;
 	}
-	
 
 	public static GenTypeEnum of(String message) {
 		for (GenTypeEnum entity : values()) {
-			if (entity.getMessage().toLowerCase().equals(message != null?message.trim().toLowerCase():"")) {
+			if (entity.getMessage().toLowerCase().equals(message != null ? message.trim().toLowerCase() : "")) {
 				return entity;
 			}
 		}

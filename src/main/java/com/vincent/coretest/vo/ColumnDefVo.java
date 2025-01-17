@@ -28,6 +28,8 @@ public class ColumnDefVo {
 	public boolean isDate = false;
 	public int maxLength;
 	public String format;
+	private int lineIndex;
+	public String srcFile;
 
 	/**
 	 * due-date-for-sight Date - Due Date for Sigh
@@ -95,6 +97,8 @@ public class ColumnDefVo {
 
 		vo.setGroupRequired(cellVO.isGroupRequired());
 		vo.setRequired(cellVO.isRequired());
+		vo.setSrcFile(cellVO.getFileName());
+		vo.setLineIndex(cellVO.getRowIndex());
 
 		vo.setName(cellVO.getBusinessName());
 		String type = cellVO.getDataType();

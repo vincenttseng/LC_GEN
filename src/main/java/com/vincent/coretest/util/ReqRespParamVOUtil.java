@@ -45,13 +45,17 @@ public class ReqRespParamVOUtil {
 					} else {
 						theMap = mapForRespObjectList;
 					}
-				} else if (GenTypeEnum.Query == cellVO.getDirection()) {
+				} else if (GenTypeEnum.Query == cellVO.getDirection() || GenTypeEnum.Path == cellVO.getDirection()) {
 					theMap = mapForQueryList;
 				}
 
 				String nodeName = null;
 				try {
 					nodeName = cellVO.getGroupName();
+					if (theMap == null) {
+						logger.info("error " + cellVO);
+						continue;
+					}
 					if (!theMap.containsKey(nodeName)) {
 						theMap.put(nodeName, new ArrayList<ColumnDefVo>());
 					}

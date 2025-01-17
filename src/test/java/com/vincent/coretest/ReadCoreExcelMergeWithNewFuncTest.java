@@ -25,7 +25,7 @@ import com.vincent.coretest.yaml.vo.RESTfulKey;
 public class ReadCoreExcelMergeWithNewFuncTest extends AbstractExcelReadBuilder {
 	protected final Logger logger = LoggerFactory.getLogger(ReadCoreExcelMergeWithNewFuncTest.class);
 
-	private String coreCategoryXlsxFromPYFile = ".\\src\\test\\input\\ref\\api_catalog_LC.xlsx";
+	private String coreCategoryXlsxFromPYFile = ".\\src\\test\\input\\ref\\api_catalog_BG.xlsx";
 
 	Map<RESTfulKey, List<MVPScopeVO>> coreApiNameToApiDataMapFromExcel = null;
 
@@ -49,7 +49,7 @@ public class ReadCoreExcelMergeWithNewFuncTest extends AbstractExcelReadBuilder 
 
 		FuncGenEnum genEnum = FuncGenEnum.All; // NEW EXISTED
 
-		outputFileName = "20250106_WHOLE_LC1_" + genEnum.name() + ".yaml";
+		outputFileName = "20250116_WHOLE_BG_" + genEnum.name() + ".yaml";
 
 		logger.info("working on {}", genEnum);
 
@@ -178,6 +178,7 @@ public class ReadCoreExcelMergeWithNewFuncTest extends AbstractExcelReadBuilder 
 				vo.setApiName(apiName);
 
 				apiNameToApiDataMapFromExcel.put(apiName, list);
+				logger.info("xxxxxxx put " + apiName + " " + list);
 			}
 		});
 
@@ -188,8 +189,8 @@ public class ReadCoreExcelMergeWithNewFuncTest extends AbstractExcelReadBuilder 
 	private Map<RESTfulKey, List<MVPScopeVO>> readCoreApiMap() {
 		HashMap<RESTfulKey, List<MVPScopeVO>> map = new HashMap<RESTfulKey, List<MVPScopeVO>>();
 
-		Map<String, Integer> headerMap = ExcelReader.getHeaderIndex("api details", coreCategoryXlsxFromPYFile);
-		List<Map<Integer, Object>> rowMapList = ExcelReader.getActiveRow("api details", coreCategoryXlsxFromPYFile, false);
+		Map<String, Integer> headerMap = ExcelReader.getHeaderIndex("b4", coreCategoryXlsxFromPYFile);
+		List<Map<Integer, Object>> rowMapList = ExcelReader.getActiveRow("b4", coreCategoryXlsxFromPYFile, false);
 
 		logger.info("rowCount {}", rowMapList.size());
 		for (Map<Integer, Object> rowData : rowMapList) {
