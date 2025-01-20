@@ -2,25 +2,5 @@
 /logs/
 .classpath
 .project
-<<<<<<< HEAD
-src/test/input/ec.zip
-src/test/input/ec/sample1.yaml
-src/test/input/ec/TCS BaNCS MS for Balance Management v1.0 OpenAPI Spec.yaml
-src/test/input/ec/TCS BaNCS MS for BaNCS Business Parameters v1.0.1 OpenAPI Spec.yaml
-src/test/input/ec/TCS BaNCS MS for Bank Structure Management v1.0.1 OpenAPI Spec.yaml
-src/test/input/ec/TCS BaNCS MS for Business Relations v1.01 OpenAPI Spec.yaml
-src/test/input/ec/TCS BaNCS MS for Consumer Loan Management v1.0.0 OpenAPI Spec.yaml
-src/test/input/ec/TCS BaNCS MS for Customer Information File v1.0.1 OpenAPI Spec.yaml
-src/test/input/ec/TCS BaNCS MS for Limit Management v1.0.0 OpenAPI Spec.yaml
-src/test/input/ec/TCS BaNCS MS for Market Information Microservice v1.0.0 OpenAPI Spec.yaml
-src/test/input/ec/TCS BaNCS MS for Product Management v1.0.0 OpenAPI Spec.yaml
-src/test/input/group/004_new.yaml
-src/test/input/group/MVP3 scope for TF_LC_B4_001 2.xlsx
-src/test/input/sample/TCS BaNCS MS for Balance Management v1.0 OpenAPI Spec.yaml
-src/test/input/group/MVP3 scope for TF_LC_B4_021.xlsx
-src/test/input/group/MVP3 scope for TF_LC_B4_026.xlsx
-src/test/output/temp.csv
-src/test/input/ref/.~lock.api_catalog_LC.xlsx#
-=======
 src/test/input/group
->>>>>>> ReadFromPYCat
+
