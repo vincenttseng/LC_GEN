@@ -2,6 +2,7 @@
 /logs/
 .classpath
 .project
+<<<<<<< HEAD
 src/test/input/ec.zip
 src/test/input/ec/sample1.yaml
 src/test/input/ec/TCS BaNCS MS for Balance Management v1.0 OpenAPI Spec.yaml
@@ -20,3 +21,6 @@ src/test/input/group/MVP3 scope for TF_LC_B4_021.xlsx
 src/test/input/group/MVP3 scope for TF_LC_B4_026.xlsx
 src/test/output/temp.csv
 src/test/input/ref/.~lock.api_catalog_LC.xlsx#
+=======
+src/test/input/group
+>>>>>>> ReadFromPYCat
