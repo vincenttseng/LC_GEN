@@ -33,10 +33,10 @@ public class ExcelReader {
 			excelFileToRead = new FileInputStream(xlsxFile);
 			wb = new XSSFWorkbook(excelFileToRead);
 
-			XSSFSheet sheet = getTargetSheet(tabPrefix, wb);
+			XSSFSheet sheet = getTargetSheet(tabPrefix, xlsxFile, wb);
 
 			if (sheet == null) {
-				logger.info("no sheet found");
+				logger.info("no sheet found {} ", xlsxFile);
 				return rowMapList;
 			}
 
@@ -119,10 +119,10 @@ public class ExcelReader {
 			excelFileToRead = new FileInputStream(xlsxFile);
 			wb = new XSSFWorkbook(excelFileToRead);
 
-			XSSFSheet sheet = getTargetSheet(tabPrefix, wb);
+			XSSFSheet sheet = getTargetSheet(tabPrefix, xlsxFile, wb);
 
 			if (sheet == null) {
-				logger.info("no sheet found");
+				logger.info("no sheet found {}", xlsxFile);
 				return result;
 			}
 
@@ -168,7 +168,7 @@ public class ExcelReader {
 		return result;
 	}
 
-	private static XSSFSheet getTargetSheet(String tabPrefix, XSSFWorkbook wb) {
+	private static XSSFSheet getTargetSheet(String tabPrefix, String fileName, XSSFWorkbook wb) {
 		XSSFSheet sheet = null;
 		try {
 			int sheetCnt = wb.getNumberOfSheets();
@@ -186,7 +186,7 @@ public class ExcelReader {
 			}
 			return sheet;
 		} catch (Exception e) {
-			logger.info("no sheet for " + tabPrefix);
+			logger.info("no sheet for " + tabPrefix + " " + fileName);
 
 		}
 		return null;
