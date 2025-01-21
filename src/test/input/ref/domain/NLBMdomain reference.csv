@@ -1,0 +1,1796 @@
+Code Name,Mnemonic,Description
+d_TFDocRcvFrm,Individual,Individual
+d_TFDocRcvFrm,Bank,Bank
+d_TFDocRcvFrm,Corporate,Corporate
+d_TFBankExt,Within,Within
+d_TFBankExt,Outside,Outside
+d_TFDCBillTyp,DocAgsntPymnt,DocAgsntPymnt
+d_TFDCBillTyp,DocAgsntAccptnc,DocAgsntAccptnc
+d_TFDCBillTyp,DirectRmttnc,DirectRmttnc
+d_TFDCBillTyp,OpnAcnt,OpnAcnt
+d_TFDCBillTyp,AdvncImprtPymnt,AdvncImprtPymnt
+d_TFDCBillTyp,ALL,ALL
+d_YesNoFlg,Yes,Yes
+d_YesNoFlg,No,No
+d_SrcOfDcmntsRcd,Email,Email
+d_SrcOfDcmntsRcd,Scanned,Scanned
+d_SrcOfDcmntsRcd,Original,Original
+d_PosTyp,143,143
+d_PosTyp,920,MT920
+d_PosTyp,940,940
+d_PosTyp,941,941
+d_PosTyp,942,942
+d_PosTyp,950,MT950
+d_PosTyp,AccountLimit,Account Limit
+d_PosTyp,AccountOpening,Account Opening
+d_PosTyp,AccStmntChrge,Acc Statement Charge
+d_PosTyp,AcntClsr,Account Closure
+d_PosTyp,AdditionFeeZBA,AdditionFeeZBA
+d_PosTyp,AdhocChrgs,Adhoc Charges
+d_PosTyp,Alctn,Allocation
+d_PosTyp,Alctn_Order,Allocation Order
+d_PosTyp,AME,AME
+d_PosTyp,Amrtz,Amortization
+d_PosTyp,APAROrigination,APAR Origination
+d_PosTyp,APARResponding,APAR Responding
+d_PosTyp,ASBA_FUND_TRANSFER,ASBA_FUND_TRANSFER
+d_PosTyp,Assignment,Assignment
+d_PosTyp,AssignOrder,Assign Order
+d_PosTyp,AutoOrdr,Auto Investment Order
+d_PosTyp,AWBDCPosTyp,AWBDCPosTyp
+d_PosTyp,AWBEndorsement,AWBEndorsement
+d_PosTyp,BackOfcPstn,Back Office Position
+d_PosTyp,BackUpTaxPrdc,BackUpTax Periodic
+d_PosTyp,BC,BC
+d_PosTyp,BCRevokeStopPymnt,BC Revoke Stop Pymnt
+d_PosTyp,BCStopPymnt,BC Stop Pymnt
+d_PosTyp,BGTxn,Bank Guarantee
+d_PosTyp,BillPaidIn,Bill Paid In
+d_PosTyp,BillPaidOut,Bill Paid Out
+d_PosTyp,Bills,Bills
+d_PosTyp,Broker,Broker Position
+d_PosTyp,BulkBkng,File level
+d_PosTyp,BulkPosTyp,BulkPosTyp
+d_PosTyp,BulkPosType,BulkPosType
+d_PosTyp,Business,Business
+d_PosTyp,BusinessBank,Business Bank
+d_PosTyp,C21,C21
+d_PosTyp,CA,Corporate Action
+d_PosTyp,CalculateCharge,Calculate Charge
+d_PosTyp,Cards,Cards
+d_PosTyp,CardTransaction,Card Transaction
+d_PosTyp,Cash,Cash
+d_PosTyp,CashBlk,Cash Block
+d_PosTyp,CashConc_Prcng,Cash Concentration Processing
+d_PosTyp,CashConc_Prcng_TBS,Cash Concentration Processing - TBS
+d_PosTyp,CashConcentration,Cash Concentration
+d_PosTyp,CCODAcnt,CCOD Account
+d_PosTyp,CER,Cash Enforcement Run
+d_PosTyp,Certificate,Certificate
+d_PosTyp,Changer_AE_LTD,Changer AE LIMITED
+d_PosTyp,ChqCancel,Chq Cancel
+d_PosTyp,ChqPaidIn,Cheque Paid In
+d_PosTyp,ChqPaidOut,Cheque Paid Out
+d_PosTyp,ChqPnOrdr,Cheque Payment Order
+d_PosTyp,ChqRecon,Cheque Reconciliation
+d_PosTyp,ChrgAcrulBkngPT,ChrgAcrulBkngPT
+d_PosTyp,CLMOrder,CLM Order
+d_PosTyp,ClrngIn,Clrng In
+d_PosTyp,ClrngOut,Clrng Out
+d_PosTyp,CltrlAbandn,Collateral Abandoned
+d_PosTyp,CM_Order,CM Order
+d_PosTyp,CmbntnOrdr,Combination Order
+d_PosTyp,CMO,CMO
+d_PosTyp,CMOCashFlow,CMO Cash Flow
+d_PosTyp,CntrctTrnsfr,Contract Transfer
+d_PosTyp,CommImmSell,CommImmSell
+d_PosTyp,Contingent_Txn,Contingent txn
+d_PosTyp,ConversionOrd,Conversion Ordr
+d_PosTyp,ConversionOrdr,MF Conversion Order
+d_PosTyp,ConvOrder,Conversion Order
+d_PosTyp,CounterprtyClaim,Counter Party Claim
+d_PosTyp,Coupon,Coupon
+d_PosTyp,CPAdjstmnt,Cost Price Adjustment
+d_PosTyp,CreditAplctn,Credit Application
+d_PosTyp,CreditLoan,Credit Loan
+d_PosTyp,CrncyBuy,Crncy Buy
+d_PosTyp,CrncySell,Crncy Sell
+d_PosTyp,CrprtPmnt,Crprt Pmnt
+d_PosTyp,CryptoExitOrder,Crypto exit order
+d_PosTyp,CryptoRebalancing,Crypto Rebalancing
+d_PosTyp,CryptoStakingRewards,Crypto Staking Rewards
+d_PosTyp,CryptoStakingTransfer,Crypto placement order
+d_PosTyp,CryptoVaultAccounts,Crypto Vault Accounts
+d_PosTyp,CryptoWallet,Crypto Wallet
+d_PosTyp,CstmrReport,Cstmr Report
+d_PosTyp,CTI,CTI
+d_PosTyp,CTIId,CTIId
+d_PosTyp,Current,Current
+d_PosTyp,CurrPositon,Currency Position
+d_PosTyp,CurrPosNotes,Currency Position Notes
+d_PosTyp,Custodian,Custodian
+d_PosTyp,Custody,Custody Position
+d_PosTyp,CustodyForward,A Forward Custody Position.
+d_PosTyp,DD,Demand Draft
+d_PosTyp,DDPaidIn,Direct Debit Paid In
+d_PosTyp,DDPaidOut,Direct Debit Paid Out
+d_PosTyp,Deal,Deal
+d_PosTyp,DepositTxn,DepositTxn
+d_PosTyp,DervSett,Derivatives Settlements
+d_PosTyp,DetCustody,Det Custody Position
+d_PosTyp,DeveloperAccountingTranche,DeveloperAccountingTranche
+d_PosTyp,DIA,DIA
+d_PosTyp,DIAShadowMvmnts,DIA Shadow Movements
+d_PosTyp,DisbrsmentCash,Disbrsment Cash
+d_PosTyp,DisbrsmentTrfr,Disbrsment  Trfr
+d_PosTyp,DownPayment,DownPayment
+d_PosTyp,DpstChrgs,DpstChrgs
+d_PosTyp,DrvMrgn,Derivative Margin
+d_PosTyp,DrvPosnExpry,Derivative Position Expiry
+d_PosTyp,DsbrmntOrdr,Disbursement Order
+d_PosTyp,DsbrmntPlan,Disbursement Plan
+d_PosTyp,DTA_LSV_Order,DTA LSV Order
+d_PosTyp,EDCBillPaymentTxn,EDC Bill Payment
+d_PosTyp,EDCBillTxn,EDC Bill
+d_PosTyp,EDCPurchaseOrder,EDCPurchaseOrder
+d_PosTyp,ELCAmendConfirmation,ELCAmendConfirmation
+d_PosTyp,ELCBillPaymentTxn,ELC Bill Payment
+d_PosTyp,ELCConfirmation,ELCConfirmation
+d_PosTyp,ELCRegistration,ELC Registration
+d_PosTyp,ELCTxn,Export Letter Of Credit
+d_PosTyp,Eligibility,Eligibility
+d_PosTyp,EMTNDeal,EMTN Deal
+d_PosTyp,Entitlement,Entitlement
+d_PosTyp,Escrow,Escrow
+d_PosTyp,Exchval,Exchange Value
+d_PosTyp,ExchValNotes,Exchange Value Notes
+d_PosTyp,ExerciseOrder,Exercise order
+d_PosTyp,Expired_Pos,Derivatives Expired Position
+d_PosTyp,ExportBill,Export Bill
+d_PosTyp,Ext_Sys_Chrg,External System Charge
+d_PosTyp,ExtAdvice,Ext Advice
+d_PosTyp,ExternalChrg,External Charges
+d_PosTyp,ExtLadChk,Ext Lad Chk
+d_PosTyp,ExtNotionalPool,Ext Notional Pool
+d_PosTyp,ExtTxnTyp,External Bookings
+d_PosTyp,FAP,FAP
+d_PosTyp,FAPG,FAPG
+d_PosTyp,Fatxn,FA Transaction
+d_PosTyp,FCNR,FCNR
+d_PosTyp,FEDS,FEDS
+d_PosTyp,Final102,Final102
+d_PosTyp,FixedAssetPur,Fixed Asset Purchase
+d_PosTyp,Flexi,Flexi Account
+d_PosTyp,Forward_FAReceiptLetterOfComfort,Forward FAReceiptLOC
+d_PosTyp,Forward_SFAUtilisation,Forward SFAUtilisation
+d_PosTyp,FrmVaultTfr,Vault to Head Teller Transfer
+d_PosTyp,FundPlan,FundPlan
+d_PosTyp,FundTransfer,FundTransfer
+d_PosTyp,FX,FX
+d_PosTyp,FXERADeal,Exchange Rate Agreement deals
+d_PosTyp,FXERAOrd,Exchange Rate Agreement orders
+d_PosTyp,FXForexDeal,"Forex covering Spot, Forward and Swap deals."
+d_PosTyp,FXForexOrd,"Forex orders including spot, forward, swap orders"
+d_PosTyp,FXOTCOptDeal,OTC Currency Option deals
+d_PosTyp,FXOTCOptOrd,OTC Option orders
+d_PosTyp,FXRateRequest,FX Rate Request
+d_PosTyp,FxRvltn,FX Revaluation
+d_PosTyp,Gbt,General Business Transaction
+d_PosTyp,GetTxn,GET Transaction
+d_PosTyp,GlblCA,Global CA
+d_PosTyp,GlobalInterest,Global Interest
+d_PosTyp,GrpdBook,GrpdBook
+d_PosTyp,Guarantees,Guarantees
+d_PosTyp,HdTlrTlrTfr,Head Teller To Teller Transfer
+d_PosTyp,IBGPosTyp,IBGPosTyp
+d_PosTyp,IBSTxns,IBS Transactions
+d_PosTyp,IBT,IBT
+d_PosTyp,IBT_Res,IBT Res
+d_PosTyp,ICAMS,ICAMS
+d_PosTyp,ICN,Internal Credit Note
+d_PosTyp,ICS,ICS
+d_PosTyp,ICS_INTRST_RECORD,Pos Type of ICS-InterestRecord
+d_PosTyp,IdvstmntRun,Idvstmnt Run
+d_PosTyp,Ijarah,Ijarah
+d_PosTyp,IncomeExpOrder,Income Expense Order
+d_PosTyp,IncomeExpOrderDtl,Income Expense Order Detail
+d_PosTyp,InitialiseBlnc,Initialize Balance
+d_PosTyp,InitMrgn,Initial Margin
+d_PosTyp,InPymntOrd,Incoming Payment Order
+d_PosTyp,Internal,Internal
+d_PosTyp,IntrstAcrl,Interest Accrual
+d_PosTyp,IntrstAppln,Interest Application
+d_PosTyp,IntrstRepoDeal,Interest Repo Deal
+d_PosTyp,IntrstStBonds,Interest Bonds
+d_PosTyp,IntrstSubsidy,Intrst Subsidy
+d_PosTyp,IntTransfer,Internal Transfer
+d_PosTyp,InvApplication,Invoice Application
+d_PosTyp,InvcAcrl,InvcAcrl
+d_PosTyp,InvcApplication,Invoice Application
+d_PosTyp,InvstPlan,Investment Plan
+d_PosTyp,InwardClearing,Inward Clearing
+d_PosTyp,InwdBtch,Inward Batch
+d_PosTyp,Issuance_of_Nonfund,Issuance of Nonfund
+d_PosTyp,Issuance_SPLetterOfComfort,Issuance SPLetterOfComfort
+d_PosTyp,Istisnaa,Istisnaa
+d_PosTyp,KestRecomp,KestRecomp
+d_PosTyp,LCTxn,Letter Of Credit
+d_PosTyp,LinkedSAOrder,Linked SA Order
+d_PosTyp,LinkedSENetSett,Linked SE Net Settlement Orders
+d_PosTyp,LmtUpdate,Limit Update
+d_PosTyp,LoanActClosure,Loan Act Closure
+d_PosTyp,LoanAdjustment,Loan Adjustment
+d_PosTyp,LoanCancellation,LoanCancellation
+d_PosTyp,LoanCncl,Loan Cancellation
+d_PosTyp,Loyalty Saving,Loyalty Saving
+d_PosTyp,LtrofCredits,Ltr of Credits
+d_PosTyp,Mandate,Mandate
+d_PosTyp,MarginOrder,Margin Order
+d_PosTyp,MarkedNotes,MarkedNotes
+d_PosTyp,MemberLoan,Member Loan
+d_PosTyp,MFSimple,MFSimple
+d_PosTyp,MLIntAccrual,ML Int Accrual
+d_PosTyp,MLIntAppln,ML Int Appln
+d_PosTyp,MMDeal,MM Deal
+d_PosTyp,MMDepositDeal,MM Deposit Deal
+d_PosTyp,MMDepositOrd,MM Deposit Order
+d_PosTyp,MMFRADeal,Forward Rate Agreement Deals
+d_PosTyp,MMGlobal,Global Interest Change
+d_PosTyp,MMIRODeal,Interest Rate Options deal
+d_PosTyp,MMIROOrd,Money Market IRO Order
+d_PosTyp,MMIRSDeal,IRS and Cross Currency IRS deals
+d_PosTyp,MMOrder,MM Order
+d_PosTyp,MsgQue,MsgQue
+d_PosTyp,MT,MT
+d_PosTyp,MT210,MT210
+d_PosTyp,MT900,MT900
+d_PosTyp,MT910,MT910
+d_PosTyp,N90,N90
+d_PosTyp,N91,N91
+d_PosTyp,N95,N95
+d_PosTyp,N96,N96
+d_PosTyp,NAV,NAV
+d_PosTyp,NCS,NCS
+d_PosTyp,NegBal,SWIFT Message Generation for Negative Balance
+d_PosTyp,NonTrade,Non - Tradeable
+d_PosTyp,NotionalPool,Notional Pool
+d_PosTyp,NPDPosTyp,NPDPosTyp
+d_PosTyp,Offset,Offset
+d_PosTyp,Onlinebnkingpymntbkng,Online Banking Payment Booking
+d_PosTyp,OnlinebnkingpymntbkngRefund,Online Banking Payment RefundBooking
+d_PosTyp,OpenDelivery,Open Delivery
+d_PosTyp,OpenPrtfl,Open Portfolio
+d_PosTyp,OpolTrnsfrOrdr,OPOL Transfer Order
+d_PosTyp,OptionAlloc,Option Allocation
+d_PosTyp,Originator,Originator
+d_PosTyp,OutBtch,Outward Batch
+d_PosTyp,OutwardClearing,Outward Clearing
+d_PosTyp,OvrDrftLmt,Over Draft Limit
+d_PosTyp,P2PLending,P2P Lending
+d_PosTyp,PASSBOOK_ACCOUNT,PASSBOOK ACCOUNT
+d_PosTyp,Payment_of_Nonfund,Payment FAReceiptLOC
+d_PosTyp,PayOrder,PayOrder
+d_PosTyp,PDC_TXN,postDatedChequeTransaction
+d_PosTyp,PeriodicCharge,Periodic Charge for PSO
+d_PosTyp,PndngChrgComp,Pending Chrage Computation
+d_PosTyp,PO,Purchase Order
+d_PosTyp,PooledOrder,Pooled order
+d_PosTyp,PooledSettOrdr,Pooled Settlement Order
+d_PosTyp,PreAdvcTxn,Pre Advise
+d_PosTyp,PreNotice,PreNotice
+d_PosTyp,PresettledDeal,For Pre settled  Deals
+d_PosTyp,Product,Product
+d_PosTyp,PrtflEntitlement,Portfolio Entitlement
+d_PosTyp,PrtflValtnAccntg,Valuation Accounting
+d_PosTyp,Pseudo,Pseudo
+d_PosTyp,PurchseOncompletion,PurchseOncompletion
+d_PosTyp,PymntOrder,Payment Order
+d_PosTyp,PymtNotification,Pymt Notification
+d_PosTyp,RcptInstruction,Receipt Instruction
+d_PosTyp,RDInstlmnt,RD Installment
+d_PosTyp,Reference Data,Reference Data
+d_PosTyp,RegnDetail,Registration Detail
+d_PosTyp,RejRet,Reject Return
+d_PosTyp,RemovalFeeZBA,Removal Fee ZBA
+d_PosTyp,Repo,Repo
+d_PosTyp,Retail_Order,Retail Order
+d_PosTyp,RetOrder,RetOrder
+d_PosTyp,Return,Return
+d_PosTyp,Revaluation,Revaluation
+d_PosTyp,Reversal_FAReceiptLetterOfComfort,Reversal FAReceiptLOC
+d_PosTyp,Reversal_SFAUtilisation,Reversal SFAUtilisation
+d_PosTyp,Reversal_SPLetterOfComfort,Reversal SPLetterOfComfort
+d_PosTyp,RprcIntrst,Reprocess Interest
+d_PosTyp,RptChrg,Report Charges
+d_PosTyp,RpymntActTrnsfr,Rpymnt Act Trnsfr
+d_PosTyp,RpymntCash,Rpymnt Cash
+d_PosTyp,RSBCOOrd,RS Banker Cheque Order
+d_PosTyp,RSCBOOrd,RS Cheque Book Order
+d_PosTyp,RSCCOOrd,RS Coupon Collection Order
+d_PosTyp,RSCODeposit,RS Cash Order Deposit
+d_PosTyp,RSCOWithdrawal,RS Cash Order Withdrawal
+d_PosTyp,RSCRDOOrd,RS Card Order
+d_PosTyp,RSECBOOrd,RS EC Book Order
+d_PosTyp,RSENCOOrd,RS Encashment Order
+d_PosTyp,RSEXOOrd,RS Exchange Order
+d_PosTyp,RspnsReq,ResponseRequired
+d_PosTyp,RSShipOrd,RSShipOrd
+d_PosTyp,RSSPOOrd,RS Stop Payment Order
+d_PosTyp,RSSROOrd,RS Security Redemption Order
+d_PosTyp,RSTCOOrd,RS TC Sale Order
+d_PosTyp,RSTCShipOrd,RS TC Cheques Shipment Order
+d_PosTyp,RSVCOOrd,RS Vault Contract Order
+d_PosTyp,RTGS,RTGS
+d_PosTyp,SA_Order,SA Order
+d_PosTyp,SafeCustody,Safe Custody
+d_PosTyp,SafekpngFee,Safe Keeping Fee
+d_PosTyp,SalePurchasePosTyp,SalePurchasePosTyp
+d_PosTyp,Saving,Saving
+d_PosTyp,SBBIntrstReversal,SBB Interest Reversal
+d_PosTyp,SBBTaxReversal,SBB Tax Reversal
+d_PosTyp,SBBTransfer,SBB Transfer
+d_PosTyp,Sbscrptn_Order,Subscription Order
+d_PosTyp,SCA,Safe Custody Account
+d_PosTyp,SDD_MAN,SDD_MAN
+d_PosTyp,SDD_ORIG,SDD_ORIG
+d_PosTyp,SDD_PDIN,DD Paid-in
+d_PosTyp,SDD_PDOUT,DD Paid-out
+d_PosTyp,SDD_RTRNPDIN,DD Paid-in Return
+d_PosTyp,SDD_RTRNPDOUT,DD Paid-out Return
+d_PosTyp,SENetSett,SE Net Settlement Orders
+d_PosTyp,SHARETRADE_BatchTxn_BUY,SHARETRADE_BatchTxn_BUY
+d_PosTyp,SHARETRADE_BatchTxn_SELL,SHARETRADE_BatchTxn_SELL
+d_PosTyp,ShreAppln,Share Application
+d_PosTyp,SICMessage,SIC Incoming Message Order
+d_PosTyp,ST_CustOrder,ST Customer Order
+d_PosTyp,ST_TradeOrder,ST TradeOrder
+d_PosTyp,StandingOrder,Standing Order
+d_PosTyp,Static Data,Static Data
+d_PosTyp,StckStmntChrg,StckStmntChrg
+d_PosTyp,STDeal,ST Deal
+d_PosTyp,StkngExitVault,Staking Exit Vault
+d_PosTyp,StkngPlcmntVault,Staking Placement Vault
+d_PosTyp,StpChq,Stop Cheque
+d_PosTyp,StpChqPymnt,Stop Cheque Payment
+d_PosTyp,StpDDPymnt,Stop Direct Debit Payment
+d_PosTyp,Subscription,Subscription
+d_PosTyp,SWIFTMessage,SWIFT Incoming Payment Message Order
+d_PosTyp,SwitchOrdr,Switch Order
+d_PosTyp,Syndication,Syndication
+d_PosTyp,Taxlot,Tax Lot
+d_PosTyp,TBill,TBill
+d_PosTyp,TBond,TBond
+d_PosTyp,TcBuy,TcBuy
+d_PosTyp,TcSell,TcSell
+d_PosTyp,TFBillPayment,LC Bill Payment
+d_PosTyp,TFBillTxn,LC Bill Lodgement
+d_PosTyp,TFCrystallizationLoan,TFCrystallizationLoan
+d_PosTyp,TFDC,Documentary Collection
+d_PosTyp,TFDCPay,Documentary Collection Pay
+d_PosTyp,TFIBGContrct,TFIBGContrct
+d_PosTyp,TlrToHdTlrTfr,Teller to Head Teller Transfer
+d_PosTyp,TlrTrnsfer,Tlr Trnsfer
+d_PosTyp,Tmplt,Template Remittance
+d_PosTyp,TOGroup,Trade Order Group
+d_PosTyp,ToVaultTfr,Head Teller To Vault Transfer
+d_PosTyp,Trade,Trade
+d_PosTyp,TrnCrsBsCIEAcnt,Trn Crs Bs  CIEAcnt
+d_PosTyp,TrnsfrBlnc,Transfer Balance
+d_PosTyp,TT,TT
+d_PosTyp,TxnBasedSweep,Txn Based Sweep
+d_PosTyp,UFT_TXN,upfrontChargesTransaction
+d_PosTyp,Unpaid,Unpaid
+d_PosTyp,VAM_BKNG,VAM Booking
+d_PosTyp,VarMrgn,Variation Margin
+d_PosTyp,VaultStkngRwrd,Vault Staking Rewards
+d_PosTyp,VendorTxn,Vendor Transaction
+d_PosTyp,WriteOffCollection,WriteOffCollection
+d_TFDCStat,OnHold,OnHold
+d_TFDCStat,Released,Released
+d_TFDCStat,Verified,Verified
+d_TFDCStat,Rejected,Rejected
+d_TFDCStat,Accepted,Accepted
+d_TFDCStat,Lodged,Lodged
+d_TFDCStat,AcptRefPndng,AcptRefPndng
+d_TFDCStat,AcptRefVerified,AcptRefVerified
+d_TFDCStat,Refused,Refused
+d_TFDCStat,PartiallyPaid,PartiallyPaid
+d_TFDCStat,BillPaid,BillPaid
+d_TFDCStat,Invalid,Invalid
+d_TFDCStat,Closed,Closed
+d_TFDCStat,WaitingForRate,WaitingForRate
+d_TFDCStat,ReturnPending,ReturnPending
+d_TFDCStat,Acknowledged,Acknowledged
+d_TFDCStat,ReturnOfDocuments,ReturnOfDocuments
+d_TFDCStat,PendingReturn,PendingReturn
+d_TFDCStat,SentBack,SentBack
+d_TFDCStat,FopClosed,FopClosed
+d_TFDCStat,Reject,Reject
+d_cudindicator,Create,Create
+d_cudindicator,Modify,Modify
+d_cudindicator,Delete,Delete
+d_cudIndicator,Update,Update
+d_auth,action_perform_approve,action_perform_approve
+d_auth,action_perform_reject,action_perform_reject
+d_Useraction,Submit-for-approval,Submit-for-approval
+d_Useraction,Reject,Reject
+d_Useraction,Authorize,Authorize
+d_Useraction,Sendback,Sendback
+d_Useraction,Cancel,Cancel
+d_Useraction,Submit-for-pend-Closure,Submit-for-pend-Closure
+d_Useraction,Release,Release
+d_Useraction,Close,Close
+d_Useraction,Delete,Delete
+d_SettlementMode,PDDTS,PDDTS
+d_SettlementMode,PDDTSEod,PDDTSEod
+d_SettlementMode,PESOnet,PESOnet
+d_SettlementMode,PhilPaSS,PhilPaSS
+d_SettlementMode,SWIFT,SWIFT
+d_MailingAddr,Electronic,Electronic
+d_MailingAddr,Physical,Physical
+d_TFShpDocTyp,BillLading,BillLading
+d_TFShpDocTyp,AirwayBill,AirwayBill
+d_TFShpDocTyp,LocalTrnsprt,LocalTrnsprt
+d_TFShpDocTyp,MultiMdlTrnsprt,MultiMdlTrnsprt
+d_TFShpDocTyp,Others,Others
+d_InsrName,CommonwealthInsuranceCompaynInc,"COMMONWEALTH INSURANCE COMPAYN, INC."
+d_InsrName,UcpbGeneralInsuranceCompanyInc,"UCPB GENERAL INSURANCE COMPANY, INC."
+d_InsrName,OrientalAssuranceCorporation,ORIENTAL ASSURANCE CORPORATION
+d_InsrName,PacificUnionInsuranceCompany,PACIFIC UNION INSURANCE COMPANY
+d_InsrName,People'sGeneralInsuranceCorporation,PEOPLE'S GENERAL INSURANCE CORPORATION
+d_InsrName,PnbGeneralInsurersCoInc,"PNB GENERAL INSURERS CO., INC."
+d_InsrName,StandardInsuranceCompanyInc,"STANDARD INSURANCE COMPANY, INC."
+d_InsrName,TheFirstNationwideAssuranceCorporation,THE FIRST NATIONWIDE ASSURANCE CORPORATION
+d_InsrName,PhilippineFirstInsuranceCompanyInc,"PHILIPPINE FIRST INSURANCE COMPANY, INC."
+d_InsrName,MalayanInsuranceCompanyInc,"MALAYAN INSURANCE COMPANY, INC."
+d_InsrName,PioneerInsuranceAndSuretySuretyCorporation,PIONEER INSURANCE AND SURETY SURETY CORPORATION
+d_InsrName,EtiqaLifeAndGeneralAssurancePhilippinesIncFormerlyAsianLifeAndGeneralAssuranceCorporation,ETIQA LIFE AND GENERAL ASSURANCE PHILIPPINES INC (FORMERLY ASIAN LIFE AND GENERAL ASSURANCE CORPORATION)
+d_InsrName,BeneficialLifeInsuranceCompanyInc,"BENEFICIAL LIFE INSURANCE COMPANY, INC."
+d_InsrName,PhilippinesAxaLifeInsuranceCorporation,PHILIPPINES AXA LIFE INSURANCE CORPORATION
+d_InsrName,FortuneGeneralInsuranceCorporation,FORTUNE GENERAL INSURANCE CORPORATION
+d_InsrName,VisayanSuretyAndInsuranceCorporation,VISAYAN SURETY & INSURANCE CORPORATION
+d_InsrName,FpgInsuranceCoInc,FPG INSURANCE CO. INC.
+d_InsrName,PrudentialGuaranteeAndAssuranceInc,PRUDENTIAL GUARANTEE AND ASSURANCE INC.
+d_InsrName,CharterPingAnInsuranceCorporation,CHARTER PING AN INSURANCE CORPORATION
+d_InsrName,MercantileInsuranceCompanyInc,"MERCANTILE INSURANCE COMPANY, INC."
+d_InsrName,MilestoneGuarantyAndAssuranceCorp,MILESTONE GUARANTY & ASSURANCE CORP
+d_InsrName,AsiaUnitedInsuranceInc,ASIA UNITED INSURANCE INC.
+d_InsrName,MapfreInsularInsuranceCorporation,MAPFRE INSULAR INSURANCE CORPORATION
+d_InsrName,SouthOfEnglandMutualLtdDelawareUsa,SOUTH OF ENGLAND MUTUAL LTD DELAWARE U.S.A.
+d_InsrName,PhilamLifeInsurance,PHILAM LIFE INSURANCE
+d_InsrName,PruLifeUk,PRU LIFE UK
+d_InsrName,InsularLifeInsCo,INSULAR LIFE INS. CO.
+d_InsrName,ManulifePhilippines,MANULIFE PHILIPPINES
+d_InsrName,SunlifeGrepa,SUNLIFE GREPA
+d_InsrName,SunlifeFinancialPhilippines,SUNLIFE FINANCIAL PHILIPPINES
+d_InsrName,PhilPrudentialLifeInsCorp,"PHIL, PRUDENTIAL LIFE INS. CORP."
+d_InsrName,EastWestAgeasLifeInsuranceCorporation,EAST WEST AGEAS LIFE INSURANCE CORPORATION
+d_InsrName,ParamountLifeAndGeneralInsurancecorporation,PARAMOUNT LIFE & GENERAL INSURANCECORPORATION
+d_InsrName,PrucoLifeInsuranceCoPhiladelpiaPa,"PRUCO LIFE INSURANCE CO, PHILADELPIA PA"
+d_InsrName,UnitedCoconutPlantersLifeAssuaranceCorporation,UNITED COCONUT PLANTERS LIFE ASSUARANCE CORPORATION
+d_CompTag,Accredited,Accredited
+d_CompTag,NonAccredited,NonAccredited
+d_AvailType,Coursed,Coursed
+d_AvailType,Endorsed,Endorsed
+d_CoverType,MRI,MRI
+d_CoverType,FIP,FIP
+d_CoverType,PFI,PFI
+d_CoverType,CARI,CARI
+d_CoverType,MC,MC
+d_CoverType,HB,HB
+d_CoverType,RB,RB
+d_TFTrnsShp,Permitted,Permitted
+d_TFTrnsShp,Prohibited,Prohibited
+d_TFTrnsShp,Allowed,Allowed
+d_TFTrnsShp,Not Allowed,Not Allowed
+d_TFTrnsShp,Conditional,Conditional
+d_TFPrtlShp,Allowed,Allowed
+d_TFPrtlShp,Not Allowed,Not Allowed
+d_TFPrtlShp,Conditional,Conditional
+d_TFIntercms,CFR,Cost and Freight
+d_TFIntercms,CIF,Cost Insurance and Freight
+d_TFIntercms,CIP,Carriage insurance Paid to
+d_TFIntercms,CPT,Carriage Paid to
+d_TFIntercms,DAF,Delivered at Frontier
+d_TFIntercms,DAP,Delivered at place
+d_TFIntercms,DDP,Delivered Duty Paid
+d_TFIntercms,DDU,Delivered Duty Unpaid
+d_TFIntercms,DEQ,Delivery Ex Quay
+d_TFIntercms,DES,Delivery Ex Ship
+d_TFIntercms,EXF,Ex-Factory
+d_TFIntercms,EXW,EX Works
+d_TFIntercms,FAS,Free alongside Ship
+d_TFIntercms,FBC,Free Delivery at Sub Contract
+d_TFIntercms,FCA,Free Carrier
+d_TFIntercms,FOB,Free On Board
+d_TFGoodsType,Capital,Capital
+d_TFGoodsType,NonCapital,NonCapital
+d_TFGoodsType,Services,Services
+d_TFGoodsType,Others,Others
+d_TFPolNat,Open,Open
+d_TFPolNat,Close,Close
+d_TFTenorTyp,Sight,Sight
+d_TFTenorTyp,Usance,Usance
+d_TFTenorTyp,MixedPayment,MixedPayment
+d_TFTenorTyp,DeferredPayment,DeferredPayment
+d_TFUsance,AfterSight,AfterSight
+d_TFUsance,AfterAcceptance,AfterAcceptance
+d_TFUsance,DateofTrnsprtDoc,DateofTrnsprtDoc
+d_TFUsance,DateofInvoice,DateofInvoice
+d_TFUsance,DateofBillofExch,DateofBillofExch
+d_TFUsance,DateofNego,DateofNego
+d_pymntmode,CustAcntDebt,CustAcntDebt
+d_pymntmode,AcntRcvbl,AcntRcvbl
+d_pymntmode,PymntCash,PymntCash
+d_pymntmode,PymntOutCC,PymntOutCC
+d_pymntmode,PymntMC,PymntMC
+d_pymntmode,PymntOthrBank,PymntOthrBank
+d_Number05,No conversion,No conversion
+d_Number05,Pre-deal,Pre-deal
+d_Number05,Ready,Ready
+d_Number05,Loan-Pre deal,Loan-Pre deal
+d_Number05,Loan-Ready,Loan-Ready
+d_Number05,Loan No Conversion,Loan No Conversion
+d_AccLayerStat,Accounted,Accounted
+d_AccLayerStat,Cancelled,Cancelled
+d_AccLayerStat,Pending,Pending
+d_AccLayerStat,RateProvided,RateProvided
+d_AccLayerStat,TRProcessed,TRProcessed
+d_AccLayerStat,WaitingForRate,WaitingForRate
+d_AccLayerStat,Reversed,Reversed
+d_AccLayerStat,SentForAcntng,SentForAcntng
+d_AccLayerStat,Treasury_to_be_Processes,Treasury_to_be_Processes
+d_TFDCPayStat,OnHold,OnHold
+d_TFDCPayStat,Released,Released
+d_TFDCPayStat,Verified,Verified
+d_TFDCPayStat,Rejected,Rejected
+d_TFDCPayStat,Executed,Executed
+d_TFDCPayStat,Settled,Settled
+d_TFDCPayStat,Closed,Closed
+d_TFDCPayStat,WaitingForRate,WaitingForRate
+d_TFDCPayStat,ForcePending,ForcePending
+d_TFDCPayStat,ForceVerified,ForceVerified
+d_TFDCPayStat,ReversePending,ReversePending
+d_TFDCPayStat,ReverseVerified,ReverseVerified
+d_TFDCPayStat,ImportLoan,ImportLoan
+d_TFDCPayStat,SentBack,SentBack
+d_TFDCPayStat,TRLoan,TRLoan
+d_TFDCPayStat,Reject,Reject
+d_Number15,Savings Account,Savings Account
+d_Number15,Current Account,Current Account
+d_Number15,LOC Account,LOC Account
+d_Number15,Crystallization Loan Account,Crystallization Loan Account
+d_Number15,Post Shipment Account,Post Shipment Account
+d_Number15,Pre Shipment Account,Pre Shipment Account
+d_Number09,Bank Deposits,Bank Deposits
+d_Number09,Cash Account,Cash Account
+d_Number09,Insurance and Value Doc,Insurance and Value Doc
+d_Number09,Inventory,Inventory
+d_Number09,Invoices,Invoices
+d_Number09,Land and Immovable property,Land and Immovable property
+d_Number09,Precious Metal,Precious Metal
+d_Number09,Shares and Bonds,Shares and Bonds
+d_Number09,Stock Statement,Stock Statement
+d_Number09,Term Deposit,Term Deposit
+d_Number09,Vehicles and Heavy machinery ,Vehicles and Heavy machinery 
+d_Number09,Guarantee,Guarantee
+d_Number09,No Margin,No Margin
+d_Number09,Internal Accounts,Internal Accounts
+d_Number09,Collateral,Collateral
+d_Number09,Lien Marked,Lien Marked
+d_Number09,Waiting For Rate,Waiting For Rate
+d_Number09,Rate Provided,Rate Provided
+d_DomainId,Self_Occupied,Self_Occupied
+d_DomainId,Rented,Rented
+d_DomainId,Leased,Leased
+d_DomainId,Vacant,Vacant
+d_DomainId,Partly_Occupied,Partly_Occupied
+d_DomainId,Other,Other
+d_DomainID,d_ABAPurpose,d_ABAPurpose
+d_DomainID,d_AccCat,d_AccCat
+d_DomainID,d_AccLayerStat,d_AccLayerStat
+d_DomainID,d_AccMethod,d_AccMethod
+d_Status,ACK,ACK
+d_Status,Active             ,Active             
+d_Status,ActivePndngAuth,ActivePndngAuth
+d_Status,ActvMdfdPndngAuth,ActvMdfdPndngAuth
+d_Status,AdjstmntPendingAuth,AdjstmntPendingAuth
+d_Status,AdjustmentAuthorised,AdjustmentAuthorised
+d_Status,Applied,Applied
+d_Status,Authorized,Authorized
+d_Status,Cancelled,Cancelled
+d_Status,CancelledNotUsed,CancelledNotUsed
+d_Status,Close,Close
+d_Status,Computed,Computed
+d_Status,Created,Created
+d_Status,CshMtchngAuth,CshMtchngAuth
+d_Status,CshMtchngInt,CshMtchngInt
+d_Status,CshMtchngPndgAprvl,CshMtchngPndgAprvl
+d_Status,CshMtchngPndgAuth,CshMtchngPndgAuth
+d_Status,CshMtchngPndgInt,CshMtchngPndgInt
+d_Status,Deleted,Deleted
+d_Status,DisplayReturnRjctd,DisplayReturnRjctd
+d_Status,Executed,Executed
+d_Status,Expired,Expired
+d_Status,Failed,Failed
+d_Status,Gifted,Gifted
+d_Status,GiftReturned,GiftReturned
+d_Status,GiftReturnRjctd,GiftReturnRjctd
+d_Status,HOLD,HOLD
+d_Status,Inactive,Inactive
+d_Status,InDisplay,InDisplay
+d_Status,ModificationOnHold,Modification OnHold
+d_Status,ModificationPendingAuthorization,Modification Pending Authorization
+d_Status,Modified,Modified
+d_Status,NACK,NACK
+d_Status,NotReconciled,NotReconciled
+d_Status,NotRemitted,NotRemitted
+d_Status,OnHold,OnHold
+d_Status,Open,Open
+d_Status,Outstanding,Outstanding
+d_Status,Paid,Paid
+d_Status,PartiallyReturned,PartiallyReturned
+d_Status,PartlyExpired,PartlyExpired
+d_Status,PartlyReconciled,PartlyReconciled
+d_Status,PartProcessed,PartProcessed
+d_Status,PendingAdjustment,PendingAdjustment
+d_Status,PendingAuthorisation,Pending Authorisation
+d_Status,PendingCancel,PendingCancel
+d_Status,PendingClosure,PendingClosure
+d_Status,PendingDebit,PendingDebit
+d_Status,PendingDeletion     ,Pending Deletion     
+d_Status,PendingInactive,Pending Inactive
+d_Status,PendingModification,PendingModification
+d_Status,PendingRemit,PendingRemit
+d_Status,PendingRev,PendingRev
+d_Status,PendngReceived,PendngReceived
+d_Status,PendngRefund,PendngRefund
+d_Status,PendngRequested,PendngRequested
+d_Status,PndInactive,PndInactive
+d_Status,PndngActiveAuth,PndngActiveAuth
+d_Status,PndngCancel,PndngCancel
+d_Status,PndngCancelAuth,PndngCancelAuth
+d_Status,PndngDeletion,PndngDeletion
+d_Status,PndngOpen,PndngOpen
+d_Status,PndngReOpen,PndngReOpen
+d_Status,Prcpt_Active,Prcpt_Active
+d_Status,Prcpt_Inactive,Prcpt_Inactive
+d_Status,Prcpt_NoFurtherParticipation,Prcpt_NoFurtherParticipation
+d_Status,Processed,Processed
+d_Status,Received,Received
+d_Status,Reconciled,Reconciled
+d_Status,ReconcileReleased,ReconcileReleased
+d_Status,Refunded,Refunded
+d_Status,Rejected,Rejected
+d_Status,Released,Released
+d_Status,Remitted,Remitted
+d_Status,RemovedFromCover,RemovedFromCover
+d_Status,ReOpen,ReOpen
+d_Status,Requested,Requested
+d_Status,Returned,Returned
+d_Status,Reversed,Reversed
+d_Status,SCNTallyTxnAccepted,SCNTallyTxnAccepted
+d_Status,SCNTallyTxnInitiated,SCNTallyTxnInitiated
+d_Status,SCNTallyTxnPndngMdfctn,SCNTallyTxnPndngMdfctn
+d_Status,SendBack,SendBack
+d_Status,Settled,Settled
+d_Status,SettledPendAuth,SettledPendAuth
+d_Status,Success,Success
+d_Status,ToBeProcessed,ToBeProcessed
+d_Status,Update,Update
+d_Status,Verified,Verified
+d_Status,WaitingForCnfrmtn,WaitingForCnfrmtn
+d_AWBStatus,Initiated,Initiated
+d_AWBStatus,Authorised,Authorised
+d_AWBStatus,Rejected,Rejected
+d_AWBStatus,Active,Active
+d_AWBStatus,Inactive,Inactive
+d_AccountType,"Forex covering Spot, Forward and Swap deals.","Forex covering Spot, Forward and Swap deals."
+d_AccountType,Payment Order,Payment Order
+d_AccountType,Account Closure,Account Closure
+d_AccountType,Allocation,Allocation
+d_AccountType,Corporate Action,Corporate Action
+d_AccountType,AME,AME
+d_AccountType,Fixed Asset Purchase,Fixed Asset Purchase
+d_AccountType,IBT,IBT
+d_AccountType,IBT Res,IBT Res
+d_AccountType,GrpdBook,GrpdBook
+d_AccountType,ICS,ICS
+d_AccountType,DD Paid-in,DD Paid-in
+d_AccountType,DD Paid-out,DD Paid-out
+d_AccountType,BulkPosType,BulkPosType
+d_AccountType,Safe Keeping Fee,Safe Keeping Fee
+d_AccountType,Bills,Bills
+d_AccountType,Guarantees,Guarantees
+d_AccountType,Ltr of Credits,Ltr of Credits
+d_AccountType,Safe Custody,Safe Custody
+d_AccountType,Teller to Head Teller Transfer,Teller to Head Teller Transfer
+d_AccountType,Head Teller To Teller Transfer,Head Teller To Teller Transfer
+d_AccountType,Vault to Head Teller Transfer,Vault to Head Teller Transfer
+d_AccountType,Head Teller To Vault Transfer,Head Teller To Vault Transfer
+d_AccountType,Idvstmnt Run,Idvstmnt Run
+d_AccountType,Cash Enforcement Run,Cash Enforcement Run
+d_AccountType,ML Int Appln,ML Int Appln
+d_AccountType,ML Int Accrual,ML Int Accrual
+d_AccountType,C21,C21
+d_AccountType,Cost Price Adjustment,Cost Price Adjustment
+d_AccountType,Deal,Deal
+d_AccountType,Limit Update,Limit Update
+d_AccountType,Pooled Order,Pooled Order
+d_AccountType,Subscription Order,Subscription Order
+d_AccountType,Allocation Order,Allocation Order
+d_AccountType,MF Conversion Order,MF Conversion Order
+d_AccountType,Pooled Settlement Order,Pooled Settlement Order
+d_AccountType,DIA Shadow Movements,DIA Shadow Movements
+d_AccountType,Trn Crs Bs CIEAcnt,Trn Crs Bs CIEAcnt
+d_AccountType,Income Expense Order,Income Expense Order
+d_AccountType,Invoice Application,Invoice Application
+d_AccountType,Derivative Position Expiry,Derivative Position Expiry
+d_AccountType,FX Revaluation,FX Revaluation
+d_AccountType,Income Expense Order Detail,Income Expense Order Detail
+d_AccountType,Inward Batch,Inward Batch
+d_AccountType,Outward Batch,Outward Batch
+d_AccountType,NCS,NCS
+d_AccountType,Trade,Trade
+d_AccountType,ICAMS,ICAMS
+d_AccountType,FEDS,FEDS
+d_AccountType,MT900,MT900
+d_AccountType,MT910,MT910
+d_AccountType,BackUpTax Periodic,BackUpTax Periodic
+d_AccountType,Saving,Saving
+d_AccountType,Current,Current
+d_AccountType,OPOL Transfer Order,OPOL Transfer Order
+d_AccountType,Back Office Position,Back Office Position
+d_AccountType,CCOD Account,CCOD Account
+d_AccountType,Offset,Offset
+d_AccountType,Safe Custody Account,Safe Custody Account
+d_AccountType,CLM Order,CLM Order
+d_AccountType,Flexi Account,Flexi Account
+d_AccountType,Linked SE Net Settlement Orders,Linked SE Net Settlement Orders
+d_AccountType,Demand Draft,Demand Draft
+d_AccountType,Purchase Order,Purchase Order
+d_AccountType,Export Bill,Export Bill
+d_AccountType,BC,BC
+d_AccountType,MT,MT
+d_AccountType,TT,TT
+d_AccountType,Clrng Out,Clrng Out
+d_AccountType,Ijarah,Ijarah
+d_AccountType,Istisnaa,Istisnaa
+d_AccountType,Rpymnt Act Trnsfr,Rpymnt Act Trnsfr
+d_AccountType,Disbrsment Trfr,Disbrsment Trfr
+d_AccountType,Loan Act Closure,Loan Act Closure
+d_AccountType,Rpymnt Cash,Rpymnt Cash
+d_AccountType,Disbrsment Cash,Disbrsment Cash
+d_AccountType,Clrng In,Clrng In
+d_AccountType,TcBuy,TcBuy
+d_AccountType,Ext Lad Chk,Ext Lad Chk
+d_AccountType,Loyalty Saving,Loyalty Saving
+d_AccountType,MT210,MT210
+d_AccountType,Outward Clearing,Outward Clearing
+d_AccountType,Inward Clearing,Inward Clearing
+d_AccountType,SBB Transfer,SBB Transfer
+d_AccountType,SBB Interest Reversal,SBB Interest Reversal
+d_AccountType,SBB Tax Reversal,SBB Tax Reversal
+d_AccountType,Cash,Cash
+d_AccountType,Custody Position,Custody Position
+d_AccountType,OTC Currency Option deals,OTC Currency Option deals
+d_AccountType,FX Rate Request,FX Rate Request
+d_AccountType,Exchange Rate Agreement deals,Exchange Rate Agreement deals
+d_AccountType,MM Deposit Deal,MM Deposit Deal
+d_AccountType,Forward Rate Agreement Deals,Forward Rate Agreement Deals
+d_AccountType,IRS and Cross Currency IRS deals,IRS and Cross Currency IRS deals
+d_AccountType,Interest Rate Options deal,Interest Rate Options deal
+d_AccountType,Credit Application,Credit Application
+d_AccountType,Credit Loan,Credit Loan
+d_AccountType,Non - Tradeable,Non - Tradeable
+d_AccountType,A Forward Custody Position.,A Forward Custody Position.
+d_AccountType,MM Order,MM Order
+d_AccountType,MM Deal,MM Deal
+d_AccountType,Product,Product
+d_AccountType,Currency Position,Currency Position
+d_AccountType,Exchange Value,Exchange Value
+d_AccountType,Currency Position Notes,Currency Position Notes
+d_AccountType,Exchange Value Notes,Exchange Value Notes
+d_AccountType,General Business Transaction,General Business Transaction
+d_AccountType,FA Transaction,FA Transaction
+d_AccountType,Internal,Internal
+d_AccountType,Open Delivery,Open Delivery
+d_AccountType,Broker Position,Broker Position
+d_AccountType,Custodian,Custodian
+d_AccountType,Variation Margin,Variation Margin
+d_AccountType,Initial Margin,Initial Margin
+d_AccountType,SE Net Settlement Orders,SE Net Settlement Orders
+d_AccountType,Det Custody Position,Det Custody Position
+d_AccountType,TBill,TBill
+d_AccountType,RSShipOrd,RSShipOrd
+d_AccountType,RS TC Cheques Shipment Order,RS TC Cheques Shipment Order
+d_AccountType,RS EC Book Order,RS EC Book Order
+d_AccountType,RS TC Sale Order,RS TC Sale Order
+d_AccountType,RS Cheque Book Order,RS Cheque Book Order
+d_AccountType,RS Banker Cheque Order,RS Banker Cheque Order
+d_AccountType,RS Card Order,RS Card Order
+d_AccountType,RS Cash Order Withdrawal,RS Cash Order Withdrawal
+d_AccountType,RS Coupon Collection Order,RS Coupon Collection Order
+d_AccountType,RS Encashment Order,RS Encashment Order
+d_AccountType,RS Exchange Order,RS Exchange Order
+d_AccountType,RS Security Redemption Order,RS Security Redemption Order
+d_AccountType,RS Stop Payment Order,RS Stop Payment Order
+d_AccountType,RS Vault Contract Order,RS Vault Contract Order
+d_AccountType,RS Cash Order Deposit,RS Cash Order Deposit
+d_AccountType,Entitlement,Entitlement
+d_AccountType,"Forex orders including spot, forward, swap orders","Forex orders including spot, forward, swap orders"
+d_AccountType,OTC Option orders,OTC Option orders
+d_AccountType,Exchange Rate Agreement orders,Exchange Rate Agreement orders
+d_AccountType,Global Interest Change,Global Interest Change
+d_AccountType,Interest Application,Interest Application
+d_AccountType,MM Deposit Order,MM Deposit Order
+d_AccountType,Money Market IRO Order,Money Market IRO Order
+d_AccountType,Share Application,Share Application
+d_AccountType,Interest Repo Deal,Interest Repo Deal
+d_AccountType,CMO Cash Flow,CMO Cash Flow
+d_AccountType,ST Customer Order,ST Customer Order
+d_AccountType,ST TradeOrder,ST TradeOrder
+d_AccountType,ST Deal,ST Deal
+d_AccountType,Exercise order,Exercise order
+d_AccountType,Option Allocation,Option Allocation
+d_AccountType,SA Order,SA Order
+d_AccountType,Certificate,Certificate
+d_AccountType,Registration Detail,Registration Detail
+d_AccountType,CM Order,CM Order
+d_AccountType,Coupon,Coupon
+d_AccountType,Conversion Order,Conversion Order
+d_AccountType,Eligibility,Eligibility
+d_AccountType,Internal Credit Note,Internal Credit Note
+d_AccountType,Periodic Charge for PSO,Periodic Charge for PSO
+d_AccountType,CMO,CMO
+d_AccountType,TBond,TBond
+d_AccountType,Repo,Repo
+d_AccountType,Retail Order,Retail Order
+d_AccountType,EMTN Deal,EMTN Deal
+d_AccountType,Interest Accrual,Interest Accrual
+d_AccountType,Interest Bonds,Interest Bonds
+d_AccountType,Open Portfolio,Open Portfolio
+d_AccountType,DTA LSV Order,DTA LSV Order
+d_AccountType,Internal Transfer,Internal Transfer
+d_AccountType,Incoming Payment Order,Incoming Payment Order
+d_AccountType,Receipt Instruction,Receipt Instruction
+d_AccountType,Standing Order,Standing Order
+d_AccountType,Assign Order,Assign Order
+d_AccountType,Margin Order,Margin Order
+d_AccountType,SIC Incoming Message Order,SIC Incoming Message Order
+d_AccountType,SWIFT Incoming Payment Message Order,SWIFT Incoming Payment Message Order
+d_AccountType,For Pre settled Deals,For Pre settled Deals
+d_AccountType,Linked SA Order,Linked SA Order
+d_AccountType,Trade Order Group,Trade Order Group
+d_AccountType,Derivatives Settlements,Derivatives Settlements
+d_AccountType,Assignment,Assignment
+d_AccountType,Disbursement Order,Disbursement Order
+d_AccountType,Disbursement Plan,Disbursement Plan
+d_AccountType,Investment Plan,Investment Plan
+d_AccountType,Switch Order,Switch Order
+d_AccountType,Auto Investment Order,Auto Investment Order
+d_AccountType,MFSimple,MFSimple
+d_AccountType,FAP,FAP
+d_AccountType,FAPG,FAPG
+d_AccountType,Member Loan,Member Loan
+d_AccountType,Account Limit,Account Limit
+d_AccountType,Amortization,Amortization
+d_AccountType,GET Transaction,GET Transaction
+d_AccountType,Cheque Paid Out,Cheque Paid Out
+d_AccountType,Cheque Paid In,Cheque Paid In
+d_AccountType,Direct Debit Paid Out,Direct Debit Paid Out
+d_AccountType,Direct Debit Paid In,Direct Debit Paid In
+d_AccountType,CTI,CTI
+d_AccountType,Account Opening,Account Opening
+d_AccountType,Mandate,Mandate
+d_AccountType,Bill Paid Out,Bill Paid Out
+d_AccountType,Bill Paid In,Bill Paid In
+d_AccountType,Stop Cheque Payment,Stop Cheque Payment
+d_AccountType,CTIId,CTIId
+d_AccountType,Originator,Originator
+d_AccountType,External Charges,External Charges
+d_AccountType,Cheque Payment Order,Cheque Payment Order
+d_AccountType,Cheque Reconciliation,Cheque Reconciliation
+d_AccountType,Report Charges,Report Charges
+d_AccountType,AdditionFeeZBA,AdditionFeeZBA
+d_AccountType,Removal Fee ZBA,Removal Fee ZBA
+d_AccountType,Return,Return
+d_AccountType,Reject Return,Reject Return
+d_AccountType,RetOrder,RetOrder
+d_AccountType,N91,N91
+d_AccountType,940,940
+d_AccountType,941,941
+d_AccountType,942,942
+d_AccountType,Ext Advice,Ext Advice
+d_AccountType,N95,N95
+d_AccountType,143,143
+d_AccountType,N96,N96
+d_AccountType,Final102,Final102
+d_AccountType,Over Draft Limit,Over Draft Limit
+d_AccountType,MT920,MT920
+d_AccountType,Global CA,Global CA
+d_AccountType,Conversion Ordr,Conversion Ordr
+d_AccountType,Combination Order,Combination Order
+d_AccountType,Transfer Balance,Transfer Balance
+d_AccountType,Initialize Balance,Initialize Balance
+d_AccountType,Reprocess Interest,Reprocess Interest
+d_AccountType,Derivatives Expired Position,Derivatives Expired Position
+d_AccountType,Adhoc Charges,Adhoc Charges
+d_AccountType,Derivative Margin,Derivative Margin
+d_AccountType,IBS Transactions,IBS Transactions
+d_AccountType,Stop Direct Debit Payment,Stop Direct Debit Payment
+d_AccountType,N90,N90
+d_AccountType,MT950,MT950
+d_AccountType,Revaluation,Revaluation
+d_AccountType,APAR Origination,APAR Origination
+d_AccountType,APAR Responding,APAR Responding
+d_AccountType,Online Banking Payment Booking,Online Banking Payment Booking
+d_AccountType,Online Banking Payment RefundBooking,Online Banking Payment RefundBooking
+d_AccountType,Cash Concentration,Cash Concentration
+d_AccountType,Ext Notional Pool,Ext Notional Pool
+d_AccountType,Cash Concentration Processing,Cash Concentration Processing
+d_AccountType,Cash Concentration Processing - TBS,Cash Concentration Processing - TBS
+d_AccountType,Pos Type of ICS-InterestRecord,Pos Type of ICS-InterestRecord
+d_AccountType,Card Transaction,Card Transaction
+d_AccountType,SDD_ORIG,SDD_ORIG
+d_AccountType,SDD_MAN,SDD_MAN
+d_AccountType,DD Paid-in Return,DD Paid-in Return
+d_AccountType,DD Paid-out Return,DD Paid-out Return
+d_AccountType,InvcAcrl,InvcAcrl
+d_AccountType,ResponseRequired,ResponseRequired
+d_AccountType,Tax Lot,Tax Lot
+d_AccountType,TcSell,TcSell
+d_AccountType,P2P Lending,P2P Lending
+d_AccountType,Unpaid,Unpaid
+d_AccountType,NAV,NAV
+d_AccountType,Portfolio Entitlement,Portfolio Entitlement
+d_AccountType,Intrst Subsidy,Intrst Subsidy
+d_AccountType,Crprt Pmnt,Crprt Pmnt
+d_AccountType,SHARETRADE_BatchTxn_BUY,SHARETRADE_BatchTxn_BUY
+d_AccountType,SHARETRADE_BatchTxn_SELL,SHARETRADE_BatchTxn_SELL
+d_AccountType,RTGS,RTGS
+d_AccountType,ASBA_FUND_TRANSFER,ASBA_FUND_TRANSFER
+d_AccountType,FX,FX
+d_AccountType,FCNR,FCNR
+d_AccountType,Cards,Cards
+d_AccountType,RD Installment,RD Installment
+d_AccountType,Collateral Abandoned,Collateral Abandoned
+d_AccountType,Loan Cancellation,Loan Cancellation
+d_AccountType,Counter Party Claim,Counter Party Claim
+d_AccountType,Txn Based Sweep,Txn Based Sweep
+d_AccountType,Cash Block,Cash Block
+d_AccountType,MsgQue,MsgQue
+d_AccountType,BulkPosTyp,BulkPosTyp
+d_AccountType,KestRecomp,KestRecomp
+d_AccountType,Cstmr Report,Cstmr Report
+d_AccountType,DIA,DIA
+d_AccountType,FundPlan,FundPlan
+d_AccountType,PayOrder,PayOrder
+d_AccountType,Subscription,Subscription
+d_AccountType,DepositTxn,DepositTxn
+d_AccountType,Crypto Wallet,Crypto Wallet
+d_AccountType,Crypto Rebalancing,Crypto Rebalancing
+d_AccountType,Crncy Buy,Crncy Buy
+d_AccountType,Crncy Sell,Crncy Sell
+d_AccountType,Global Interest,Global Interest
+d_AccountType,Pymt Notification,Pymt Notification
+d_AccountType,File level,File level
+d_AccountType,Acc Statement Charge,Acc Statement Charge
+d_AccountType,Syndication,Syndication
+d_AccountType,Pending Chrage Computation,Pending Chrage Computation
+d_AccountType,PASSBOOK ACCOUNT,PASSBOOK ACCOUNT
+d_AccountType,CrncySwtch,CrncySwtch
+d_AccountType,Valuation Accounting,Valuation Accounting
+d_AccountType,Stop Cheque,Stop Cheque
+d_AccountType,Chq Cancel,Chq Cancel
+d_AccountType,Notional Pool,Notional Pool
+d_AccountType,External Bookings,External Bookings
+d_AccountType,Bank Guarantee,Bank Guarantee
+d_AccountType,Export Letter Of Credit,Export Letter Of Credit
+d_AccountType,ELC Registration,ELC Registration
+d_AccountType,ELC Bill Payment,ELC Bill Payment
+d_AccountType,EDC Bill,EDC Bill
+d_AccountType,EDC Bill Payment,EDC Bill Payment
+d_AccountType,Letter Of Credit,Letter Of Credit
+d_AccountType,Pre Advise,Pre Advise
+d_AccountType,BG,BG
+d_AccountType,LC Bill Lodgement,LC Bill Lodgement
+d_AccountType,LC Bill Payment,LC Bill Payment
+d_AccountType,MarkedNotes,MarkedNotes
+d_AccountType,Tlr Trnsfer,Tlr Trnsfer
+d_AccountType,TFDC,TFDC
+d_AccountType,Documentary Collection,Documentary Collection
+d_AccountType,Documentary Collection Pay,Documentary Collection Pay
+d_AccountType,External System Charge,External System Charge
+d_AccountType,Contract Transfer,Contract Transfer
+d_AccountType,Business,Business
+d_AccountType,Business Bank,Business Bank
+d_AccountType,Pseudo,Pseudo
+d_AccountType,Reference Data,Reference Data
+d_AccountType,Static Data,Static Data
+d_AccountType,DownPayment,DownPayment
+d_AccountType,LoanCancellation,LoanCancellation
+d_AccountType,CommImmSell,CommImmSell
+d_AccountType,PurchseOncompletion,PurchseOncompletion
+d_AccountType,PreNotice,PreNotice
+d_AccountType,WriteOffCollection,WriteOffCollection
+d_AccountType,StckStmntChrg,StckStmntChrg
+d_AccountType,SWIFT Message Generation for Negative Balance,SWIFT Message Generation for Negative Balance
+d_AccountType,FundTransfer,FundTransfer
+d_AccountType,FollowUp,FollowUp
+d_AccountType,Vendor Transaction,Vendor Transaction
+d_AccountType,Crypto placement order,Crypto placement order
+d_AccountType,Crypto exit order,Crypto exit order
+d_AccountType,Calculate Charge,Calculate Charge
+d_AccountType,Crypto Staking Rewards,Crypto Staking Rewards
+d_AccountType,Escrow,Escrow
+d_AccountType,VAM Booking,VAM Booking
+d_AccountType,Staking Placement Vault,Staking Placement Vault
+d_AccountType,Staking Exit Vault,Staking Exit Vault
+d_AccountType,Vault Staking Rewards,Vault Staking Rewards
+d_AccountType,DeveloperAccountingTranche,DeveloperAccountingTranche
+d_AccountType,BC Stop Pymnt,BC Stop Pymnt
+d_AccountType,BC Revoke Stop Pymnt,BC Revoke Stop Pymnt
+d_AccountType,Crypto Vault Accounts,Crypto Vault Accounts
+d_AccountType,AWBEndorsement,AWBEndorsement
+d_AccountType,IBGPosTyp,IBGPosTyp
+d_AccountType,EDCPurchaseOrder,EDCPurchaseOrder
+d_AccountType,TFIBGContrct,TFIBGContrct
+d_AccountType,NPDPosTyp,NPDPosTyp
+d_AccountType,AWBDCPosTyp,AWBDCPosTyp
+d_AccountType,postDatedChequeTransaction,postDatedChequeTransaction
+d_AccountType,upfrontChargesTransaction,upfrontChargesTransaction
+d_AccountType,Contingent txn,Contingent txn
+d_AccountType,Issuance SPLetterOfComfort,Issuance SPLetterOfComfort
+d_AccountType,Reversal SPLetterOfComfort,Reversal SPLetterOfComfort
+d_AccountType,Forward FAReceiptLOC,Forward FAReceiptLOC
+d_AccountType,Reversal FAReceiptLOC,Reversal FAReceiptLOC
+d_AccountType,Issuance of Nonfund,Issuance of Nonfund
+d_AccountType,Payment FAReceiptLOC,Payment FAReceiptLOC
+d_AccountType,Forward SFAUtilisation,Forward SFAUtilisation
+d_AccountType,Reversal SFAUtilisation,Reversal SFAUtilisation
+d_AccountType,SalePurchasePosTyp,SalePurchasePosTyp
+d_AccountType,TFCrystallizationLoan,TFCrystallizationLoan
+d_AccountType,ELCConfirmation,ELCConfirmation
+d_AccountType,ELCAmendConfirmation,ELCAmendConfirmation
+d_AccountType,DpstChrgs,DpstChrgs
+d_TFBGStatus,OnHold,OnHold
+d_TFBGStatus,Released,Released
+d_TFBGStatus,Verified,Verified
+d_TFBGStatus,PendingClosure,PendingClosure
+d_TFBGStatus,Closed,Closed
+d_TFBGStatus,Executed,Executed
+d_TFBGStatus,Expired,Expired
+d_TFBGStatus,Rejected,Rejected
+d_TFBGStatus,WaitingForRate,WaitingForRate
+d_TFBGStatus,AmndmntInit,AmndmntInit
+d_TFBGStatus,AcptRefPndng,AcptRefPndng
+d_TFBGStatus,Refused,Refused
+d_TFBGStatus,Final1,Final1
+d_TFBGStatus,SuspWdrwPndng,SuspWdrwPndng
+d_TFBGStatus,CnclClosePndng,CnclClosePndng
+d_TFBGStatus,RevivalPndng,RevivalPndng
+d_TFBGStatus,Cancelled,Cancelled
+d_TFBGStatus,ModifyOnHold,ModifyOnHold
+d_TFBGStatus,ModifyReleased,ModifyReleased
+d_TFBGStatus,SentBack,SentBack
+d_TFBGStatus,NRCancel,NRCancel
+d_TFBGStatus,ComplianceFailed,ComplianceFailed
+d_TFBGStatus,ComplianceOnHold,ComplianceOnHold
+d_TFBGStatus,Reject,Reject
+d_TFBGStatus,Claimed,Claimed
+d_TFBGStatus,Cancelled,Cancelled
+d_TFBGStatus,Compliance OnHold,Compliance OnHold
+d_TFBGStatus,Compliance Rejected,Compliance Rejected
+d_TFBGStatus,Compliance Approved,Compliance Approved
+d_TFBGStatus,Accept Refusal Pending,Accept Refusal Pending
+d_TFBGStatus,Amendment Initiated,Amendment Initiated
+d_TFBGStatus,Modify Released,Modify Released
+d_TFBGStatus,Modify On Hold,Modify On Hold
+d_TFBGStatus,Cancel Close Pending,Cancel Close Pending
+d_TFBGStatus,Closed,Closed
+d_TFBGStatus,Executed,Executed
+d_TFBGStatus,Expired,Expired
+d_TFBGStatus,Final,Final
+d_TFBGStatus,On Hold/Draft,On Hold/Draft
+d_TFBGStatus,Pending Closure,Pending Closure
+d_TFBGStatus,Refused,Refused
+d_TFBGStatus,Released,Released
+d_TFBGStatus,Revival Pending,Revival Pending
+d_TFBGStatus,Suspend Withdraw Pending,Suspend Withdraw Pending
+d_TFBGStatus,Verified,Verified
+d_TFBGStatus,Waiting For Rate,Waiting For Rate
+d_TFBGStatus,SentBack,SentBack
+d_TFBGStatus,Not Received,Not Received
+d_TFBGStatus,Compliance Failed,Compliance Failed
+d_TFBGStatus,Rejected,Rejected
+d_TFBGStatus,BG Claimed,BG Claimed
+d_ModeOfRecovery,Casa,Casa
+d_ModeOfRecovery,LoC,LoC
+d_ModeOfRecovery,Loan,Loan
+d_ModeOfRecovery,CasaAndLoan,CasaAndLoan
+d_ModeOfRecovery,CasaAndLoC,CasaAndLoC
+d_ModeOfRecovery,LoCAndLoan,LoCAndLoan
+d_ModeOfRecovery,CasaLoCAndLoan,CasaLoCAndLoan
+d_Docdsptch,ToBank,To Bank
+d_Docdsptch,ToDrawee,To Drawee
+d_Docdsptch,NoDispatch,No Dispatch
+d_LcEventStatus,Accepted,Accepted
+d_LcEventStatus,AcptRefPndng,AcptRefPndng
+d_LcEventStatus,AcptRefVerified,AcptRefVerified
+d_LcEventStatus,AmndmntInit,AmndmntInit
+d_LcEventStatus,AmndmntSent,AmndmntSent
+d_LcEventStatus,BillPaid,BillPaid
+d_LcEventStatus,Cancelled,Cancelled
+d_LcEventStatus,CancelPending,CancelPending
+d_LcEventStatus,CancelVerified,CancelVerified
+d_LcEventStatus,Closed,Closed
+d_LcEventStatus,CnclClosePndng,CnclClosePndng
+d_LcEventStatus,CnclCloseVerify,CnclCloseVerify
+d_LcEventStatus,Executed,Executed
+d_LcEventStatus,Expired,Expired
+d_LcEventStatus,ForcePending,ForcePending
+d_LcEventStatus,ForceVerified,ForceVerified
+d_LcEventStatus,Lodged,Lodged
+d_LcEventStatus,OnHold,OnHold
+d_LcEventStatus,PartiallyPaid,PartiallyPaid
+d_LcEventStatus,Refused,Refused
+d_LcEventStatus,Rejected,Rejected
+d_LcEventStatus,Released,Released
+d_LcEventStatus,ReversePending,ReversePending
+d_LcEventStatus,ReverseVerified,ReverseVerified
+d_LcEventStatus,Settled,Settled
+d_LcEventStatus,Verified,Verified
+d_LcEventStatus,RevivedLCOnHold,RevivedLCOnHold
+d_LcEventStatus,RevivedLCReleased,RevivedLCReleased
+d_LcEventStatus,Revived,Revived
+d_LcEventStatus,ImportLoan,ImportLoan
+d_LcEventStatus,DevolvedLC,DevolvedLC
+d_LcEventStatus,SentBack,SentBack
+d_PaymentTyp,ESR,ESR
+d_PaymentTyp,BLPmnt,BLPmnt
+d_PaymentTyp,CTI,CTI
+d_PaymentTyp,Collection,Collection
+d_PaymentTyp,Commercial,Commercial
+d_PaymentTyp,DrftIssuance,DrftIssuance
+d_PaymentTyp,Financial,Financial
+d_PaymentTyp,InterBank,InterBank
+d_PaymentTyp,Postal,Postal
+d_PaymentTyp,ReturnPymnt,ReturnPymnt
+d_PaymentTyp,ReturnSO,ReturnSO
+d_PaymentTyp,SO,SO
+d_PaymentTyp,SalaryPmnt,SalaryPmnt
+d_PaymentTyp,StlmntDD,StlmntDD
+d_PaymentTyp,TEAM,TEAM
+d_PaymentTyp,Treasury,Treasury
+d_PaymentTyp,DividendPmnt,DividendPmnt
+d_PaymentTyp,IntraCompany,IntraCompany
+d_PaymentTyp,Other,Other
+d_PaymentTyp,BankInitTrnsfr,BankInitTrnsfr
+d_PaymentTyp,FX4Cash,FX4Cash
+d_PaymentTyp,OLA,OLA
+d_PaymentTyp,OLO,OLO
+d_PaymentTyp,LoanRepayment,LoanRepayment
+d_PaymentTyp,AcceptGiro,AcceptGiro
+d_PaymentTyp,MMAcceptCall,MMAcceptCall
+d_PaymentTyp,DirectDebit,DirectDebit
+d_PaymentTyp,RevocationDD,RevocationDD
+d_PaymentTyp,MMPlaceDeal,MMPlaceDeal
+d_PaymentTyp,MMAcceptDeal,MMAcceptDeal
+d_PaymentTyp,MMPlaceSettlement,MMPlaceSettlement
+d_PaymentTyp,MMAcceptSettlement,MMAcceptSettlement
+d_PaymentTyp,POSAcquiring,POSAcquiring
+d_PaymentTyp,iDEALAcquiring,iDEALAcquiring
+d_PaymentTyp,EPPayment,EPPayment
+d_PaymentTyp,ICSPayment,ICSPayment
+d_PaymentTyp,CorrBkFund,CorrBkFund
+d_PaymentTyp,EBP,EBP
+d_PaymentTyp,LiqdtyTxn,LiqdtyTxn
+d_PaymentTyp,OutStatChq,OutStatChq
+d_PaymentTyp,TYPC,TYPC
+d_PaymentTyp,VACP,VACP
+d_PaymentTyp,WkInCust,WkInCust
+d_PaymentTyp,CentralBank,CentralBank
+d_PaymentTyp,SEPA,SEPA
+d_PaymentTyp,LoanDisbursement,LoanDisbursement
+d_PaymentTyp,Full Payment,Full Payment
+d_PaymentTyp,Partial Payment,Partial Payment
+d_PaymentMode,Cheque,Cheque
+d_PaymentMode,Clearing,Clearing
+d_PaymentMode,Account,Account
+d_PaymentMode,Cash,Cash
+d_PaymentMode,VoucherSet,VoucherSet
+d_PaymentMode,ETFHouseTransfer,ETFHouseTransfer
+d_PaymentMode,InwardClearing,InwardClearing
+d_PaymentMode,IBTO,IBTO
+d_PaymentMode,BankersCheque,BankersCheque
+d_InterDomestic,International,International
+d_InterDomestic,Domestic,Domestic
+d_InterDomestic,International,International
+d_InterDomestic,Domestic,Domestic
+d_PreShpmntFncBasis,NetTotal,NetTotal
+d_PreShpmntFncBasis,FOB,FOB
+d_TypeOfDocsPO,PurchaseOrder,PurchaseOrder
+d_TypeOfDocsPO,ProformaInvoice,ProformaInvoice
+d_TypeOfDocsPO,SalesContract,SalesContract
+d_DCEventStatus,Accepted,Accepted
+d_DCEventStatus,Acknowledged,Acknowledged
+d_DCEventStatus,AcptRefPndng,AcptRefPndng
+d_DCEventStatus,AcptRefVerified,AcptRefVerified
+d_DCEventStatus,BillPaid,BillPaid
+d_DCEventStatus,Closed,Closed
+d_DCEventStatus,Executed,Executed
+d_DCEventStatus,ForcePending,ForcePending
+d_DCEventStatus,ForceVerified,ForceVerified
+d_DCEventStatus,Invalid,Invalid
+d_DCEventStatus,Lodged,Lodged
+d_DCEventStatus,OnHold,OnHold
+d_DCEventStatus,PartiallyPaid,PartiallyPaid
+d_DCEventStatus,PendingReturn,PendingReturn
+d_DCEventStatus,Refused,Refused
+d_DCEventStatus,Rejected,Rejected
+d_DCEventStatus,Released,Released
+d_DCEventStatus,ReturnOfDocuments,ReturnOfDocuments
+d_DCEventStatus,ReturnPending,ReturnPending
+d_DCEventStatus,ReversePending,ReversePending
+d_DCEventStatus,ReverseVerified,ReverseVerified
+d_DCEventStatus,Settled,Settled
+d_DCEventStatus,Verified,Verified
+d_DCEventStatus,WaitingForRate,WaitingForRate
+d_DCEventStatus,ImportLoan,ImportLoan
+d_DCEventStatus,SentBack,SentBack
+d_TFBillStat,Partially Paid,Partially Paid
+d_TFBillStat,Refused,Refused
+d_TFBillStat,Acceptal Refusal Verified,Acceptal Refusal Verified
+d_TFBillStat,Acceptal Refusal Pending,Acceptal Refusal Pending
+d_TFBillStat,Lodged,Lodged
+d_TFBillStat,Accepted,Accepted
+d_TFBillStat,Cancelled,Cancelled
+d_TFBillStat,Verified,Verified
+d_TFBillStat,Released,Released
+d_TFBillStat,Waiting ForRate,Waiting ForRate
+d_TFBillStat,Bill Paid,Bill Paid
+d_TFBillStat,On Hold/Draft,On Hold/Draft
+d_TFBillStat,Acknowledged,Acknowledged
+d_TFBillStat,Return of Documents,Return of Documents
+d_TFBillStat,Pending Return,Pending Return
+d_TFBillStat,SentBack,SentBack
+d_TFBillStat,Rejected,Rejected
+d_TFBillStat,Compliance Failed,Compliance Failed
+d_TFBillStat,Compliance OnHold,Compliance OnHold
+d_TFBillStat,Compliance Approved,Compliance Approved
+d_TFBillStat,Compliance Rejected,Compliance Rejected
+d_TFResponse,Positive,Positive
+d_TFResponse,Negative,Negative
+d_TFResponse,NotReceived,NotReceived
+d_TFResponse,Not Received,Not Received
+d_TFResponse,Swift Received,Swift Received
+d_TFResponse,Message Verified,Message Verified
+d_TFResponse,Negative,Negative
+d_TFResponse,Positive,Positive
+d_TFResponse,Accepted,Accepted
+d_TFResponse,Refused,Refused
+d_TFResponse,Deemed Accepted,Deemed Accepted
+d_corresMedium,Swift,Swift
+d_corresMedium,Physical,Physical
+d_DocumentType,ELC,ELC
+d_DocumentType,PO_PI_SC,PO_PI_SC
+d_DocumentType,Others,Others
+d_DocumentType,Electricity Bill,Electricity Bill
+d_DocumentType,PortMngmntAgrmnt,PortMngmntAgrmnt
+d_DocumentType,Export,Export
+d_DocumentType,ImportDesp,ImportDesp
+d_DocumentType,ExpDesp,ExpDesp
+d_DocumentType,ExpImpDesp,ExpImpDesp
+d_DocumentType,ExconLOA,ExconLOA
+d_DocumentType,Disclaimer Form,Disclaimer Form
+d_DocumentType,KYC1,KYC1
+d_DocumentType,Trade License,Trade License
+d_DocumentType,KYC3,KYC3
+d_DocumentType,PEP,PEP
+d_DocumentType,POA Agreement,POA Agreement
+d_DocumentType,Passport,Passport
+d_DocumentType,Memorandum of Association,Memorandum of Association
+d_DocumentType,Articles of Association,Articles of Association
+d_DocumentType,BrdResolDoc,BrdResolDoc
+d_DocumentType,Utiliy Bill,Utiliy Bill
+d_DocumentType,Miscellaneous,Miscellaneous
+d_DocumentType,Aus Wthhld KESt1,Aus Wthhld KESt1
+d_DocumentType,Aus Wthhld KESt2,Aus Wthhld KESt2
+d_DocumentType,Aus Wthhld KESt2 Options,Aus Wthhld KESt2 Options
+d_DocumentType,Aus Wthhld KESt3,Aus Wthhld KESt3
+d_DocumentType,EUQuest Document,EUQuest Document
+d_DocumentType,All,All
+d_DocumentType,Fiscal Declaration For Custody Account,Fiscal Declaration For Custody Account
+d_DocumentType,Aus Backup Tax,Aus Backup Tax
+d_DocumentType,WHT Exemption,WHT Exemption
+d_DocumentType,WHT Reduction,WHT Reduction
+d_DocumentType,15H,15H
+d_DocumentType,Account Opening,Account Opening
+d_DocumentType,Birth Certificate,Birth Certificate
+d_DocumentType,Guradian Official Identification,Guradian Official Identification
+d_DocumentType,Valid paper work for foreigners,Valid paper work for foreigners
+d_DocumentType,Statement of Account,Statement of Account
+d_DocumentType,GST-In,GST-In
+d_DocumentType,Bankers Verification,Bankers Verification
+d_DocumentType,Education ID card,Education ID card
+d_DocumentType,Government Origination ID Card,Government Origination ID Card
+d_DocumentType,Photo Credit Card,Photo Credit Card
+d_DocumentType,Document of Local Bodies,Document of Local Bodies
+d_DocumentType,Document of Central State Government,Document of Central State Government
+d_DocumentType,CUSTOMER PROFILE FORM,CUSTOMER PROFILE FORM
+d_DocumentType,AOF,AOF
+d_DocumentType,PHOTO,PHOTO
+d_DocumentType,SIGNATURE,SIGNATURE
+d_DocumentType,SPECIMEN CARD,SPECIMEN CARD
+d_DocumentType,E-KYC,E-KYC
+d_DocumentType,PAN VALIDATION,PAN VALIDATION
+d_DocumentType,MOBILE BANKING FORM,MOBILE BANKING FORM
+d_DocumentType,INTERNET BANKING FORM,INTERNET BANKING FORM
+d_DocumentType,SMS BANKING FORM,SMS BANKING FORM
+d_DocumentType,VISA DEBIT CARD FORM,VISA DEBIT CARD FORM
+d_DocumentType,RUPAY DEBIT CARD FORM,RUPAY DEBIT CARD FORM
+d_DocumentType,CHEQUE BOOK FORM,CHEQUE BOOK FORM
+d_DocumentType,PNCPS FORM,PNCPS FORM
+d_DocumentType,LTD FORM,LTD FORM
+d_DocumentType,NREGA Job card,NREGA Job card
+d_DocumentType,PHOTO I-CARD ISSUED BY PUBLIC FINANCIAL INSTITUTION,PHOTO I-CARD ISSUED BY PUBLIC FINANCIAL INSTITUTION
+d_DocumentType,CLOSE RELATIVE DECLARATION,CLOSE RELATIVE DECLARATION
+d_DocumentType,PHOTOCARD ISSUED BY STATE GOVT.,PHOTOCARD ISSUED BY STATE GOVT.
+d_DocumentType,FORM 60,FORM 60
+d_DocumentType,CST CERTIFICATE,CST CERTIFICATE
+d_DocumentType,COPARCENERS DECLARATION,COPARCENERS DECLARATION
+d_DocumentType,GAZETTE NOTIFICATION,GAZETTE NOTIFICATION
+d_DocumentType,HUF DEED,HUF DEED
+d_DocumentType,LETTER FROM EMPLOYER,LETTER FROM EMPLOYER
+d_DocumentType,LIST OF COPARCENERS,LIST OF COPARCENERS
+d_DocumentType,MARRIAGE CERTIFICATE,MARRIAGE CERTIFICATE
+d_DocumentType,PARTNERSHIP DEED,PARTNERSHIP DEED
+d_DocumentType,POWER OF ATORNY,POWER OF ATORNY
+d_DocumentType,RESOLUTION,RESOLUTION
+d_DocumentType,SALES TAX RETURN,SALES TAX RETURN
+d_DocumentType,TRUST DEED,TRUST DEED
+d_DocumentType,VAT CERTIFICATE,VAT CERTIFICATE
+d_DocumentType,VISA,VISA
+d_DocumentType,PROFESSIONAL TAX AUTHORITY CERTIFICATE,PROFESSIONAL TAX AUTHORITY CERTIFICATE
+d_DocumentType,SALES TAX AUTHORITY CERTIFICATE,SALES TAX AUTHORITY CERTIFICATE
+d_DocumentType,SERVICE TAX AUTHORITY CERTIFICATE,SERVICE TAX AUTHORITY CERTIFICATE
+d_DocumentType,PHOTO I-CARD ISSUED BY CENTRAL GOVT.,PHOTO I-CARD ISSUED BY CENTRAL GOVT.
+d_DocumentType,PHOTO I-CARD ISSUED BY PUBLIC SECTOR UNDERTAKINGS,PHOTO I-CARD ISSUED BY PUBLIC SECTOR UNDERTAKINGS
+d_DocumentType,REGISTERED SALE DEED,REGISTERED SALE DEED
+d_DocumentType,REGISTERED RENT AGREEMENT,REGISTERED RENT AGREEMENT
+d_DocumentType,IEC ISSUED BY DGFT,IEC ISSUED BY DGFT
+d_DocumentType,PHOTO I-CARD ISSUED BY SCHEDULED COMMERCIAL BANKS,PHOTO I-CARD ISSUED BY SCHEDULED COMMERCIAL BANKS
+d_DocumentType,PHOTO I-CARD ISSUED BY STATUTORY AUTHORITY,PHOTO I-CARD ISSUED BY STATUTORY AUTHORITY
+d_DocumentType,PHOTO I-CARD ISSUED BY REGULATORY AUTHORITY,PHOTO I-CARD ISSUED BY REGULATORY AUTHORITY
+d_DocumentType,GAZETTED OFFICERS LETTER WITH PHOTO ATTESTATION,GAZETTED OFFICERS LETTER WITH PHOTO ATTESTATION
+d_DocumentType,MIGRANT WORKER FORM,MIGRANT WORKER FORM
+d_DocumentType,FATCA FORM,FATCA FORM
+d_DocumentType,STUDENT PHOTO I-CARD,STUDENT PHOTO I-CARD
+d_DocumentType,OTHER BANK PASSBOOK WITH BANK STATEMENT,OTHER BANK PASSBOOK WITH BANK STATEMENT
+d_DocumentType,FEE RECIEPT,FEE RECIEPT
+d_DocumentType,CONTACT POINT VERIFICATION REPORT,CONTACT POINT VERIFICATION REPORT
+d_DocumentType,COLLEGE LEAVING CERTIFICATE,COLLEGE LEAVING CERTIFICATE
+d_DocumentType,NOTARISED RENT AGREEMENT WITH POLICE VERIFICATION,NOTARISED RENT AGREEMENT WITH POLICE VERIFICATION
+d_DocumentType,RBI LICENSE,RBI LICENSE
+d_DocumentType,GUARDIANS PAN CARD,GUARDIANS PAN CARD
+d_DocumentType,FOOD DRUG LICENSE,FOOD DRUG LICENSE
+d_DocumentType,PROPERTY TAX ISSUED BY MUNCIPAL AUTHORITY,PROPERTY TAX ISSUED BY MUNCIPAL AUTHORITY
+d_DocumentType,SCHOOL BONAFIED CERTIFICATE,SCHOOL BONAFIED CERTIFICATE
+d_DocumentType,NOC FROM GRAMPANCHAYAT,NOC FROM GRAMPANCHAYAT
+d_DocumentType,GAS BILL/RECEIPT LATEST,GAS BILL/RECEIPT LATEST
+d_DocumentType,SCHOOL LEAVING CERTIFICATE,SCHOOL LEAVING CERTIFICATE
+d_DocumentType,I-20 FORM,I-20 FORM
+d_DocumentType,SOCIAL SECURITY (NRE),SOCIAL SECURITY (NRE)
+d_DocumentType,ALL MERGED DOCUMENT,ALL MERGED DOCUMENT
+d_DocumentType,CPF-Page-1,CPF-Page-1
+d_DocumentType,CPF-Page-2,CPF-Page-2
+d_DocumentType,CPF-Page-3,CPF-Page-3
+d_DocumentType,CPF-Page-4,CPF-Page-4
+d_DocumentType,AOF-Page-1,AOF-Page-1
+d_DocumentType,AOF-Page-2,AOF-Page-2
+d_DocumentType,1st Applicant Photo,1st Applicant Photo
+d_DocumentType,2nd Applicant Photo,2nd Applicant Photo
+d_DocumentType,3rd Applicant Photo,3rd Applicant Photo
+d_DocumentType,4th Applicant Photo,4th Applicant Photo
+d_DocumentType,ABCD,ABCD
+d_DocumentType,CPR,CPR
+d_DocumentType,IGA Certificate,IGA Certificate
+d_DocumentType,Proof Of Address,Proof Of Address
+d_DocumentType,Bank Statement,Bank Statement
+d_DocumentType,TIN,TIN
+d_DocumentType,SSN,SSN
+d_DocumentType,W-9 Form,W-9 Form
+d_DocumentType,W-8BEN Form,W-8BEN Form
+d_DocumentType,Wathiq Consent,Wathiq Consent
+d_DocumentType,W-8 ECI,W-8 ECI
+d_DocumentType,W-8 EXP,W-8 EXP
+d_DocumentType,W-8 IMY,W-8 IMY
+d_DocumentType,License Certificate,License Certificate
+d_DocumentType,Financial Statement,Financial Statement
+d_DocumentType,Customer Consent Declaration Form,Customer Consent Declaration Form
+d_DocumentType,Benefit Consent Form,Benefit Consent Form
+d_DocumentType,Board Resolution Seeking Banking Services,Board Resolution Seeking Banking Services
+d_DocumentType,Memorandum And AOA,Memorandum And AOA
+d_DocumentType,Partnership Agreement,Partnership Agreement
+d_DocumentType,RequestLetter,RequestLetter
+d_DocumentType,EN-Unified National Establishment Number,EN-Unified National Establishment Number
+d_DocumentType,Deed Of Pledge,Deed Of Pledge
+d_DocumentType,Mortgage Note,Mortgage Note
+d_DocumentType,Insurance Policy,Insurance Policy
+d_DocumentType,Bank Guarantee,Bank Guarantee
+d_DocumentType,LetterOfCredit,LetterOfCredit
+d_DocumentType,FiduciaryAgr,FiduciaryAgr
+d_DocumentType,PortMngmntAgrmn,PortMngmntAgrmn
+d_DocumentType,PrfmncOtCur,PrfmncOtCur
+d_DocumentType,IntrLetter,IntrLetter
+d_DocumentType,Address Proof,Address Proof
+d_DocumentType,Reference letter,Reference letter
+d_DocumentType,Certificate of Incorporation,Certificate of Incorporation
+d_DocumentType,Account Opening Form,Account Opening Form
+d_DocumentType,SpcmnSgntur,SpcmnSgntur
+d_DocumentType,Proxy Doc,Proxy Doc
+d_DocumentType,DrvtvsAgrmnt,DrvtvsAgrmnt
+d_DocumentType,Social Security Number,Social Security Number
+d_DocumentType,W9,W9
+d_DocumentType,EquityAgrmnt,EquityAgrmnt
+d_DocumentType,MutualFundAgrmn,MutualFundAgrmn
+d_DocumentType,OptionAgrmnt,OptionAgrmnt
+d_DocumentType,FuturesAgrmnt,FuturesAgrmnt
+d_DocumentType,AssetLiabMngt,AssetLiabMngt
+d_DocumentType,IdentificationA,IdentificationA
+d_DocumentType,ForeignAgrmnt,ForeignAgrmnt
+d_DocumentType,PAN,PAN
+d_DocumentType,Driving License,Driving License
+d_DocumentType,Certified Articles of Incopration,Certified Articles of Incopration
+d_DocumentType,Government issued license,Government issued license
+d_DocumentType,Trust Instrument,Trust Instrument
+d_DocumentType,EIN,EIN
+d_DocumentType,ITIN,ITIN
+d_DocumentType,ATIN,ATIN
+d_DocumentType,PTIN,PTIN
+d_DocumentType,CoSignerNtc,CoSignerNtc
+d_DocumentType,26AAA,26AAA
+d_DocumentType,Aadhaar Card,Aadhaar Card
+d_DocumentType,NREGA Card,NREGA Card
+d_DocumentType,Ration Card,Ration Card
+d_DocumentType,Student ID Card,Student ID Card
+d_DocumentType,TAN,TAN
+d_DocumentType,Telephone Bill,Telephone Bill
+d_DocumentType,Voter Identity Card,Voter Identity Card
+d_DocumentType,Water Bill,Water Bill
+d_DocumentType,Shop and Establishment Registration,Shop and Establishment Registration
+d_DocumentType,Photo I-Card Issued By Public Financial Insitution,Photo I-Card Issued By Public Financial Insitution
+d_DocumentType,Photo I-Card Issued By State Govt,Photo I-Card Issued By State Govt
+d_DocumentType,Certificate Of Registration,Certificate Of Registration
+d_DocumentType,Incorporation Certificate,Incorporation Certificate
+d_DocumentType,Photo I-Card Issued By Central Govt,Photo I-Card Issued By Central Govt
+d_DocumentType,Food & Drug License,Food & Drug License
+d_DocumentType,FATCA Self Declaration,FATCA Self Declaration
+d_DocumentType,Resident Identity,Resident Identity
+d_DocumentType,Main Certificate Registration,Main Certificate Registration
+d_DocumentType,Governmental Permission Letter,Governmental Permission Letter
+d_DocumentType,Diplomatic Passport,Diplomatic Passport
+d_DocumentType,Family Registration Book,Family Registration Book
+d_DocumentType,Hafithat Nofos and Civil Regis,Hafithat Nofos and Civil Regis
+d_DocumentType,Certificate of birth for speci,Certificate of birth for speci
+d_DocumentType,SAMA approval letter,SAMA approval letter
+d_DocumentType,Non-Saudi Passport,Non-Saudi Passport
+d_DocumentType,Board of Directors Decision Fo,Board of Directors Decision Fo
+d_DocumentType,Embassy Letter,Embassy Letter
+d_DocumentType,President or Vice President Re,President or Vice President Re
+d_DocumentType,Commercial License,Commercial License
+d_DocumentType,Special Passport,Special Passport
+d_DocumentType,Certificate of birth,Certificate of birth
+d_DocumentType,Court Deed,Court Deed
+d_DocumentType,Introduction Letter,Introduction Letter
+d_DocumentType,GCC Passport,GCC Passport
+d_DocumentType,Tribesmen of Rabi AlKhali Perm,Tribesmen of Rabi AlKhali Perm
+d_DocumentType,GCC National Identification Ca,GCC National Identification Ca
+d_DocumentType,Diplomatic Card,Diplomatic Card
+d_DocumentType,Official Letter,Official Letter
+d_DocumentType,Sub Certificate Registration,Sub Certificate Registration
+d_DocumentType,Article of Association,Article of Association
+d_DocumentType,Non-Saudi Certificate Registra,Non-Saudi Certificate Registra
+d_DocumentType,Depository Area Lease Contract,Depository Area Lease Contract
+d_DocumentType,Banking License,Banking License
+d_DocumentType,Hereditary Succession Deed,Hereditary Succession Deed
+d_DocumentType,Iqama Without Passport,Iqama Without Passport
+d_DocumentType,Organizations Presence Agreeme,Organizations Presence Agreeme
+d_DocumentType,SAMA Approval Letter (valid fo,SAMA Approval Letter (valid fo
+d_DocumentType,Royal Order,Royal Order
+d_DocumentType,Compliance Approval Letter,Compliance Approval Letter
+d_DocumentType,Family Record,Family Record
+d_DocumentType,License issued by the Ministry,License issued by the Ministry
+d_DocumentType,Commercial Registration Contra,Commercial Registration Contra
+d_DocumentType,Visitor Card/Temporary Iqama,Visitor Card/Temporary Iqama
+d_DocumentType,Magnetic IQAMA,Magnetic IQAMA
+d_DocumentType,License to practice the activi,License to practice the activi
+d_DocumentType,ARAB,ARAB
+d_DocumentType,aviation,aviation
+d_DocumentType,CMA License,CMA License
+d_DocumentType,Deceased Identity,Deceased Identity
+d_DocumentType,DEFAULT ID TYPE,DEFAULT ID TYPE
+d_DocumentType,Rental Agreement,Rental Agreement
+d_DocumentType,Acknowledgment from bank in country of origin,Acknowledgment from bank in country of origin
+d_DocumentType,Cpd approval,Cpd approval
+d_DocumentType,Authorized representative file,Authorized representative file
+d_DocumentType,Ajeer notice certified by the school,Ajeer notice certified by the school
+d_DocumentType,Bedoun,Bedoun
+d_DocumentType,Certified copy of civil registration ( woman ),Certified copy of civil registration ( woman )
+d_DocumentType,Ministry of education eligibility certificate,Ministry of education eligibility certificate
+d_DocumentType,Customer Agreement/File,Customer Agreement/File
+d_DocumentType,Court Appointment Custodian ID,Court Appointment Custodian ID
+d_DocumentType,Court Appointment Custodian License,Court Appointment Custodian License
+d_DocumentType,Court Decision Appointing Custodian,Court Decision Appointing Custodian
+d_DocumentType,Self Certification,Self Certification
+d_DocumentType,Copy Of Dispute Document,Copy Of Dispute Document
+d_DocumentType,Employment ID,Employment ID
+d_DocumentType,Muqeem ID,Muqeem ID
+d_DocumentType,Saudi ID card,Saudi ID card
+d_DocumentType,Introduction letter from employer,Introduction letter from employer
+d_DocumentType,Ids of heirs,Ids of heirs
+d_DocumentType,Intr ltr fm area mayr prp/clr add,Intr ltr fm area mayr prp/clr add
+d_DocumentType,Iqama,Iqama
+d_DocumentType,Ids of reference,Ids of reference
+d_DocumentType,Members ids,Members ids
+d_DocumentType,Judicial Resolution Deed,Judicial Resolution Deed
+d_DocumentType,Letter Of Entity Requesting Visit,Letter Of Entity Requesting Visit
+d_DocumentType,Letter of intro/refer cert by govt/other agency,Letter of intro/refer cert by govt/other agency
+d_DocumentType,License from min. of education,License from min. of education
+d_DocumentType,Min of interior approval,Min of interior approval
+d_DocumentType,Ministry of labor license,Ministry of labor license
+d_DocumentType,Gcc national i.d. card,Gcc national i.d. card
+d_DocumentType,Proof of ksa address,Proof of ksa address
+d_DocumentType,Pledge to inform bank of each departure,Pledge to inform bank of each departure
+d_DocumentType,Visit visa on passport,Visit visa on passport
+d_DocumentType,Psprt with 3 mos wrkng visa,Psprt with 3 mos wrkng visa
+d_DocumentType,Crs Self Certification,Crs Self Certification
+d_DocumentType,Saudi passport,Saudi passport
+d_DocumentType,Signature Card of authorized signatory,Signature Card of authorized signatory
+d_DocumentType,Salary certificate/proof of income,Salary certificate/proof of income
+d_DocumentType,Succession Deed,Succession Deed
+d_DocumentType,Signature Card of cpt,Signature Card of cpt
+d_DocumentType,"Spec sign, doc auth for gcc by cor bk","Spec sign, doc auth for gcc by cor bk"
+d_DocumentType,Death Certificate,Death Certificate
+d_DocumentType,Saudia ID card,Saudia ID card
+d_DocumentType,Undertaking to present mq (magnetic iq)later stag,Undertaking to present mq (magnetic iq)later stag
+d_DocumentType,Undertaking to inform end of contract,Undertaking to inform end of contract
+d_DocumentType,Undertaking to prst pasprt at a ls,Undertaking to prst pasprt at a ls
+d_DocumentType,Written commitment to notify final departure,Written commitment to notify final departure
+d_DocumentType,Written req by entity to open acct,Written req by entity to open acct
+d_DocumentType,IDs of all authorized signatories,IDs of all authorized signatories
+d_DocumentType,Power of attorney to open / operate account,Power of attorney to open / operate account
+d_DocumentType,Min of labor and social affairs letter,Min of labor and social affairs letter
+d_DocumentType,Copy of decision to form the board of directors,Copy of decision to form the board of directors
+d_DocumentType,Approval of high committee to collect donation,Approval of high committee to collect donation
+d_DocumentType,Lic from min of islamic affairs for call and guid.,Lic from min of islamic affairs for call and guid.
+d_DocumentType,License/permission from ministry of commerce,License/permission from ministry of commerce
+d_DocumentType,License from min. of health,License from min. of health
+d_DocumentType,Royal degree,Royal degree
+d_DocumentType,License from gen. pres. for youth welfare (gpyw),License from gen. pres. for youth welfare (gpyw)
+d_DocumentType,Commercial registration,Commercial registration
+d_DocumentType,Private Professional License,Private Professional License
+d_DocumentType,Permanent License,Permanent License
+d_DocumentType,Temporary License,Temporary License
+d_DocumentType,Bank Memo,Bank Memo
+d_DocumentType,Court Decision Appointing Custodian And his auth,Court Decision Appointing Custodian And his auth
+d_DocumentType,Court Appointed Custodian id,Court Appointed Custodian id
+d_DocumentType,Court Appointed Custodian License,Court Appointed Custodian License
+d_DocumentType,Copy Of Disputes Document,Copy Of Disputes Document
+d_DocumentType,Legal Deed (property endowment) wakf,Legal Deed (property endowment) wakf
+d_DocumentType,ID Of Signatories,ID Of Signatories
+d_DocumentType,Written Request,Written Request
+d_DocumentType,By Laws,By Laws
+d_DocumentType,Board Resolution,Board Resolution
+d_DocumentType,Ministry Of Social Affairs License,Ministry Of Social Affairs License
+d_DocumentType,Preliminary Articles Of Association,Preliminary Articles Of Association
+d_DocumentType,Legalized c.r. of home country,Legalized c.r. of home country
+d_DocumentType,Permit or lic from ministry,Permit or lic from ministry
+d_DocumentType,Ministry Of Finance Approval,Ministry Of Finance Approval
+d_DocumentType,Sagia License,Sagia License
+d_DocumentType,Grievance Bureau Resolution,Grievance Bureau Resolution
+d_DocumentType,Aprvl frm govt of home cntry,Aprvl frm govt of home cntry
+d_DocumentType,Pledge Agreement,Pledge Agreement
+d_DocumentType,Contract for Collateral Loans - Lombard Credit,Contract for Collateral Loans - Lombard Credit
+d_DocumentType,Loan Pledge Agreement,Loan Pledge Agreement
+d_DocumentType,Lombard Loan Agreement,Lombard Loan Agreement
+d_DocumentType,Reg GG Certification,Reg GG Certification
+d_DocumentType,W-8BEN-E,W-8BEN-E
+d_DocumentType,SignatureCard,SignatureCard
+d_DocumentType,UdyogAdhar,UdyogAdhar
+d_DocumentType,TinNumber,TinNumber
+d_DocumentType,IECode,IECode
+d_DocumentType,TradeLicense,TradeLicense
+d_ShipmentType,PreShipment,PreShipment
+d_ShipmentType,PostShipment,PostShipment
+d_RiskOn,IssuingBank,IssuingBank
+d_RiskOn,Customer,Customer
+d_WorkflowStatus,OnHold             ,OnHold             
+d_WorkflowStatus,PendingAuthorisation,PendingAuthorisation
+d_WorkflowStatus,ActModOnHold       ,ActModOnHold       
+d_WorkflowStatus,ActModPendAuth     ,ActModPendAuth     
+d_WorkflowStatus,Active             ,Active             
+d_WorkflowStatus,Rejected     ,Rejected     
+d_WorkflowStatus,Cancelled,Cancelled
+d_WorkflowStatus,ActModOnHold,ActModOnHold
+d_WorkflowStatus,ActModPendAuth,ActModPendAuth
+d_WorkflowStatus,Active,Active
+d_WorkflowStatus,Close,Close
+d_WorkflowStatus,Executed,Executed
+d_WorkflowStatus,Expired,Expired
+d_WorkflowStatus,Failed,Failed
+d_WorkflowStatus,InActive,InActive
+d_WorkflowStatus,MOnHold,MOnHold
+d_WorkflowStatus,MPendActOnHOld,MPendActOnHOld
+d_WorkflowStatus,MPendActPendingAuth,MPendActPendingAuth
+d_WorkflowStatus,MPendingAuth,MPendingAuth
+d_WorkflowStatus,OnHold,OnHold
+d_WorkflowStatus,Open,Open
+d_WorkflowStatus,PendingActivation,PendingActivation
+d_WorkflowStatus,PendingCancel,PendingCancel
+d_WorkflowStatus,PendingClosure,PendingClosure
+d_WorkflowStatus,Successful,Successful
+d_WorkflowStatus,PendingInactivation,PendingInactivation
+d_WorkflowStatus,PendingPendActiveCancel,PendingPendActiveCancel
+d_WorkflowStatus,PendingReopen,PendingReopen
+d_WorkflowStatus,ReInitiate,ReInitiate
+d_WorkflowStatus,Rejected,Rejected
+d_WorkflowStatus,Impaired,Impaired
+d_WorkflowStatus,Writeoff,Writeoff
+d_WorkflowStatus,NonPrfAsset,NonPrfAsset
+d_WorkflowStatus,WaitingForRate,WaitingForRate
+d_WorkflowStatus,RepairAwaited,RepairAwaited
+d_WorkflowStatus,AuthAwaited,AuthAwaited
+d_WorkflowStatus,PendWriteoff,PendWriteoff
+d_WorkflowStatus,RolloverMergeClosed,RolloverMergeClosed
+d_WorkflowStatus,PendingClosureWaitingForRate,PendingClosureWaitingForRate
+d_WorkflowStatus,PendingClosureAuthAwaited,PendingClosureAuthAwaited
+d_WorkflowStatus,ReschedPendngAuth,ReschedPendngAuth
+d_WorkflowStatus,AuthWtchRjctd,AuthWtchRjctd
+d_WorkflowStatus,PendingReversal,PendingReversal
+d_WorkflowStatus,Reversed,Reversed
+d_WorkflowStatus,Rescinded,Rescinded
+d_WorkflowStatus,IRSCancelled,IRSCancelled
+d_WorkflowStatus,PndngClsrCalcAwatd,PndngClsrCalcAwatd
+d_WorkflowStatus,PndngClsrCalcCompl,PndngClsrCalcCompl
+d_WorkflowStatus,IRSPendingCancel,IRSPendingCancel
+d_WorkflowStatus,PymntInitdFrClsr,PymntInitdFrClsr
+d_WorkflowStatus,Liquidated,Liquidated
+d_WorkflowStatus,PendingClosureInitiated,PendingClosureInitiated
+d_WorkflowStatus,Released,Released
+d_WorkflowStatus,PendingRevert,PendingRevert
+d_WorkflowStatus,Reverted,Reverted
+d_WorkflowStatus,Authorised,Authorised
+d_WorkflowStatus,PendingAuth,PendingAuth
+d_WorkflowStatus,ReversalAuth,ReversalAuth
+d_WorkflowStatus,ReversalRejected,ReversalRejected
+d_WorkflowStatus,Freezed,Freezed
+d_WorkflowStatus,PendingFreeze,PendingFreeze
+d_WorkflowStatus,Utilised,Utilised
+d_WorkflowStatus,Deferred,Deferred
+d_WorkflowStatus,SentBack,SentBack
+d_InstallmntType,Balloon,Balloon
+d_InstallmntType,EMI,EMI
+d_InstallmntType,Equal,Equal
+d_InstallmntType,IntrstOnly,IntrstOnly
+d_InstallmntType,Irregular,Irregular
+d_InstallmntType,Negotiated,Negotiated
+d_InstallmntType,PrinNegoRegIntrst,PrinNegoRegIntrst
+d_InstallmntType,PrinNegoIrregIntrst,PrinNegoIrregIntrst
+d_InstallmntType,NegotiatedInstallment,NegotiatedInstallment
+d_InstallmntType,IrrEqualPrncpl,IrrEqualPrncpl
+d_InstallmntType,ADVNC_EMI,ADVNC_EMI
+d_RpymntFreq,Monthly,Monthly
+d_RpymntFreq,Bimonthly,Bimonthly
+d_RpymntFreq,Quarterly,Quarterly
+d_RpymntFreq,Semiannually,Semiannually
+d_RpymntFreq,Annually,Annually
+d_RpymntFreq,Maturity,Maturity
+d_RpymntFreq,SemiMonthly,SemiMonthly
+d_RpymntFreq,Fortnightly,Fortnightly
+d_RepaymentMethod,OCR,OCR
+d_RepaymentMethod,AutoDebit,AutoDebit
+d_RepaymentMethod,DirectDebit,DirectDebit
+d_RepaymentMethod,DirectDebitPayment,DirectDebitPayment
+d_RepaymentMethod,Cash,Cash
+d_RepaymentMethod,PDC,PDC
+d_LoanType,Demand,Demand
+d_LoanType,NonRevolving,NonRevolving
+d_LoanType,Revolving,Revolving
+d_LoanType,Term,Term
+d_LoanType,AmrtzngLOC,AmrtzngLOC
+d_LoanType,DefrdMrtgLOC,DefrdMrtgLOC
+d_LoanType,NonAmrtzngLOC,NonAmrtzngLOC
+d_LoanType,WithRollover,WithRollover
+d_LoanType,LoCtoTermLoans,LoCtoTermLoans
+d_LoanType,Deposits,Deposits
+d_LoanType,CallableLoans,CallableLoans
+d_LoanType,MurabhahaFinance,MurabhahaFinance
+d_LoanType,Istisna,Istisna
+d_LoanType,Ijaarah,Ijaarah
+d_LoanType,ComdtyMurabaha,ComdtyMurabaha
+d_LoanType,ServiceIjarah,ServiceIjarah
+d_LoanType,ForwarIjarah,ForwarIjarah
+d_LoanType,MurabahahWithOutPurchase,MurabahahWithOutPurchase
+d_LoanType,MurabahahWithOutAsset,MurabahahWithOutAsset
+d_LoanType,IjarahWithOutPurchase,IjarahWithOutPurchase
+d_LoanType,Qard,Qard
+d_LoanType,DiscountedLoan,DiscountedLoan
+d_LoanType,IndexLinkedLoan,IndexLinkedLoan
+d_LoanType,TrancheDisbursement,TrancheDisbursement
+d_LoanPurposeCode,NewProduction,NewProduction
+d_LoanPurposeCode,Reconstruction,Reconstruction
+d_LoanPurposeCode,Purchase,Purchase
+d_LoanPurposeCode,Other,Other
+d_LoanPurposeCode,Reschedulingloaninternal,Reschedulingloaninternal
+d_LoanPurposeCode,Reschedulingloaninternal_financialproblem,Reschedulingloaninternal_financialproblem
+d_LoanPurposeCode,WorkingCapital,WorkingCapital
+d_LoanPurposeCode,PurchaseofMachinery_MedicalInstruments,PurchaseofMachinery_MedicalInstruments
+d_LoanPurposeCode,PurchaseofSpares_Attachment,PurchaseofSpares_Attachment
+d_LoanPurposeCode,PurchaseCranes_Crawlers_Equipment,PurchaseCranes_Crawlers_Equipment
+d_LoanPurposeCode,PurchaseofTransportVehicle,PurchaseofTransportVehicle
+d_LoanPurposeCode,PurchaseofFurnitureandFixtures,PurchaseofFurnitureandFixtures
+d_LoanPurposeCode,PurchaseofElectricFittings_Installation,PurchaseofElectricFittings_Installation
+d_LoanPurposeCode,Machineries_Refurbishing_Repairs_Maintenance,Machineries_Refurbishing_Repairs_Maintenance
+d_LoanPurposeCode,PurchaseofProperty,PurchaseofProperty
+d_LoanPurposeCode,Property_Renovation_Repairs,Property_Renovation_Repairs
+d_LoanPurposeCode,BusinessDevelopment_Expansion,BusinessDevelopment_Expansion
+d_LoanPurposeCode,Personal,Personal
+d_LoanPurposeCode,Vehicle,Vehicle
+d_LoanPurposeCode,Purchase_ConstructionofHouse,Purchase_ConstructionofHouse
+d_LoanPurposeCode,Others,Others
+d_LoanPurposeCode,ExportPostShipmentLoan,ExportPostShipmentLoan
+d_LoanPurposeCode,NewProduction,NewProduction
+d_LoanPurpose,FixedAsset,FixedAsset
+d_LoanPurpose,TradeFin,TradeFin
+d_LoanPurpose,WorkingCap,WorkingCap
+d_IntrCatg,Credit,Credit
+d_IntrCatg,Debit,Debit
+d_IntrCatg,Both,Both
+d_IntrCatg,NotApplbl,NotApplbl
+d_IntrCatg,Penal,Penal
+d_IntrCatg,UCA,UCA
+d_IntrCatg,GroupLvl_Cr,GroupLvl_Cr
+d_IntrCatg,SubsyLvl_Cr,SubsyLvl_Cr
+d_IntrCatg,AccountLvl_Cr,AccountLvl_Cr
+d_IntrCatg,GroupLvl_Dr,GroupLvl_Dr
+d_IntrCatg,SubsyLvl_Dr,SubsyLvl_Dr
+d_IntrCatg,AccountLvl_Dr,AccountLvl_Dr
+d_IntrCatg,CrPnlty,CrPnlty
+d_IntrCatg,AprtnAcnt_Cr,AprtnAcnt_Cr
+d_IntrCatg,AprtnAcnt_Dr,AprtnAcnt_Dr
+d_IntrCatg,AprtnGroup_Cr,AprtnGroup_Cr
+d_IntrCatg,AprtnGroup_Dr,AprtnGroup_Dr
+d_IntrCatg,AprtnSubsy_Cr,AprtnSubsy_Cr
+d_IntrCatg,AprtnSubsy_Dr,AprtnSubsy_Dr
+d_IntrCatg,Adhoc,Adhoc
+d_IntrCatg,Commission,Commission
+d_IntrCatg,IntrstAcrual,IntrstAcrual
+d_IntrCatg,CommissionAcrual,CommissionAcrual
+d_IntrCatg,PriceGliff,PriceGliff
+d_RateTyp,Fixed,Fixed
+d_RateTyp,Floating,Floating
+d_RateTyp,InterestReset,InterestReset
+d_RateTyp,FlatAmount,FlatAmount
+d_TFPrePostLoanStatus,OnHold,OnHold
+d_TFPrePostLoanStatus,Release,Release
+d_TFPrePostLoanStatus,Executed,Executed
+d_TFPrePostLoanStatus,Rejected,Rejected
+d_TFPrePostLoanStatus,Sentback,Sentback
+d_TFPrePostLoanStatus,PendingCancel,PendingCancel
+d_TFPrePostLoanStatus,Cancelled,Cancelled
+d_TFPrePostLoanStatus,PendingClose,PendingClose
+d_TFPrePostLoanStatus,Closed,Closed
+d_TFPrePostLoanStatus,AmendInitiated,AmendInitiated
+d_TFPrePostLoanStatus,Expired,Expired
+d_TFPrePostLoanStatus,Verified,Verified
+d_TFPrePostLoanStatus,WaitingForRate,WaitingForRate
+d_TFPrePostLoanStatus,RateAvailable,RateAvailable
+d_TFPrePostLoanStatus,RateRejected,RateRejected
+d_TFPrePostLoanStatus,RateCancelled,RateCancelled
+d_TFPrePostLoanStatus,Disbursed,Disbursed
+d_TFPrePostLoanStatus,Settled,Settled
+d_TFPrePostLoanStatus,Active,Active
+d_TFPrePostLoanStatus,PendingCrystallization,PendingCrystallization
+d_TFPrePostLoanStatus,Crystallised,Crystallised

@@ -13,7 +13,7 @@ import org.apache.commons.lang3.StringUtils;
 
 public class DomainMapUtil {
 	private static final String TYPE_TO_DOMAIN_FILENAME = ".\\src\\test\\input\\ref\\typeToDomain.txt";
-	private static final String DOMAINNAME_TO_DBTYPES_FILE = ".\\src\\test\\input\\ref\\domainRef.csv";
+	private static final String DOMAINNAME_TO_DBTYPES_FILE_ROOT = ".\\src\\test\\input\\ref\\domain\\";
 
 	public static Map<String, String> readFileTypeToDomainMap() throws IOException {
 		return readFileTypeToDomainMap(TYPE_TO_DOMAIN_FILENAME);
@@ -68,10 +68,20 @@ public class DomainMapUtil {
 	}
 
 	public static Map<String, String> readDomainNameToTypesMap() throws IOException {
-		File file = new File(DOMAINNAME_TO_DBTYPES_FILE);
-		return readDomainNameToTypesMap(file);
+		File fileRoot = new File(DOMAINNAME_TO_DBTYPES_FILE_ROOT);
+		Map<String, String> map = new HashMap<String, String>();
+
+		if (fileRoot.exists() && fileRoot.isDirectory()) {
+			String[] fileArray = fileRoot.list();
+
+			for (String fileName : fileArray) {
+				File file = new File(DOMAINNAME_TO_DBTYPES_FILE_ROOT + fileName);
+				map.putAll(readDomainNameToTypesMap(file));
+			}
+		}
+		return map;
 	}
-	
+
 	public static Map<String, String> readDomainNameToTypesMap(File domainFile) throws IOException {
 		FileReader in = new FileReader(domainFile);
 		BufferedReader br = new BufferedReader(in);
@@ -92,6 +102,9 @@ public class DomainMapUtil {
 					String key = StringUtils.trim(tokens[0]);
 					String value1 = StringUtils.trim(tokens[1]);
 					String value2 = StringUtils.trim(tokens[2]);
+					
+					value1 = value1.replace("\"", " ");
+					value2 = value2.replace("\"", " ");
 					if (!map.containsKey(key)) {
 						map.put(key, value1 + ":" + value2);
 					} else {
