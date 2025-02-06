@@ -134,3 +134,11 @@
             maxLength: 256
             minLength: 0
             type: string
+        - name: im-req-id
+          in: header
+          description: Unique identifier for the segment under a im-req-id
+          required: false
+          schema:
+            maxLength: 256
+            minLength: 0
+            type: string
