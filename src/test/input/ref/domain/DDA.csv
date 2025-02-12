@@ -1,0 +1,3005 @@
+﻿Code Name,Mnemonic,Description
+d_OwnershipType,AllJntly,AllJntly
+d_OwnershipType,AnyOneOrSrvvr,AnyOneOrSrvvr
+d_OwnershipType,AuthSgAndAnyOne,AuthSgAndAnyOne
+d_OwnershipType,AuthSgnAnyOne,AuthSgnAnyOne
+d_OwnershipType,AuthSgnOneOrAll,AuthSgnOneOrAll
+d_OwnershipType,EithrOrSrvvr,EithrOrSrvvr
+d_OwnershipType,FrmrOrSrvvr,FrmrOrSrvvr
+d_OwnershipType,JntlyOrSrvvr,JntlyOrSrvvr
+d_OwnershipType,Jointly,Joint Owner Of the things
+d_OwnershipType,MinorOptdByGdn,MinorOptdByGdn
+d_OwnershipType,MinorOvrThrteen,MinorOvrThrteen
+d_OwnershipType,MnrGdnOptdByGdn,MnrGdnOptdByGdn
+d_OwnershipType,Proprtr,Proprtr
+d_OwnershipType,PwrOfAttrny,PwrOfAttrny
+d_OwnershipType,Single,Owned Singly
+d_OwnershipType,SlfOrAuthSgntry,SlfOrAuthSgntry
+d_RelApplicblty,Account,Account
+d_RelApplicblty,Customer,Customer
+d_RelApplicblty,Both,Both
+d_RelCustType,Company,Company
+d_RelCustType,Individual,Individual
+d_RelCustType,Bank,Bank
+d_BPReln,25ormoresharehl,25% or more shareholder - Corporate
+d_BPReln,25ormoresharein,25% or more shareholder - individual
+d_BPReln,AAuthorizedSignatory,Authorized signatory
+d_BPReln,Access_Contract,Access Contract
+d_BPReln,Account_Holder,Account Holder
+d_BPReln,Accountant,Accountant
+d_BPReln,AccountOpener,Account Opener
+d_BPReln,AddlCardHolder,Additional Card Holder
+d_BPReln,Approve_Foreign_Exchange_Trading_Orders,Approve Foreign Exchange Trading Orders
+d_BPReln,Approve_Orders,Approve Orders
+d_BPReln,Approve_Salary_Orders,Approve Salary Orders
+d_BPReln,Asset_Mgmt_Cmpn,Asset Management Company
+d_BPReln,Associated Person,Associated Person
+d_BPReln,AssociateOrganisation,Sole Trader
+d_BPReln,AssociatePartnership,General Partnership
+d_BPReln,AssoOrg,AssociateOrganisation
+d_BPReln,AssoPrtn,AssociatePartnership
+d_BPReln,AssosciateOrganisation,AssosciateOrganisation
+d_BPReln,AssosciatePartnership,AssosciatePartnership
+d_BPReln,Attorney Holder,AttorneyHolder
+d_BPReln,AttorneyHolder,Attorney holder
+d_BPReln,AuthorisedSignatory,Authorised Signatory
+d_BPReln,AuthPerson1,AuthPerson1
+d_BPReln,AuthPerson10,AuthPerson10
+d_BPReln,AuthPerson11,AuthPerson11
+d_BPReln,AuthPerson12,AuthPerson12
+d_BPReln,AuthPerson13,AuthPerson13
+d_BPReln,AuthPerson14,AuthPerson14
+d_BPReln,AuthPerson15,AuthPerson15
+d_BPReln,AuthPerson16,AuthPerson16
+d_BPReln,AuthPerson17,AuthPerson17
+d_BPReln,AuthPerson18,AuthPerson18
+d_BPReln,AuthPerson19,AuthPerson19
+d_BPReln,AuthPerson2,AuthPerson2
+d_BPReln,AuthPerson20,AuthPerson20
+d_BPReln,AuthPerson21,AuthPerson21
+d_BPReln,AuthPerson22,AuthPerson22
+d_BPReln,AuthPerson23,AuthPerson23
+d_BPReln,AuthPerson24,AuthPerson24
+d_BPReln,AuthPerson25,AuthPerson25
+d_BPReln,AuthPerson26,AuthPerson26
+d_BPReln,AuthPerson27,AuthPerson27
+d_BPReln,AuthPerson28,AuthPerson28
+d_BPReln,AuthPerson29,AuthPerson29
+d_BPReln,AuthPerson3,AuthPerson3
+d_BPReln,AuthPerson30,AuthPerson30
+d_BPReln,AuthPerson31,AuthPerson31
+d_BPReln,AuthPerson32,AuthPerson32
+d_BPReln,AuthPerson33,AuthPerson33
+d_BPReln,AuthPerson34,AuthPerson34
+d_BPReln,AuthPerson35,AuthPerson35
+d_BPReln,AuthPerson36,AuthPerson36
+d_BPReln,AuthPerson4,AuthPerson4
+d_BPReln,AuthPerson5,AuthPerson5
+d_BPReln,AuthPerson6,AuthPerson6
+d_BPReln,AuthPerson7,AuthPerson7
+d_BPReln,AuthPerson8,AuthPerson8
+d_BPReln,AuthPerson9,AuthPerson9
+d_BPReln,Automatic_Approve_Orders,Automatic Approve Orders
+d_BPReln,Automatic_Approve_Salary_Orders,Automatic Approve Salary Orders
+d_BPReln,AVTS_Inst,father
+d_BPReln,AVTS_Ref_Inst,Mother
+d_BPReln,BelngsPostFinanLtd,Belongs To PostFinance AG
+d_BPReln,BelngsSwissPost,Belongs To Post Concern
+d_BPReln,Bene,Beneficiary
+d_BPReln,BeneficialOwner,Beneficial owner
+d_BPReln,Beneficiary,Beneficiary
+d_BPReln,Beneficiary_ofIBO,Beneficiary of IBO
+d_BPReln,BorrowerLoan,Borrower Loan
+d_BPReln,Brother,Brother
+d_BPReln,Bulk_Cancellation_Credit_or_Debit_Payment_Orders,Bulk Cancellation Credit or Debit Payment Orders
+d_BPReln,Capture_Auto_Approved_Orders,Capture Auto Approved Orders
+d_BPReln,Capture_Orders,Capture Orders
+d_BPReln,Chairman,Chairman
+d_BPReln,Chairperson,Chairperson
+d_BPReln,ChildEmployeeSwissPost,ChildEmployeeSwissPost
+d_BPReln,ChildEmpSwi,ChildEmployeeSwissPost
+d_BPReln,Close Person,Close Person
+d_BPReln,CommanditaireVennootschap,CommanditaireVennootschap
+d_BPReln,CompteJoint,Employment
+d_BPReln,Connected_Party,ConnectedParty
+d_BPReln,ContrPersnFATCACRS,Controlling Person FATCA CRS
+d_BPReln,ContrPersnFormK,Controlling Person FormK
+d_BPReln,Corporate_User,Corporate_User
+d_BPReln,CorporateEmployee,Corporate Employee
+d_BPReln,CorporateGurantor,Corporate Gurantor
+d_BPReln,CorporateShareholder,Corporate shareholder
+d_BPReln,CorporateUser,CorporateUser
+d_BPReln,CorrReceiver,Correspondence Receiver
+d_BPReln,CoSigner,CoSigner
+d_BPReln,Credit_Facility,Credit Facility Counterparty
+d_BPReln,Customer,Customer
+d_BPReln,Daughter,Daughter
+d_BPReln,DaughterInLaw,Daughter In Law
+d_BPReln,Decedent,Decedent
+d_BPReln,Director,Director
+d_BPReln,DOSRI,DOSRI
+d_BPReln,Download_Account_and_Interest_Statements,Download Account and Interest Statements
+d_BPReln,Download_Processing_Information,Download Processing Information
+d_BPReln,EconomicBenificiary,Economic Benificiary
+d_BPReln,Eenmanszaak,Eenmanszaak
+d_BPReln,Employee,Employee
+d_BPReln,Employer,Employer
+d_BPReln,Employment,Employment
+d_BPReln,Engagement,CompteJoint
+d_BPReln,Euser,E-User
+d_BPReln,Executor,Executor
+d_BPReln,ExtAssetManager,External Asset Manager
+d_BPReln,Extrnl_Asset_Mg,External Asset Manager via Internet
+d_BPReln,FacilityToManager,Facility to Manager
+d_BPReln,FamillyMember,Familly member
+d_BPReln,Father,Father
+d_BPReln,Father_nm,Father's Name
+d_BPReln,FatherInLaw,Father In Law
+d_BPReln,Financial_Intermediary,Financial Intermediary(FIM)
+d_BPReln,FndtnCncil,Foundation Council
+d_BPReln,FormRLawyer,FormR Lawyer
+d_BPReln,Founder,Founder
+d_BPReln,Founder_of_Trust,Founder_of_Trust
+d_BPReln,FounderofTrust,Founder of Trust
+d_BPReln,FounderOrTrust,Founder or trust
+d_BPReln,Founding_Donor,Founding Donor
+d_BPReln,FullPower_ofAttorney,Full Power of Attorney
+d_BPReln,Fund_Administrator,Fund Administrator
+d_BPReln,Further_Special,Further Specialist
+d_BPReln,Gplus_Affiliate,Gplus Affiliate
+d_BPReln,Grantor_Settlor,Grantor/Settlor
+d_BPReln,GRI,GRI (General Right to Information)
+d_BPReln,GroupCompany,Group Company
+d_BPReln,GrpMember,Group Member
+d_BPReln,GRS,GRS (General Right of Signature)
+d_BPReln,Guarantor,Guarantor
+d_BPReln,Guardian,Guardian
+d_BPReln,Head_Department,Head Department
+d_BPReln,HUF_member,HUF Member
+d_BPReln,HUFMember,FHUF Member
+d_BPReln,IndividualShareholder,Individual shareholder
+d_BPReln,Initiator_ofClient,Initiator of Client Relationship
+d_BPReln,Interested_Party,Interested Party
+d_BPReln,Intermediate_Beneficial,Intermediate Beneficial Owner
+d_BPReln,Introducer,Introducer
+d_BPReln,Investment_Advisor_Manager,Investment Advisor / Investment Manager
+d_BPReln,InvstmntMngr,Investment Manager
+d_BPReln,Joint Owner,Joint Owner
+d_BPReln,JointOwner,Joint Owner
+d_BPReln,Kartha,Kartha
+d_BPReln,Legacy_Role,Legacy Role
+d_BPReln,LegalAdvisor,Legal Advisor
+d_BPReln,LegalGaurdian,Legal Gaurdian
+d_BPReln,LegalGuardian,Legal Guardian
+d_BPReln,LegalRep_ClientSenior,Legal Rep/Client Senior Manager
+d_BPReln,LenderLoan,Lender Loan
+d_BPReln,LetterOfAuthorisation,Letter Of Authorisation
+d_BPReln,Level_1_Agent,Level 1 Agent
+d_BPReln,Level_2_Agent,Level 2 Agent
+d_BPReln,Level_3_Agent,Level 3 Agent
+d_BPReln,Limited_power_ofattorney,Limited power of attorney
+d_BPReln,Maatschap,Maatschap
+d_BPReln,Manage_E_Bill_Contracts,Manage E-Bill Contracts
+d_BPReln,Manager,Manager
+d_BPReln,ManagingDirector,Managing Director
+d_BPReln,Member,Member
+d_BPReln,MemberoftheBoard,Member of the Board
+d_BPReln,Messenger,Messenger
+d_BPReln,Mother,Mother
+d_BPReln,Mother_nm,Mother's Name
+d_BPReln,MotherInLaw,Mother In Law
+d_BPReln,NamedBeneficiar,Named Beneficiary
+d_BPReln,Nominee,Nominee
+d_BPReln,Nominee_Shareholder,Nominee Shareholder
+d_BPReln,NomineeDeleted,NomineeDeleted
+d_BPReln,NumberedClient,NumberedClient
+d_BPReln,NumClient,Numbered client
+d_BPReln,Officer,Officer
+d_BPReln,Operating_Company,Operating Company
+d_BPReln,OperatingCompany,OperatingCompany
+d_BPReln,Other,Other Relation
+d_BPReln,Owner,Account Owner
+d_BPReln,Parent/Guardian,Guardian
+d_BPReln,ParentCorporate,ParentCorporate
+d_BPReln,ParentCorporatEentity,Parent Corporate entity
+d_BPReln,ParentLegalEntity,Parent legal entity
+d_BPReln,PartEmpSwi,PartnerEmployeeSwissPost
+d_BPReln,Partner,Partner
+d_BPReln,PartnerEmployeeSFR,Partner Employee SFR
+d_BPReln,PartnerEmployeeSwissPost,PartnerEmployeeSwissPost
+d_BPReln,Plan_Sponsor,Plan Sponsor
+d_BPReln,Pledgee,Pledgee
+d_BPReln,PolicyHolder,Policy Holder
+d_BPReln,PowerOfAttorney,Power of Attorney
+d_BPReln,PowerOfAttorneyHolder,Power of attorney holder
+d_BPReln,Primary_Customer,Primary Customer
+d_BPReln,proprietor,proprietor
+d_BPReln,Protector,Protector
+d_BPReln,Proxy,Proxy
+d_BPReln,RelatedInterest,Related Interest
+d_BPReln,RelatedParty,Related Party
+d_BPReln,RelatedParty-ServiceProvider,Related party-Service Provider
+d_BPReln,RelationshipLinking,Relationship Linking
+d_BPReln,REQUEST_BALANCE,Request Balance
+d_BPReln,Request_Salary_Details,Request Salary Details
+d_BPReln,Request_Transactions,Request Transactions
+d_BPReln,RightOfSignatureCustomerBase,Right Of Signature CustomerBase
+d_BPReln,RiskRelation,RiskRelation
+d_BPReln,ROD,Right of Disposal
+d_BPReln,ROSCustBase,RightOfSignatureCustomerBase
+d_BPReln,SameCustomer,SameCustomer
+d_BPReln,Search_Account_Directory,Search Account Directory
+d_BPReln,Search_Single_Payment,Search Single Payment
+d_BPReln,Secretary,Secretary
+d_BPReln,Settlor,Settlor
+d_BPReln,Settlor_GrantorofIBO,Settlor/Grantor of IBO
+d_BPReln,Shareholder,Share holder
+d_BPReln,ShareHolder_Company,Share Holder Company
+d_BPReln,ShareHolder_Public,Share Holder Public
+d_BPReln,ShareholderCompany,Shareholder company
+d_BPReln,ShareholderPublic,Shareholder public
+d_BPReln,Signatory,Signatory
+d_BPReln,Significant_Donor,Significant Donor
+d_BPReln,SoleOwner,Sole owner
+d_BPReln,SoleProprietor,Sole Proprietor
+d_BPReln,Son,Son
+d_BPReln,SonInLaw,Son In Law
+d_BPReln,Spouse,Spouse
+d_BPReln,SRI,SRI (Special Right to Information)
+d_BPReln,SRS,SRS (Special Right of Signature)
+d_BPReln,Stockholder,Stockholder
+d_BPReln,StructOfPower,Structure of Power
+d_BPReln,SubsdryHierarIsPartOf,Subsidiary Hierarchy Is Part Of
+d_BPReln,SubsdryHierarIsPartOfLeglCmmnty,Subsidiary Hierarchy Is Part Of Legal Community
+d_BPReln,SubsicidaryLegalEntity,Subsicidary Legal Entity
+d_BPReln,SubsidiaryCompany,Subsidiary Company
+d_BPReln,Tax_Reporting_Entity,Tax Reporting Entity
+d_BPReln,TechnicalUser,Technical User
+d_BPReln,Trust_Protector,Trust Protector
+d_BPReln,Trust_ProtectorofIBO,Trust Protector of IBO
+d_BPReln,Trusted_Contact,Trusted Contact
+d_BPReln,Trustee,Trustee
+d_BPReln,Trustee_OfIBO,Trustee Of IBO
+d_BPReln,Twentyfiveormoresharehl,Twentyfiveormoresharehl
+d_BPReln,Twentyfiveormoresharein,Twentyfiveormoresharein
+d_BPReln,Ultimate_Beneficial,Ultimate Beneficial Owner
+d_BPReln,VennootschapOnderFirma,VennootschapOnderFirma
+d_BPReln,WealthManager,Wealth Manager
+d_BPReln,ZUGRIFF_AUFTR_3RD_PARTY,Access 3rd-Party Orders
+d_BPReln,ZUGRIFF_VERTRAG,Access Contract
+d_YesNoFlg,Never,Never
+d_YesNoFlg,No,No
+d_YesNoFlg,NONE,None
+d_YesNoFlg,NotApplicable,NotApplicable
+d_YesNoFlg,NotAssessed,NotAssessed
+d_YesNoFlg,Yes,Yes
+d_YesNoFlg,Never,Never
+d_YesNoFlg,No,No
+d_YesNoFlg,NONE,None
+d_YesNoFlg,NotApplicable,NotApplicable
+d_YesNoFlg,NotAssessed,NotAssessed
+d_YesNoFlg,Yes,Yes
+d_AccRelGrpLevel,Gr1,Gr 1
+d_AccRelGrpLevel,Gr2,Gr 2
+d_AccRelGrpLevel,Gr3,Gr 3
+d_AccRelGrpLevel,Gr4,Gr 4
+d_AccRelGrpLevel,Gr5,Gr 5
+d_AccRelGrpLevel,Gr6,Gr 6
+d_AddrTyp,BillingAddress,Billing Address Type
+d_AddrTyp,BillingAlternate,Billing Alternate Address Type
+d_AddrTyp,BillingEmail,Billing Email Address Type
+d_AddrTyp,BranchAddress,Branch Address
+d_AddrTyp,Business,Business
+d_AddrTyp,Contact,Contact
+d_AddrTyp,Correspondence,Correspondence
+d_AddrTyp,Delivery,Delivery
+d_AddrTyp,Duplicate,Duplicate
+d_AddrTyp,eFinance,eFinance
+d_AddrTyp,Electronic,Electronic
+d_AddrTyp,Email,Email
+d_AddrTyp,FAX,FAX
+d_AddrTyp,Field50,Field50
+d_AddrTyp,Holdmail,Holdmail
+d_AddrTyp,HomeCountryLandline,Home Country Landline
+d_AddrTyp,HomeCountryMobile,Home Country Mobile
+d_AddrTyp,Internal,Internal
+d_AddrTyp,LocalLandline,Local Landline
+d_AddrTyp,LocalMobile,Local Mobile
+d_AddrTyp,MarktDvlpMajrCust,MarktDvlpMajrCust
+d_AddrTyp,MarktElectronicAddr,MarktElectronicAddr
+d_AddrTyp,Misc,Misc
+d_AddrTyp,MrktMajrCust,MrktMajrCust
+d_AddrTyp,Non SEPA,Non SEPA
+d_AddrTyp,Official,Official
+d_AddrTyp,Organization Id,Organization Id
+d_AddrTyp,Other Id,Other Id
+d_AddrTyp,OtherPostal,OtherPostal
+d_AddrTyp,Others,Others
+d_AddrTyp,Permanent,Permanent
+d_AddrTyp,Primary_Residency,Primary Residency
+d_AddrTyp,Private Id,Private Id
+d_AddrTyp,RoamingMobile,Roaming Mobile
+d_AddrTyp,Secondary_Residency,Secondary Residency
+d_AddrTyp,SenderAddrEnglish,SenderAddrEnglish
+d_AddrTyp,SenderAddrFrench,SenderAddrFrench
+d_AddrTyp,SenderAddrGerman,SenderAddrGerman
+d_AddrTyp,SenderAddrItalian,SenderAddrItalian
+d_AddrTyp,SEPA,SEPA
+d_AddrTyp,SWIFT,SWIFT
+d_AddrTyp,Telephone,Telephone
+d_AddrTyp,Temporary,Temporary
+d_AddrTyp,TradeFinance,TradeFinance
+d_AddrTyp,URL,URL
+d_AddrTyp,WorkLandline,Work Landline
+d_CountryCode,AD,Andorra
+d_CountryCode,AE,Andorra
+d_CountryCode,AF,Afghanistan
+d_CountryCode,AG,Afghanistan
+d_CountryCode,AI,Anguilla
+d_CountryCode,AL,Albania
+d_CountryCode,AM,Albania
+d_CountryCode,AN,Armenia
+d_CountryCode,AO,Angola
+d_CountryCode,AQ,Angola
+d_CountryCode,AR,Antarctica
+d_CountryCode,AS,American Samoa
+d_CountryCode,AT,American Samoa
+d_CountryCode,AU,Australia
+d_CountryCode,AW,Aruba
+d_CountryCode,AX,Aruba
+d_CountryCode,AZ,AX
+d_CountryCode,BA,Bosnia and Herzegovina
+d_CountryCode,BB,Barbados
+d_CountryCode,BE,Belgium
+d_CountryCode,BF,Burkina Faso
+d_CountryCode,BG,Bulgaria
+d_CountryCode,BH,Bahrain
+d_CountryCode,BI,Burundi
+d_CountryCode,BJ,Benin
+d_CountryCode,BL,Saint Barth?lemy
+d_CountryCode,BM,Bermuda
+d_CountryCode,BN,Brunei
+d_CountryCode,BO,Bolivia
+d_CountryCode,BQ,Bonaire Sint Eustatius and Saba
+d_CountryCode,BR,Brazil
+d_CountryCode,BS,Bahamas
+d_CountryCode,BT,Bhutan
+d_CountryCode,BV,BV
+d_CountryCode,BW,Botswana
+d_CountryCode,BY,Belarus
+d_CountryCode,BZ,Belize
+d_CountryCode,CA,Canada
+d_CountryCode,CC,Cocos (Keeling) Islands
+d_CountryCode,CD,Congo Democratic Republic
+d_CountryCode,CF,Central African Republic
+d_CountryCode,CG,Congo Republic
+d_CountryCode,CH,Switzerland
+d_CountryCode,CI,C?dIvoire
+d_CountryCode,CK,Cook Islands
+d_CountryCode,CL,Chile
+d_CountryCode,CM,Cameroon
+d_CountryCode,CN,China Peoples Republic
+d_CountryCode,CO,Colombia
+d_CountryCode,CR,Costa Rica
+d_CountryCode,CU,Cuba
+d_CountryCode,CV,Cape Verde
+d_CountryCode,CW,Cura?
+d_CountryCode,CX,Christmas Island
+d_CountryCode,CY,Cyprus
+d_CountryCode,CZ,Czech Republic
+d_CountryCode,DE,Germany
+d_CountryCode,DJ,Djibouti
+d_CountryCode,DK,Denmark
+d_CountryCode,DM,Dominica
+d_CountryCode,DO,Dominican Republic
+d_CountryCode,DZ,Algeria
+d_CountryCode,EC,Ecuador
+d_CountryCode,EE,Estonia
+d_CountryCode,EG,Egypt
+d_CountryCode,EH,Western Sahara
+d_CountryCode,ER,Eritrea
+d_CountryCode,ES,Spain
+d_CountryCode,ET,Ethiopia
+d_CountryCode,FI,inland
+d_CountryCode,FJ,iji
+d_CountryCode,FK,alkland Islands
+d_CountryCode,FM,Micronesia
+d_CountryCode,FO,aroe Islands
+d_CountryCode,FR,rance
+d_CountryCode,GA,Gabon
+d_CountryCode,GB,Great Britain
+d_CountryCode,GD,Grenada
+d_CountryCode,GE,Georgia
+d_CountryCode,GF,rench Guiana
+d_CountryCode,GG,Guernsey
+d_CountryCode,GH,Ghana
+d_CountryCode,GI,Gibraltar
+d_CountryCode,GL,Greenland
+d_CountryCode,GM,Gambia
+d_CountryCode,GN,Guinea Republic
+d_CountryCode,GP,Guadeloupe
+d_CountryCode,GQ,Equatorial Guinea
+d_CountryCode,GR,Greece
+d_CountryCode,GS,South Georgia and Sandwich
+d_CountryCode,GT,Guatemala
+d_CountryCode,GU,Guam
+d_CountryCode,GW,Guinea-Bissau
+d_CountryCode,GY,Guyana
+d_CountryCode,HK,Hong Kong
+d_CountryCode,HM,HM
+d_CountryCode,HN,Honduras
+d_CountryCode,HR,Croatia
+d_CountryCode,HT,Haiti
+d_CountryCode,HU,Haiti
+d_CountryCode,ID,Hungary
+d_CountryCode,IE,Indonesia
+d_CountryCode,IL,Ireland
+d_CountryCode,IM,Isle of Man
+d_CountryCode,IN,India
+d_CountryCode,IO,British Indian Ocean Territory
+d_CountryCode,IQ,British Indian Ocean Territory
+d_CountryCode,IR,Iran
+d_CountryCode,IS,Iceland
+d_CountryCode,IT,Iceland
+d_CountryCode,JE,Italy
+d_CountryCode,JM,Jamaica
+d_CountryCode,JO,Jamaica
+d_CountryCode,JP,Japan
+d_CountryCode,KE,Japan
+d_CountryCode,KG,Azerbaijan
+d_CountryCode,KH,Cambodia
+d_CountryCode,KI,Cambodia
+d_CountryCode,KM,Comoros
+d_CountryCode,KN,Comoros
+d_CountryCode,KP,Korea Dem Peo Rep
+d_CountryCode,KR,Korea (South Korea) Republic
+d_CountryCode,KW,Korea (South Korea) Republic
+d_CountryCode,KY,Cayman Islands
+d_CountryCode,KZ,Cayman Islands
+d_CountryCode,LA,Kazakstan
+d_CountryCode,LB,Laos Peoples Democratic Republic
+d_CountryCode,LC,Lebanon
+d_CountryCode,LI,Liechtenstein
+d_CountryCode,LK,Liechtenstein
+d_CountryCode,LR,Liberia
+d_CountryCode,LS,Lesotho
+d_CountryCode,LT,Lesotho
+d_CountryCode,LU,Lithuania
+d_CountryCode,LV,Latvia
+d_CountryCode,LY,Latvia
+d_CountryCode,MA,Libyan
+d_CountryCode,MC,Monaco
+d_CountryCode,MD,Moldova
+d_CountryCode,ME,Moldova
+d_CountryCode,MF,Montenegro
+d_CountryCode,MG,Madagascar
+d_CountryCode,MH,Madagascar
+d_CountryCode,MK,Macedonia
+d_CountryCode,ML,Macedonia
+d_CountryCode,MM,Mali
+d_CountryCode,MN,Mongolia
+d_CountryCode,MO,Macao
+d_CountryCode,MP,Macao
+d_CountryCode,MQ,Mariana Islands
+d_CountryCode,MR,Martinique
+d_CountryCode,MS,Mauritania
+d_CountryCode,MT,Malta
+d_CountryCode,MU,Malta
+d_CountryCode,MV,Maldives
+d_CountryCode,MW,Malawi
+d_CountryCode,MX,Malawi
+d_CountryCode,MY,Malaysia
+d_CountryCode,MZ,Malaysia
+d_CountryCode,NA,Mozambique
+d_CountryCode,NC,Namibia
+d_CountryCode,NE,New Caledonia
+d_CountryCode,NF,Niger
+d_CountryCode,NG,Nigeria
+d_CountryCode,NI,Nicaragua
+d_CountryCode,NL,Netherlands
+d_CountryCode,NO,Netherlands
+d_CountryCode,NP,Nepal
+d_CountryCode,NR,Nauru
+d_CountryCode,NU,Niue
+d_CountryCode,NZ,New Zealand
+d_CountryCode,OM,New Zealand
+d_CountryCode,OTH,OTH
+d_CountryCode,PA,Oman
+d_CountryCode,PE,Panama
+d_CountryCode,PF,Peru
+d_CountryCode,PG,Papua New Guinea
+d_CountryCode,PH,Papua New Guinea
+d_CountryCode,PK,Pakistan
+d_CountryCode,PL,Pakistan
+d_CountryCode,PM,Poland
+d_CountryCode,PN,Pitcairn Island
+d_CountryCode,PR,Pitcairn Island
+d_CountryCode,PS,Palestine
+d_CountryCode,PT,Palestine
+d_CountryCode,PW,Palau
+d_CountryCode,PY,Palau
+d_CountryCode,QA,Paraguay
+d_CountryCode,RE,?ion
+d_CountryCode,RO,?ion
+d_CountryCode,RS,omania
+d_CountryCode,RU,Serbia
+d_CountryCode,RW,ussian Federation
+d_CountryCode,SA,Saudi Arabia
+d_CountryCode,SB,Saudi Arabia
+d_CountryCode,SC,Seychelles
+d_CountryCode,SD,Seychelles
+d_CountryCode,SE,Sudan
+d_CountryCode,SG,Singapore
+d_CountryCode,SH,Albania
+d_CountryCode,SI,Ascension StHelena Tristan
+d_CountryCode,SJ,Slovenia
+d_CountryCode,SK,Slovak Republic
+d_CountryCode,SL,Sierra Leone
+d_CountryCode,SM,San Marino
+d_CountryCode,SN,San Marino
+d_CountryCode,SO,Senegal
+d_CountryCode,SR,Somalia
+d_CountryCode,SS,South Sudan
+d_CountryCode,ST,S?o Tome and Principe
+d_CountryCode,stateless,Nauru
+d_CountryCode,SV,El Salvardor
+d_CountryCode,SX,El Salvardor
+d_CountryCode,SY,Sint Maarten
+d_CountryCode,SZ,Swaziland
+d_CountryCode,TC,Swaziland
+d_CountryCode,TD,Chad
+d_CountryCode,TF,Chad
+d_CountryCode,TG,TF
+d_CountryCode,TH,Thailand
+d_CountryCode,TJ,Tajikistan
+d_CountryCode,TK,Tajikistan
+d_CountryCode,TL,Azerbaijan
+d_CountryCode,TM,Timor-Leste
+d_CountryCode,TN,Tunisia
+d_CountryCode,TO,Tonga
+d_CountryCode,TR,Tonga
+d_CountryCode,TT,Trinidad and Tobago
+d_CountryCode,TV,Trinidad and Tobago
+d_CountryCode,TW,China Taiwan
+d_CountryCode,TY,TL
+d_CountryCode,TZ,China Taiwan
+d_CountryCode,UA,Tanzania
+d_CountryCode,UG,Uganda
+d_CountryCode,UM,Uganda
+d_CountryCode,US,UM
+d_CountryCode,UT,United States of America
+d_CountryCode,UY,Uruguay
+d_CountryCode,UZ,Uruguay
+d_CountryCode,VA,Uzbekistan
+d_CountryCode,VC,St Vincent and Grenadines
+d_CountryCode,VE,St Vincent and Grenadines
+d_CountryCode,VG,Venezuela
+d_CountryCode,VH,VH
+d_CountryCode,VI,VH
+d_CountryCode,VN,Viet Nam
+d_CountryCode,VU,Vanuatu
+d_CountryCode,WF,Vanuatu
+d_CountryCode,WS,Wallis and Futuna Islands
+d_CountryCode,XD,TY
+d_CountryCode,XZ,Kosovo
+d_CountryCode,YE,Kosovo
+d_CountryCode,YT,Mayotte
+d_CountryCode,ZA,Mayotte
+d_CountryCode,ZM,South Africa
+d_CountryCode,ZW,Zambia
+d_Relation,AddlDirector,AddlDirector
+d_Relation,AltDirector,AltDirector
+d_Relation,Brother,Brother
+d_Relation,Daughter,Daughter
+d_Relation,Father,Father
+d_Relation,Fiancee,Fiancee
+d_Relation,Husband,Husband
+d_Relation,JntSecretory,JntSecretory
+d_Relation,KartaHuf,KartaHuf
+d_Relation,Manager,Manager
+d_Relation,Mother,Mother
+d_Relation,Officer,Officer
+d_Relation,Others,Others
+d_Relation,Partner,Partner
+d_Relation,President,President
+d_Relation,Sister,Sister
+d_Relation,SlpPartners,SlpPartners
+d_Relation,SlPrprtorship,SlPrprtorship
+d_Relation,Son,Son
+d_Relation,Treasurer,Treasurer
+d_Relation,Wife,Wife
+d_AcctType,SavingsAccount,SavingsAccount
+d_AcctType,CurrentAccount,CurrentAccount
+d_AcctType,CorporateCurrentAccount,CorporateCurrentAccount
+d_AcctType,ConsumerLoan,ConsumerLoan
+d_AcctType,TermLoan,TermLoan
+d_AcctType,Checking,Checking
+d_AcctType,Loan,Loan
+d_AcctType,DDA,DDA
+d_AcctType,InternalAccount,InternalAccount
+d_AcctType,LineofCredit,LineofCredit
+d_AcctType,Nostro Account,Nostro Account
+d_IntrCatg,Credit,Credit
+d_IntrCatg,Debit,Debit
+d_IntrCatg,Penal,Penal
+d_IntrstSubCat,Penal,Penal
+d_IntrstSubCat,PenalOnIntrst,Penal on Interest
+d_IntrstSubCat,PenalOnPrincipal,Penal on Principal
+d_IntrstSubCat,Priority,Priority
+d_RateTyp,Fixed,Fixed
+d_RateTyp,Fixed1,Fixed1
+d_RateTyp,FlatAmount,FlatAmount
+d_RateTyp,Floating,Floating
+d_RateTyp,InterestReset,InterestReset
+d_RateTyp,PrimeRate,PrimeRate
+d_IntrPractice,30 By 360 Plus1,30 By 360 Plus1
+d_IntrPractice,30 By 365 Plus1,30 By 365 Plus1
+d_IntrPractice,30 By Actual,30 By Actual
+d_IntrPractice,30By360,30 by 360
+d_IntrPractice,30By365,30 by 365
+d_IntrPractice,30E By 360,30E By 360
+d_IntrPractice,365 By 360,365 By 360
+d_IntrPractice,Act By Act AFB,Act By Act AFB
+d_IntrPractice,Act By Act ICMA,Act By Act ICMA
+d_IntrPractice,Act By Act ISDA,Act By Act ISDA
+d_IntrPractice,Actual By Actual,Actual By Actual
+d_IntrPractice,ActualBy360,Actual by 360
+d_IntrPractice,ActualBy365,Actual by 365
+d_IntrPractice,Not Applicable,Not Applicable
+d_IntrPractice,Semi 30 By 360,Semi 30 By 360
+d_IntrstType,Compound,Compound
+d_IntrstType,IntrstOD,Outstanding Interest
+d_IntrstType,OdBal,Outstanding Bal
+d_IntrstType,OdPndI,Outstanding PndI
+d_IntrstType,OdXcMsc,Outstanding XcMsc
+d_IntrstType,PenalOD,Outstanding Penal
+d_IntrstType,Principal_Interest,Principal_Interest
+d_IntrstType,PrincipalBal,PrincipalBal
+d_IntrstType,PrncplOD,Outstanding Principal
+d_IntrstType,Simple,Simple
+d_IntRatePurpose,BancsFixed,BancsFixed
+d_IntRatePurpose,BankPrime,Bank Prime
+d_IntRatePurpose,EONIA_ADJ_BASE,EONIA_ADJ_BASE
+d_IntRatePurpose,EONIA_ADJ_BASE3,EONIA_ADJ_BASE3
+d_IntRatePurpose,EONIA_ADJ_BASE365,EONIA_ADJ_BASE365
+d_IntRatePurpose,FEED_FUND_OPEN,FEED FUND OPEN
+d_IntRatePurpose,FX_AMORTIZ,FX_AMORTIZ
+d_IntRatePurpose,FXAMORTIZ,FXAMORTIZ
+d_IntRatePurpose,JIBIR,JIBIR
+d_IntRatePurpose,JIBOR,JIBOR
+d_IntRatePurpose,LIBOR,LIBOR
+d_IntRatePurpose,LoanZeroBase,MTN
+d_IntRatePurpose,MAXCNVNTNLRATE,Max Conventional Rate
+d_IntRatePurpose,MTN,MTN
+d_IntRatePurpose,NIT,NIT
+d_IntRatePurpose,OVERNIGHT_INDEXED,OVERNIGHT INDEXED
+d_IntRatePurpose,Penal1,Penal1
+d_IntRatePurpose,Penal2,Penal2
+d_IntRatePurpose,PrimeRate,PrimeRate
+d_IntRatePurpose,TAB,TAB
+d_IntRatePurpose,Tasa_Camara,Tasa Camara
+d_IntRatePurpose,TIP,TIP
+d_IntrFixingFreq,Adhoc,Adhoc
+d_IntrFixingFreq,Bimonthly,Bimonthly
+d_IntrFixingFreq,Daily,Daily
+d_IntrFixingFreq,Fortnightly,Fortnightly
+d_IntrFixingFreq,Fortnightly1,Fortnightly 1
+d_IntrFixingFreq,Fortnightly15,Fortnightly 15
+d_IntrFixingFreq,HalfYearly,HalfYearly
+d_IntrFixingFreq,Intraday,Intraday
+d_IntrFixingFreq,Maturity,Maturity
+d_IntrFixingFreq,Monthly,Monthly
+d_IntrFixingFreq,NoFrequency,NoFrequency
+d_IntrFixingFreq,Quartrerly,Quarterly
+d_IntrFixingFreq,Weekly,Weekly
+d_IntrFixingFreq,Yearly,Yearly
+d_IntrApplFreq,4_4_5,4-4-5 Weeks
+d_IntrApplFreq,4_5_4,4-5-4 Weeks
+d_IntrApplFreq,5_4_4,5-4-4 Weeks
+d_IntrApplFreq,Biweekly,Biweekly Anniversary
+d_IntrApplFreq,Daily,Daily
+d_IntrApplFreq,Fortnightly,Fortnightly
+d_IntrApplFreq,HalfYearly,HalfYearly
+d_IntrApplFreq,HalfYearlyAnn,Half Yearly Anniversary
+d_IntrApplFreq,Immediate,Immediate
+d_IntrApplFreq,InterestReset,InterestReset
+d_IntrApplFreq,Maturity,Maturity
+d_IntrApplFreq,Monthly,Monthly
+d_IntrApplFreq,MonthlyAnn,Monthly Anniversary
+d_IntrApplFreq,NotApp,Not Applicable
+d_IntrApplFreq,Quarterly,Quarterly
+d_IntrApplFreq,QuarterlyAnn,Quarterly Anniversary
+d_IntrApplFreq,Temp1,Temporary Interest
+d_IntrApplFreq,Temp2,Temporary
+d_IntrApplFreq,Weekly,Weekly Anniversary
+d_IntrApplFreq,WithCollection,with Collection
+d_IntrApplFreq,WithRepayment,With Repayment
+d_IntrApplFreq,Yearly,Yearly
+d_IntrApplFreq,YearlyAnn,Yearly Anniversary
+d_SlabBasis,Amount,Amount
+d_OverrideType,Absolute,Absolute
+d_OverrideType,Differential,Differential
+d_OverrideType,limit,limit
+d_ChargeItemId,"	DeliveryEPOE-financePaperRelease",Delivery EPO E-finance Paper Release
+d_ChargeItemId,AcClsgFeePrdc,Periodic Fees for Ac Closing
+d_ChargeItemId,AcClsgStmntFee,AC closing Statement Fee
+d_ChargeItemId,AccOpngChrgs,Account Opening Charges
+d_ChargeItemId,AccountClosureCharge,Account Closure Charge
+d_ChargeItemId,AccountFlatFee,Account Flat Fee
+d_ChargeItemId,AccOverDraft,Account Over Draft
+d_ChargeItemId,AcMntncFee,Account Maintenance Fee
+d_ChargeItemId,AcntBalLtr,Account balance letter
+d_ChargeItemId,AcntClsgFee,Account Closing Fee
+d_ChargeItemId,AcntClsr,AcntClsr
+d_ChargeItemId,AcntMgmntFee,Account Management Fee - PC
+d_ChargeItemId,AcntMngFee,Account Management Fee
+d_ChargeItemId,AcntMngFeeCHFEUR,"Account Management Fee - BC (CHF, EUR)"
+d_ChargeItemId,AcntMngFeeFCY,Account Management Fee - BC (FCY)
+d_ChargeItemId,AcntMntnChrgBsns,Account Maintenance Charges - Business
+d_ChargeItemId,AcntMntnChrgIndv,Account Maintenance Charges - Individual
+d_ChargeItemId,AcntOpngFee,Account Opening Fee
+d_ChargeItemId,AcntStmntFeeCamt053MT940,Account statement fee camt.053 / MT940
+d_ChargeItemId,AcntStmntonPaper,Account Statement on Paper (E-)Savings Account
+d_ChargeItemId,AcntTrnovrChrg,Account TurnOver Charge
+d_ChargeItemId,AddAccountStatements,AddAccountStatements
+d_ChargeItemId,AddAcStmntChrg,Additional Account Statement on Paper
+d_ChargeItemId,AdditionalCharg,Additional Charge
+d_ChargeItemId,AdditionalFee,Additional Fee
+d_ChargeItemId,AdditnNotional,Addition Notional
+d_ChargeItemId,AddtnlMailCharge,Additional Mail Charges
+d_ChargeItemId,AdhocLimit,Adhoc Limit
+d_ChargeItemId,AdmFeeSecAmt,Administration Fee Security Amount
+d_ChargeItemId,AdmFeeSecAmtMM,Administration Fee Security Amount MINMAX
+d_ChargeItemId,AdminLegalFees,Admin Fees
+d_ChargeItemId,AdmnstratnFeeSl,Administration Fee SI
+d_ChargeItemId,AdtnPriceforPooling,Additional Price for Pooling
+d_ChargeItemId,AdvancePayment,Advance Payment
+d_ChargeItemId,AgioCharges,Agio Charges
+d_ChargeItemId,AGPRFRRS,Agent Processing Fees
+d_ChargeItemId,AlertGnrtn,AlertGnrtn
+d_ChargeItemId,AME_Charges,AME Charges
+d_ChargeItemId,AmendCableCHRG,AmendCableCHRG
+d_ChargeItemId,AmendComtmntCHRG,AmendComtmntCHRG
+d_ChargeItemId,AnualChrgFee,Annual Charge Fee
+d_ChargeItemId,AppAdmFeeMM,Application of Administration Fee Security Amount
+d_ChargeItemId,AppSafeFeeLine,Apply Safe Fee Line
+d_ChargeItemId,AppSafeFeePos,Apply Safe Fee Position
+d_ChargeItemId,AppSfFFrgnLine,Apply Safe Fee Foreign Line
+d_ChargeItemId,AppSfFFrgnPos,Apply Safe Fee Foreign Position
+d_ChargeItemId,AppSfFFrgnPosMM,Apply Safe Fee Foreign Position Min Max
+d_ChargeItemId,AppSfFLineMM,Apply Safe Fee Line Min Max
+d_ChargeItemId,AppSfFPosMM,Apply Safe Fee Position Min Max
+d_ChargeItemId,AppSfFrgnLineMM,Apply Safe Fee Foreign Line Min Max
+d_ChargeItemId,ArrangementFee,Arrangement Fee
+d_ChargeItemId,ArrearsDividend,Arrears Dividend Charge
+d_ChargeItemId,ArrearsDividendChrg,Arrears Dividend Charge
+d_ChargeItemId,ArtificialISPymntslipimg,Artificial IS Payment slip image
+d_ChargeItemId,AssetInsuranceFee,Asset Insurance Fee
+d_ChargeItemId,AssimilationChrg,Assimilation Charge
+d_ChargeItemId,ATMBlncInqTxnOthrBnk,ATM Balance Inquiry Other Bank
+d_ChargeItemId,ATMBlncInqTxnOwnBnk,ATM Balance Inquiry Own Bank
+d_ChargeItemId,ATMCardIssuance,ATM Card Issuance
+d_ChargeItemId,ATMCashWthdrwlOthrBnk,ATM Cash Withdrawl Other Bank
+d_ChargeItemId,ATMCashWthdrwlOwnBnk,ATM Cash Withdrawl Own Bank
+d_ChargeItemId,ATMChrgs,ATM Charge
+d_ChargeItemId,ATMDecTxnOthrBnk,ATM Declined Transaction Other Bank
+d_ChargeItemId,ATMDecTxnOwnBnk,ATM Declined Transaction Own Bank
+d_ChargeItemId,ATMOthrBnkTnsacnChrgs,ATM Other Bank Transaction Charges
+d_ChargeItemId,ATMTnsctnChrgs,ATM Own Transaction Charges
+d_ChargeItemId,Audit_Confirmation,Audit Confirmation
+d_ChargeItemId,AvailabilityFeeEfinance,Availability Fee E-Finance
+d_ChargeItemId,AvailabilityFeeTBS,Availability Fee TBS
+d_ChargeItemId,AvailabiltyFeeFDS,Availability Fee FDS
+d_ChargeItemId,AvailabiltyFeeForSpclChannelUsg,Availability Fee for Special channel usage
+d_ChargeItemId,AWBDCChrgItemId,AWBDCChrgItemId
+d_ChargeItemId,AWBEndorsement,AWBEndorsement
+d_ChargeItemId,BackUpTax,BackUp Tax
+d_ChargeItemId,BackUpTaxPrdc,BackUpTax Periodic
+d_ChargeItemId,Balance_Certificate,Balance Certificate
+d_ChargeItemId,Balance_enquiries,Balance enquiries
+d_ChargeItemId,BankGuarantee,Bank Guarantee
+d_ChargeItemId,BasicBundleFee,Basic Bundle Fee
+d_ChargeItemId,BeatChqDlvryChrg,Beat Cheque Delivery Charges
+d_ChargeItemId,BeatChqPkpChrg,Beat Cheque Pickup charges
+d_ChargeItemId,BeatCshDlvryChrg,Beat Cash Delivery Charges
+d_ChargeItemId,BeatCshPkpChrg,Beat cash Pickup Charges
+d_ChargeItemId,BeatDocDlvryChrg,Beat Document Delivery Charges
+d_ChargeItemId,BeatDocPkpChrg,Beat Document Pickup charges
+d_ChargeItemId,BENChrgDbtr,BEN Charge to Debtor
+d_ChargeItemId,BeneMasLmtMaintncChrg,BeneMasLmtMaintncChrg
+d_ChargeItemId,BeneMasSetupChrg,BeneMasSetupChrg
+d_ChargeItemId,BeneMasVldtChrg,BeneMasVldtChrg
+d_ChargeItemId,BestEffortFee,Best Effort Fee
+d_ChargeItemId,BGAmednPostal,BGAmednPostal
+d_ChargeItemId,BGAmendAdvising,BGAmendAdvising
+d_ChargeItemId,BGAmendBillHandling,BGAmendBillHandling
+d_ChargeItemId,BGAmendConfirmation,BGAmendConfirmation
+d_ChargeItemId,BGAmendCourier,BGAmendCourier
+d_ChargeItemId,BGAmendStamp,BGAmendStamp
+d_ChargeItemId,BGAmendSwift,BGAmendSwift
+d_ChargeItemId,BGCableCHRG,BGCableCHRG
+d_ChargeItemId,BGCancelShip,BGCancelShip
+d_ChargeItemId,BGCommOthr,BGCommOthr
+d_ChargeItemId,BGCommSBLC,BGCommSBLC
+d_ChargeItemId,BGCommShip,BGCommShip
+d_ChargeItemId,BGComtmntCHRG,BGComtmntCHRG
+d_ChargeItemId,BIC_IBAN_Fee,BIC_IBAN_Fee
+d_ChargeItemId,BillPdInExeFee,BillPdInExeFee
+d_ChargeItemId,BillPdInUnPdFee,BillPdInUnPdFee
+d_ChargeItemId,BillPdoutExe,Bill Paid Out Execution
+d_ChargeItemId,BillRemExeFee,BillRemExeFee
+d_ChargeItemId,BilPdOutUnPdFee,BilPdOutUnPdFee
+d_ChargeItemId,BlockingFee,Blocking Fee
+d_ChargeItemId,BnkDrftIssFee,Bank Draft Issue Fee
+d_ChargeItemId,BnkGrnteeCommission,Bank Guarantee Commission
+d_ChargeItemId,BonusIssueChrg,Bonus Issue Charge
+d_ChargeItemId,BPAuditRprtFee,BPAuditRprtFee
+d_ChargeItemId,BrokerageBroker,Brokerage (Broker)
+d_ChargeItemId,BrokerageClient,Brokerage (Client)
+d_ChargeItemId,BrokerFee,Broker Fee
+d_ChargeItemId,BrokrgCharges,Brokerage Charge for FX and MM
+d_ChargeItemId,BulkFileUpload,BulkFileUpload
+d_ChargeItemId,BundleAdminFee,Bundle Administration Fee
+d_ChargeItemId,BusinessBankSOExecutionFee,Business Bank SO Execution
+d_ChargeItemId,BusinessSOExecutionFee,Business SO Execution
+d_ChargeItemId,CallOfNonPaidCptlsOnShrsBndsChrg,Call of non-paid capital on shares  bonds Charge
+d_ChargeItemId,CAMiscClntChrg1,CA Miscellaneous Client Charges
+d_ChargeItemId,CAMiscClntChrg2,CA Miscellaneous Client Charges
+d_ChargeItemId,CAMT53,CAMT53
+d_ChargeItemId,CAMT53_CHDD54,CAMT53_CHDD54
+d_ChargeItemId,CAMT53_SDD54,CAMT53_SDD54
+d_ChargeItemId,CancellationBCDD,Cancellation of BC/DD
+d_ChargeItemId,CapitalPayment,Capital Payment Account
+d_ChargeItemId,Cash_Inpayment_IS_Own_Account,Cash Inpayment IS Own Account
+d_ChargeItemId,Cash_International_PostOffice_Payments,Cash International - PostOffice Payments
+d_ChargeItemId,CashDeposit_OwnAcc,Cash Deposit Own Account
+d_ChargeItemId,CashDeposit_OwnAcc_CardBased,Cash Deposit Own Account Card Based
+d_ChargeItemId,CashDividendChrg,Cash Dividend Charge
+d_ChargeItemId,CashFlowKickBak,Cash Flow Kickback
+d_ChargeItemId,CashInpaymentES_OwnAcc,Cash Inpayment ES Own Account
+d_ChargeItemId,CashInpaymentESR_OwnAcc,ESR CashInPayment OwnAcnt
+d_ChargeItemId,CashIntlFromAbroad,Cash international form
+d_ChargeItemId,CashMergerChrg,Cash Merger Charge
+d_ChargeItemId,CashPayout,Cash Payout
+d_ChargeItemId,CashWthdrwlchckinSwiss,Cash Withdrawal Check in Switzerland
+d_ChargeItemId,CATxnFee,Right Issue Handling Charge
+d_ChargeItemId,CentralBanKSOExecutionFee,Central Bank SO Execution
+d_ChargeItemId,CersaiRegnChrgs,Cersai regn Charges
+d_ChargeItemId,CertifiedChecks,CertifiedChecks
+d_ChargeItemId,Change_Of_Collateral,Change Of Collateral
+d_ChargeItemId,Change_Of_Payment_Method,Change Of Payment Method
+d_ChargeItemId,Change_OR_Release_Of_Collateral,Change OR Release Of Collateral
+d_ChargeItemId,ChBkOrdrFees,Cheque Book Order Fees
+d_ChargeItemId,CheqReserveFee,Cheque Paid In Reserve
+d_ChargeItemId,ChequeReversal,Cheque Reversal Charge
+d_ChargeItemId,ChequeUnpaid,Cheque UnPaid
+d_ChargeItemId,ChngOfDmclWoExcgOfScrtsChrg,Change of Domicile Without Exchange of Securities Charge
+d_ChargeItemId,ChngOfNmWoExcgOfScrtsChrg,Change of Name Without Exchange of Securities Charge
+d_ChargeItemId,ChqBookDeliveryCharges,Cheque Book Delivery Charges
+d_ChargeItemId,ChqBookIssuCharges,Cheque Book Issue Charge
+d_ChargeItemId,ChqCanPmSetUp,ChqCanPmSetUp
+d_ChargeItemId,ChqExchangeComm,Cheque Exchange Commission
+d_ChargeItemId,ChqIssuanceFee,Cheque Issuance Fee
+d_ChargeItemId,ChqPaidOutExe,Cheque Paid Out Execution
+d_ChargeItemId,ChqPdInFees,Cheque Paid In Fees
+d_ChargeItemId,ChqPdInSgnFee,ChqPdInSgnFee
+d_ChargeItemId,ChqPdInUnPd,Cheque Paid In Unpaid
+d_ChargeItemId,ChqPdOutUnPd,Cheque Paid Out Unpaid
+d_ChargeItemId,ChqPdOutUnPdIss,ChqPdOutUnPdIss
+d_ChargeItemId,CHQPOManualCaptFee,CHQPOManualCaptFee
+d_ChargeItemId,ChqRemExeFee,ChqRemExeFee
+d_ChargeItemId,ChqRemitanceFee,ChqRemitanceFee
+d_ChargeItemId,CHQRemManualCaptFee,CHQRemManualCaptFee
+d_ChargeItemId,ChqRevokeFee,Cheque Revoke fee
+d_ChargeItemId,ChqStpFees,Cheque Stop Fees
+d_ChargeItemId,CIBILChrgCIR,CIBIL charges - CIR
+d_ChargeItemId,CIBILChrgCommercial,CIBIL charges - Commercial
+d_ChargeItemId,CIBILChrgCommercialWthCMR,CIBIL charges - Commercial with CMR
+d_ChargeItemId,CILEXBG,CILEX BG Charges
+d_ChargeItemId,CILEXDC,CILEX DC Charges
+d_ChargeItemId,CILEXIB,CILEX IB Charges
+d_ChargeItemId,CILEXLC,CILEX LC Charges
+d_ChargeItemId,ClcltprcESRprcoptdlvryprdctyHlfDly,Calculate price for ESR processing option ? delivery periodicity- Half Daily 
+d_ChargeItemId,ClctPrcDlvryPaperPymntOrdr,Price for Delivery of Paper-based Payments order
+d_ChargeItemId,ClctprcESRprcoptdlvryprdctyDly,Calculate price for ESR processing option ? delivery periodicity- Daily 
+d_ChargeItemId,ClctprcESRprcoptdlvryprdctyHrly,Calculate price for ESR processing option ? delivery periodicity- Hourly 
+d_ChargeItemId,CloseDormant,Account Close Dormant
+d_ChargeItemId,CMA_Charge,CMA Charge
+d_ChargeItemId,CmbndPoolMaintenance,Combined Pool Maintenance
+d_ChargeItemId,CmpSafeFeeFixed,CmpSafeFeeFixed
+d_ChargeItemId,CmpSafeFeeLine,CmpSafeFeeLine
+d_ChargeItemId,CmpSafeFeePos,CmpSafeFeePos
+d_ChargeItemId,CmpSafeFeeVarbl,CmpSafeFeeVarbl
+d_ChargeItemId,CmpSfFFrgnLine,CmpSafeFeeFrgnLine
+d_ChargeItemId,CmpSfFrgnLineMM,CmpSafeFrgnLineMinMax
+d_ChargeItemId,CmpSfFrgnPos,CmpSafeFeeFrgnPos
+d_ChargeItemId,CmpSfFrgnPosMM,CmpSafeFrgnPosMinMax
+d_ChargeItemId,CmpSfLineMM,CmpSafeLineMinMax
+d_ChargeItemId,CmpSfPosMM,CmpSafePosMinMax
+d_ChargeItemId,CmtmntFeeForLOC,Commitment Fee For LOC
+d_ChargeItemId,CnclMsgRjctChrg,Cncltn Msg Rjectn Charges
+d_ChargeItemId,CncltnChrg,Cancellation Charge
+d_ChargeItemId,Coin_Handling_Fee,Coin Handling Fee
+d_ChargeItemId,CollectionChrgs,Collection Charges
+d_ChargeItemId,Commission,Commission
+d_ChargeItemId,Commitment_Fee,Commitment Fee
+d_ChargeItemId,CommitmentFee,Commitment Fee
+d_ChargeItemId,CommitmentFeeFxd,Commitment Fee (Fixed)
+d_ChargeItemId,CommitmentFeeVlm,Commitment Fee (Volume)
+d_ChargeItemId,CommWthSrvceTax,Draft issuance charges
+d_ChargeItemId,ComnctnChrg,Communication Charge
+d_ChargeItemId,ComplianceComm,Complaince Commission
+d_ChargeItemId,ConcMaintenanceCharge,Cash Concentration Maintenance
+d_ChargeItemId,ConcPrtcptngMtnenceCharge,Cash Concentration Participation Charge
+d_ChargeItemId,ConcPrtcptngTxnCharge,ConcPrtcptngTxnCharge
+d_ChargeItemId,ConcTransactionCharge,ConcTransactionCharge
+d_ChargeItemId,ConfirmationofBsnsRel,Confirmation of business relationships
+d_ChargeItemId,ConversionHandlingCharge,Conversion Handling Charge
+d_ChargeItemId,CopyOfChequeChrgs,Copy of Cheque Charges
+d_ChargeItemId,CorrClaimOUROU,CorrClaimOUROU
+d_ChargeItemId,CorrClaimOURSS,CorrClaimOURSS
+d_ChargeItemId,CorrFeeBENCB,Corr Fee BEN CB
+d_ChargeItemId,CorrFeeBENOU,Corr Fee BEN OU
+d_ChargeItemId,CorrFeeBENSS,Corr Fee BEN SS
+d_ChargeItemId,CorrFeeOURCB,Corresp. Fee OUR - via Correspdnt
+d_ChargeItemId,CorrFeeOUROU,Corr Fee OUR OU
+d_ChargeItemId,CorrFeeOURSS,Corr Fee OUR SS
+d_ChargeItemId,CorrFeeSHACB,Corr Fee SHA CB
+d_ChargeItemId,CorrFeeSHAOU,Corr Fee SHA OU
+d_ChargeItemId,CorrFeeSHASS,Corr Fee SHA SS
+d_ChargeItemId,CorrspOURFee,Corrsp. OUR
+d_ChargeItemId,CounterChrg,CounterChrg
+d_ChargeItemId,CountofESDay/AcntNumber,Count of ES / day / Account Number
+d_ChargeItemId,CountofESRDay/AcntNumber,Count of ESR / day / Participation Number
+d_ChargeItemId,CptlGainsPymtChrg,Capital Gains Payment Charge
+d_ChargeItemId,CptlParValIncWoExcgOfScrtsChrg,Capital  Par value  increase without exchange of securities Cha
+d_ChargeItemId,CptlRdcnWoCmpsnWoExcgOfScrtsChrg,Capital reduction without compensation without exchange of sec
+d_ChargeItemId,CptlRdcnWoCmpsnWthExcgOfScrtsChrg,Capital reduction without compensation with exchange of securitie
+d_ChargeItemId,CrAdvice,Additional Credit Advice
+d_ChargeItemId,CrDrAdvice,Credit and Debit Advice
+d_ChargeItemId,CrdtCommission,Credit Commission
+d_ChargeItemId,CrdtLoanCmsn,CreditLoan Commission
+d_ChargeItemId,Credit_Report,Credit Report
+d_ChargeItemId,CrspndntFeeBEN,Correspondent Fee BEN
+d_ChargeItemId,CrspndntFeeOur,Correspondent Fee Our
+d_ChargeItemId,CrspndntFeeOurP,Correspondent Fee Our Prepaid
+d_ChargeItemId,CrspndntFeeSha,Correspondent Fee Shared
+d_ChargeItemId,CryptoStakingRewardsFee,Crypto Staking Rewards Fee
+d_ChargeItemId,CryptoTransferFee,CryptoTransferFee charges
+d_ChargeItemId,CshDvndWthCptlGainsDstrbnChrg,Cash Dividend with Capital Gains Distrubtion Charge
+d_ChargeItemId,CTNonSTPFee,CT Non STP Fee
+d_ChargeItemId,CtPaperBasedProcessingFees,Ct Paper Based Processing Fees
+d_ChargeItemId,CustAssetFee(Manual),Customer Asset Fee (Manual)
+d_ChargeItemId,CustMasMdfyChrg,CustMasMdfyChrg
+d_ChargeItemId,CustMasSetUpChrg,CustMasSetUpChrg
+d_ChargeItemId,CustodyFeeCryptoAcnts,Custody Fee Crypto Acnts
+d_ChargeItemId,CustomerAssetFee,Customer Asset Fee
+d_ChargeItemId,CustomerSegmentFee,Customer Segment Fee
+d_ChargeItemId,CustSKF,Safe Keeping Fee
+d_ChargeItemId,CustTest,Customer Test Support CT
+d_ChargeItemId,CustTestSup,Customer Test-Support
+d_ChargeItemId,CustTestSupportCH-DD,Customer Test Support CH-DD/SDD
+d_ChargeItemId,DDOrgnSetupFee,DD Org Setup Fee
+d_ChargeItemId,DDPaidInCncltn,DDPaidInCncltn
+d_ChargeItemId,DDPdInChrgCrPrtyBulk,DDPdInChrgCrPrtyBulk
+d_ChargeItemId,DDPdInOutFeeOU,DD Paid In Paid Out Fee OU
+d_ChargeItemId,DDPdInOutFeeSS,DD Paid In Paid Out Fee SS
+d_ChargeItemId,DDPdInRprFee,Direct Debit Paid In Repair Fees
+d_ChargeItemId,DDPdInRtFee,Direct Debit Paid-In Return Fees
+d_ChargeItemId,DDPdInRvctnFee,DDPdInRvctnFee
+d_ChargeItemId,DDPdInSgnFlg,DDPdInSgnFlg
+d_ChargeItemId,DDPdInStagngMdfychrg,DDPdInStagngMdfychrg
+d_ChargeItemId,DDPdInUnPd,DD Paid In Unpaid
+d_ChargeItemId,DDPdInUnPdIss,DDPdInUnPdIss
+d_ChargeItemId,DDPdInUnRVKDIss,DDPdInUnRVKDIss
+d_ChargeItemId,DDPdoutExe,Direct Debit Paid-Out Execution Fees
+d_ChargeItemId,DDPdOutRtFee,Direct Debit Paid Out Return Fees
+d_ChargeItemId,DDPdOutUnPdFees,DD Paid Out Unpaid Fees
+d_ChargeItemId,DDPdOuUnPdIss,DDPdOuUnPdIss
+d_ChargeItemId,DDPdOuUnRVKDIss,DDPdOuUnRVKDIss
+d_ChargeItemId,DDPIExctnFees,Direct Debit Paid-In Execution Fees
+d_ChargeItemId,DDPOManualCaptFee,DDPOManualCaptFee
+d_ChargeItemId,DDRembrstmnt,DDRembrstmnt
+d_ChargeItemId,DDRemitCncltn,DDRemitCncltn
+d_ChargeItemId,DDRemManualCaptFee,DD Remittance Manual Capture Fees
+d_ChargeItemId,DDRepFees,Direct Debit Paid-Out Repair Fees
+d_ChargeItemId,DDRevokeFee,DDRevokeFee
+d_ChargeItemId,DDRmtExeFee,DD Rm Exe Fee
+d_ChargeItemId,DDRvldtnChrgs,DD Revalidation charges
+d_ChargeItemId,DDSetUpFees,DD Set Up Fee
+d_ChargeItemId,DDStpPymntFees,DD Stop Payment Fees
+d_ChargeItemId,DebitAdvice,Additional Debit Advice
+d_ChargeItemId,DebitCardIssuance,Debit Card Issuance
+d_ChargeItemId,DebitCardReplacementFee,Debit Card Replacement Fee
+d_ChargeItemId,DefermentofInstallment,Deferment of Installment
+d_ChargeItemId,Delivery_EPO_Efinance_Paper_Release,Delivery EPO E-finance Paper Release
+d_ChargeItemId,DematCharges,Demat Charges
+d_ChargeItemId,DepositReconciliation,DepositReconciliation
+d_ChargeItemId,DisAgioCharges,Dis Agio Charges
+d_ChargeItemId,DisbursementFee,Disbursement Fee
+d_ChargeItemId,DishonouredOrRtrnchq,Dishonoured Or Return Cheque
+d_ChargeItemId,DlvryFee,DeliveryFee  ReceptionFee
+d_ChargeItemId,DomicilaryVerificationCharge,Domiciliary Verification Charge
+d_ChargeItemId,DormancyFee,Dormancy Charge
+d_ChargeItemId,DplctAcStmntChrg,Duplicate Account Statement Charges
+d_ChargeItemId,DplctAcStmtChrg,Duplicate Acount Statement Charge
+d_ChargeItemId,DrAdvicePayOrder,Debit Advice Payment Order
+d_ChargeItemId,DrawdownCharge,Drawdown Charge
+d_ChargeItemId,DshnrChrg,Dishonour Charge item
+d_ChargeItemId,DsslnOfSbscrtnR,Dissolution of subscription rights Charge
+d_ChargeItemId,DsslnOfSbscrtnRghtChrg,DsslnOfSbscrtnRghtChrg
+d_ChargeItemId,DupCardIssChrg,Duplicate Card issuance Charges
+d_ChargeItemId,DuplctePassBkChrgs,Extra/Duplicate Passbook Charges
+d_ChargeItemId,EBLAdvising,EBLAdvising charges
+d_ChargeItemId,EBLBillConfirmation,EBLBillConfirmation charges
+d_ChargeItemId,EBLBillCourier,EBLBillCourier charges
+d_ChargeItemId,EBLBillHandling,EBLBillHandling charges
+d_ChargeItemId,EBLBillPostal,EBLBillPostal charges
+d_ChargeItemId,EBLBillStamp,EBLBillStamp charges
+d_ChargeItemId,EBLBillSwift,EBLBillSwift charges
+d_ChargeItemId,EDCAdvising,EDCAdvising charges
+d_ChargeItemId,EDCAdvisingReturn,EDCAdvising Return
+d_ChargeItemId,EDCBillConfirmation,EDCBillConfirmation charges
+d_ChargeItemId,EDCBillCourier,EDCBillCourier charges
+d_ChargeItemId,EDCBillHandling,EDCBillHandling charges
+d_ChargeItemId,EDCBillPayAdvising,EDCBillPayAdvising charges
+d_ChargeItemId,EDCBillPayConfirmation,EDCBillPayConfirmation charges
+d_ChargeItemId,EDCBillPayCourier,EDCBillPayCourier charges
+d_ChargeItemId,EDCBillPayHandling,EDCBillPayHandling charges
+d_ChargeItemId,EDCBillPayPostal,EDCBillPayPostal charges
+d_ChargeItemId,EDCBillPayStamp,EDCBillPayStamp charges
+d_ChargeItemId,EDCBillPaySwift,EDCBillPaySwift charges
+d_ChargeItemId,EDCBillPostal,EDCBillPostal charges
+d_ChargeItemId,EDCBillStamp,EDCBillStamp charges
+d_ChargeItemId,EDCBillSwift,EDCBillSwift charges
+d_ChargeItemId,EDCConfirmationReturn,EDCConfirmation Return
+d_ChargeItemId,EDCCourierReturn,EDCCourier Return
+d_ChargeItemId,EDCHandlingReturn,EDCHandling Return
+d_ChargeItemId,EDCPostalReturn,EDCPostal Return
+d_ChargeItemId,EDCStampReturn,EDCStamp Return
+d_ChargeItemId,EDCSwiftReturn,EDCSwift Return
+d_ChargeItemId,ELCAdvisingReturn,ELCAdvising Return
+d_ChargeItemId,ELCAmendAdvising,ELC Amend Advising
+d_ChargeItemId,ELCAmendConfirmation,ELC Amend Confirmation
+d_ChargeItemId,ELCAmendCourier,ELC Amend Courier
+d_ChargeItemId,ELCAmendHandling,ELC Amend Handling
+d_ChargeItemId,ELCAmendPostal,ELC Amend Postal
+d_ChargeItemId,ELCAmendStamp,ELC Amend Stamp
+d_ChargeItemId,ELCAmendSwift,ELC Amend Swift
+d_ChargeItemId,ELCBillPayAdvising,ELCBillPay Advising
+d_ChargeItemId,ELCBillPayConfirmation,ELCBillPay Confirmation
+d_ChargeItemId,ELCBillPayCourier,ELCBillPay Courier
+d_ChargeItemId,ELCBillPayHandling,ELCBillPay Handling
+d_ChargeItemId,ELCBillPayPostal,ELCBillPay Postal
+d_ChargeItemId,ELCBillPayStamp,ELCBillPay Stamp
+d_ChargeItemId,ELCBillPaySwift,ELCBillPay Swift
+d_ChargeItemId,ELCClosureAdvising,ELCClosureAdvising charges
+d_ChargeItemId,ELCClosureConfirmation,ELCClosureConfirmation charges
+d_ChargeItemId,ELCClosureCourier,ELCClosureCourier charges
+d_ChargeItemId,ELCClosureHandling,ELCClosureHandling charges
+d_ChargeItemId,ELCClosurePostal,ELCClosurePostal charges
+d_ChargeItemId,ELCClosureStamp,ELCClosureStamp charges
+d_ChargeItemId,ELCClosureSwift,ELCClosureSwift charges
+d_ChargeItemId,ELCConfirmAdvising,ELC Confirm Advising
+d_ChargeItemId,ELCConfirmationReturn,ELCConfirmation Return
+d_ChargeItemId,ELCConfirmConfirmation,ELC Confirm Confirmation
+d_ChargeItemId,ELCConfirmCourier,ELC Confirm Courier
+d_ChargeItemId,ELCConfirmHandling,ELC Confirm Handling
+d_ChargeItemId,ELCConfirmPostal,ELC Confirm Postal
+d_ChargeItemId,ELCConfirmStamp,ELC Confirm Stamp
+d_ChargeItemId,ELCConfirmSwift,ELC Confirm Swift
+d_ChargeItemId,ELCCourierReturn,ELCCourier Return
+d_ChargeItemId,ELCHandlingReturn,ELCHandling Return
+d_ChargeItemId,ELCIssueAdvising,ELC Issue Advising
+d_ChargeItemId,ELCIssueConfirmation,ELC Issue Confirmation
+d_ChargeItemId,ELCissueCourier,ELC Issue Courier
+d_ChargeItemId,ELCIssueHandling,ELC Issue Handling
+d_ChargeItemId,ELCIssueStamp,ELC Issue Stamp
+d_ChargeItemId,ELCisuuePostal,ELC Issue Postal
+d_ChargeItemId,ELCIsuueSwift,ELC Issue Swift
+d_ChargeItemId,ELCPostalReturn,ELCPostal Return
+d_ChargeItemId,ELCStampReturn,ELCStamp Return
+d_ChargeItemId,ELCSwiftReturn,ELCSwift Return
+d_ChargeItemId,ELCTransferAdvising,ELCTransferAdvising charges
+d_ChargeItemId,ELCTransferConfirmation,ELCTransferConfirmation charges
+d_ChargeItemId,ELCTransferCourier,ELCTransferCourier charges
+d_ChargeItemId,ELCTransferHandling,ELCTransferHandling charges
+d_ChargeItemId,ELCTransferPostal,ELCTransferPostal charges
+d_ChargeItemId,ELCTransferStamp,ELCTransferStamp charges
+d_ChargeItemId,ELCTransferSwift,ELCTransferSwift charges
+d_ChargeItemId,Electronic_Pymts_Ordr_individual_cnfrmtn,Electronic Payments Order Individual Confirmation
+d_ChargeItemId,Enquiries,Enquiries
+d_ChargeItemId,EnquiriesCptlPaymnt,Enquiries Capital Payment Account
+d_ChargeItemId,EnquiryFee,Enquiry Fee
+d_ChargeItemId,EntryLoad,Entry Load
+d_ChargeItemId,EPaymntPFEFinance,E-Payment PostFinance E-Finance
+d_ChargeItemId,EPOEnquiry,EPO enquiry
+d_ChargeItemId,ES_Cash_Inpayment,ES Cash Inpayment
+d_ChargeItemId,ES_Slip_With_Full_Capture,ES Slip With Full Capture
+d_ChargeItemId,ESProcessingOptnIntraDay,ES Processing Option - booking periodicity - Intra Daily
+d_ChargeItemId,ESProcessingOptnIntraDay_Delivery,ES Processing Option - delivery periodicity - Intra Daily
+d_ChargeItemId,ESR processing option ? delivery periodicity - Daily,ESR processing option ? delivery periodicity - Daily
+d_ChargeItemId,ESR processing option ? delivery periodicity - Half Daily,ESR processing option ? delivery periodicity - Half Daily
+d_ChargeItemId,ESR processing option ?delivery periodicity - Daily,ESR processing option delivery periodicity - Daily
+d_ChargeItemId,ESR processing option ?delivery periodicity - Half Daily,ESR processing option delivery periodicity - Half Daily
+d_ChargeItemId,ESRPrcsngOption,ESR processing option - delivery periodicity - Hourly
+d_ChargeItemId,ESRProcessing,ESR Processing
+d_ChargeItemId,ESRProcessingOptnDaily,ESR Processing Booking Periodicity Option - Daily
+d_ChargeItemId,ESRProcessingOptnHalfDaily,ESR Processing Booking Periodicity Option - Half Daily
+d_ChargeItemId,ESRProcessingOptnHourly,ESR Processing Booking Periodicity Option - Hourly
+d_ChargeItemId,ESRProcessingValDtOptnT0,ESR Processing Value Date Option T0
+d_ChargeItemId,ESRProcessingValDtOptnT1,ESR Processing Value Date Option T1
+d_ChargeItemId,EUQuest,EUQuest
+d_ChargeItemId,EUQuestBackup,EUQuest BackUp
+d_ChargeItemId,EUQuestBkpPrdc,EUQuest Backup Periodic
+d_ChargeItemId,EUQuestCert,EUQuest Certificate
+d_ChargeItemId,EUREXFEE,Eurex Fee
+d_ChargeItemId,ExcessFeeforRegDTransactions,ExcessFeeforRegDTransactions
+d_ChargeItemId,ExcessiveMoneyMarketDepositAccountTransRegDViolation,ExcessiveMoneyMarketDepositAccountTransRegDViolation
+d_ChargeItemId,ExchangeChrg,Exchange Charge
+d_ChargeItemId,ExCorrFeeOURCB,ExCorrFeeOURCB
+d_ChargeItemId,ExCorrFeeOURSS,ExCorrFeeOURSS
+d_ChargeItemId,ExExpOutPoslChg,ExExpOutPoslChg
+d_ChargeItemId,ExitLoad,Exit Load
+d_ChargeItemId,ExmptVat,ExmptVat
+d_ChargeItemId,ExpediteDebitCard,ExpediteDebitCard
+d_ChargeItemId,ExpeditePINMailReminder,ExpeditePINMailReminder
+d_ChargeItemId,Expense_Option_OUR_Cost_PostOffice_Payments,Expense Option OUR Cost PostOffice Payments
+d_ChargeItemId,ExpressdelISRFrms,Express delivery of ISR forms
+d_ChargeItemId,ExpressDeliveryFee,Express Delivery
+d_ChargeItemId,ExpressExecutionFee,Express Execution
+d_ChargeItemId,ExpressServices,Express Services 
+d_ChargeItemId,ExprtnOfWarrantsChrg,Expiration of warrants Charge
+d_ChargeItemId,ExRgLoPslEurFee,ExRgLoPslEurFee
+d_ChargeItemId,ExRgOutPslErFee,ExRgOutPslErFee
+d_ChargeItemId,ExrLonAdhocFee,External Loan Adhoc Fees
+d_ChargeItemId,ExtAcntClsngFee,External Account Closure fee
+d_ChargeItemId,ExtAcntMgmtFee,External Account Management Fee
+d_ChargeItemId,ExtAcntOpngFcyFee,External Account opening fee Foreign Currency
+d_ChargeItemId,ExtAcntOpngLcyFee,External Account opening fee Local Currency
+d_ChargeItemId,ExtAcntStUp,ExtAcntStUp
+d_ChargeItemId,ExtAuditCertFee,External Audit Certificate Fee
+d_ChargeItemId,ExtAutoBahnStUpFee,External Autobahn Treasury Set Up Fee
+d_ChargeItemId,ExtAutoBahnTrngFee,External Autobahn Treasury Training Fee
+d_ChargeItemId,ExtAutoInvStUp,ExtAutoInvStUp
+d_ChargeItemId,ExtBnkDrtIssFee,ExtBnkDrtIssFee
+d_ChargeItemId,ExtBPAuditRprt,ExtBPAuditRprt
+d_ChargeItemId,ExtCCMaintenanceCharge,ExtCCMaintenanceCharge
+d_ChargeItemId,ExtCCTransactionChargec,ExtCCTransactionChargec
+d_ChargeItemId,ExtCertPymCapt,External Certificate Payment Capture
+d_ChargeItemId,ExtChannelTrngFee,ExtChannelTrngFee
+d_ChargeItemId,ExtChnINewslnfo,ExtChnINewslnfo
+d_ChargeItemId,ExtChnlChangeFee,ExtChnlChangeFee
+d_ChargeItemId,ExtChnlCnqStUp,ExtChnlCnqStUp
+d_ChargeItemId,ExtChnlCshMgmnt,ExtChnlCshMgmnt
+d_ChargeItemId,ExtChnlH2HFTest,ExtChnlH2HFTest
+d_ChargeItemId,ExtChnlH2HQCon,ExtChnlH2HQCon
+d_ChargeItemId,ExtChnlH2HStUp,ExtChnlH2HStUp
+d_ChargeItemId,ExtChnlICnctStUp,ExtChnlICnctStUp
+d_ChargeItemId,ExtChnlItkStUp,ExtChnlItkStUp
+d_ChargeItemId,ExtChnlNewsInfo,ExtChnlNewsInfo
+d_ChargeItemId,ExtChnlSetUpFee,ExtChnlSetUpFee
+d_ChargeItemId,ExtChnlTxtStUp,ExtChnlTxtStUp
+d_ChargeItemId,ExtChnTokenFee,ExtChnTokenFee
+d_ChargeItemId,ExtChqRjctFees,ExtChqRjctFees
+d_ChargeItemId,ExtChrgRecoveryFee,External Charges Recovery Fee
+d_ChargeItemId,ExtCnctvtySetupFee,ExtCnctvtySetupFee
+d_ChargeItemId,ExtCourMsgInTwn,ExtCourMsgInTwn
+d_ChargeItemId,ExtCourMsgRstCy,ExtCourMsgRstCy
+d_ChargeItemId,ExtCshPIStUp,ExtCshPIStUp
+d_ChargeItemId,ExtCshPlPrtnrBnk,ExtCshPlPrtnrBnk
+d_ChargeItemId,ExtCshPlStUp,External Cash Pool Set Up Fees
+d_ChargeItemId,ExtCshPlStUpAcc,ExtCshPlStUpAcc
+d_ChargeItemId,ExtDDPdInOutgDirDlvry,External Direct Debit Paid In Outgoing via Direct Delivery
+d_ChargeItemId,ExtDDPdInOutgSS,External Direct Debit Paid In Outgoing via Clrg
+d_ChargeItemId,ExtDDStopTxnFee,ExtDDStopTxnFee
+d_ChargeItemId,ExtDocDup,ExtDocDup
+d_ChargeItemId,ExtDptSTrptNts,ExtDptSTrptNts
+d_ChargeItemId,ExternaICashConcentnMntnc,Ext(CPE) Cash Concentration Charges
+d_ChargeItemId,ExternalFundTrnsfr,External Fund Transfer
+d_ChargeItemId,ExtExchngComm,External Exchange Commission
+d_ChargeItemId,ExtExpPostlChrg,ExtExpPostlChrg
+d_ChargeItemId,ExtFacilityCommIntl,ExtFacilityCommIntl
+d_ChargeItemId,ExtGoGrnteeOpngFee,External Go Guarantee Opening Fee (Upfront Fee)
+d_ChargeItemId,ExtInsuranceCharges,External Insurance charges
+d_ChargeItemId,ExtInvExpBnMnAg,ExtInvExpBnMnAg
+d_ChargeItemId,ExtInvExpLeMnAg,ExtInvExpLeMnAg
+d_ChargeItemId,ExtInvExpMoMnAg,ExtInvExpMoMnAg
+d_ChargeItemId,ExtInwrdChqRtrn,Cheque Return Fees
+d_ChargeItemId,ExtLimitAdmnFee,"External Limit Administration Fee	"
+d_ChargeItemId,ExtLimitFee,External Limit Fee  
+d_ChargeItemId,ExtLimitOpngFee,External Limit Opening Fee  
+d_ChargeItemId,ExtLoanAdmnFee,External Loan Administration Fee
+d_ChargeItemId,ExtLoanClaimRvrslFee,ExtLoanClaimRvrslFee
+d_ChargeItemId,ExtLoanClsngFee,External Loan Closing Fee
+d_ChargeItemId,ExtLoanOpngFee,External Loan Opening Fee
+d_ChargeItemId,ExtLoPstlEurFee,ExtLoPstlEurFee
+d_ChargeItemId,ExtMiscellaneousFeeIntl,ExtMiscellaneousFeeIntl
+d_ChargeItemId,ExtMT101SetUpFee,ExtMT101SetUpFee
+d_ChargeItemId,ExtnOfDrtnWoExcgOfScrtsChrg,Extension of Duration Without Exchange of Securities Charge
+d_ChargeItemId,ExtOtherExtChrg,ExtOtherExtChrg
+d_ChargeItemId,ExtPslOutEurFee,ExtPslOutEurFee
+d_ChargeItemId,ExtPymBillChrg,External Payment Bill Charge
+d_ChargeItemId,ExtPymChqChrg,External Payment Cheque Charge
+d_ChargeItemId,ExtPymntFeeOutgDirDlvry,External Paymt Fee Trnsfr Paid Out via Direct Delivery
+d_ChargeItemId,ExtPymntFeeOutgSS,External Paymt Fee Trnsfr Paid Out via Clrg
+d_ChargeItemId,ExtPymntFeeOutSSVol,ExtPymntFeeOutSSVol
+d_ChargeItemId,ExtPymTrnDDChrg,External Payment Transfer DD Charge
+d_ChargeItemId,ExtRemBillChrg,External Remittance Bill Charge
+d_ChargeItemId,ExtRemChqChrg,External Remittance Cheque Charge
+d_ChargeItemId,ExtRemTrnDDChrg,External Remittance Transfer DD Charge
+d_ChargeItemId,ExtRgsPslEurFee,ExtRgsPslEurFee
+d_ChargeItemId,ExtSafeBoxFee,ExtSafeBoxFee
+d_ChargeItemId,ExtSDDCoreSrchrg,ExtSDDCoreSrchrg
+d_ChargeItemId,ExtSDDCoreXbdrSrchrg,ExtSDDCoreXbdrSrchrg
+d_ChargeItemId,ExtSEPAAclPmnt,External SEPA Accelerated Payments
+d_ChargeItemId,ExtSEPAB2Bln,External SEPA B2B Incoming
+d_ChargeItemId,ExtSEPAB2BOut,External SEPA B2B Outgoing
+d_ChargeItemId,ExtSEPAB2BRet,ExtSEPAB2BRet
+d_ChargeItemId,ExtSEPAB2BRetIn,ExtSEPAB2BRetIn
+d_ChargeItemId,ExtSEPAB2BRetOut,External SEPA B2B Return Out
+d_ChargeItemId,ExtSEPACancTrf,External SEPA Cancellation Transfer Fee
+d_ChargeItemId,ExtSEPACoreln,External SEPA Core Incoming
+d_ChargeItemId,ExtSEPACoreOut,External SEPA Core Outgoing
+d_ChargeItemId,ExtSEPACrTrf,External SEPA Credit Transfer
+d_ChargeItemId,ExtSEPADDRet,ExtSEPADDRet
+d_ChargeItemId,ExtSEPADDRetIn,External SEPA DD Return In
+d_ChargeItemId,ExtSEPADDRetOut,ExtSEPADDRetOut
+d_ChargeItemId,ExtSEPAlnTrf,External SEPA Incoming Transfer
+d_ChargeItemId,ExtSEPAManualFee,External SEPA Manual Fee
+d_ChargeItemId,ExtSEPAMndtStup,External SEPA Mandate Setup Fee
+d_ChargeItemId,ExtSEPAOutBlk,External SEPA Outgoing Bulk
+d_ChargeItemId,ExtSEPARejTrf,ExtSEPARejTrf 
+d_ChargeItemId,ExtSlBgNmlNts,ExtSlBgNmlNts
+d_ChargeItemId,ExtSlBgNmlSlbg,ExtSlBgNmlSlbg 
+d_ChargeItemId,ExtSlBgTrvlChq,ExtSlBgTrvlChq
+d_ChargeItemId,ExtSlBgUURNts,ExtSlBgUURNts
+d_ChargeItemId,ExtSlBgUURSlbg,ExtSlBgUURSlbg
+d_ChargeItemId,ExtSOModFee,ExtSOModFee
+d_ChargeItemId,ExtSOSetUpFee,ExtSOSetUpFee
+d_ChargeItemId,ExtSrchIntgChrg,Search and Investigation Charge
+d_ChargeItemId,ExtStateGrnteeOpngFee,External State Guarantee Opening Fee (Upfront Fee)
+d_ChargeItemId,ExtStopChqChrg,External Stop Cheque Charge
+d_ChargeItemId,ExtStopChqChrgs,ExtStopChqChrgs
+d_ChargeItemId,ExtSundryChrg,External Sundry Charge
+d_ChargeItemId,ExtThrdPrtyChgs,ExtThrdPrtyChgs
+d_ChargeItemId,ExtTrfStopTxnFee,ExtTrfStopTxnFee
+d_ChargeItemId,ExtTrsmssnChrg,ExtTrsmssnChrg
+d_ChargeItemId,ExtWdrSTrptNts,ExtWdrSTrptNts
+d_ChargeItemId,F400,SWIFT Advice-MT 400 Series
+d_ChargeItemId,FacilityComm,Facility Commission
+d_ChargeItemId,FAMEND,Amendment Charge
+d_ChargeItemId,FAUDIT,Full Audit Report
+d_ChargeItemId,FBALCERT,Certificate of Balance
+d_ChargeItemId,FBVAL,Backvaluation Fee
+d_ChargeItemId,FCANCELFNB,Cncltn Following Enquiry
+d_ChargeItemId,FCCT,FCCT Charges
+d_ChargeItemId,FCHQBK,Issuance of a Cheque Book
+d_ChargeItemId,FCOLLNWOR,Clean Collections Without Recourse
+d_ChargeItemId,FCOLLNWR,Clean Collections With Recourse
+d_ChargeItemId,FCOM,Debit Vostro Account
+d_ChargeItemId,FCONV,Conversion of Proceeds
+d_ChargeItemId,FCOURIER,Courier Charges
+d_ChargeItemId,FdcryCommission,Fiduciary Commission
+d_ChargeItemId,FeeForElectronicAcntStmntPDF,Electronic account statement PDF
+d_ChargeItemId,FHNDL,Handling Fees
+d_ChargeItemId,FinalityFee,Finality Fee
+d_ChargeItemId,FinalRepaymentChrg,Final Repayment Charge
+d_ChargeItemId,FINTRATEQ,Interest Rate Query
+d_ChargeItemId,FINVEST,Investigations
+d_ChargeItemId,FlatRatePrices,Flat rate prices for transfer
+d_ChargeItemId,FMCHG,Miscellaneous Charges
+d_ChargeItemId,FMSWIFTM,Any SWIFT ADVICE Manually Sent
+d_ChargeItemId,FNET,FNET
+d_ChargeItemId,FolioChrgs,Folio Charges
+d_ChargeItemId,FondsEffectFee,FondsEffectFee
+d_ChargeItemId,ForeignTax,Foreign Tax
+d_ChargeItemId,ForeignTax1,Foreign Tax 1
+d_ChargeItemId,ForeignTax2,Foreign Tax 2
+d_ChargeItemId,FQRYE12M,Query Fees Elctrnc 6-12 Mnths
+d_ChargeItemId,FQRYE3M,Query Fees Elctrnc 0-3 Mnths
+d_ChargeItemId,FQRYE6M,Query Fees Elctrnc 3-6 Mnths
+d_ChargeItemId,FQRYEG12M,Query Fees Elctrnc Grtr 12 Mnths
+d_ChargeItemId,FQRYP12M,Query Fees Paper 6-12 Mnths
+d_ChargeItemId,FQRYP3M,Query Fees Paper 0-3 Mnths
+d_ChargeItemId,FQRYP6M,Query Fees Paper 3-6 Mnths
+d_ChargeItemId,FQRYPG12M,Query Fees Paper Grtr 12 Mnths
+d_ChargeItemId,Frontload,Front Load
+d_ChargeItemId,FrstRmndrChrg,First Reminder Charge
+d_ChargeItemId,FSTMPRT,Statement Reprint
+d_ChargeItemId,FTCS,Travellers Cheques Sorting Fee
+d_ChargeItemId,Full Reversal Direct Debit Order,Full Reversal Direct Debit Order
+d_ChargeItemId,FullAccountReconciliation,FullAccountReconciliation
+d_ChargeItemId,FUPAYCHQ,Unpay of Cheques
+d_ChargeItemId,FUPAYCLN,Unpay of Collections
+d_ChargeItemId,FXCommCredit,FX Commission Credit
+d_ChargeItemId,FXCommDebit,FX Commission Debit
+d_ChargeItemId,FXCommission,FX Commission
+d_ChargeItemId,FXCommission_CA,FX Commission for CA
+d_ChargeItemId,GarnishmentProcessing,GarnishmentProcessing
+d_ChargeItemId,GenAdhocChrgs,Generate Adhoc Charges
+d_ChargeItemId,Giro_International_Urgent,Giro International Urgent
+d_ChargeItemId,GiroIntFrom,Giro international form 
+d_ChargeItemId,GoodsPaymntByCheck,Goods Payment by Check
+d_ChargeItemId,GOPymntGrntFee,GOPymntGrntFee
+d_ChargeItemId,GOQtryPymtGrntFee,GO quarterly payment guarantee fee
+d_ChargeItemId,Group10,Group 10
+d_ChargeItemId,GrpdChqIssuanceFee,GrpdChqIssuanceFee
+d_ChargeItemId,GrpdPymntFeeOutOU,GrpdPymntFeeOutOU
+d_ChargeItemId,GrpdPymntRepairFee,GrpdPymntRepairFee
+d_ChargeItemId,GuaranteeCmsn,Guarantee Commission
+d_ChargeItemId,HldMlChrg,Hold Mail Charge
+d_ChargeItemId,IBCCharges,IBC Charge
+d_ChargeItemId,IBGAdvising,IBGAdvising
+d_ChargeItemId,IBGAmednPostal,IBGAmednPostal
+d_ChargeItemId,IBGAmend,IBGAmend
+d_ChargeItemId,IBGAmendAdvising,IBGAmendAdvising
+d_ChargeItemId,IBGAmendBillHandling,IBGAmendBillHandling
+d_ChargeItemId,IBGAmendChrgItemId,IBGAmendChrgItemId
+d_ChargeItemId,IBGAmendConfirmation,IBGAmendConfirmation
+d_ChargeItemId,IBGAmendCourier,IBGAmendCourier
+d_ChargeItemId,IBGAmendStamp,IBGAmendStamp
+d_ChargeItemId,IBGAmendSwift,IBGAmendSwift
+d_ChargeItemId,IBGChrgItemId,IBGChrgItemId
+d_ChargeItemId,IBGCourier,IBGCourier
+d_ChargeItemId,IBGLCConfirmation,IBGLCConfirmation
+d_ChargeItemId,IBGMaintenance,IBGMaintenance
+d_ChargeItemId,IBGPostalChrg,IBGPostalChrg 
+d_ChargeItemId,IBGStamp,IBGStamp
+d_ChargeItemId,IBGSwiftFee,IBGSwiftFee
+d_ChargeItemId,IMPSChrgs,IMPS Charges
+d_ChargeItemId,IncntvFee,IncntvFee
+d_ChargeItemId,InMoneyTransfer,InMoneyTransfer
+d_ChargeItemId,InpaymentFee,Cash Deposit Charge
+d_ChargeItemId,InsptnChrg,Inspection Charges
+d_ChargeItemId,InsrnsChrgDlvry,Insurance charge along with delivery fee
+d_ChargeItemId,InsrnsChrgDlvryFee,InsrnsChrgDlvryFee
+d_ChargeItemId,InterestCompensation,InterestCompensation
+d_ChargeItemId,InterimDividendChrg,Interim Dividend Charge
+d_ChargeItemId,IntradayAcntStmntFee,Intraday Account statement fee
+d_ChargeItemId,IntradayMvmntReportCamt052,Intraday movement report camt.052 / MT 942
+d_ChargeItemId,IntrstCpnClltnChrgFxdChrg,Fixed Interest Coupon Charge
+d_ChargeItemId,IntrstCpnClltnChrgVrblChrg,Variable Interest Coupon Charge
+d_ChargeItemId,InvalidAddress,Dormant - Invalid Address
+d_ChargeItemId,InvalidTinFee,Invalid Tin Fee
+d_ChargeItemId,InvstMntAdv,Investment Maintenance Advice
+d_ChargeItemId,Inward_Clearing_Return_Closed_Account,Inward Clearing Return Closed Account
+d_ChargeItemId,InwardClearingExecution,Inward Clearing Execution
+d_ChargeItemId,InwardClearingReturns,Inward Clearing Returns
+d_ChargeItemId,InwrdRturnChrgs,Inward Return Charges
+d_ChargeItemId,IrrevocablePromisetoPay,Irrevocable promise to pay
+d_ChargeItemId,IS_Reject,IS Reject
+d_ChargeItemId,ISCAMT054,ISCAMT54
+d_ChargeItemId,ISCAMT53_54,ISCAMT53_54
+d_ChargeItemId,ISCAMT54,ISCAMT54
+d_ChargeItemId,Islamic_Change_Of_Collateral,Islamic Change Of Collateral
+d_ChargeItemId,Islamic_Change_Of_Payment_Method,Islamic Change Of Payment Method
+d_ChargeItemId,Islamic_Change_OR_Release_Of_Collateral,Islamic Change OR Release Of Collateral
+d_ChargeItemId,Islamic_Commitment_Fee,Islamic Commitment Fee
+d_ChargeItemId,Islamic_Credit_Report,Islamic Credit Report
+d_ChargeItemId,Islamic_Reallocation_Fees,Islamic Reallocation Fees
+d_ChargeItemId,Islamic_Release_Of_Collateral,Islamic Release Of Collateral
+d_ChargeItemId,Islamic_Tranche_Fees,Islamic Tranche Fees
+d_ChargeItemId,IslamicBrokerageFee,Islamic Brokerage Fee
+d_ChargeItemId,IslamicHandlingFee,Islamic Handling Fee
+d_ChargeItemId,ISR_Cash_Inpayment,ISR Cash Inpayment 
+d_ChargeItemId,ISR_Processing,ISR+ Processing
+d_ChargeItemId,ISR_Rejects,ISR Rejects
+d_ChargeItemId,ISRAdjstmntEntry,ISR adjusted entry 
+d_ChargeItemId,ISRAdjustment,ISR-Demand
+d_ChargeItemId,ISRBulkRejects,ISR bulk rejects
+d_ChargeItemId,ISRCAMT53_54,ISRCAMT53_54
+d_ChargeItemId,ISRCAMT54,ISRCAMT54
+d_ChargeItemId,ISRCancellation,Cancellation of ISR
+d_ChargeItemId,ISROrForms,IS Order Forms
+d_ChargeItemId,ISRTechDemand,ISR techn. demand
+d_ChargeItemId,ISSlipOrders,ISR Order Forms
+d_ChargeItemId,IssuanceofBlnCrtfct,Issuance of Balance Certificate
+d_ChargeItemId,IssueDuplicateStmt,Issue Duplicate Statement
+d_ChargeItemId,KEST1,KEST1
+d_ChargeItemId,KESt2,KESt2
+d_ChargeItemId,KEST2LNR,Kest2 Linear
+d_ChargeItemId,KESt2O,Kest2 Options
+d_ChargeItemId,KEST3,KEST3
+d_ChargeItemId,KestCertificates,KESt Certificates
+d_ChargeItemId,KickbackFee,Kickbank Fee
+d_ChargeItemId,LateRepaymentFee,Late Repayment Fee
+d_ChargeItemId,LbltyLtrIssToFinInst,Liability letter issued to financial institutions
+d_ChargeItemId,LbltyLtrToGovtDep,Liability letter issued to government departments/embassies
+d_ChargeItemId,LCAmendAdvising,LCAmendAdvising
+d_ChargeItemId,LCAmendBillHandling,LCAmendBillHandling
+d_ChargeItemId,LCAmendConfirmation,LCAmendConfirmation
+d_ChargeItemId,LCAmendCourier,LCAmendCourier
+d_ChargeItemId,LCAmendment,LCAmendment
+d_ChargeItemId,LCAmendPostal,LCAmendPostal
+d_ChargeItemId,LCAmendStamp,LCAmendStamp
+d_ChargeItemId,LCAmendSwift,LCAmendSwift
+d_ChargeItemId,LCAmendUsance,LCAmendUsance
+d_ChargeItemId,LCIssueAdvising,LCIssueAdvising
+d_ChargeItemId,LCIssueBillHandling,LCIssueBillHandling 
+d_ChargeItemId,LCIssueConfirmation,LCIssueConfirmation
+d_ChargeItemId,LCIssueCourier,LCIssueCourier
+d_ChargeItemId,LCIssuePostal,LCIssuePostal
+d_ChargeItemId,LCIssueStamp,LCIssueStamp
+d_ChargeItemId,LCIssueSwift,LCIssueSwift
+d_ChargeItemId,LCLGFee,LCLGFee
+d_ChargeItemId,LegalFees,Legal Fees
+d_ChargeItemId,LiabilityLetter,Liability Letter
+d_ChargeItemId,LifeInsuranceFee,Life Insurance Fee
+d_ChargeItemId,LimitClsureFee,Limit Closure Fee
+d_ChargeItemId,LimitCrtFee,Limit Creation Fee
+d_ChargeItemId,LimitGranting,Limit Granting
+d_ChargeItemId,LimitMdfyFee,Limit Modification Fee
+d_ChargeItemId,LiquidationFinalChrg,LiquidationFinalChrg
+d_ChargeItemId,LiquidationNotFinalChrg,Liquidation Not Final Charge
+d_ChargeItemId,LiquidityOrderFee,Liquidity Order Fee
+d_ChargeItemId,LiquidityServicingFee,Liquidity Servicing Fee
+d_ChargeItemId,LmtMntnceFee,Limit Maintainance Fee
+d_ChargeItemId,LmtNonUtilFees,Limit Non-utilization Fees
+d_ChargeItemId,LmtUtilFees,Limit Utilization Fees
+d_ChargeItemId,LnClosureFee,LnClosureFee
+d_ChargeItemId,LnMinPreClosure,Loan Min. PreClosure Fee
+d_ChargeItemId,LoanAdministrationFee,Loan Adminstration Fee
+d_ChargeItemId,LoanAgPropertyTakeOvr,Loan Ag Property TakeOver Charges
+d_ChargeItemId,LoanClosureChrg,LoanClosureChrg
+d_ChargeItemId,LoanOpenFee,LoanOpenFee
+d_ChargeItemId,LoanPreClosureCharges,Loan Pre-Closure Charges
+d_ChargeItemId,LoanPrepaymentC,Loan Early Repayment
+d_ChargeItemId,LoanRolloverFee,Loan Rollover Fee
+d_ChargeItemId,LoanTakeOvr,Loan Take Over
+d_ChargeItemId,LoanTopUpFee,Loan Top up Fee
+d_ChargeItemId,LockerClosingChrgs,Locker Closing Charges
+d_ChargeItemId,LockerOpningChrgs,Locker Opening Charges
+d_ChargeItemId,LockerRentChrgs,Locker Rent Charges
+d_ChargeItemId,LockerRentRecovery,Locker Rent Recovery
+d_ChargeItemId,LocTakeOvr,LOC Take Over
+d_ChargeItemId,MandateSetupDestination,Mandate Setup Destination
+d_ChargeItemId,MandateSetUpFee,Mandate Setup Fee
+d_ChargeItemId,MandateStpPymnt,Mandate Stop Payment
+d_ChargeItemId,MandtCncltnChrg,MandtCncltnChrg
+d_ChargeItemId,MandtStopPymntRvoctn,MandtStopPymntRvoctn
+d_ChargeItemId,ManualFee,Manual Fee
+d_ChargeItemId,ManualWithText,Manual with text (account) 
+d_ChargeItemId,ManualWithTextAHV,Manual with text (AHV Liechtenstein)
+d_ChargeItemId,ManualWithTextBookedImdtly,Manual with text (booked immediately)
+d_ChargeItemId,ManualWithTextCmpnstnCheques,Manual with text (compensation cheques)
+d_ChargeItemId,ManualWithTextIGLZV,Manual with text (IGL/ZV)
+d_ChargeItemId,ManualWithTextISR,Manual with text (ISR) 
+d_ChargeItemId,ManualWithTextMisc,Manual with text (misc.) 
+d_ChargeItemId,ManualWithTextOSR,Manual with text (OSR) 
+d_ChargeItemId,ManualWithTextreceipts,Manual with text (receipts)
+d_ChargeItemId,ManualWithTextVD,Manual with text (VD) 
+d_ChargeItemId,MergerChrg,Merger Charge
+d_ChargeItemId,MinAvdvBalChrg,Minimum Value Balance Charge
+d_ChargeItemId,MinBalChrg,Minimum Balance Charges
+d_ChargeItemId,MinBalChrgs,MinBalChrgs
+d_ChargeItemId,MinBlnDfult,Minimum balance - Default
+d_ChargeItemId,MiscellaneousFee,Miscellaneous Fee
+d_ChargeItemId,MiscPFTChrgs1,Miscellaneous PFT Charges 1
+d_ChargeItemId,MiscPFTChrgs2,Miscellaneous PFT Charges 2
+d_ChargeItemId,MngmntFee,Management Fee
+d_ChargeItemId,MnlHndlgChrg,Manual Handling Charge
+d_ChargeItemId,ModifySO,ModifySO
+d_ChargeItemId,MT101ExecutionFee,MT101 Execution
+d_ChargeItemId,MT2XX,Outgoing MT2XX Fee
+d_ChargeItemId,MultipleDebitAttempts,Multiple Debit Attempts
+d_ChargeItemId,NewIssueCommsn,New Issue Commision
+d_ChargeItemId,NmbrdAcFee,Numbered Account Fee
+d_ChargeItemId,NmbrdClntFee,Numbered Client Fee
+d_ChargeItemId,NoDuesCertificate,No dues Certificate
+d_ChargeItemId,NoLbltyCert,No liability certificate
+d_ChargeItemId,NominalMembership,Nominal Membership
+d_ChargeItemId,NonFinAmend,NonFinAmend
+d_ChargeItemId,NonHomeBranchCharge,Non Home Branch Charge
+d_ChargeItemId,NotionalPoolMaintenanceCharge,NotionalPoolMaintenanceCharge
+d_ChargeItemId,NotionalPoolMgmntFee,Notional Pooling Management Fee
+d_ChargeItemId,NotnlSbscrptnF,Notional Subscription Fee
+d_ChargeItemId,NPDChrgItemId,NPDChrgItemId
+d_ChargeItemId,NPDCommissionELC,NPDCommissionELC
+d_ChargeItemId,NPDCourier,NPDCourier
+d_ChargeItemId,NPDCourierELC,NPDCourierELC
+d_ChargeItemId,NPDDocumentHandle,NPDDocumentHandle
+d_ChargeItemId,NPDDocumentHandleELC,NPDDocumentHandleELC
+d_ChargeItemId,NPDMiscChargeELC,NPDMiscChargeELC
+d_ChargeItemId,NPDMiscChrg,NPDMiscChrg
+d_ChargeItemId,NPDPostalChargeELC,NPDPostalChargeELC
+d_ChargeItemId,NPDPostalChrg,NPDPostalChrg
+d_ChargeItemId,NPDStamp,NPDStamp
+d_ChargeItemId,NPDTax,NPDTax
+d_ChargeItemId,NPDTaxELC,NPDTaxELC
+d_ChargeItemId,NSF,Non Sufficient Funds
+d_ChargeItemId,NSF_OD,Non-Sufficient Funds
+d_ChargeItemId,NtnlPoolMgtFee,Notional Pool Management Fee
+d_ChargeItemId,Ntnlpoolsetup,Notional Pool Setup Fee
+d_ChargeItemId,OBCIBC,OBC/IBC
+d_ChargeItemId,OfficialChecks,OfficialChecks
+d_ChargeItemId,OpenFee,OpenFee
+d_ChargeItemId,OpenPortfolio,OpenPortfolio
+d_ChargeItemId,OperationalFee,OperationalFee
+d_ChargeItemId,OpngFeeNotional,Opening Fee Notional
+d_ChargeItemId,OrderCancellatn,Order Cancellation
+d_ChargeItemId,OrderExpiry,Order Expiry
+d_ChargeItemId,OrderModificatn,Order Modification
+d_ChargeItemId,OSR_Cash_Outpayment,OSR Cash Outpayment
+d_ChargeItemId,OSR_Rejects,OSR Rejects
+d_ChargeItemId,OSRAdjustment,OSR-Demand
+d_ChargeItemId,OSRBulkRejects,OSR bulk rejects
+d_ChargeItemId,OSRCAMT53_54,OSRCAMT53_54
+d_ChargeItemId,OSRCAMT54,OSRCAMT54
+d_ChargeItemId,OSRDigitalCopy,OSR digital copy 
+d_ChargeItemId,OtherBankDDChrgs,Other Bank DD Charges
+d_ChargeItemId,Others,Others
+d_ChargeItemId,Outgoing_EGA_B,Outgoing EGA-B
+d_ChargeItemId,OutMoneyTransferDomestic,OutMoneyTransferDomestic
+d_ChargeItemId,OutMoneyTransferInternational,OutMoneyTransferInternational
+d_ChargeItemId,OutwardClearingExecution,Outward Clearing Execution
+d_ChargeItemId,OutwardClearingReturns,Outward Clearing Returns
+d_ChargeItemId,OutwrdRturnChrgs,Outward Return charges
+d_ChargeItemId,OverdrawnCashNonODAccount,Overdrawn Cash NonOD Account
+d_ChargeItemId,OverdrawnCashODAccount,Overdrawn Cash OD Account
+d_ChargeItemId,OverdueInterest,Overdue Interest Charge item
+d_ChargeItemId,PaidInFee,Paid In Fee
+d_ChargeItemId,PaidInUnpaidFee,Paid In Unpaid Fee
+d_ChargeItemId,PaidOutUnpdFee,Paid Out Unpaid Fee
+d_ChargeItemId,pain001eBillSIXExecutionFee,pain.001 eBill SIX Execution
+d_ChargeItemId,pain001ExecutionFee,pain.001 Execution
+d_ChargeItemId,Paper_Based_PO_Individual_cnfrmton_Paper,Paper Based PO Individual Confirmation
+d_ChargeItemId,PaperBasedProcessingFees,Direct Debit Remittance Paper Base Processing Fees
+d_ChargeItemId,PaperInvcFee,PaperInvcFee
+d_ChargeItemId,PartialReconciliation,PartialReconciliation
+d_ChargeItemId,PartlPrcngFcltyChrg,PartlPrcngFcltyChrg
+d_ChargeItemId,PassBkChrgs,Passbook Charges
+d_ChargeItemId,PassbookIssuance,Passbook Issuance
+d_ChargeItemId,PassBookIssue,PassBook Issue
+d_ChargeItemId,PaymentExecutionFee,Payment Execution
+d_ChargeItemId,PaymentGatewayEndCustomerFee,Payment Gateway End Customer Fee
+d_ChargeItemId,PaymentGatewayMerchantFee,Payment Gateway Merchant Fee
+d_ChargeItemId,PaymentOrderConfirmation,Payment Order Confirmation
+d_ChargeItemId,PaymentOrderReceiptFee,Payment Order Receipt Fee
+d_ChargeItemId,PayOrderCancel,Pay Order Cancel
+d_ChargeItemId,PayorderDigSlip,PO Order Confirmation with Digital Slip
+d_ChargeItemId,PayOrderIssue,Pay Order Issue
+d_ChargeItemId,PayOrderStop,Pay Order Stop
+d_ChargeItemId,PdOutCertFees,PdOutCertFees
+d_ChargeItemId,PdOutSecFees,PdOutSecFees
+d_ChargeItemId,PenalInterest,Penal Interest
+d_ChargeItemId,PenaltyFee,Penalty Fee
+d_ChargeItemId,PFBenefit,Post Finance Benefit 
+d_ChargeItemId,PhotocopyOfCheck,PhotocopyOfCheck
+d_ChargeItemId,PhysicalDeliveryofUnitCertificates,Physical delivery of unit certificates
+d_ChargeItemId,PoolMaintncChrg,Balance Netting Maintenance
+d_ChargeItemId,PoolPrtcptnChrg,Pool Participation Charge
+d_ChargeItemId,PoolSetupFee,Pool Setup Fee
+d_ChargeItemId,PortPerfrmncFee,Portfolio Performance Fee
+d_ChargeItemId,PostalFee,Postal Fee
+d_ChargeItemId,PrcCHDDTrnsctn,Price for Transaction CH-DD
+d_ChargeItemId,PrcISTrnsctn,Price for Transaction IS
+d_ChargeItemId,PrcSDDTrnsctn,Price for Transaction SDD
+d_ChargeItemId,PrcTrnsctnPOSO,Price for Transaction PO / SO
+d_ChargeItemId,PrcTrnsctnSlrypnsnpymntEfin,Price for Transaction PO / SO (E-Finance)
+d_ChargeItemId,PrcTrnsctnSlrypnsnpymntEPOEfin,Price for Transaction EPO
+d_ChargeItemId,PrdcRprtngChrg,Periodic Reporting Charges
+d_ChargeItemId,PreClosTimeDep,Pre Closure Time Deposit
+d_ChargeItemId,Preclosure,Loan Preclosure Charge
+d_ChargeItemId,PreClosureMinRebateItem,Pre Closure Min Rebate
+d_ChargeItemId,PreClosureRebateItem,Pre Closure Rebate
+d_ChargeItemId,PreclosureUpfront,Deferred Profit Charge
+d_ChargeItemId,PrematureRdmptn,Premature Redemption Charge
+d_ChargeItemId,PrematureRdmptnChrg,Premature Redumption Charge
+d_ChargeItemId,PreNoticeFee,PreNoticeFee
+d_ChargeItemId,PrePaidCharge,PrePaid Charge
+d_ChargeItemId,PrfrmncAdnlCurr,Performance In Additional Currency Fee
+d_ChargeItemId,Pric_For_Neutral_ISR_Form_without_Atchmt,Neutral ISR Form without Attachment
+d_ChargeItemId,Pric_For_Printed_ISR_Form_without_Atchmt,Printed ISR Form without Attachment
+d_ChargeItemId,Pric_Neutral_Printed_ISR_Form_with_attch,Neutral or Printed ISR Form with attachment
+d_ChargeItemId,Pric_Paper_Based_PO_Exec_Cnfrmtion_Paper,Paper Based PO Execution Confirmation Paper
+d_ChargeItemId,Price_For_EPO_Execution_Confirmation,EPO Execution Confirmation
+d_ChargeItemId,Price_For_Neutral_IS_Form_Order,Neutral IS Form Order
+d_ChargeItemId,Price_For_Payment_Confirmation_Paper,Payment Confirmation Paper
+d_ChargeItemId,Price_For_Payment_Order__Confirmations_With_Digital_Slip,PO Order Confirmation with Digital Slip
+d_ChargeItemId,Price_For_Printed_IS_Form_Orders,Printed IS Form Orders
+d_ChargeItemId,Price_ForArtificial_IS_Payment_Slip_Image,Artificial IS Payment slip image
+d_ChargeItemId,Price_Giro,Price for Transaction GIRO
+d_ChargeItemId,PricecashedcheckAC,Price cashed-check A.C. 
+d_ChargeItemId,PriceforDelivery,Price for Delivery of Paper-based Payments order
+d_ChargeItemId,Priceforreversalofanuncoveredcheque,Price for reversal of an uncovered cheque 
+d_ChargeItemId,PriceGroup1,Pricing Group 1 - Creditors / Debtors
+d_ChargeItemId,PriceGroup2,Pricing Group 2 - Creditors / Debtors without single payments E-Finance or EDAG
+d_ChargeItemId,PriceGroup3,Pricing Group 3 - Debtors
+d_ChargeItemId,PriceGroup4,Pricing Group 4 - Creditors
+d_ChargeItemId,PriceGroup5,Pricing Group 5 - Creditors EPO / PO or SO incl Salary or Pension
+d_ChargeItemId,PriceGroup6,Pricing Group 6 - Debtors ESR / CH-DD / SDD
+d_ChargeItemId,PriceGroup7,Pricing Group 7 - Debtors ES / ESR
+d_ChargeItemId,PriceGroup8,Pricing Group 8 - Debtors CH-DD / SDD
+d_ChargeItemId,PriceGroup9,Pricing Group 9 - Payment Slip IS or ISR
+d_ChargeItemId,PrivateWealthOnlinePlus,PrivateWealthOnlinePlus
+d_ChargeItemId,ProcessingFee,Processing Fee
+d_ChargeItemId,PropertyInsuranceCharge,Property Insurance Charge
+d_ChargeItemId,PrtflDstbnStcksWoOptionChrg,Portfolio distribution in stocks without option
+d_ChargeItemId,PrtflDstbnStcksWthOptionChrg,Portfolio distribution in stocks with option
+d_ChargeItemId,PstlChrg,Postal Charge
+d_ChargeItemId,PttHndlgChrg,Ptt Handling Charge
+d_ChargeItemId,PurchaseOrder,PurchaseOrder
+d_ChargeItemId,Purchases_Cash_Wthdrwls_Cnter_Wthout_Crd,"Purchases, Cash Withdrawals at the Counter Without Card"
+d_ChargeItemId,PymntChrgsCrPrtyBulk,PymntChrgsCrPrtyBulk
+d_ChargeItemId,PymntChrgsDbtPrtyBulk,PymntChrgsDbtPrtyBulk
+d_ChargeItemId,PymntCncltn,PymntCncltn
+d_ChargeItemId,PymntFeeIncmg,Payment Fee Incoming
+d_ChargeItemId,PymntFeeIncmgCB,Paymt Fee Transfer Paid In-Corrsp.
+d_ChargeItemId,PymntFeeIncmgOU,Payment Fee Book Transfer Paid In
+d_ChargeItemId,PymntFeeIncmgSS,Paymt Fee Trnsfr Paid In via Clrg
+d_ChargeItemId,PymntFeeOutgCB,Paymt Fee Transfer Paid Out-Corrsp
+d_ChargeItemId,PymntFeeOutgOU,Payment Fee Book Transfer Paid Out
+d_ChargeItemId,PymntFeeOutgSS,Paymt Fee Trnsfr Paid Out via Clrg
+d_ChargeItemId,PymntFeeOutgSSVol,PymntFeeOutgSSVol
+d_ChargeItemId,PymntRtFee,PymntRtFee
+d_ChargeItemId,PymtChrgCrPrtyBulk,PymtChrgCrPrtyBulk
+d_ChargeItemId,PymtStagngMdfychrg,PymtStagngMdfychrg
+d_ChargeItemId,QR_CashInpayment,QR Cash Inpayment
+d_ChargeItemId,QR_FullCapture,Full Capture Ultimate Debtor
+d_ChargeItemId,QR_PostProcessing,Post Processing QR Bill
+d_ChargeItemId,QRR_Reject,QRR Rejects
+d_ChargeItemId,Reallocation_Fees,Reallocation Fees
+d_ChargeItemId,RealTimeUsablty,Real Time Usability
+d_ChargeItemId,RecallofTT/TTReturn,Recall of TT/TT Return
+d_ChargeItemId,Receipts,Receipts 
+d_ChargeItemId,RedirectingCharges,Redirecting Charges
+d_ChargeItemId,RegularMembership,Regular Membership
+d_ChargeItemId,ReguReqrChrgs,Regulatory Charges
+d_ChargeItemId,ReinvestmentChrg,Reinvestment Charge
+d_ChargeItemId,RejectionChrg,Remittance Rejection Fee
+d_ChargeItemId,Release_Of_Collateral,Release Of Collateral
+d_ChargeItemId,Release_Of_Liability_Certificate,Release Of Liability Certificate
+d_ChargeItemId,RematCharges,Remat Charges
+d_ChargeItemId,ReminderFee,Reminder Fee
+d_ChargeItemId,RemitCncltn,RemitCncltn
+d_ChargeItemId,RemitRevokeStopPymnt,RemitRevokeStopPymnt
+d_ChargeItemId,RemitStopPymnt,Remit Stop Payment
+d_ChargeItemId,RemittanceFee,Remittance Fee
+d_ChargeItemId,RemovalNotional,Removal Notional
+d_ChargeItemId,RenewalFee,Renewal Fee
+d_ChargeItemId,RepairFeeCmplx,Repair Fee Complex
+d_ChargeItemId,RepairFeeSimple,Repair Fee Simple
+d_ChargeItemId,ReportingCharge,Reporting Charge
+d_ChargeItemId,ReqforOLDChqLessequalto1yr,Old Cheque Less Than Equals To 1 Year
+d_ChargeItemId,ReqforOLDChqlessthan1Yr,Old Cheque Less Than 1 Year
+d_ChargeItemId,RescheduleCharge,Reschedule Charge
+d_ChargeItemId,RestructureCharge,Restructure Charge
+d_ChargeItemId,RetlCommission,Retail Commission
+d_ChargeItemId,RetlCshDepChrg,Retail Cash deposit
+d_ChargeItemId,RetlCshWdlChrg,Cash Withdrawal Charge
+d_ChargeItemId,RetrvlOfSaleSlip,Retrieval of Sales Slip
+d_ChargeItemId,ReturnChqOther,Return Cheque Other
+d_ChargeItemId,RevalidationPO,Revalidation of PO
+d_ChargeItemId,Reversalfee,Reversal Fee
+d_ChargeItemId,ReviewLimit,Review Limit
+d_ChargeItemId,RevokeChequeStpPymnt,Revoke Cheque Stop Payment
+d_ChargeItemId,RevSplitChrg,Reverse Split Charge
+d_ChargeItemId,RglrVat,RglrVat
+d_ChargeItemId,RgstrnCharges,Registration Charges
+d_ChargeItemId,RlsLtr,Release letter
+d_ChargeItemId,RmbrsmntFee,RmbrsmntFee
+d_ChargeItemId,RmnrtnEquIncom,Rmnrtn Equity Incom
+d_ChargeItemId,RmnrtnFxdIncom,Rmnrtn Fxd Income
+d_ChargeItemId,RolloverLimit,Rollover Limit
+d_ChargeItemId,RprtngChrg,Reporting Charge
+d_ChargeItemId,RS_VII_Fee,RS_VII_Fee
+d_ChargeItemId,RtlChqEncshChrg,Cheque Encashment Charge
+d_ChargeItemId,SafeCstdyOwnFix,Safe CustodyFee Own(Fixed)
+d_ChargeItemId,SafeCustodyFeeForeign,Safe Custody Fee Foreign ( per position)
+d_ChargeItemId,SafeCustodyFeeOwn,Safe Custody Fee Own(per position)
+d_ChargeItemId,SameDayFee,SWIFT Same Day MT
+d_ChargeItemId,SavingWithdrawalAmount,Saving Withdrawal Amount Fee
+d_ChargeItemId,SavingWithdrawalCount,Saving Withdrawal Counter Fee
+d_ChargeItemId,SbscrptnChrg,Account Statement on Paper
+d_ChargeItemId,SbscrptnKikBak,SbscrptnKikBak
+d_ChargeItemId,SecondReminderCharge,Second Reminder Charge
+d_ChargeItemId,SegmentDownGrdServiceCharge,Segment DownGrade Service Charge
+d_ChargeItemId,SeperationChrg,Seperation Charge
+d_ChargeItemId,ServiceFee,Service Fee
+d_ChargeItemId,SettlementFee,Settlement Fee
+d_ChargeItemId,SFMSCharges,SFMSCharges
+d_ChargeItemId,SHAChrgDebtr,SHA Charges to Debtor
+d_ChargeItemId,ShareofFeePFLoan,Share of fee PF loan 
+d_ChargeItemId,ShareofInterestPFLoan,Share of interest PF loan
+d_ChargeItemId,ShareofInterestPFMortgage,Share of Interest PF mortgage
+d_ChargeItemId,ShippingBankCheque,Shipping bank cheque 
+d_ChargeItemId,SIC_Settlement_EGA_B,SIC Settlement EGA-B
+d_ChargeItemId,SICExecutionFees,SIC Execution
+d_ChargeItemId,SICStlmntfrompacs004,SIC Settlement from pacs.004
+d_ChargeItemId,SICStlmntfrompacs008,SIC Settlement from pacs.008
+d_ChargeItemId,SignatureFlag,Signature Flag
+d_ChargeItemId,SignatureVrfctn,Signature Verification
+d_ChargeItemId,SITAX,SITAX
+d_ChargeItemId,SlipBasedPaymentOrderFee,Slip Based Payment Order Fee
+d_ChargeItemId,SnctLmtFee,Sanction Limit Fee
+d_ChargeItemId,SndryChrgNoTxbl,SndryChrgNoTxbl
+d_ChargeItemId,SOCncltnChrg,SOCncltnChrg
+d_ChargeItemId,SOexecfee,Standing Order Execution Fee
+d_ChargeItemId,SOFlatExecutionFee,Standing Order Flat Execution
+d_ChargeItemId,SolvencyCertificateChrg,Solvency certificate charges
+d_ChargeItemId,SOMntnfee,Standing Order Maintenance Fee
+d_ChargeItemId,SOSetupChrg,SOSetupChrg
+d_ChargeItemId,SOSetupfee,Standing Order Setup Fee
+d_ChargeItemId,SOStopPymnt,SOStopPymnt
+d_ChargeItemId,SOStopPymntRvoctn,SOStopPymntRvoctn
+d_ChargeItemId,SOURCE,SOURCE
+d_ChargeItemId,Special_Channel_Usage,Special Channel Usage
+d_ChargeItemId,SpecialCustodyFee,Special Custody Fee
+d_ChargeItemId,SpecialHandling,SpecialHandling
+d_ChargeItemId,SpinOffChrg,SpinOff Charge
+d_ChargeItemId,SplitChrg,Split Charge
+d_ChargeItemId,SrvcCncptFee,Service Concept Fee
+d_ChargeItemId,SrvcCncptSrvcFee,Service Concept Service Fee
+d_ChargeItemId,SrvcCnptSrvcFee,Service Concept Service Fee
+d_ChargeItemId,StampDuty,Stamp Duty
+d_ChargeItemId,StampedStatementDeliveryOutsideAbuDhabi,Stamped Statement - Delivery (outside Abu Dhabi)
+d_ChargeItemId,StampTax,Stamp Tax
+d_ChargeItemId,StampTaxPerChq,Stamp Tax per Cheque
+d_ChargeItemId,StandingInstructnChrgFailed,Standing Instruction Charges - Failed
+d_ChargeItemId,Statement_Print_Charges,Statement Print Charges
+d_ChargeItemId,StckDvndWoOptnRedmptnChrg,Stock Dividend without optionRedemption Charge
+d_ChargeItemId,StckDvndWthOptionChrg,Stock Dividend with option Charge
+d_ChargeItemId,STCommission,STCommission
+d_ChargeItemId,SternoCAMT54,Storno CAMT54
+d_ChargeItemId,STMiscBrkrChrg1,ST Miscellaneous Broker Charges 1
+d_ChargeItemId,STMiscBrkrChrg2,ST Miscellaneous Broker Charges 2
+d_ChargeItemId,STMiscBrkrChrg3,ST Miscellaneous Broker Charges 3
+d_ChargeItemId,STMiscClntChrg1,ST Miscellaneous Client Charges 1
+d_ChargeItemId,STMiscClntChrg2,ST Miscellaneous Client Charges 2
+d_ChargeItemId,STMiscClntChrg3,ST Miscellaneous Client Charges 3
+d_ChargeItemId,StmpdStmntDelvry,Stamped Statement - Delivery
+d_ChargeItemId,StmpdStmntPickup,Stamped Statement - Pickup
+d_ChargeItemId,StmtAboveFiveyear,Statement Above Five Years
+d_ChargeItemId,StmtBelowFiveyear,Statement Below Five Years
+d_ChargeItemId,StmtBelowOneyear,Statement Below One Year
+d_ChargeItemId,StmtPrintChrgs,Statement Print Charges
+d_ChargeItemId,StockExchangeFees,Stock Exchange Fees
+d_ChargeItemId,StopPayment,StopPayment
+d_ChargeItemId,StoppingFee,Stopping Fee
+d_ChargeItemId,SubscriptionFee,Subscription Fee
+d_ChargeItemId,SubsequentAcntDocs,Subsequent account documents
+d_ChargeItemId,SubstAccCharges,Substitution Account - Credits and Debits
+d_ChargeItemId,SundryChrgsTxbl,SundryChrgsTxbl
+d_ChargeItemId,SupplyFeeZVLimit,Supply fee ZV limit
+d_ChargeItemId,Sweepexecfee,Sweep Execution fee
+d_ChargeItemId,SweepMntnfee,Sweep Maintenance Fee
+d_ChargeItemId,SweepSetupfee,Sweep Setup Fee
+d_ChargeItemId,SWIFT_Debit_Credit_Advice_Fee,SWIFT Debit / Credit Advice Fee
+d_ChargeItemId,SwiftCopyCharges,SWIFT Copy Charges
+d_ChargeItemId,TAElctrncPymntOrdr,Price for Transaction E Finance Single Payments
+d_ChargeItemId,TAElctrncPymntOrdrSlryPnsn,Price for Transaction Salary and pension payment 
+d_ChargeItemId,TAInpymntSlip,Price for Transaction IS
+d_ChargeItemId,TAPymntStndngordr,Calculate Price for Delivery of Paper-based Payments order
+d_ChargeItemId,TASwisDrctDbt,Price for Transaction SDD
+d_ChargeItemId,Tax_Statement_Securities_Portfolio,Tax Statement Securities Portfolio
+d_ChargeItemId,TelephoneChrg,Telephone Charges
+d_ChargeItemId,TFAdvising,TFAdvising
+d_ChargeItemId,TFBGAmend,BG Amendment
+d_ChargeItemId,TFBGClaim,TFBGClaim
+d_ChargeItemId,TFBGCommission,TFBGCommission
+d_ChargeItemId,TFBGMaintenance,BG Maintenance
+d_ChargeItemId,TFBillHandling,TF Bill Handling
+d_ChargeItemId,TFBillLodgeAdvising,TFBillLodgeAdvising
+d_ChargeItemId,TFBillLodgeBillHandling,TFBillLodgeBillHandling
+d_ChargeItemId,TFBillLodgeConfirmation,TFBillLodgeConfirmation
+d_ChargeItemId,TFBillLodgeCourier,TFBillLodgeCourier
+d_ChargeItemId,TFBillLodgePostal,TFBillLodgePostal
+d_ChargeItemId,TFBillLodgeStamp,TFBillLodgeStamp
+d_ChargeItemId,TFBillLodgeSwift,TFBillLodgeSwift
+d_ChargeItemId,TFBillPayAdvising,TFBillPayAdvising
+d_ChargeItemId,TFBillPayConfirmation,TFBillPayConfirmation
+d_ChargeItemId,TFBillPayCourier,TFBillPayCourier
+d_ChargeItemId,TFBillPayeBillHandling,TFBillPayeBillHandling
+d_ChargeItemId,TFBillPayPostal,TFBillPayPostal
+d_ChargeItemId,TFBillPayStamp,TFBillPayStamp
+d_ChargeItemId,TFBillPaySwift,TFBillPaySwift
+d_ChargeItemId,TFCommision,TF Commision
+d_ChargeItemId,TFCourier,TFCourier
+d_ChargeItemId,TFDCAmendAdvising,TFDCAmendAdvising
+d_ChargeItemId,TFDCAmendBillHandling,TFDCAmendBillHandling
+d_ChargeItemId,TFDCAmendConfirmation,TFDCAmendConfirmation
+d_ChargeItemId,TFDCAmendCourier,TFDCAmendCourier
+d_ChargeItemId,TFDCAmendPostal,TFDCAmendPostal
+d_ChargeItemId,TFDCAmendStamp,TFDCAmendStamp
+d_ChargeItemId,TFDCAmendSwift,TFDCAmendSwift
+d_ChargeItemId,TFDCBillPayImportLoan,TFDCBillPayImportLoan
+d_ChargeItemId,TFDCLodgeAdvising,TFDCLodgeAdvising
+d_ChargeItemId,TFDCLodgeBillHandling,TFDCLodgeBillHandling
+d_ChargeItemId,TFDCLodgeConfirmation,TFDCLodgeConfirmation
+d_ChargeItemId,TFDCLodgeCourier,TFDCLodgeCourier
+d_ChargeItemId,TFDCLodgePostal,TFDCLodgePostal
+d_ChargeItemId,TFDCLodgeStamp,TFDCLodgeStamp
+d_ChargeItemId,TFDCLodgeSwift,TFDCLodgeSwift
+d_ChargeItemId,TFDCPayAdvising,TFDCPayAdvising
+d_ChargeItemId,TFDCPayBillHandling,TFDCPayBillHandling
+d_ChargeItemId,TFDCPayConfirmation,TFDCPayConfirmation
+d_ChargeItemId,TFDCPayCourier,TFDCPayCourier
+d_ChargeItemId,TFDCPayPostal,TFDCPayPostal
+d_ChargeItemId,TFDCPayStamp,TFDCPayStamp
+d_ChargeItemId,TFDCPaySwift,TFDCPaySwift
+d_ChargeItemId,TFExchange,TF Exchange
+d_ChargeItemId,TFLCBillPayImportLoan,TFLCBillPayImportLoan
+d_ChargeItemId,TFLCCommission,TFLCCommission
+d_ChargeItemId,TFLCConfirmation,TFLCConfirmation
+d_ChargeItemId,TFPostal,TFPostal charges
+d_ChargeItemId,TFPostalChrg,TF Postal Charge
+d_ChargeItemId,TFStamp,TFStamp
+d_ChargeItemId,TFSwift,TFSwift charges
+d_ChargeItemId,TFSwiftFee,TF Swift Fee
+d_ChargeItemId,TFUsance,TFUsance
+d_ChargeItemId,ThirdPartyChecksReturnedDueToInsufficientFunds,ThirdPartyChecksReturnedDueToInsufficientFunds
+d_ChargeItemId,ThirdReminderCharge,Third Reminder Charge
+d_ChargeItemId,TokenFee,Tading Key Fee
+d_ChargeItemId,TopupExecFee,TopupExecFee
+d_ChargeItemId,Tranche_Fees,Tranche Fees
+d_ChargeItemId,TranscriptOfCheckingAccount,TranscriptOfCheckingAccount
+d_ChargeItemId,Transfer_Via_SIC_Order,Transfer Via SIC Order
+d_ChargeItemId,TransferFee,Transfer Fee
+d_ChargeItemId,TxnFee,Transaction Fee
+d_ChargeItemId,TxnPercMinMax,Transaction Percentage Min Max
+d_ChargeItemId,TxnPriceforpacs004Out,Transcation price for pacs.004 Out
+d_ChargeItemId,TxnPriceforpacs008In,Transcation price for pacs.008 In
+d_ChargeItemId,TxnPriceforpacs008Out,Transcation price for pacs.008 Out
+d_ChargeItemId,TxnStagngFclty,TxnStagngFclty
+d_ChargeItemId,TxnStagngMdfyFclty,TxnStagngMdfyFclty
+d_ChargeItemId,UKStampDuty,UK Stamp Duty
+d_ChargeItemId,UndOdtCmm,UndOdtCmm
+d_ChargeItemId,UnusedChequeCharges,Unused Cheque Charges
+d_ChargeItemId,UnutilizedFee,Unutilized Fee
+d_ChargeItemId,USSOURCE,US SOURCE
+d_ChargeItemId,VA_Fee,Virtual Account Management Fee
+d_ChargeItemId,VAProcessingOptnDaily,VA Processing Option - booking periodicity - Daily
+d_ChargeItemId,VAProcessingOptnDaily_Delivery,VA Processing Option - delivery periodicity - Daily
+d_ChargeItemId,VAProcessingOptnHalfDaily,VA Processing Option - booking periodicity - Half Daily
+d_ChargeItemId,VAProcessingOptnHalfDaily_Delivery,VA Processing Option - delivery periodicity - Half Daily
+d_ChargeItemId,VAProcessingOptnHourly,VA Processing Option - booking periodicity - Hourly
+d_ChargeItemId,VAProcessingOptnHourly_Delivery,VA Processing Option - delivery periodicity - Hourly
+d_ChargeItemId,VAProcessingOptnIntraDay,VA Processing Option - booking periodicity - Intra Daily
+d_ChargeItemId,VAProcessingOptnIntraDay_Delivery,VA Processing Option - delivery periodicity - Intra Daily
+d_ChargeItemId,VASPFee,VASP Fee
+d_ChargeItemId,VaultCustodyFee,Vault Custody Fee
+d_ChargeItemId,VaultRentO,Vault Rent
+d_ChargeItemId,VaultRentP,Vault Rent Periodic
+d_ChargeItemId,VaultRoleFee,Vault Role Fee
+d_ChargeItemId,VaultStorageAddressFee,Vault Storage Address Fee
+d_ChargeItemId,VaultWithdrawalFee,Vault Withdrawal Fee
+d_ChargeItemId,VendorPayments,Invoice Payment
+d_ChargeItemId,VrfctionofDomicialiaryCompany,Verification of domiciliary company
+d_ChargeItemId,VrtlAcntMaintncChrg,VrtlAcntMaintncChrg
+d_ChargeItemId,VrtlAcntSetUpChrg,VrtlAcntSetUpChrg
+d_ChargeItemId,WHTax,Witholding Tax
+d_ChargeItemId,Wthdrawalrequest,Withdrawal request 
+d_ChargeItemId,ZBAPoolAddnFee,ZBA Pool Addition Fee
+d_ChargeItemId,ZBAPoolOpngFee,ZBA Pool Opening Fee
+d_ChargeItemId,ZBAPoolRmvlFee,ZBA Pool Removal Fee
+d_ChargeItemId,ZBAPoolSbscFee,ZBA Pool Subscription Fee
+d_AcntType,SavingsAccount,Savings Account 
+d_AcntType,CurrentAccount,Current Account
+d_AccountSubType,Compensation,Compensation
+d_AccountSubType,Normal,Normal
+d_AccountSubType,Salary,Salary
+d_ProductId,A_AM_Floating,A_AM_Floating
+d_ProductId,A_AM_Floating FJ,A_AM_Floating FJ
+d_ProductId,A_AM_Floating_Average_Batch FJ,A_AM_Floating_Average_Batch FJ
+d_ProductId,A_AM_Interest_WHT,A_AM_Interest_WHT
+d_ProductId,A_AM_Interest_WHT FJ,A_AM_Interest_WHT FJ
+d_ProductId,A_AM_Interest_WHT_Avg_Cr_Daily FJ,A_AM_Interest_WHT_Avg_Cr_Daily FJ
+d_ProductId,A_AM_Money_Account_Int FJ,A_AM_Money_Account_Int FJ
+d_ProductId,A_AM_Money_Account_Int_Instr FJ,A_AM_Money_Account_Int_Instr FJ
+d_ProductId,A_Basic_Account,A_Basic_Account
+d_ProductId,A_Basic_Account FJ,A_Basic_Account FJ
+d_ProductId,A_Business_Investment FJ,A_Business_Investment FJ
+d_ProductId,A_CA_Basic_Business FJ,A_CA_Basic_Business FJ
+d_ProductId,A_Cash_Account_Auto FJ,A_Cash_Account_Auto FJ
+d_ProductId,A_Check_account_USD FJ,A_Check_account_USD FJ
+d_ProductId,A_Checking_Productive_National FJ,A_Checking_Productive_National FJ
+d_ProductId,A_Citibank_Interest FJ,A_Citibank_Interest FJ
+d_ProductId,A_Demand_Acct__Interest(Daily) FJ,A_Demand_Acct__Interest(Daily) FJ
+d_ProductId,A_Global_Dormancy_Account,A_Global_Dormancy_Account
+d_ProductId,A_Global_Dormancy_Account FJ,A_Global_Dormancy_Account FJ
+d_ProductId,A_Master_Account,A_Master_Account
+d_ProductId,A_Master_Account FJ,A_Master_Account FJ
+d_ProductId,A_Money_Account_HalfYearly FJ,A_Money_Account_HalfYearly FJ
+d_ProductId,A_Professional_Master_Account,A_Professional_Master_Account
+d_ProductId,A_Professional_Master_Account FJ,A_Professional_Master_Account FJ
+d_ProductId,A_QUARTERLY_INSTRUMENT FJ,A_QUARTERLY_INSTRUMENT FJ
+d_ProductId,A_Ready_Credit FJ,A_Ready_Credit FJ
+d_ProductId,A_SB_Expat_Savings_AC FJ,A_SB_Expat_Savings_AC FJ
+d_ProductId,A_SB_Junior FJ,A_SB_Junior FJ
+d_ProductId,A_SB_Salary FJ,A_SB_Salary FJ
+d_ProductId,A_SB_Senior FJ,A_SB_Senior FJ
+d_ProductId,A_Unnati_Account FJ,A_Unnati_Account FJ
+d_ProductId,Business Current Account,Business Current Account
+d_ProductId,Busniess Savnigs Account,Busniess Savnigs Account
+d_ProductId,Current- Bank,Current- Bank
+d_ProductId,Current- Bank FJ,Current- Bank FJ
+d_ProductId,Current- Business,Current- Business
+d_ProductId,Current- Business FJ,Current- Business FJ
+d_ProductId,Current- Individual,Current- Individual
+d_ProductId,Current- Individual FJ,Current- Individual FJ
+d_ProductId,Daily Interest,Daily Interest
+d_ProductId,Retail C/A,Retail C/A
+d_ProductId,Retail Savings Account,Retail Savings Account
+d_ProductId,Rupee Checking A/c,Rupee Checking A/c
+d_ProductId,Saving- Business,Saving- Business
+d_ProductId,Saving- Business FJ,Saving- Business FJ
+d_ProductId,Saving- Individual,Saving- Individual
+d_ProductId,Saving- Individual FJ,Saving- Individual FJ
+d_ProductId,Saving-Minor,Saving-Minor
+d_ProductId,Saving-Minor FJ,Saving-Minor FJ
+d_ProductId,Savings Product,Savings Product
+d_ProductId,SB Basic,SB Basic
+d_ProductId,SB Corp/SME  BHD,SB Corp/SME  BHD
+d_LanguageCode,Arabic,Arabic
+d_LanguageCode,English,English
+d_LanguageCode,French,French
+d_LanguageCode,German,German
+d_LanguageCode,Hebrew,Hebrew
+d_LanguageCode,Italian,Italian
+d_LanguageCode,Japanese,Japanese
+d_LanguageCode,Portugese,Portugese
+d_LanguageCode,Spanish,Spanish
+d_LanguageCode,Swedish,Swedish
+d_CardSubType,ATM_with_Positive_Balance,ATM with Positive Balance
+d_CardSubType,Blue,Blue
+d_CardSubType,Business,Business
+d_CardSubType,Classic,Classic
+d_CardSubType,Corporate,Corporate
+d_CardSubType,Credit,Credit
+d_CardSubType,Direct,Direct
+d_CardSubType,EMV Classic,EMV Classic
+d_CardSubType,EMV Platinum,EMV Platinum
+d_CardSubType,Gold,Gold
+d_CardSubType,Gold_Business,Gold Business
+d_CardSubType,Gold_Corporate,Gold Corporate
+d_CardSubType,Green,Green
+d_CardSubType,Life_Style,Life Style
+d_CardSubType,Local,Local
+d_CardSubType,Platinum,Platinum
+d_CardSubType,Regular,Regular
+d_CardSubType,Regular_ATM,Regular ATM
+d_CardSubType,Sds,Sds
+d_CardSubType,Signia,Signia
+d_CardSubType,Silver_Corporate,Silver Corporate
+d_CardSubType,Speedomat,Speedomat
+d_SourceOfAcnt,BanksMailer,Banks mailer
+d_SourceOfAcnt,BsnsCrspdnt,Business correspondent
+d_SourceOfAcnt,Callcenter,Call center
+d_SourceOfAcnt,Employee,Employee
+d_SourceOfAcnt,ExistingCust,Existing customer
+d_SourceOfAcnt,MarktngAgency,Marketing agency
+d_SourceOfAcnt,Others,Others
+d_SourceOfAcnt,Telemarketer,Tele marketer
+d_wfstatus,Active,Active
+d_wfstatus,ActModOnHold,ActModOnHold
+d_wfstatus,ActModPendAuth,ActModPendAuth
+d_wfstatus,AuthAwaited,AuthAwaited
+d_wfstatus,AuthWtchRjctd,AuthWtchRjctd
+d_wfstatus,Cancelled,Cancelled
+d_wfstatus,Close,Close
+d_wfstatus,Executed,Executed
+d_wfstatus,Expired,Expired
+d_wfstatus,Failed,Failed
+d_wfstatus,Freezed,Freezed
+d_wfstatus,Impaired,Impaired
+d_wfstatus,InActive,InActive
+d_wfstatus,IRSCancelled,IRSCancelled
+d_wfstatus,IRSPendingCancel,IRSPendingCancel
+d_wfstatus,Liquidated,Liquidated
+d_wfstatus,MOnHold,ModOnHold
+d_wfstatus,MPendActOnHOld,MPendActOnHOld
+d_wfstatus,MPendActPendingAuth,MPendActPendingAuth
+d_wfstatus,MPendingAuth,Modify Pending Auth
+d_wfstatus,NonPrfAsset,NonPerformingAsset
+d_wfstatus,OnHold,OnHold
+d_wfstatus,Open,Open
+d_wfstatus,PendingActivation,PendingActivation
+d_wfstatus,PendingAuth,Pending Auth
+d_wfstatus,PendingAuthorisation,Pending Authorisation
+d_wfstatus,PendingCancel,PendingCancel
+d_wfstatus,PendingClosure,PendingClosure
+d_wfstatus,PendingClosureAuthAwaited,PendingClosureAuthAwaited
+d_wfstatus,PendingClosureCalcAwait,PendingClosureCalcAwait
+d_wfstatus,PendingClosureCalcComplete,PendingClosureCalcComplete
+d_wfstatus,PendingClosureWaitingForRate,PendingClosureWaitingForRate
+d_wfstatus,PendingFreeze,PendingFreeze
+d_wfstatus,PendingInactivation,PendingInactivation
+d_wfstatus,PendingPendActiveCancel,PendingPendActiveCancel
+d_wfstatus,PendingReopen,PendingReopen
+d_wfstatus,PendingReversal,PendingReversal
+d_wfstatus,PendWriteoff,PendWriteoff
+d_wfstatus,PndngClsrCalcAwatd,PendingClosureCalculationAwaited
+d_wfstatus,PndngClsrCalcCompl,PendingClosureCalculationCompleted
+d_wfstatus,PymntInitdFrClsr,PymntInitdFrClsr
+d_wfstatus,ReInitiate,ReInitiate
+d_wfstatus,Rejected,Rejected
+d_wfstatus,Released,Released
+d_wfstatus,RepairAwaited,RepairAwaited
+d_wfstatus,ReschedPendngAuth,ReschedPendngAuth
+d_wfstatus,Rescinded,Rescinded
+d_wfstatus,Reversed,Reversed
+d_wfstatus,RolloverMergeClosed,Rollover Merge Closed
+d_wfstatus,Successful,Successful
+d_wfstatus,WaitingForRate,WaitingForRate
+d_wfstatus,Writeoff,Writeoff
+d_wfstatus,Deleted,Deleted
+d_AccUsage,General,General
+d_Frequency,Annual,Annual
+d_Frequency,Any,Any
+d_Frequency,AtMaturity,AtMaturity
+d_Frequency,BiWeekly,BiWeekly
+d_Frequency,ContCompond,ContCompond
+d_Frequency,Daily,Daily
+d_Frequency,Deferred,Deferred
+d_Frequency,DeferredDayEnd,DeferredDayEnd
+d_Frequency,Fortnightly,Fortnightly
+d_Frequency,HalfYearly,Half Yearly
+d_Frequency,HlfYearlyAnvrsry,HlfYearlyAnvrsry
+d_Frequency,HlfYrlyAnvrsry,Half Yearly Anniversary
+d_Frequency,Immediate,Immediate
+d_Frequency,ImmOnAuth,Immediately on Authorisation
+d_Frequency,InterestApplica,InterestApplication
+d_Frequency,InterestApplication,Interest Application
+d_Frequency,IntraDay,IntraDay
+d_Frequency,MnthlyAnvrsry,Monthly Anniversary
+d_Frequency,Monthly,Monthly
+d_Frequency,None,None
+d_Frequency,Online,On-line
+d_Frequency,Quarterly,Quarterly
+d_Frequency,QurtlyAnvrsry,Quarterly Anniversary
+d_Frequency,RecurringImmediate,Immediate and Recurring
+d_Frequency,Weekly,Weekly
+d_Frequency,WklyAnvrsry,Weekly Anniversary
+d_Frequency,Yearly,Yearly
+d_Frequency,YrlyAnvrsry,Yearly Anniversary
+d_UserAction,Authorize,Authorize
+d_UserAction,Cancel,Cancel
+d_UserAction,Close,Close
+d_UserAction,Reject,Reject
+d_UserAction,Sendback,Sendback
+d_UserAction,Release,Release
+d_UserAction,Submit-for-pend-Closure,Submit-for-pend-Closure
+d_UserAction,Submit-for-pend-Reversal,Submit-for-pend-Reversal
+d_UserAction,Reverse,Reverse
+d_PosTyp,Cash,Cash
+d_MandateRights,ACH Outgoing,ACH Outgoing
+d_MandateRights,ACHOutgoingExtChnl,ACH Outgoing - External Channel
+d_MandateRights,AcntToAcnt,Account to Account
+d_MandateRights,AcntToAcntExtChnl,Account to Account - External Channel
+d_MandateRights,DirectDebit,Direct Debit
+d_MandateRights,ECSDebit,ECS Debit
+d_MandateRights,InwardClrngDr,Inward Clearing Debit
+d_MandateRights,InwardClrngDrManual,Inward Clearing Debit - Manual
+d_MandateRights,NEFTOutgoing,NEFTOutgoing
+d_MandateRights,NEFTOutgoingExtChnl,NEFT Outgoing - External Channel
+d_MandateRights,OutWardClearing,Outward Clearing
+d_MandateRights,RequestChqBook,Request Cheque Book
+d_MandateRights,RqChqueBkExtChnl,Request Cheque Book - External Channel
+d_MandateRights,RSCashDeposit,Cash Deposit
+d_MandateRights,RSCashWithdrawal,Cash Withdrawal
+d_MandateRights,RTGSOutgoing,RTGS Outgoing
+d_MandateRights,RTGSOutgoingExtChnl,RTGS Outgoing - External Channel
+d_MandateRights,SignCASAacOpngDoc,Sign CASA AC opening Documents
+d_MandateRights,SignLoanAgrmntDoc,Sign Loan Agreement Documents
+d_MandateRights,SignTDOpngDoc,Sign Term Deposit Opening Documents
+d_MandateRights,STDOrderDr,Standing Order Debit
+d_MandateRights,STDOrderDrExtChnl,Standing Order Debit - External Channel
+d_MandateRights,TDOpngStlmntACD,TD Opening - Settlement AC Debit
+d_cudindicator,Create,Create
+d_cudindicator,Modify,Modify
+d_cudindicator,Delete,Delete
+d_cudIndicator,Create,Create
+d_cudIndicator,Update,Update
+d_cudIndicator,Delete,Delete
+d_SettInstrnLvl,Account,Account
+d_FollowupStat,1OffExemptTyp3Acc,One-off /Exempted Type 3 account
+d_FollowupStat,AccountIsInactive,Account is Inactive 
+d_FollowupStat,AccountRestructured,AccountRestructured
+d_FollowupStat,AccountUnderDPD,AccountUnderDPD
+d_FollowupStat,Active,Active
+d_FollowupStat,ActualCreditFrozen,Credit Frozen
+d_FollowupStat,ActualFrozen,Debits and credits frozen
+d_FollowupStat,Bankrupt,Bankrupt
+d_FollowupStat,BlackList,Black List
+d_FollowupStat,CashInPaymentsBlocked,Cash In Payments Blocked
+d_FollowupStat,CashWithdrawalsBlocked,Cash Withdrawals Blocked
+d_FollowupStat,CashWthdrwl,Cash Wthdrwl And In payment Blocked
+d_FollowupStat,CourtOrder,Court order
+d_FollowupStat,CreditBlocked,CreditFreeze
+d_FollowupStat,CreditdatalawIncompetent,Credit data law-incompetent
+d_FollowupStat,Creditfreezing,Credit freezing
+d_FollowupStat,CreditsAndCashWithdrawBlocked,Credits And Cash Withdraw Blocked
+d_FollowupStat,CustmrClsrInitiatd,Customer Closure Initiated
+d_FollowupStat,Customebaddebt,Customer x96 bad debt
+d_FollowupStat,CustomerDead,Customer Dead
+d_FollowupStat,CustomerFATCANonCompliant,Customer FATCA Non Compliant
+d_FollowupStat,Customerhastradinglimitations,Customer has trading limitations 
+d_FollowupStat,Customerunderbankruptcy,Customer under bankruptcy
+d_FollowupStat,DebitBlocked,DebitFreeze
+d_FollowupStat,DebitCreditBlocked,TotalFreeze
+d_FollowupStat,DebitCreditBlockedInProcessOfClosing,Debit Credit Blocked In Process Of Closing Core
+d_FollowupStat,DebitCreditBlockedInProvisionalClosure,Debit Credit Blocked In Provisional Closure
+d_FollowupStat,DebitFrozen,Debit Frozen
+d_FollowupStat,Debits,Debits And Cash In payment Blocked
+d_FollowupStat,Dormant,Dormant
+d_FollowupStat,DormantAccount,Dormant account
+d_FollowupStat,EscrowDebitFreeze,Escrow Debit Freeze
+d_FollowupStat,F2FAuthND,Face to face authentication not done
+d_FollowupStat,FATCADocumentPending,FATCA Document Pending
+d_FollowupStat,FinancialTransactionsrestricted,Financial Transactions restricted
+d_FollowupStat,ForeignResident,Foreign resident 
+d_FollowupStat,IdentitycardlostStolen,Identity card lost/stolen
+d_FollowupStat,Inactive,Inactive
+d_FollowupStat,Inoperative,Inoperative
+d_FollowupStat,Inoperative_1,Inoperative_1
+d_FollowupStat,KYCIncomplete,KYC incomplete
+d_FollowupStat,MandatoryDocumentPending,Mandatory Document Pending
+d_FollowupStat,Margin Alert,Margin Alert
+d_FollowupStat,Margin Call,Margin Call
+d_FollowupStat,MaturedMinorStatus,Matured Minor status
+d_FollowupStat,Minor,Minor
+d_FollowupStat,NonOtcType3Acct,Non OTC Type3 Accounts
+d_FollowupStat,NormalTyp3Acc,Normal Type 3 account
+d_FollowupStat,NotApplcbl,Not Applicable
+d_FollowupStat,NotBookable,Not Bookable
+d_FollowupStat,NoTransactionBlock,Blocked
+d_FollowupStat,NPAcustomer,NPAcustomer
+d_FollowupStat,PartialDisbursal,PartialDisbursal
+d_FollowupStat,PastReviewDate,PastReviewDate
+d_FollowupStat,PendingClosure,Pending Closure
+d_FollowupStat,PendingDormant,Pending Dormant
+d_FollowupStat,PendingFirstDeposit,Pending First Deposit
+d_FollowupStat,ReactivationCBT,Reactivation CBT
+d_FollowupStat,RelatedPersons,Related persons 
+d_FollowupStat,SpecialTerms,Special terms
+d_FollowupStat,Staking_Account,Staking Account
+d_FollowupStat,TotalBlock,Total Block
+d_FollowupStat,Vault_Account,Vault Account
+d_FollowupStat,WalkIn,Walk in
+d_FollowupStat,Warning Alert,Warning Alert
+d_FollowupStat,WhereAboutNotKnown,WhereAboutNotKnown
+d_BlckRsn,AccClosure,AccClosure
+d_BlckRsn,AccountClosure,Account Closure
+d_BlckRsn,AddressUnknown,Address Unknown
+d_BlckRsn,BankDues,Bank Dues
+d_BlckRsn,Bankruptcy,Bankruptcy
+d_BlckRsn,ByPostFinance,By PostFinance
+d_BlckRsn,ByPublicAuthorities,ByPublicAuthorities
+d_BlckRsn,Compliance,Compliance
+d_BlckRsn,CustomerInitiated,By Customer
+d_BlckRsn,CustomerNotIdentified,Customer Not Identified
+d_BlckRsn,Deceased,Deceased
+d_BlckRsn,DormantAccount,Dormant Account
+d_BlckRsn,DormantAssets,Dormant Assets
+d_BlckRsn,Fraud,Fraud
+d_BlckRsn,Hard_Block_HB1,Regulatory
+d_BlckRsn,Hard_Block_HB2,Bank Dues
+d_BlckRsn,IncompleteDocumentation,Incomplete Documentation
+d_BlckRsn,MissingDocuments,MissingDocuments
+d_BlckRsn,NegativeBalance,NegativeBalance
+d_BlckRsn,NoBlock,No Block
+d_BlckRsn,NotApplicable,Not Applicable
+d_BlckRsn,Opening,Opening
+d_BlckRsn,Others,Others
+d_BlckRsn,PerCustomer,PerCustomer
+d_BlckRsn,ReactivationCBT,Reactivation CBT
+d_BlckRsn,Regulatory,Regulatory
+d_BlckRsn,RestrictedAccount,Restricted Account
+d_BlckRsn,Soft_Block_SB1,Customer initiated
+d_BlckRsn,Soft_Block_SB2,Others
+d_BlckRsn,UpdateCustomerData,Update customer data
+d_BlckRsn,WithoutContact,Without Contact
+d_TxnSign,Both,Both
+d_TxnSign,Credit,Credit
+d_TxnSign,Debit,Debit
+d_TrnsfrTyp,Cash_Withdrawal,Cash Withdrawal
+d_TrnsfrTyp,External_Bank_Payment,External Bank Payment
+d_TrnsfrTyp,ExternalPayments,External Payments
+d_TrnsfrTyp,Local_Fund_Transfer,Local Fund Transfer
+d_TrnsfrTyp,OutwardClearingCheck,Outward Clearing Check
+d_TrnsfrTyp,WriteOff,WriteOff
+d_ChannelType,ATM,ATM
+d_ChannelType,Batch,Batch
+d_ChannelType,BranchNetwork,BranchNetwork
+d_ChannelType,CallCenter,CallCenter
+d_ChannelType,FDS,FDS
+d_ChannelType,Hnet,Hnet
+d_ChannelType,InternetBanking,InternetBanking
+d_ChannelType,IVRS,Interface
+d_ChannelType,MobileBanking,MobileBanking
+d_ChannelType,online,online
+d_ChannelType,Postomat,Postomat
+d_ChannelType,Requested_By_Teller,Requested By Teller
+d_ChannelType,Requested_Via_Interface_Channel,Requested Via Interface Channel
+d_ChannelType,Requested_Via_Internet_Channel,Requested Via Internet Channel
+d_ChannelType,SWIFT,SWIFT
+d_ChannelType,SWIFTFileAct,SWIFTFileAct
+d_ChannelType,SWIFTFIN,SWIFTFIN
+d_ChannelAccess,AccountOpeningRestricted,AccountOpeningRestricted
+d_ChannelAccess,AllAccessAllowed,AllAccessAllowed
+d_ChannelAccess,CreditAllowed,CreditAllowed
+d_ChannelAccess,DebitAllowed,Debit Allowed
+d_ChannelAccess,EnquiryAllowed,EnquiryAllowed
+d_ChannelAccess,Restricted,Restricted
+d_DocStat,Archived,Archived
+d_DocStat,Deferred,Deffered
+d_DocStat,Deffered,Deferred
+d_DocStat,Expired,Expired
+d_DocStat,NotReceived,Not Received
+d_DocStat,NotRequired,Not Required
+d_DocStat,OK,OK
+d_DocStat,Received,Received
+d_DocStat,ReceivedOK,Received OK
+d_DocStat,Rejected,Rejected
+d_DocStat,Waived,Waived
+d_DocRqdPurpose,AccOprtnByPrxy,AccOprtnByPrxy
+d_DocRqdPurpose,AccountOpening,Account Opening Form
+d_DocRqdPurpose,AddressProof,AddressProof
+d_DocRqdPurpose,All,All Documents Exemption
+d_DocRqdPurpose,alternative,alternative
+d_DocRqdPurpose,BackUpTax,BackUpTax Exemption
+d_DocRqdPurpose,BankDocumentation,Bank Documentation
+d_DocRqdPurpose,BGAmendment,BGAmendment
+d_DocRqdPurpose,BGClaimRegistration,BGClaimRegistration
+d_DocRqdPurpose,BGClaimSettlement,BGClaimSettlement
+d_DocRqdPurpose,BGIssuance,BGIssuance
+d_DocRqdPurpose,BPOpening,BPOpening
+d_DocRqdPurpose,CitizenshipDeclaration,Citizenship Declaration
+d_DocRqdPurpose,Clientfile,Clientfile
+d_DocRqdPurpose,DCExportBillLodgement,DCExportBillLodgement
+d_DocRqdPurpose,DCExportBillsettlement,DCExportBillsettlement
+d_DocRqdPurpose,DCImportBillLodgement,DCImportBillLodgement
+d_DocRqdPurpose,DCImportBillsettlement,DCImportBillsettlement
+d_DocRqdPurpose,DerivativeTradi,DerivativeTradi
+d_DocRqdPurpose,DerivativeTrading,DerivativeTrading
+d_DocRqdPurpose,Etransfer,Etransfer
+d_DocRqdPurpose,EUQuest,EUQuest Exemption
+d_DocRqdPurpose,ExportLCAmendment,ExportLCAmendment
+d_DocRqdPurpose,ExportLCBillRealization,ExportLCBillRealization
+d_DocRqdPurpose,ExportLCBillRegistration,ExportLCBillRegistration
+d_DocRqdPurpose,ExportLCRegistration,ExportLCRegistration
+d_DocRqdPurpose,ForiegnOper,ForiegnOper
+d_DocRqdPurpose,Identification,Identification
+d_DocRqdPurpose,IdentificationDocument,IdentificationDocument
+d_DocRqdPurpose,InvstmntAcnt,InvstmntAcnt
+d_DocRqdPurpose,KESt1,KESt1 Exemption
+d_DocRqdPurpose,KESt2,KESt2 Exemption
+d_DocRqdPurpose,KESt2O,KESt2 Options
+d_DocRqdPurpose,KESt3,KESt3 Exemption
+d_DocRqdPurpose,LCAmendment,LCAmendment
+d_DocRqdPurpose,LCBillLodgement,LCBillLodgement
+d_DocRqdPurpose,LCBillsettlement,LCBillsettlement
+d_DocRqdPurpose,LCIssuance,LCIssuance
+d_DocRqdPurpose,LendFA,LendFA
+d_DocRqdPurpose,LendStocks,LendStocks
+d_DocRqdPurpose,Loan,Loan
+d_DocRqdPurpose,LombardLoan,Lombard Loan
+d_DocRqdPurpose,ManualHldr,ManualHldr
+d_DocRqdPurpose,MMDeposit,MMDeposit
+d_DocRqdPurpose,Other,Other
+d_DocRqdPurpose,participation,participation
+d_DocRqdPurpose,PledgeAssets,Pledge Assets
+d_DocRqdPurpose,Portfolio,Portfolio
+d_DocRqdPurpose,PortfolioOpenin,PortfolioOpenin
+d_DocRqdPurpose,PortfolioOpening,PortfolioOpening
+d_DocRqdPurpose,Product,Product
+d_DocRqdPurpose,ProofofIdntfyOrAdrs,ProofofIdntfyOrAdrs
+d_DocRqdPurpose,Purchase Order,Purchase Order
+d_DocRqdPurpose,QI,QUALIFIED INTERMEDIARY
+d_DocRqdPurpose,QlfdInvstr,QlfdInvstr
+d_DocRqdPurpose,RealEstate,Real Estate
+d_DocRqdPurpose,Regulatory,Regulatory
+d_DocRqdPurpose,RentalDepositOpening,Rental Deposit Opening
+d_DocRqdPurpose,RenunciationFor,RenunciationFor
+d_DocRqdPurpose,RenunciationForm,RenunciationForm
+d_DocRqdPurpose,SecTrnsfr,Security Transfer
+d_DocRqdPurpose,Security,Security
+d_DocRqdPurpose,shrtsellFA,shrtsellFA
+d_DocRqdPurpose,shrtsellstock,shrtsellstock
+d_DocRqdPurpose,SightAcnt,SightAcnt
+d_BankDtlTyp,2DBarcodeFax,2D Barcode (Fax)
+d_BankDtlTyp,2DBarcodeServer,2D Barcode (Original)
+d_BankDtlTyp,ACH,ACH
+d_BankDtlTyp,All,All
+d_BankDtlTyp,ATM,ATM
+d_BankDtlTyp,AU,AU
+d_BankDtlTyp,BACSCQ,BACSCQ
+d_BankDtlTyp,BACSDD,BACSDD
+d_BankDtlTyp,BACSEURT,BACSEURT
+d_BankDtlTyp,BACSGBPT,BACSGBPT
+d_BankDtlTyp,Bangalore Branch,Bangalore Branch
+d_BankDtlTyp,Bank Code,Bank Code
+d_BankDtlTyp,BankCode,BankCode
+d_BankDtlTyp,BankGroup,BankGroup
+d_BankDtlTyp,BCH,BCH
+d_BankDtlTyp,BIC,BIC
+d_BankDtlTyp,BICOMP,BICOMP
+d_BankDtlTyp,BIDV,BIDV
+d_BankDtlTyp,BIGC,Big-C
+d_BankDtlTyp,BL,BL
+d_BankDtlTyp,BPId,BPId
+d_BankDtlTyp,Branch_Teller,Branch_Teller
+d_BankDtlTyp,BrnchChnl,BrnchChnl
+d_BankDtlTyp,BrnchTeller,BrnchTeller
+d_BankDtlTyp,BWA,BWA
+d_BankDtlTyp,CallCentre,CallCentre
+d_BankDtlTyp,CAPHUB,CAPHUB
+d_BankDtlTyp,CC,CC
+d_BankDtlTyp,CEC001,CEC001
+d_BankDtlTyp,CEC006,CEC006
+d_BankDtlTyp,CECCHQ,CECCHQ
+d_BankDtlTyp,CECDD,CECDD
+d_BankDtlTyp,CFMS,CFMS
+d_BankDtlTyp,CH,CH
+d_BankDtlTyp,CHAPS,CHAPS
+d_BankDtlTyp,CHAPSGBPT,CHAPSGBPT
+d_BankDtlTyp,Chennai Branch,Chennai Branch
+d_BankDtlTyp,Cheques,Cheques
+d_BankDtlTyp,CHI,CHI
+d_BankDtlTyp,CHIPS,CHIPS
+d_BankDtlTyp,CITAD,CITAD
+d_BankDtlTyp,CNHCHATS,CNHCHATS
+d_BankDtlTyp,CorpChanl,CorpChanl
+d_BankDtlTyp,CountryCode,CountryCode
+d_BankDtlTyp,Credence,Credence
+d_BankDtlTyp,CrptChnlBulk,CrptChnlBulk
+d_BankDtlTyp,CrptChnlUnitry,CrptChnlUnitry
+d_BankDtlTyp,Customer Account,Customer Account
+d_BankDtlTyp,Customer Master,Customer Master
+d_BankDtlTyp,d_Directory_UNK,d_Directory_UNK
+d_BankDtlTyp,DBFFT,DBFFT
+d_BankDtlTyp,Delhi Branch,Delhi Branch
+d_BankDtlTyp,DigitalChnl,DigitalChnl
+d_BankDtlTyp,DS,DS
+d_BankDtlTyp,EasyPay,EasyPay
+d_BankDtlTyp,eBank,eBank
+d_BankDtlTyp,EBP,EBP
+d_BankDtlTyp,ECCS,ECCS
+d_BankDtlTyp,ECS_Agartala,ECS_Agartala
+d_BankDtlTyp,ECS_Agra,ECS_Agra
+d_BankDtlTyp,ECS_Allahabad,ECS_Allahabad
+d_BankDtlTyp,ECS_Amritsar,ECS_Amritsar
+d_BankDtlTyp,ECS_Anand,ECS_Anand
+d_BankDtlTyp,ECS_Asansol,ECS_Asansol
+d_BankDtlTyp,ECS_Aurangabad,ECS_Aurangabad
+d_BankDtlTyp,ECS_Baroda,ECS_Baroda
+d_BankDtlTyp,ECS_Belgaum,ECS_Belgaum
+d_BankDtlTyp,ECS_Bhavnagar,ECS_Bhavnagar
+d_BankDtlTyp,ECS_Bhilwara,ECS_Bhilwara
+d_BankDtlTyp,ECS_Bhopal,ECS_Bhopal
+d_BankDtlTyp,ECS_Bijapur,ECS_Bijapur
+d_BankDtlTyp,ECS_Bikaner,ECS_Bikaner
+d_BankDtlTyp,ECS_Burdwan,ECS_Burdwan
+d_BankDtlTyp,ECS_Calicut,ECS_Calicut
+d_BankDtlTyp,ECS_Chandigarh,ECS_Chandigarh
+d_BankDtlTyp,ECS_Coimbatore,ECS_Coimbatore
+d_BankDtlTyp,ECS_Cuttack,ECS_Cuttack
+d_BankDtlTyp,ECS_Davanagere,ECS_Davanagere
+d_BankDtlTyp,ECS_Dehradun,ECS_Dehradun
+d_BankDtlTyp,ECS_Dhanbad,ECS_Dhanbad
+d_BankDtlTyp,ECS_Durgapur,ECS_Durgapur
+d_BankDtlTyp,ECS_Ernakulam,ECS_Ernakulam
+d_BankDtlTyp,ECS_Erode,ECS_Erode
+d_BankDtlTyp,ECS_Gadag,ECS_Gadag
+d_BankDtlTyp,ECS_Gangtok,ECS_Gangtok
+d_BankDtlTyp,ECS_Gorakhpur,ECS_Gorakhpur
+d_BankDtlTyp,ECS_Gulbarga,ECS_Gulbarga
+d_BankDtlTyp,ECS_Gwalior,ECS_Gwalior
+d_BankDtlTyp,ECS_Haldia,ECS_Haldia
+d_BankDtlTyp,ECS_Hassan,ECS_Hassan
+d_BankDtlTyp,ECS_Hubli,ECS_Hubli
+d_BankDtlTyp,ECS_Imphal,ECS_Imphal
+d_BankDtlTyp,ECS_Indore,ECS_Indore
+d_BankDtlTyp,ECS_Jabalpur,ECS_Jabalpur
+d_BankDtlTyp,ECS_Jalandhar,ECS_Jalandhar
+d_BankDtlTyp,ECS_Jammu,ECS_Jammu
+d_BankDtlTyp,ECS_Jamnagar,ECS_Jamnagar
+d_BankDtlTyp,ECS_Jamshedpur,ECS_Jamshedpur
+d_BankDtlTyp,ECS_Jodhpur,ECS_Jodhpur
+d_BankDtlTyp,ECS_Kakinada,ECS_Kakinada
+d_BankDtlTyp,ECS_Kanpur,ECS_Kanpur
+d_BankDtlTyp,ECS_Kolhapur,ECS_Kolhapur
+d_BankDtlTyp,ECS_Kota,ECS_Kota
+d_BankDtlTyp,ECS_Lucknow,ECS_Lucknow
+d_BankDtlTyp,ECS_Ludhiana,ECS_Ludhiana
+d_BankDtlTyp,ECS_Madurai,ECS_Madurai
+d_BankDtlTyp,ECS_Mandya,ECS_Mandya
+d_BankDtlTyp,ECS_Mangalore,ECS_Mangalore
+d_BankDtlTyp,ECS_Mysore,ECS_Mysore
+d_BankDtlTyp,ECS_Nagpur,ECS_Nagpur
+d_BankDtlTyp,ECS_Nashik,ECS_Nashik
+d_BankDtlTyp,ECS_Nellore,ECS_Nellore
+d_BankDtlTyp,ECS_NewDelhi,ECS_NewDelhi
+d_BankDtlTyp,ECS_Panaji,ECS_Panaji
+d_BankDtlTyp,ECS_Patna,ECS_Patna
+d_BankDtlTyp,ECS_Puducherry,ECS_Puducherry
+d_BankDtlTyp,ECS_Pune,ECS_Pune
+d_BankDtlTyp,ECS_Raichur,ECS_Raichur
+d_BankDtlTyp,ECS_Raipur,ECS_Raipur
+d_BankDtlTyp,ECS_Rajkot,ECS_Rajkot
+d_BankDtlTyp,ECS_Ranchi,ECS_Ranchi
+d_BankDtlTyp,ECS_Salem,ECS_Salem
+d_BankDtlTyp,ECS_Shillong,ECS_Shillong
+d_BankDtlTyp,ECS_Shimla,ECS_Shimla
+d_BankDtlTyp,ECS_Shimoga,ECS_Shimoga
+d_BankDtlTyp,ECS_Sholapur,ECS_Sholapur
+d_BankDtlTyp,ECS_Siliguri,ECS_Siliguri
+d_BankDtlTyp,ECS_Surat,ECS_Surat
+d_BankDtlTyp,ECS_Thrissur,ECS_Thrissur
+d_BankDtlTyp,ECS_Tirunelveli,ECS_Tirunelveli
+d_BankDtlTyp,ECS_Tirupati,ECS_Tirupati
+d_BankDtlTyp,ECS_Tirupur,ECS_Tirupur
+d_BankDtlTyp,ECS_Trichy,ECS_Trichy
+d_BankDtlTyp,ECS_Tumkur,ECS_Tumkur
+d_BankDtlTyp,ECS_Udaipur,ECS_Udaipur
+d_BankDtlTyp,ECS_Udupi,ECS_Udupi
+d_BankDtlTyp,ECS_Varanasi,ECS_Varanasi
+d_BankDtlTyp,ECS_Vijayawada,ECS_Vijayawada
+d_BankDtlTyp,ECS_Visakhapatnam,ECS_Visakhapatnam
+d_BankDtlTyp,Edifact,Edifact
+d_BankDtlTyp,EGIRO,EGIRO
+d_BankDtlTyp,EMZCQ,EMZCQ
+d_BankDtlTyp,EMZDD,EMZDD
+d_BankDtlTyp,EMZT,EMZT
+d_BankDtlTyp,EPH,EPH
+d_BankDtlTyp,EQUENSCHQ,EQUENSCHQ
+d_BankDtlTyp,EQUENSDC,EQUENSDC
+d_BankDtlTyp,EQUENSDD,EQUENSDD
+d_BankDtlTyp,EQUENST,EQUENST
+d_BankDtlTyp,ES,ES
+d_BankDtlTyp,etax,eTax (Electronic)
+d_BankDtlTyp,eTaxManual,eTax (Manual)
+d_BankDtlTyp,EuroSIC,EuroSIC
+d_BankDtlTyp,ExcelImporter,Excel Electronic
+d_BankDtlTyp,ExcelImporterManual,Excel Manual
+d_BankDtlTyp,ExternalAccount,External Account
+d_BankDtlTyp,FDUpload,FD Upload
+d_BankDtlTyp,Finlite,Finlite
+d_BankDtlTyp,Finnone,Finnone
+d_BankDtlTyp,FISC,FISC
+d_BankDtlTyp,FIX,FIX
+d_BankDtlTyp,FTS,FTS
+d_BankDtlTyp,FW,FW
+d_BankDtlTyp,GBM,GBM
+d_BankDtlTyp,GCMS+,GCMS+
+d_BankDtlTyp,GCMSPLUSGCP,GCP Group
+d_BankDtlTyp,GCMSPLUSMT101,MT101
+d_BankDtlTyp,GCPSalary,GCP Salary
+d_BankDtlTyp,HanoiVietnamBranch,HanoiVietnamBranch
+d_BankDtlTyp,HK,HK
+d_BankDtlTyp,HKCheques,HKCheques
+d_BankDtlTyp,HKDCHATS,HKDCHATS
+d_BankDtlTyp,HKGDD,HKGDD
+d_BankDtlTyp,HochiMinhVietnamBranch,HoChiMinhVietnamBranch
+d_BankDtlTyp,IBRS,IBRS
+d_BankDtlTyp,IBRS_Emergency,IBRS Emergency Upload
+d_BankDtlTyp,ICCS,ICCS
+d_BankDtlTyp,iConnect,iConnect
+d_BankDtlTyp,IE,IE
+d_BankDtlTyp,Internet,Internet
+d_BankDtlTyp,INTERPAY,INTERPAY
+d_BankDtlTyp,IT,IT
+d_BankDtlTyp,IVR,IVR
+d_BankDtlTyp,LclClrng,LclClrng
+d_BankDtlTyp,Location,Location
+d_BankDtlTyp,LSV,LSV
+d_BankDtlTyp,LSVPLUS_CHF,LSVPLUS_CHF
+d_BankDtlTyp,LSVPLUS_EUR,LSVPLUS_EUR
+d_BankDtlTyp,Manual,Manual
+d_BankDtlTyp,ManualEntryFax,Fax
+d_BankDtlTyp,ManualEntryOrgnl,Manual Entries-Original
+d_BankDtlTyp,ManualUpld,ManualUpld
+d_BankDtlTyp,ManualUpload,Manual Upload
+d_BankDtlTyp,MCFXML,MCFXML
+d_BankDtlTyp,Misys,Misys
+d_BankDtlTyp,Mobile,Mobile
+d_BankDtlTyp,MT101Manual,MT101 (Manual)
+d_BankDtlTyp,Mumbai Branch,Mumbai Branch
+d_BankDtlTyp,NACH,NACH
+d_BankDtlTyp,NACHA,NACHA
+d_BankDtlTyp,NameAddr,NameAddr
+d_BankDtlTyp,NBIN,NBIN
+d_BankDtlTyp,NECS,NECS
+d_BankDtlTyp,NZ,NZ
+d_BankDtlTyp,Omakase,Pain.001
+d_BankDtlTyp,OSCFinacle,OSCFinacle
+d_BankDtlTyp,OSCProfund,OSCProfund
+d_BankDtlTyp,OVS,OVS
+d_BankDtlTyp,PartyIdentifier,Party Identifier
+d_BankDtlTyp,PayPro,PayPro
+d_BankDtlTyp,Prime,Prime
+d_BankDtlTyp,Profund,Profund
+d_BankDtlTyp,PT,PT
+d_BankDtlTyp,RECS_Ahmedabad,RECS_Ahmedabad
+d_BankDtlTyp,RECS_Bengaluru,RECS_Bengaluru
+d_BankDtlTyp,RECS_Bhubaneshwar,RECS_Bhubaneshwar
+d_BankDtlTyp,RECS_Chennai,RECS_Chennai
+d_BankDtlTyp,RECS_Guwahati,RECS_Guwahati
+d_BankDtlTyp,RECS_Jaipur,RECS_Jaipur
+d_BankDtlTyp,RECS_Kolkata,RECS_Kolkata
+d_BankDtlTyp,RECS_Thiruvananthapuram,RECS_Thiruvananthapuram
+d_BankDtlTyp,Ripple,Ripple
+d_BankDtlTyp,RPS,RPS
+d_BankDtlTyp,RT,RT
+d_BankDtlTyp,RTGSPLUS,RTGSPLUS
+d_BankDtlTyp,RU,RU
+d_BankDtlTyp,SalaryGroupPayment,SPOT Salary
+d_BankDtlTyp,SARIE,SARIE
+d_BankDtlTyp,SARIECHQ,SARIECHQ
+d_BankDtlTyp,SARIEDD,SARIEDD
+d_BankDtlTyp,SC,SC
+d_BankDtlTyp,SEDUS,SEDUS
+d_BankDtlTyp,SEPA,SEPA
+d_BankDtlTyp,SEPA DD,SEPA DD
+d_BankDtlTyp,SFMSNEFT,SFMSNEFT
+d_BankDtlTyp,SFMSRTGS,SFMSRTGS
+d_BankDtlTyp,SGPDD,SGPDD
+d_BankDtlTyp,SIC,SIC
+d_BankDtlTyp,SLBE,SLBE
+d_BankDtlTyp,SMILE,SMILE
+d_BankDtlTyp,SNCE,SNCE
+d_BankDtlTyp,SNCEBL,SNCEBL
+d_BankDtlTyp,SNCECQ,SNCECQ
+d_BankDtlTyp,SNCECQPN,SNCECQPN
+d_BankDtlTyp,SNCEDD,SNCEDD
+d_BankDtlTyp,SNCEQPN,SNCEQPN
+d_BankDtlTyp,SPI,SPI
+d_BankDtlTyp,SpotGroup,SPOT Group
+d_BankDtlTyp,StandingOrder,Standing Order
+d_BankDtlTyp,Straight2Axis,Straight2Axis
+d_BankDtlTyp,SWIFT,SWIFT
+d_BankDtlTyp,TARGET2,TARGET2
+d_BankDtlTyp,TCMS,TCMS
+d_BankDtlTyp,TCMS_Emergency,TCMS Emergency Format
+d_BankDtlTyp,TCSBaNCS,TCSBaNCS
+d_BankDtlTyp,TIE_TaipeiIntgrdEUC,TIE Taipei Integrated EUC
+d_BankDtlTyp,TYPC,TYPC
+d_BankDtlTyp,UOBChequesSGD,UOBChequesSGD
+d_BankDtlTyp,UOBChequesUSD,UOBChequesUSD
+d_BankDtlTyp,UPSS,UPSS
+d_BankDtlTyp,USDCHATS,USDCHATS
+d_BankDtlTyp,VACP,VACP
+d_BankDtlTyp,VietinBank,VietinBank
+d_BankDtlTyp,VietinPayroll,Vietin-Payroll
+d_BankDtlTyp,XbrdrHVPNet,XbrdrHVPNet
+d_BankDtlTyp,XbrdrLVPNet,XbrdrLVPNet
+d_BankDtlTyp,YCS,YCS
+d_BankDtlTyp,ZA,ZA
+d_SettCodes,AllOthers,All others
+d_SettCodes,Charges,Charges
+d_SettCodes,Interest,Interest
+d_SettCodes,PeriodicCharge,PeriodicCharge
+d_SettCodes,PoolCharge,PoolCharge
+d_SettCodes,PoolInterest,PoolInterest
+d_SettCodes,PriceCntrctChargeAcc,Price Contract Charge Account
+d_SettCodes,StakingPayout,Staking Payout
+d_SettTyp1,Both,Both
+d_SettTyp1,Disbursement,Disbursement
+d_SettTyp1,InterestSettlement,InterestSettlement
+d_SettTyp1,LoanDisbursement,LoanDisbursement
+d_SettTyp1,Payment,Payment
+d_SettTyp1,Procurement,Procurement
+d_SettTyp1,Repayment,Repayment
+d_SettTyp1,SecurityDeposit,SecurityDeposit
+d_StlmntMode,OutsideBank,Outside Bank
+d_StlmntMode,WithinBank,Within Bank
+d_FreqUnit,3xperDay,3x per day
+d_FreqUnit,Bi Monthly,Bi Monthly
+d_FreqUnit,Bi_Annual,Bi_Annual
+d_FreqUnit,BiWeekly,BiWeekly
+d_FreqUnit,CalendarHalfYearly,Calendar Half Yearly
+d_FreqUnit,CalendarMonthEnd,Calendar Month End
+d_FreqUnit,CalendarQuarterEnd,Calendar Quarter End
+d_FreqUnit,CalendarYearEnd,Calendar Year End
+d_FreqUnit,Day,Day
+d_FreqUnit,Every2hrs,Every Two Hours
+d_FreqUnit,FiveQuarter,FiveQuarter
+d_FreqUnit,Fixed Time,Fixed Time
+d_FreqUnit,Fortnight,Fortnight
+d_FreqUnit,HalfDaily,Half Daily
+d_FreqUnit,halfmonthly,half monthly
+d_FreqUnit,Hour,Hour
+d_FreqUnit,Hourly,Hourly
+d_FreqUnit,Immediate,Immediate
+d_FreqUnit,Intraday,Intraday
+d_FreqUnit,Minutes,Minutes
+d_FreqUnit,Month,Month
+d_FreqUnit,MonthEnd,Month End
+d_FreqUnit,No Frequency,No Frequency
+d_FreqUnit,OnDemand,On Demand
+d_FreqUnit,Overnight,Overnight
+d_FreqUnit,Quarter,Quarter
+d_FreqUnit,QuarterEnd,Quarter End
+d_FreqUnit,quarterly,quarterly
+d_FreqUnit,Six Month,Six Month
+d_FreqUnit,SixQuarter,SixQuarter
+d_FreqUnit,SpecificDates,SpecificDates
+d_FreqUnit,SPOT,SPOT
+d_FreqUnit,SpotNext,SpotNext
+d_FreqUnit,ThreeQuarter,ThreeQuarter
+d_FreqUnit,Today,Today
+d_FreqUnit,Tomorow,Tomorow
+d_FreqUnit,TomorrowNext,TomorrowNext
+d_FreqUnit,Week,Week
+d_FreqUnit,WeekEnd,Week End
+d_FreqUnit,weekly,weekly
+d_FreqUnit,Year,Year
+d_FreqUnit,YearEnd,Year End
+d_FreqUnit,Yearly,Yearly
+d_Mand_txn_typ,AllDebit,All Debit
+d_Mand_txn_typ,Open_close_account,Open close account
+d_Mand_txn_typ,Add_delete_signatory,Add delete signatory
+d_Mand_txn_typ,Borrow_on_behalf_of_company,Borrow on behalf of company
+d_Mand_txn_typ,DebitAccountAuthority,Debit Account Authority
+d_Mand_txn_typ,OnlineBankingForm,Online Banking Form
+d_ModeOfPymnt,ACTransfer,ACTransfer
+d_ModeOfPymnt,ACTransferExternalAC,ACTransferExternalAC
+d_ModeOfPymnt,Cash,Cash
+d_ModeOfPymnt,Cheque,Cheque
+d_ModeOfPymnt,Clearing,Clearing
+d_ModeOfPymnt,CO,CO
+d_ModeOfPymnt,DD,DD
+d_ModeOfPymnt,ExternalPayments,External Payments
+d_ModeOfPymnt,IBTA,IBTA
+d_ModeOfPymnt,MT,MT
+d_ModeOfPymnt,Others,Others
+d_ModeOfPymnt,OutwardClearingCheck,Outward Clearing Check
+d_ModeOfPymnt,PDC,PDC
+d_ModeOfPymnt,PO,PO
+d_ModeOfPymnt,Coex,Coex
+d_Dscnt_Typ,Discount Type,Discount Type
+d_chrg_purps,Charge purpose,Charge purpose
+d_Account_Type_Ownr,CurrentAccount,Current Account
+d_Account_Type_Ownr,SavingAccount,Saving Account
+d_Account_Type_Ownr,TermDeposit,Term Deposit
+d_InstrIntrTyp,AmntNominal,Nominal Amount
+d_InstrIntrTyp,AmountNominal,Amount Nominal
+d_InstrIntrTyp,Fixed,Fixed
+d_InstrIntrTyp,FixedFloating,Fixed Floating
+d_InstrIntrTyp,Floating,Floating
+d_InstrIntrTyp,FloatingFixed,Floating Fixed
+d_InstrIntrTyp,ODOnTD,ODOnTD
+d_InstrIntrTyp,ReversFloating,Reverse Floating
+d_InstrIntrTyp,StepDown,Step Down
+d_InstrIntrTyp,StepUp,Step Up
+d_LimTyp,OverdraftLimit,Overdraft Limit
+d_LimitTemplate,AcntLmt,Account Limit
+d_LimitTemplate,AutoBasic,AutoBasic
+d_LimitTemplate,AutoStandard,AutoStandard
+d_LimitTemplate,Basic,Basic Limit
+d_LimitTemplate,CnstrctnLoan,Construction Loan
+d_LimitTemplate,Credit,Credit Limit
+d_LimitTemplate,DfltTemplate,Default Zero Limit
+d_LimitTemplate,ElevatedStandard,"Elevated	Standard"
+d_LimitTemplate,LQLimit,LQLimit
+d_LimitTemplate,MaximumStandard,Maximum  Standard
+d_LimitTemplate,Payment,Payment Limit
+d_LimitTemplate,SBOStandard,Small Business Offer STANDARD Overdraft
+d_LimitTemplate,Special,Special Limit
+d_LimitTemplate,Standard,Standard Limit
+d_LimitTemplate,StudentStandard,Student Standard
+d_LimitTemplate,YouthStandard,Youth Standard
+d_LimitTemID,Limit Template ID,Limit Template ID
+d_LmtRuleStat,Active,Active
+d_LmtRuleStat,ActModPndAuth,ActModPndAuth
+d_LmtRuleStat,Cancelled,Cancelled
+d_LmtRuleStat,PndngClosure,PndngClosure
+d_LmtRuleStat,Rejected,Rejected
+d_LmtRuleStat,Released,Released
+d_LmtRuleStat,Verified,Verified
+d_LimitBasis,BorrowingBase,BorrowingBase
+d_LimitBasis,LimitAmount,LimitAmount
+d_LimitBasis,LowerOfTwo,LowerOfTwo
+d_UserRole,AccountsManager,Accounts Manager
+d_UserRole,All,All
+d_UserRole,CMA,CMA
+d_UserRole,ComManager,Communication Manager
+d_UserRole,ComplianceOff,Compliance Officer
+d_UserRole,CreditsOfficer,Credits Officer
+d_UserRole,CSA,CSA
+d_UserRole,Dealer,Dealer
+d_UserRole,DummyDealer,Dummy Dealer
+d_UserRole,ExCon,ExCon
+d_UserRole,FinController,Financial Controller
+d_UserRole,Fund_Manager,Fund_Manager
+d_UserRole,HeadTeller,Head Teller
+d_UserRole,OnlineTrader,Online Trader
+d_UserRole,PaymentsMgr,Payments Manager
+d_UserRole,Plain_Admin,Plain Admin
+d_UserRole,PortfolioMgr,Portfolio Manager
+d_UserRole,RealEsate,Real Estate
+d_UserRole,ReportQueries,Report and Queries
+d_UserRole,RiskManager,Risk Manager
+d_UserRole,RM,RM
+d_UserRole,SecAdmin,Security Administrator
+d_UserRole,SepaDirectDebit,Sepa Direct Debit
+d_UserRole,SystemManager,System Manager
+d_UserRole,Teller,Teller
+d_UserRole,TOKEN,TOKEN
+d_UserRole,Trader,Trader
+d_Number08,Limit Reference,Limit Reference
+d_LmtChngSchdlTyp,Absolute,Absolute
+d_LmtChngSchdlTyp,Adhoc,Adhoc
+d_LmtChngSchdlTyp,Redemption,Redemption
+d_LmtChngSchdlTyp,Reversal,Reversal
+d_LmtChngSchdlTyp,Seasonal,Seasonal
+d_AcntNumScheme,AcntRef,Account Reference
+d_AcntNumScheme,AcntRefCrncy,Account Reference Currency
+d_AcntNumScheme,Bban,BBAN
+d_AcntNumScheme,BbanSeqId,BBAN Sequence Id
+d_AcntNumScheme,CASAReference,CASA Reference
+d_AcntNumScheme,CIF,CIF
+d_AcntNumScheme,ExtRefNum,External Reference
+d_AcntNumScheme,ExtRefNum1,External Reference 1
+d_AcntNumScheme,ExtRefNum2,External Reference 2
+d_AcntNumScheme,Iban,Iban
+d_AcntNumScheme,IntAcntScheme,Internal Account Scheme
+d_AcntNumScheme,Loans,Loans
+d_AcntNumScheme,LOCReference,LOC Reference
+d_AcntNumScheme,Other,Other
+d_AcntNumScheme,QZAcntNum,Internal Account Reference
+d_AcntNumScheme,Syndication ArrangementId,Syndication Arrangement Id
+d_AcntNumScheme,TermDeposit,Term Deposit
+d_DefinitionType,SystemDefined,SystemDefined
+d_DefinitionType,UserDefined,UserDefined
+d_DefinitionType,Both,Both
+d_ModLogic,Mod10,Mod 10
+d_ModLogic,Mod10Rcrsv,Mod 10-Rcrsv
+d_ModLogic,Mod11,Mod 11
+d_ModLogic,Mod22,Mod22
+d_ModLogic,Mod26,Mod26
+d_ModLogic,Mod97,Mod 97
+d_ModLogic,Mod97_10,Mod97-10
+d_ModLogic,ModS11,ModS11
+d_InstrTyp,All,All
+d_InstrTyp,AME,AME
+d_InstrTyp,AutMiscEnt,AutMiscEnt
+d_InstrTyp,AutMiscEntry,AutMiscEntry
+d_InstrTyp,BankGurantee,Bank Guarantee/Stand By Letter of Credit
+d_InstrTyp,BankPrdcts,Bank Products
+d_InstrTyp,BDP,BDP
+d_InstrTyp,BillPdIn,Bill Paid In
+d_InstrTyp,BillPdOut,Bill Paid Out
+d_InstrTyp,Bills,Bills
+d_InstrTyp,BISR,Bank Initiated SI Request (BISR)
+d_InstrTyp,BOBT,Bank Order Bank Transfer (BOBT)
+d_InstrTyp,BOBTPreExec,BOBTPreExecuted
+d_InstrTyp,BOCT,Bank Order Customer Transfer (BOCT)
+d_InstrTyp,BuldgScFund,BuldgScFund
+d_InstrTyp,CallNtcDeposit,Call Notice Deposit
+d_InstrTyp,Cards,Cards
+d_InstrTyp,CashConc,Cash Concentration
+d_InstrTyp,CerDeposit,Certificate Deposit
+d_InstrTyp,CertificateofDeposit,Certificate of Deposit
+d_InstrTyp,CHDDDebit,CHDD
+d_InstrTyp,CHDDPdIn,Direct Debit Paid-In (CHDDPdIn)
+d_InstrTyp,CHDDPIB2B,CHDDPIB2B
+d_InstrTyp,CHDDPICOR1,CHDDPICOR1
+d_InstrTyp,CHDDPOB2B,CHDDPOB2B
+d_InstrTyp,CHDDPOCORE1,CHDDPOCORE1
+d_InstrTyp,Cheque,Bankers cheque
+d_InstrTyp,CHEQUES,Inventory
+d_InstrTyp,ChqPdIn,Cheque Paid In
+d_InstrTyp,ChqPdOut,Cheque Paid Out
+d_InstrTyp,CI,Customer Instruction (CI)
+d_InstrTyp,CIPreExec,CI Pre-Executed (CIPreExec)
+d_InstrTyp,CISR,Customer Initiated SI Request (CISR)
+d_InstrTyp,CMO,CMO
+d_InstrTyp,CntngntCntrcts,Contingent Contracts
+d_InstrTyp,CoInvstFund,CoInvstFund
+d_InstrTyp,ComdtyMurabaha,Commodity Murabaha
+d_InstrTyp,Commodities,Commodity Details
+d_InstrTyp,Commodity,Commodities
+d_InstrTyp,Commpapers,Commercial Papers
+d_InstrTyp,CrncyFutures,Currency Futures
+d_InstrTyp,CrncyPosAcc,Currency Position Account
+d_InstrTyp,CrncyPosAcc_Nts,Currency Position Account Notes
+d_InstrTyp,CrncySwap,Forex Swap
+d_InstrTyp,CrssCrncyIRS,Cross Currency IRS
+d_InstrTyp,CrtfctDpst,Certificate Of Deposits
+d_InstrTyp,CshAccnt,Cash Account
+d_InstrTyp,CurrAcc,Current Account Advances
+d_InstrTyp,Current,Current Account
+d_InstrTyp,CurrOptTrad,Currency Options (Traded)
+d_InstrTyp,DDPdOut,DDPdOut
+d_InstrTyp,DDPI,Direct Debit Paid-In (DDPI)
+d_InstrTyp,DDPIB2B,CHDDPdInB2B
+d_InstrTyp,DDPICore,Direct Debit Paid-In (DDPICore)
+d_InstrTyp,DDPO,Direct Debit Paid-Out (DDPO)
+d_InstrTyp,DDPOOOFB2B,DDPOOOFB2B
+d_InstrTyp,DDPOOOFCore,DDPOOOFCore
+d_InstrTyp,DDPORecB2B,DDPORecB2B
+d_InstrTyp,DDPORecCore,DDPORecCore
+d_InstrTyp,DebitCards,Debit Cards
+d_InstrTyp,DebtInstruments,DebtInstruments
+d_InstrTyp,DebtLikeStrPrdtGROI,Debt Like Structured Products GROI
+d_InstrTyp,DebtLikeStrProducts,Debt Like Structured Products
+d_InstrTyp,Direct Debit Paid-Out (CHDDPdOut),Direct Debit Paid-Out (CHDDPdOut)
+d_InstrTyp,Discounted,Discounted Instrument
+d_InstrTyp,DocCollection,DocCollection
+d_InstrTyp,DrDbtLSV,Direct Debit LSV
+d_InstrTyp,DrDbtLSV_PdOut,DrDbtLSV_PdOut
+d_InstrTyp,DrDbtLSVpPdOut,DrDbtLSVpPdOut
+d_InstrTyp,DrDbtPdIn,Direct Debit Paid In
+d_InstrTyp,DrDbtPdOut,Direct Debit Paid Out
+d_InstrTyp,EMTN,EMTN
+d_InstrTyp,Eq_Bskts,Equity Baskets
+d_InstrTyp,EquityInstrmnts,Equity Instruments
+d_InstrTyp,EquityLikeStrProducts,Equity Like Structured Products
+d_InstrTyp,ExchngTradedFnd,Exchange Traded Fund
+d_InstrTyp,ExportDocCollections,ExportDocCollections
+d_InstrTyp,ExportLetterOfCredit,ExportLetterOfCredit
+d_InstrTyp,FidCallNtcDep,Fiduciary Call Notice Deposit
+d_InstrTyp,FidTermDeposit,Fiduciary Term Deposit
+d_InstrTyp,FixedAsset,Fixed Asset
+d_InstrTyp,FixedTermDep,Fixed Term Deposit
+d_InstrTyp,ForwardRateAgrm,ForwardRateAgrm
+d_InstrTyp,ForwardRateAgrmnt,Forward Rate Agreement
+d_InstrTyp,Fund,Share Instrument
+d_InstrTyp,FX_Rate,FX Rate
+d_InstrTyp,FxdAssetLand,Fixed Asset Land
+d_InstrTyp,FxdAssetService,Fixed Asset Service
+d_InstrTyp,FxdAssetVehicle,Fixed Asset Vehicle
+d_InstrTyp,FxdTrmAcct,Fixed Term Loans
+d_InstrTyp,FxdTrmLoan,Fixed Term Loan
+d_InstrTyp,FxFwd,Forex Forward
+d_InstrTyp,FXLinked,FX Linked
+d_InstrTyp,FxNDF,Non Deliverable Forwards
+d_InstrTyp,FXRate,FXRate
+d_InstrTyp,FxSpot,Forex Spot
+d_InstrTyp,FxSwap,FxSwap
+d_InstrTyp,GrntdFund,Guarnateed Fund
+d_InstrTyp,GrntdProduct,Guaranteed Product
+d_InstrTyp,GROIDbtEqtStrct,GROIDbtEqtStrct
+d_InstrTyp,GU,GU
+d_InstrTyp,Ijaarah,Ijarah
+d_InstrTyp,IncomingBG,IncomingBG
+d_InstrTyp,Index,Index
+d_InstrTyp,IndexCrtfct,Index Certificates
+d_InstrTyp,IndexLinked,Index Linked
+d_InstrTyp,IndOptTrad,Index Options (Traded)
+d_InstrTyp,IndxFutures,Index Futures
+d_InstrTyp,IntAcc,Internal Account
+d_InstrTyp,IntRatFutures,Interest Rate Futures
+d_InstrTyp,IntrstRtOptTrad,IntrstRtOptTrad
+d_InstrTyp,InvstFund,Invest Funds
+d_InstrTyp,InvstFundBonds,Invest Fund Bonds
+d_InstrTyp,InvstFundEquity,Invest Fund Equity
+d_InstrTyp,InvstFundMnyMkt,Invest Fund Money Market
+d_InstrTyp,InvstFundOther,Invest Fund Other
+d_InstrTyp,InvstTrust,Invest Trust
+d_InstrTyp,IRO,Interest Rate Option
+d_InstrTyp,IRS,IRS
+d_InstrTyp,Istisna,Istisna
+d_InstrTyp,Istisnaa,Istisnaa
+d_InstrTyp,LC,LC
+d_InstrTyp,LetterOfCredit,LetterOfCredit
+d_InstrTyp,LineofCredit,Line of Credit
+d_InstrTyp,LmtTemplate,Limit Template
+d_InstrTyp,Loyalty Saving,Loyalty Saving
+d_InstrTyp,MiscEntry,Miscellaneous Entry(MiscEntry)
+d_InstrTyp,MnyAccts,Cash Accounts
+d_InstrTyp,MnyMarktSec,Money Market Securities
+d_InstrTyp,Mortgage Home,Consumer Term Loans
+d_InstrTyp,Consumer Loan Secured,Consumer Term Loans
+d_InstrTyp,Consumer Loan Unsecured,Consumer Term Loans
+d_InstrTyp,MTN,Med Term Note
+d_InstrTyp,Mudaraba,Mudaraba
+d_InstrTyp,Mudarabah,Mudarabah
+d_InstrTyp,MudharabahTermDpst,Mudhrabha Term Deposit
+d_InstrTyp,Mudharba,Mudarabah
+d_InstrTyp,Murabaha,Murabaha Recurring Deposit
+d_InstrTyp,MurabahahWithOutAsset,Murabaha without asset
+d_InstrTyp,MurabhahaFinance,Murabaha Finance
+d_InstrTyp,Musharaka,Musharaka
+d_InstrTyp,MutualFund,Mutual Fund
+d_InstrTyp,NIEC,NIEC
+d_InstrTyp,NIPdIn,NI Paid In
+d_InstrTyp,NIPdOut,NI Paid Out
+d_InstrTyp,NotionalPooling,Notional Pooling
+d_InstrTyp,OABT,Own Account Bank Transfer (OABT)
+d_InstrTyp,OACT,Own Account Customer Transfer (OACT)
+d_InstrTyp,OTCCurncyOpt,OTC Currency Option
+d_InstrTyp,OTCSecOpt,OTC Securities Options
+d_InstrTyp,OtherFnds,Other Funds
+d_InstrTyp,Others,Others
+d_InstrTyp,OthNonQtdInstr,Other Non  quoted
+d_InstrTyp,Payment Liquidity,PLN (Payment Liquidity)
+d_InstrTyp,PaymentProd,Payment Product
+d_InstrTyp,Personal,Personal
+d_InstrTyp,PhyPrcMetals,Physical Precious Metals
+d_InstrTyp,PoolingAndConcentration,Combined Pool
+d_InstrTyp,PortfolioProd,PortfolioProd
+d_InstrTyp,PPB,Personal Portfolio Bond
+d_InstrTyp,PreLoadCards,PreLoadCards
+d_InstrTyp,PromNotesPdOut,Prom Notes Paid Out
+d_InstrTyp,Promp,Promp
+d_InstrTyp,ProNotes,Promissory Notes
+d_InstrTyp,PrtflioProd,Portfolio Products
+d_InstrTyp,Pseudo,Pseudo
+d_InstrTyp,Pymnt,Payment
+d_InstrTyp,Qard,Qard
+d_InstrTyp,ReccDep,Recurring Deposits
+d_InstrTyp,Repo,Repo Instrument
+d_InstrTyp,RevRepo,Reverse Repo
+d_InstrTyp,Rights,Rights
+d_InstrTyp,RtlTermDep,Term Deposits
+d_InstrTyp,SavAccnt,Savings Account
+d_InstrTyp,Saving,Saving
+d_InstrTyp,ScrtsdOptions,Securitised Options
+d_InstrTyp,SDDDebit,SDD
+d_InstrTyp,SecFutures,Securities Futures
+d_InstrTyp,SecOptTrad,Securities Options Traded
+d_InstrTyp,Special_Interest_Container,Special Interest Containers
+d_InstrTyp,SSBT,Settlement System Bank Transfer (SSBT)
+d_InstrTyp,SSCT,Settlement System Customer Transfer (SSCT)
+d_InstrTyp,SSLT,Settlement System Low Value Transfer (SSLT)
+d_InstrTyp,SSPRDT,Settlement System Periodic Bulk Transfer (SSPRDT)
+d_InstrTyp,StructuredCertOfDpst,Structured Certificate Of Deposit
+d_InstrTyp,SyndicationContract,Syndication Contract
+d_InstrTyp,TBills,Treasury Bills
+d_InstrTyp,TBonds,TBonds
+d_InstrTyp,Transfer,Transfer
+d_InstrTyp,TravCheque,Travelers cheque
+d_InstrTyp,UL,UL
+d_InstrTyp,UnitTrust,Unit Trust
+d_InstrTyp,Vaults,Vaults
+d_InstrTyp,Vehicle,Business Term Loans
+d_InstrTyp,Wadhiya,Wadiah
+d_InstrTyp,Warrant,Warrants
+d_InstrTyp,XchgValAcc,Exchange Value Account
+d_InstrTyp,XchgValAcc_Nts,Exchange Value Account Notes
+d_FldName,AcntNum,Account Number
+d_FldName,AcntSeq,AccountSequence
+d_FldName,BankBranch,Bank Branch
+d_FldName,BankCode,Bank Code
+d_FldName,BranchCode,Branch Code
+d_FldName,ChckDgt,Check Digit
+d_FldName,Client_code,Level4 code
+d_FldName,CustRef,CustomerReference
+d_FldName,DepositSchemePlan,Deposit Reference
+d_FldName,Level1_Code,Level1 Code
+d_FldName,Level2_Code,Level2 Code
+d_FldName,Level3_Code,Level3 Code
+d_FldName,Level4_code,Level5 code
+d_FldName,Level5_code,Level6 code
+d_FldName,Level6_code,Level7 code
+d_FldName,Level7_code,Client code
+d_FldName,Postal_Account_Num,Postal Account Number
+d_FldName,Prefix_code,Prefix Code
+d_FldName,ProductCode,Product Code
+d_FldName,ProductType,Account Type
+d_FldName,UqClntCode,Unique Client Code
+d_FillTyp,Left,Left
+d_FillTyp,NA,NA
+d_FillTyp,Right,Right
+d_FieldTyp,Alphabetic,Alphabetic
+d_FieldTyp,AlphaNumeric,AlphaNumeric
+d_FieldTyp,AlphaSpecial,AlphaSpecial
+d_FieldTyp,BenBnkRpr,BenBnkRpr
+d_FieldTyp,BenRpr,BenRpr
+d_FieldTyp,Numeric,Numeric
+d_FieldTyp,NumSpecial,NumSpecial
+d_FieldTyp,SpecialChar,SpecialChar
+d_FieldFormat,AlphaNumeric,Alpha Numeric
+d_FieldFormat,Date,Date
+d_FieldFormat,List,List
+d_FieldFormat,Numeric,Numeric
+d_Int_Rec,AddntnlTax,Additional Tax
+d_Int_Rec,CmpnstdInterest,CmpnstdInterest
+d_Int_Rec,CmpnstnBenefit,CmpnstnBenefit
+d_Int_Rec,Comm,Comm
+d_Int_Rec,Commission,Commission
+d_Int_Rec,CrPnltyInterest,Credit penalty Interest
+d_Int_Rec,FictCmpnstdInt,FictCmpnstdInt
+d_Int_Rec,FictitiousInt,FictitiousInt
+d_Int_Rec,FundIntrst,On Average Bal
+d_Int_Rec,Intrst,Interest
+d_Int_Rec,PoolingAcntIntr,PoolingAcntIntrst
+d_Int_Rec,PoolingGrpIntrs,PoolingGrpIntrs
+d_Int_Rec,PoolingIntrstNo,PoolingIntrstNo
+d_Int_Rec,PoolingSubsyInt,PoolingSubsyInt
+d_Int_Rec,SuspendInt,SuspendInterest
+d_Int_Rec,VAT,VAT
+d_Int_Rec,Wtax,WithholdingTax

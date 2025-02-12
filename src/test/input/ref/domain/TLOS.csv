@@ -1,0 +1,238 @@
+﻿d_BusinessArea,Letter Of Credit,Letter Of Credit
+d_BusinessArea,Non LC Bills,Non LC Bills
+d_TradeLoanTyp,Import Loan,Import Loan
+d_TradeLoanTyp,Pre-Shipment Loan,Pre-Shipment Loan
+d_TradeLoanTyp,Import Loan,Import Loan
+d_TradeLoanTyp,Pre-Shipment Loan,Pre-Shipment Loan
+d_PosTyp,Current,Current
+d_PosTyp,LCTxn,LCTxn
+d_PosTyp,PreAdvcTxn,PreAdvcTxn
+d_PosTyp,TFBillTxn,TFBillTxn
+d_PosTyp,TFBillPayment,TFBillPayment
+d_PosTyp,ELCTxn,ELCTxn
+d_PosTyp,ELCBillTxn,ELCBillTxn
+d_PosTyp,ELCBillPayTxn,ELCBillPayTxn
+d_PosTyp,TFCrystallizationLoan,TFCrystallizationLoan
+d_PosTyp,Nostro,Nostro
+d_PosTyp,LOC,LOC
+d_PosTyp,Savings,Savings
+d_PosTyp,Term Deposit,Term Deposit
+d_PosTyp,ChrgSimulator,ChrgSimulator
+d_PosTyp,AWBEndorsement,AWBEndorsement
+d_PosTyp,ELCConfirmation,ELCConfirmation
+d_AcctType,SavingsAccount,SavingsAccount
+d_AcctType,CurrentAccount,CurrentAccount
+d_AcctType,CorporateCurrentAccount,CorporateCurrentAccount
+d_AcctType,ConsumerLoan,ConsumerLoan
+d_AcctType,TermLoan,TermLoan
+d_AcctType,Checking,Checking
+d_AcctType,Loan,Loan
+d_AcctType,DDA,DDA
+d_AcctType,InternalAccount,InternalAccount
+d_AcctType,LineofCredit,LineofCredit
+d_AcctType,NostroAccount,NostroAccount
+d_AcctType,CBSCoex,CBSCoex
+d_AcctType,CBSDep,CBSDep
+d_AcctType,CBSLoan,CBSLoan
+d_TFIntercms,CFR,Cost and Freight
+d_TFIntercms,CIF,Cost Insurance and Freight
+d_TFIntercms,CIP,Carriage insurance Paid to
+d_TFIntercms,CPT,Carriage Paid to
+d_TFIntercms,DAF,Delivered at Frontier
+d_TFIntercms,DAP,Delivered at place
+d_TFIntercms,DDP,Delivered Duty Paid
+d_TFIntercms,DDU,Delivered Duty Unpaid
+d_TFIntercms,DEQ,Delivery Ex Quay
+d_TFIntercms,DES,Delivery Ex Ship
+d_TFIntercms,EXF,Ex-Factory
+d_TFIntercms,EXW,EX Works
+d_TFIntercms,FAS,Free alongside Ship
+d_TFIntercms,FBC,Free Delivery at Sub Contract
+d_TFIntercms,FCA,Free Carrier
+d_TFIntercms,FOB,Free On Board
+d_ShipmentType,PostShipment,PostShipment
+d_ShipmentType,PreShipment,PreShipment
+d_YesNoFlg,Never,Never
+d_YesNoFlg,No,No
+d_YesNoFlg,NONE,None
+d_YesNoFlg,NotApplicable,NotApplicable
+d_YesNoFlg,NotAssessed,NotAssessed
+d_YesNoFlg,Yes,Yes
+d_LoanOperationType,Collection,Collection
+d_LoanOperationType,Discount,Discount
+d_LoanOperationType,Negotiation,Negotiation
+d_LoanOperationType,Purchase,Purchase
+d_TFTenorTyp,DeferredPayment,Deferred Payment
+d_TFTenorTyp,MixedPayment,Mixed Payment
+d_TFTenorTyp,Sight,Sight
+d_TFTenorTyp,Usance,Usance
+d_RiskOn,Customer,Customer
+d_RiskOn,IssuingBank,IssuingBank
+d_LoanCrncyType,BillCrncy,BillCrncy
+d_LoanCrncyType,ForiegnCrncy,ForiegnCrncy
+d_LoanCrncyType,LocalCrncy,LocalCrncy
+d_TFBankExt,Outside,Outside
+d_TFBankExt,Within,Within
+d_TFLoanStatus,Active,Active
+d_TFLoanStatus,AmendInitiated,AmendInitiated
+d_TFLoanStatus,Cancelled,Cancelled
+d_TFLoanStatus,Closed,Closed
+d_TFLoanStatus,Disbursed,Disbursed
+d_TFLoanStatus,Executed,Executed
+d_TFLoanStatus,Expired,Expired
+d_TFLoanStatus,OnHold,OnHold
+d_TFLoanStatus,PendingCancel,PendingCancel
+d_TFLoanStatus,PendingClose,PendingClose
+d_TFLoanStatus,RateAvailable,RateAvailable
+d_TFLoanStatus,RateCancelled,RateCancelled
+d_TFLoanStatus,RateRejected,RateRejected
+d_TFLoanStatus,Rejected,Rejected
+d_TFLoanStatus,Release,Release
+d_TFLoanStatus,Sentback,Sentback
+d_TFLoanStatus,Settled,Settled
+d_TFLoanStatus,Verified,Verified
+d_TFLoanStatus,WaitingForRate,WaitingForRate
+d_UserAction,Approve,Approve
+d_UserAction,Cancel,Cancel
+d_UserAction,Close,Close
+d_UserAction,Reject,Reject
+d_UserAction,Sendback,Sendback
+d_UserAction,Submitforapproval,Submit-for-approval
+d_UserAction,SubmitforpendClosure,Submit-for-pend-Closure
+d_UserAction,Delete,Delete
+d_LoanPurposeCode,BusinessDevelopment_Expansion,BusinessDevelopment_Expansion
+d_LoanPurposeCode,Education,Education
+d_LoanPurposeCode,ExportPostShipmentLoan,ExportPostShipmentLoan
+d_LoanPurposeCode,Machineries_Refurbishing_Repairs_Maintenance,Machineries_Refurbishing_Repairs_Maintenance
+d_LoanPurposeCode,Others,Others
+d_LoanPurposeCode,Personal,Personal
+d_LoanPurposeCode,Property_Renovation_Repairs,Property_Renovation_Repairs
+d_LoanPurposeCode,Purchase_ConstructionofHouse,Purchase_ConstructionofHouse
+d_LoanPurposeCode,PurchaseCranes_Crawlers_Equipment,PurchaseCranes_Crawlers_Equipment
+d_LoanPurposeCode,PurchaseofElectricFittings_Installation,PurchaseofElectricFittings_Installation
+d_LoanPurposeCode,PurchaseofFurnitureandFixtures,PurchaseofFurnitureandFixtures
+d_LoanPurposeCode,PurchaseofMachinery_MedicalInstruments,PurchaseofMachinery_MedicalInstruments
+d_LoanPurposeCode,PurchaseofProperty,PurchaseofProperty
+d_LoanPurposeCode,PurchaseofSpares_Attachment,PurchaseofSpares_Attachment
+d_LoanPurposeCode,PurchaseofTransportVehicle,PurchaseofTransportVehicle
+d_LoanPurposeCode,TakeOverLoan,Take Over Loan
+d_LoanPurposeCode,Vehicle,Vehicle
+d_LoanPurposeCode,WorkingCapital,WorkingCapital
+d_FreqUnit,3xperDay,3x per day
+d_FreqUnit,Bi Monthly,Bi Monthly
+d_FreqUnit,Bi_Annual,Bi_Annual
+d_FreqUnit,BiWeekly,BiWeekly
+d_FreqUnit,CalendarHalfYearly,Calendar Half Yearly
+d_FreqUnit,CalendarMonthEnd,Calendar Month End
+d_FreqUnit,CalendarQuarterEnd,Calendar Quarter End
+d_FreqUnit,CalendarYearEnd,Calendar Year End
+d_FreqUnit,Day,Day
+d_FreqUnit,Every2hrs,Every Two Hours
+d_FreqUnit,FiveQuarter,FiveQuarter
+d_FreqUnit,Fixed Time,Fixed Time
+d_FreqUnit,Fortnight,Fortnight
+d_FreqUnit,HalfDaily,Half Daily
+d_FreqUnit,halfmonthly,half monthly
+d_FreqUnit,Hourly,Hourly
+d_FreqUnit,Immediate,Immediate
+d_FreqUnit,Intraday,Intraday
+d_FreqUnit,Minutes,Minutes
+d_FreqUnit,Month,Month
+d_FreqUnit,MonthEnd,Month End
+d_FreqUnit,No Frequency,No Frequency
+d_FreqUnit,OnDemand,On Demand
+d_FreqUnit,Overnight,Overnight
+d_FreqUnit,QuarterEnd,Quarter End
+d_FreqUnit,quarterly,quarterly
+d_FreqUnit,Six Month,Six Month
+d_FreqUnit,SixQuarter,SixQuarter
+d_FreqUnit,SpecificDates,SpecificDates
+d_FreqUnit,SPOT,SPOT
+d_FreqUnit,SpotNext,SpotNext
+d_FreqUnit,ThreeQuarter,ThreeQuarter
+d_FreqUnit,Today,Today
+d_FreqUnit,Tomorow,Tomorow
+d_FreqUnit,TomorrowNext,TomorrowNext
+d_FreqUnit,WeekEnd,Week End
+d_FreqUnit,weekly,weekly
+d_FreqUnit,YearEnd,Year End
+d_FreqUnit,Yearly,Yearly
+d_wfStatus,Onhold,Onhold
+d_wfStatus,Pending Authorization ,Pending Authorization 
+d_wfStatus,Active,Active
+d_wfStatus,Modification Onhold,Modification Onhold
+d_wfStatus,Modification Pending Authorization,Modification Pending Authorization
+d_wfStatus,Pending Cancel,Pending Cancel
+d_wfStatus,Cancelled,Cancelled
+d_wfStatus,Rejected,Rejected
+d_wfStatus,Inactive,Inactive
+d_wfStatus,Pending Delete Authorization,Pending Delete Authorization
+d_wfStatus,Closed,Closed
+d_wfStatus,Pending Closure Authorization,Pending Closure Authorization
+d_InstallmntType,Balloon,Balloon
+d_InstallmntType,EI,Equal Installment
+d_InstallmntType,Equal,Equal
+d_InstallmntType,IntrstOnly,IntrstOnly
+d_InstallmntType,Irregular,Irregular
+d_InstallmntType,IrrEqualPrncpl,IrrEqualPrncpl
+d_InstallmntType,Negotiated,Negotiated
+d_InstallmntType,PrinNegoIrRegIntrst,PrinNegoIrRegIntrst
+d_InstallmntType,PrinNegoRegIntrst,PrinNegoRegIntrst
+d_ResponseStatus,Cancelled,Cancelled
+d_ResponseStatus,Failed,Failed
+d_ResponseStatus,Failure,Failure
+d_ResponseStatus,NotRequested,NotRequested
+d_ResponseStatus,Requested,Requested
+d_ResponseStatus,Success,Success
+d_IntrCatg,AccountLvl_Cr,Account Level Interest Apportionment Cr
+d_IntrCatg,AccountLvl_Dr,Account Level Interest Apportionment Dr
+d_IntrCatg,Adhoc,Adhoc Limit Interest
+d_IntrCatg,AprtnAcnt_Cr,AprtnAcnt_Cr
+d_IntrCatg,AprtnAcnt_Dr,AprtnAcnt_Dr
+d_IntrCatg,AprtnGroup_Cr,AprtnGroup_Cr
+d_IntrCatg,AprtnGroup_Dr,AprtnGroup_Dr
+d_IntrCatg,AprtnSubsy_Cr,AprtnSubsy_Cr
+d_IntrCatg,AprtnSubsy_Dr,AprtnSubsy_Dr
+d_IntrCatg,Both,Both
+d_IntrCatg,Commission,Commission
+d_IntrCatg,Credit,Credit
+d_IntrCatg,CrPnlty,Credit penalty
+d_IntrCatg,Debit,Debit
+d_IntrCatg,GroupLvl_Cr,Group Level Interest Apportionment Cr
+d_IntrCatg,GroupLvl_Dr,Group Level Interest Apportionment Dr
+d_IntrCatg,NotApplbl,Not applicable
+d_IntrCatg,Penal,Penal
+d_IntrCatg,PriceGliff,Price Gliff
+d_IntrCatg,SubsyLvl_Cr,Subsidiary Level Interest Apportionment Cr
+d_IntrCatg,SubsyLvl_Dr,Subsidiary Level Interest Apportionment Dr
+d_IntrCatg,UCA,Under Clearing Allowance
+d_OverrideType,Absolute,Absolute
+d_OverrideType,Differential,Differential
+d_OverrideType,limit,limit
+d_AcctActivation,OnLoanFirstDisb,OnLoanFirstDisb
+d_AcctActivation,OnLoanStrtDt,OnLoanStrtDt
+d_LoanType,AmrtzngLOC,AmrtzngLOC
+d_LoanType,CallableLoans,Callable Loans
+d_LoanType,ComdtyMurabaha,Commodity Murabaha
+d_LoanType,DefrdMrtgLOC,DefrdMrtgLOC
+d_LoanType,Demand,Demand
+d_LoanType,Deposits,Deposits
+d_LoanType,DiscountedLoan,Discounted Loan
+d_LoanType,ForwardIjarah,Forward Ijarah
+d_LoanType,Ijaarah,Ijarah
+d_LoanType,IjarahWithOutPurchase,Ijarah Without Purchase
+d_LoanType,IndexLinkedLoan,IndexLinkedLoan
+d_LoanType,Istisna,Istisna
+d_LoanType,MurabahahWithOutAsset,Murabahah Without Asset
+d_LoanType,MurabahahWithOutPurchase,Murabahah Without Purchase
+d_LoanType,MurabhahaFinance,Murabhaha Finance
+d_LoanType,NonAmrtzngLOC,NonAmrtzngLOC
+d_LoanType,NonRevolving,NonRevolving
+d_LoanType,Qard,Qard
+d_LoanType,Revolving,Revolving
+d_LoanType,ServiceIjarah,Service Ijarah
+d_LoanType,Term,Term
+d_DisbType,FreeFormat,FreeFormat
+d_DisbType,Irregular,Irregular
+d_DisbType,MultipleTranche,MultipleTranche
+d_DisbType,SingleTranche,SingleTranche
