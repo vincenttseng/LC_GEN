@@ -2,6 +2,7 @@ package com.vincent.coretest.util;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -113,11 +114,25 @@ public class TextUtil {
 		return -1;
 	}
 
-	public static String removeEndingSemicolon(String line) {
-		if (StringUtils.isBlank(line) || !line.endsWith(":")) {
-			return StringUtils.trim(line);
+	public static String removeEndingSemicolonAndDash(String line) {
+		String tmp = line;
+		String result = trimEndingSemicolonAndDash(tmp);
+		while (result.length() != tmp.length()) {
+			tmp = result;
+			result = trimEndingSemicolonAndDash(tmp);
+		}
+		return result;
+	}
+
+	private static String trimEndingSemicolonAndDash(String line) {
+		if (StringUtils.isNotBlank(line)) {
+			if (line.endsWith(":") || line.endsWith("-")) {
+				return StringUtils.trim(line.substring(0, line.length() - 1));
+			} else {
+				return StringUtils.trim(line);
+			}
 		} else {
-			return StringUtils.trim(line.substring(0, line.length() - 1));
+			return line;
 		}
 	}
 
@@ -125,9 +140,9 @@ public class TextUtil {
 		int indexSemi = line.indexOf(":");
 		int indexComment = line.indexOf("#");
 		if (indexComment > indexSemi) {
-			return removeEndingSemicolon(StringUtils.trim(line.substring(0, indexSemi)));
+			return removeEndingSemicolonAndDash(StringUtils.trim(line.substring(0, indexSemi)));
 		} else {
-			return removeEndingSemicolon(line);
+			return removeEndingSemicolonAndDash(line);
 		}
 	}
 
@@ -145,4 +160,15 @@ public class TextUtil {
 		return apiName.replaceAll("[^a-zA-Z0-9 ]", "");
 	}
 
+	public static final String getValueFromMap(Map<Integer, Object> map, Integer key, String defaultVal) {
+		if (map.containsKey(key)) {
+			String value = map.get(key) != null ? StringUtils.trim(map.get(key).toString()).trim() : defaultVal;
+			value = value.replace("\u00A0", "");
+
+			return value;
+
+		} else {
+			return defaultVal;
+		}
+	}
 }

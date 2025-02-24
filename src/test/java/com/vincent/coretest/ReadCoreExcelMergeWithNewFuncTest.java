@@ -25,7 +25,7 @@ import com.vincent.coretest.yaml.vo.RESTfulKey;
 public class ReadCoreExcelMergeWithNewFuncTest extends AbstractExcelReadBuilder {
 	protected final Logger logger = LoggerFactory.getLogger(ReadCoreExcelMergeWithNewFuncTest.class);
 
-	private String coreCategoryXlsxFromPYFile = ".\\src\\test\\input\\ref\\api_catalog_FI.xlsx";
+	private String coreCategoryXlsxFromPYFile = ".\\src\\test\\input\\ref\\api_catalog_xx.xlsx";
 
 	Map<RESTfulKey, List<MVPScopeVO>> coreApiNameToApiDataMapFromExcel = null;
 
@@ -49,7 +49,7 @@ public class ReadCoreExcelMergeWithNewFuncTest extends AbstractExcelReadBuilder 
 
 		FuncGenEnum genEnum = FuncGenEnum.All; // NEW EXISTED
 
-		outputFileName = "20250214_FI_coreonly.yaml";
+		outputFileName = "20250224_coreonly_1.yaml";
 
 		logger.info("working on {}", genEnum);
 
@@ -114,18 +114,6 @@ public class ReadCoreExcelMergeWithNewFuncTest extends AbstractExcelReadBuilder 
 				logger.debug("  {} RESTfulKey {} existed {}", method, aRESTfulKey, coreApiNameToApiDataMapFromExcel.containsKey(aRESTfulKey));
 
 				Set<String> arrayGroupNameSet = new HashSet<String>();
-//				for (MVPScopeVO aMVPScopeVO : list) {
-//					if (aMVPScopeVO.isArray()) {
-//						arrayGroupNameSet.add(aMVPScopeVO.getGroupName());
-//					}
-//				}
-//				for(MVPScopeVO aMVPScopeVO:list) {
-//					if(arrayGroupNameSet.contains(aMVPScopeVO.getGroupName())) {
-//						aMVPScopeVO.setArray(true);
-//					} else {
-//						aMVPScopeVO.setArray(false);
-//					}
-//				}
 
 				if (coreApiNameToApiDataMapFromExcel.containsKey(aRESTfulKey)) {
 					List<MVPScopeVO> v1List = coreApiNameToApiDataMapFromExcel.get(aRESTfulKey);

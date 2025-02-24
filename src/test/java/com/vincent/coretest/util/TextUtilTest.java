@@ -42,4 +42,10 @@ public class TextUtilTest {
 		String apiName = "Simulate trial closure of term deposit / recurring deposit accounts";
 		logger.info(TextUtil.filterAPIName(apiName));
 	}
+	
+	@Test
+	public void testremoveEndingSemicolonAndDash() {
+		String value = "dfadfsadf--:";
+		logger.info(TextUtil.removeEndingSemicolonAndDash(value));
+	}
 }

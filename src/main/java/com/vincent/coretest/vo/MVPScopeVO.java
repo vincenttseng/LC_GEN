@@ -1,5 +1,8 @@
 package com.vincent.coretest.vo;
 
+import static com.vincent.coretest.util.TextUtil.getValueFromMap;
+import static com.vincent.coretest.util.TextUtil.removeEndingSemicolonAndDash;
+
 import java.util.Collection;
 import java.util.Map;
 
@@ -53,7 +56,7 @@ public class MVPScopeVO implements Cloneable {
 	Map<Integer, Object> rowData = null;
 
 	boolean isArray = false;
-	
+
 	String fileName = null;
 
 	public MVPScopeVO(FuncGenEnum genEnum, Map<String, Integer> headerMap, Map<Integer, Object> rowData) throws Exception {
@@ -102,15 +105,18 @@ public class MVPScopeVO implements Cloneable {
 			apiName = getValueFromMap(rowData, index, "");
 		}
 		apiName = TextUtil.filterAPIName(apiName);
+		apiName = TextUtil.removeEndingSemicolonAndDash(apiName);
 
 		index = headerMap.get("API Node");
 		if (index != null) {
 			apiNode = getValueFromMap(rowData, index, "");
 		}
 
+		apiNode = formatVariableLowerAndDash(apiNode);
+
 		index = headerMap.get("Group Name");
 		if (index != null) {
-			groupName = getValueFromMap(rowData, index, "");
+			groupName = StringUtils.lowerCase(getValueFromMap(rowData, index, ""));
 		}
 		groupName = correctGroupName(groupName);
 
@@ -136,6 +142,7 @@ public class MVPScopeVO implements Cloneable {
 		if (index != null) {
 			businessName = getValueFromMap(rowData, index, "");
 		}
+		businessName = formatVariableLowerAndDash(businessName);
 
 		index = headerMap.get("Domain values");
 		if (index != null) {
@@ -205,16 +212,25 @@ public class MVPScopeVO implements Cloneable {
 		return (MVPScopeVO) super.clone(); // Perform shallow copy
 	}
 
-	public static final String getValueFromMap(Map<Integer, Object> map, Integer key, String defaultVal) {
-		if (map.containsKey(key)) {
-			String value = map.get(key) != null ? StringUtils.trim(map.get(key).toString()).trim() : defaultVal;
-			value = value.replace("\u00A0", "");
-
-			return value;
-
-		} else {
-			return defaultVal;
+	public static String formatVariableLowerAndDash(String origName) {
+		String tmp = new String(origName);
+		final String DASH = "-";
+		tmp = tmp.replace("_", DASH);
+		String[] tokens = tmp.split(DASH);
+		StringBuilder sb = new StringBuilder();
+		boolean found = false;
+		if (tokens != null && tokens.length > 0) {
+			for (String token : tokens) {
+				if (StringUtils.length(token) > 0) {
+					if (found) {
+						sb.append(DASH);
+					}
+					sb.append(StringUtils.lowerCase(token));
+					found = true;
+				}
+			}
 		}
+		return removeEndingSemicolonAndDash(sb.toString());
 	}
 
 	public static final String correctGroupName(String value) {

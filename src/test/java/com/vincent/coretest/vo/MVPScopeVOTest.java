@@ -43,4 +43,19 @@ public class MVPScopeVOTest {
 		value = MVPScopeVO.correctGroupName(value);
 		logger.info("value {}", value);
 	}
+
+	@Test
+	public void testApiNode() {
+		String apiNode = "forfeting-inititation";
+		logger.info("{} value {}", apiNode, MVPScopeVO.formatVariableLowerAndDash(apiNode));
+
+		apiNode = "Forfeting-Inititation";
+		logger.info("{} value {}", apiNode, MVPScopeVO.formatVariableLowerAndDash(apiNode));
+
+		apiNode = "Forfeting-Inititation-";
+		logger.info("{} value {}", apiNode, MVPScopeVO.formatVariableLowerAndDash(apiNode));
+
+		apiNode = "AbadA--titation";
+		logger.info("{} value {}", apiNode, MVPScopeVO.formatVariableLowerAndDash(apiNode));
+	}
 }

@@ -1,7 +1,7 @@
 package com.vincent.coretest.yaml.textvo;
 
 import static com.vincent.coretest.util.TextUtil.countLeadSpace;
-import static com.vincent.coretest.util.TextUtil.removeEndingSemicolon;
+import static com.vincent.coretest.util.TextUtil.removeEndingSemicolonAndDash;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -125,7 +125,7 @@ public class PathDataStorage {
 					pathContentVOList.add(pathContentVO);
 				}
 				tmpContentList.clear();
-				currentUrl = removeEndingSemicolon(line.substring(2));
+				currentUrl = removeEndingSemicolonAndDash(line.substring(2));
 			} else {
 				int spaceNo = countLeadSpace(line);
 				if (spaceNo > 0) {
