@@ -49,7 +49,7 @@ public class ReadCoreExcelMergeWithNewFuncTest extends AbstractExcelReadBuilder 
 
 		FuncGenEnum genEnum = FuncGenEnum.All; // NEW EXISTED
 
-		outputFileName = "NLBM_20250224_c.yaml";
+		outputFileName = "NLBM_20250225_2.yaml";
 
 		logger.info("working on {}", genEnum);
 
@@ -107,11 +107,11 @@ public class ReadCoreExcelMergeWithNewFuncTest extends AbstractExcelReadBuilder 
 			if (list != null && list.size() > 0) {
 				MVPScopeVO vo = list.get(0);
 				String parentPath = v2GetParentPath(vo.getPath());
-				logger.info("key {} path {} root {} ", key, vo.getPath(), parentPath);
+				logger.debug("key {} path {} root {} ", key, vo.getPath(), parentPath);
 				HttpMethod method = HttpMethod.valueOf(vo.getHttpMethod());
 
 				RESTfulKey aRESTfulKey = new RESTfulKey(parentPath, method);
-				logger.info("  {} RESTfulKey {} existed {}", method, aRESTfulKey, coreApiNameToApiDataMapFromExcel.containsKey(aRESTfulKey));
+				logger.debug("  {} RESTfulKey {} existed {}", method, aRESTfulKey, coreApiNameToApiDataMapFromExcel.containsKey(aRESTfulKey));
 
 				Set<String> arrayGroupNameSet = new HashSet<String>();
 
