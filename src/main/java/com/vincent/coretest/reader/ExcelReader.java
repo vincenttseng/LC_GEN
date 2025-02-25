@@ -8,6 +8,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -169,6 +170,8 @@ public class ExcelReader {
 	}
 
 	private static XSSFSheet getTargetSheet(String tabPrefix, String fileName, XSSFWorkbook wb) {
+
+		String prefix = tabPrefix != null ? tabPrefix.toLowerCase() : DEFAULT_TAB_PREFIX;
 		XSSFSheet sheet = null;
 		try {
 			int sheetCnt = wb.getNumberOfSheets();
@@ -176,7 +179,8 @@ public class ExcelReader {
 			for (int i = 0; i < sheetCnt; i++) {
 				XSSFSheet tmp = wb.getSheetAt(i);
 				String name = tmp.getSheetName();
-				if (name != null && name.toLowerCase().startsWith(tabPrefix != null ? tabPrefix.toLowerCase() : DEFAULT_TAB_PREFIX)) {
+				String comparee = StringUtils.trim(StringUtils.lowerCase(name));
+				if (comparee != null && comparee.startsWith(prefix)) {
 					sheetName = name;
 				}
 			}

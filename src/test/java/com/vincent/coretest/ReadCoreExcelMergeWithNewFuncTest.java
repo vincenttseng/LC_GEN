@@ -25,7 +25,7 @@ import com.vincent.coretest.yaml.vo.RESTfulKey;
 public class ReadCoreExcelMergeWithNewFuncTest extends AbstractExcelReadBuilder {
 	protected final Logger logger = LoggerFactory.getLogger(ReadCoreExcelMergeWithNewFuncTest.class);
 
-	private String coreCategoryXlsxFromPYFile = ".\\src\\test\\input\\ref\\api_catalog_xx.xlsx";
+	private String coreCategoryXlsxFromPYFile = ".\\src\\test\\input\\ref\\api_catalog_NLBM.xlsx";
 
 	Map<RESTfulKey, List<MVPScopeVO>> coreApiNameToApiDataMapFromExcel = null;
 
@@ -49,7 +49,7 @@ public class ReadCoreExcelMergeWithNewFuncTest extends AbstractExcelReadBuilder 
 
 		FuncGenEnum genEnum = FuncGenEnum.All; // NEW EXISTED
 
-		outputFileName = "20250224_coreonly_1.yaml";
+		outputFileName = "NLBM_20250224_c.yaml";
 
 		logger.info("working on {}", genEnum);
 
@@ -93,7 +93,7 @@ public class ReadCoreExcelMergeWithNewFuncTest extends AbstractExcelReadBuilder 
 				} else {
 					logger.debug("error " + vo);
 				}
-
+				
 				String desc = DomainTypeUtil.getDescriptionByDomainValue(vo.getBusinessName(), vo.getDomainValue());
 				if (StringUtils.isNotBlank(desc)) {
 					// logger.info("changing desc {}", desc);
@@ -107,11 +107,11 @@ public class ReadCoreExcelMergeWithNewFuncTest extends AbstractExcelReadBuilder 
 			if (list != null && list.size() > 0) {
 				MVPScopeVO vo = list.get(0);
 				String parentPath = v2GetParentPath(vo.getPath());
-				logger.debug("key {} path {} root {} ", key, vo.getPath(), parentPath);
+				logger.info("key {} path {} root {} ", key, vo.getPath(), parentPath);
 				HttpMethod method = HttpMethod.valueOf(vo.getHttpMethod());
 
 				RESTfulKey aRESTfulKey = new RESTfulKey(parentPath, method);
-				logger.debug("  {} RESTfulKey {} existed {}", method, aRESTfulKey, coreApiNameToApiDataMapFromExcel.containsKey(aRESTfulKey));
+				logger.info("  {} RESTfulKey {} existed {}", method, aRESTfulKey, coreApiNameToApiDataMapFromExcel.containsKey(aRESTfulKey));
 
 				Set<String> arrayGroupNameSet = new HashSet<String>();
 
@@ -176,8 +176,8 @@ public class ReadCoreExcelMergeWithNewFuncTest extends AbstractExcelReadBuilder 
 	private Map<RESTfulKey, List<MVPScopeVO>> readCoreApiMap() {
 		HashMap<RESTfulKey, List<MVPScopeVO>> map = new HashMap<RESTfulKey, List<MVPScopeVO>>();
 
-		Map<String, Integer> headerMap = ExcelReader.getHeaderIndex("xapi", coreCategoryXlsxFromPYFile);
-		List<Map<Integer, Object>> rowMapList = ExcelReader.getActiveRow("xapi", coreCategoryXlsxFromPYFile, false);
+		Map<String, Integer> headerMap = ExcelReader.getHeaderIndex("api", coreCategoryXlsxFromPYFile);
+		List<Map<Integer, Object>> rowMapList = ExcelReader.getActiveRow("api", coreCategoryXlsxFromPYFile, false);
 
 		logger.info("rowCount {}", rowMapList.size());
 		for (Map<Integer, Object> rowData : rowMapList) {

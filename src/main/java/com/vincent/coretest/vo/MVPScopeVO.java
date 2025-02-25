@@ -189,6 +189,7 @@ public class MVPScopeVO implements Cloneable {
 		}
 
 		reqPath = HttpUtils.showURIWithoutQuery(originalPathWithQuery);
+		reqPath = reqPath.toLowerCase();
 
 		if (genEnum == FuncGenEnum.NEW && reqPath.toLowerCase().contains("v2")) {
 			apiName = new StringBuilder().append("V2 ").append(apiName).toString();
