@@ -188,6 +188,10 @@ public class MVPScopeVO implements Cloneable {
 			// logger.info("path {}", path);
 		}
 
+		if (StringUtils.isNotBlank(httpMethod)) {
+			httpMethod = httpMethod.toUpperCase();
+		}
+		
 		reqPath = HttpUtils.showURIWithoutQuery(originalPathWithQuery);
 		reqPath = reqPath.toLowerCase();
 
