@@ -36,6 +36,11 @@ public class ExcelReader {
 
 			XSSFSheet sheet = getTargetSheet(tabPrefix, xlsxFile, wb);
 
+			if(sheet == null) {
+				sheet = getTargetSheet(DEFAULT_TAB_PREFIX, xlsxFile, wb);
+			}
+			logger.info("reading row for sheet " + sheet.getSheetName());
+			
 			if (sheet == null) {
 				logger.info("no sheet found {} ", xlsxFile);
 				return rowMapList;
@@ -121,6 +126,10 @@ public class ExcelReader {
 			wb = new XSSFWorkbook(excelFileToRead);
 
 			XSSFSheet sheet = getTargetSheet(tabPrefix, xlsxFile, wb);
+			if(sheet == null) {
+				sheet = getTargetSheet(DEFAULT_TAB_PREFIX, xlsxFile, wb);
+			}
+			logger.info("reading getHeaderIndex for sheet " + sheet.getSheetName());
 
 			if (sheet == null) {
 				logger.info("no sheet found {}", xlsxFile);
@@ -170,7 +179,6 @@ public class ExcelReader {
 	}
 
 	private static XSSFSheet getTargetSheet(String tabPrefix, String fileName, XSSFWorkbook wb) {
-
 		String prefix = tabPrefix != null ? tabPrefix.toLowerCase() : DEFAULT_TAB_PREFIX;
 		XSSFSheet sheet = null;
 		try {
