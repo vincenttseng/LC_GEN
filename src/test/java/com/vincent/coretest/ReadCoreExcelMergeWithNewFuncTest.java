@@ -104,22 +104,23 @@ public class ReadCoreExcelMergeWithNewFuncTest extends AbstractExcelReadBuilder 
 			logger.info("=====>{} active line {}", xlsxFile, activeCnt);
 		}
 
-		Map<String,String> namePathSet = new HashMap<String,String>();
-		
+		Map<String, RESTfulKey> apiNamePathCheckingMap = new HashMap<String, RESTfulKey>();
+
 		apiNameToApiDataMapFromExcel.forEach((key, list) -> {
 			if (list != null && list.size() > 0) {
 				MVPScopeVO vo = list.get(0);
 				String parentPath = v2GetParentPath(vo.getPath());
 				logger.debug("key {} path {} root {} ", key, vo.getPath(), parentPath);
 				HttpMethod method = HttpMethod.valueOf(vo.getHttpMethod());
-
-				RESTfulKey aRESTfulKey = new RESTfulKey(parentPath, method);
-				logger.debug("  {} RESTfulKey {} existed {}", method, aRESTfulKey, coreApiNameToApiDataMapFromExcel.containsKey(aRESTfulKey));
+				
+				RESTfulKey voRESTfulKey = new RESTfulKey(vo.getPath(), method);
+				RESTfulKey parentRESTfulKey = new RESTfulKey(parentPath, method);
+				logger.debug("  {} RESTfulKey {} existed {}", method, parentRESTfulKey, coreApiNameToApiDataMapFromExcel.containsKey(parentRESTfulKey));
 
 				Set<String> arrayGroupNameSet = new HashSet<String>();
 
-				if (coreApiNameToApiDataMapFromExcel.containsKey(aRESTfulKey)) {
-					List<MVPScopeVO> v1List = coreApiNameToApiDataMapFromExcel.get(aRESTfulKey);
+				if (coreApiNameToApiDataMapFromExcel.containsKey(parentRESTfulKey)) {
+					List<MVPScopeVO> v1List = coreApiNameToApiDataMapFromExcel.get(parentRESTfulKey);
 
 					// 收集這個 API 所有是陣列的 GROUP
 					for (MVPScopeVO aMVPScopeVO : v1List) {
@@ -158,6 +159,20 @@ public class ReadCoreExcelMergeWithNewFuncTest extends AbstractExcelReadBuilder 
 						logger.warn("v1 not found BUT IT IS existed ==> {} ", vo);
 					}
 
+				}
+
+				// checking if apiname with different method and path
+				for (MVPScopeVO voInList : list) {
+					HttpMethod tmpHttpMethod = HttpMethod.valueOf(voInList.getHttpMethod());
+					RESTfulKey tmpRESTfulKey = new RESTfulKey(voInList.getPath(), tmpHttpMethod);
+					if (!apiNamePathCheckingMap.containsKey(voInList.getApiName())) {
+						apiNamePathCheckingMap.put(voInList.getApiName(), tmpRESTfulKey);
+					} else {
+						if (!tmpRESTfulKey.equals(voRESTfulKey)) {
+							logger.info("ERROR file {} voInList: apiName {} method {} path {} file2: {} vo: apiName {} method {} path {}", voInList.getFileName(), voInList.getApiName(),
+									tmpRESTfulKey.getMethod(), tmpRESTfulKey.getPath(), vo.getFileName(), vo.getApiName(), voRESTfulKey.getMethod(), voRESTfulKey.getPath());
+						}
+					}
 				}
 			}
 		});
