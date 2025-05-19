@@ -25,7 +25,7 @@ import com.vincent.coretest.yaml.vo.RESTfulKey;
 public class ReadCoreExcelMergeWithNewFuncTest extends AbstractExcelReadBuilder {
 	protected final Logger logger = LoggerFactory.getLogger(ReadCoreExcelMergeWithNewFuncTest.class);
 
-	private String coreCategoryXlsxFromPYFile = ".\\src\\test\\input\\ref\\api_catalog_NLBM.xlsx";
+	private String coreCategoryXlsxFromPYFile = ".\\src\\test\\input\\ref\\api_catalog_xxxx.xlsx";
 
 	Map<RESTfulKey, List<MVPScopeVO>> coreApiNameToApiDataMapFromExcel = null;
 
@@ -49,7 +49,7 @@ public class ReadCoreExcelMergeWithNewFuncTest extends AbstractExcelReadBuilder 
 
 		FuncGenEnum genEnum = FuncGenEnum.All; // NEW EXISTED
 
-		outputFileName = "NLBM_20250225_1.yaml";
+		outputFileName = "RFM_20250519_step3_2.yaml";
 
 		logger.info("working on {}", genEnum);
 
@@ -70,6 +70,7 @@ public class ReadCoreExcelMergeWithNewFuncTest extends AbstractExcelReadBuilder 
 			logger.info("size {}", rowMapList.size());
 
 			int activeCnt = 0;
+
 			for (Map<Integer, Object> rowData : rowMapList) {
 				MVPScopeVO vo = null;
 				try {
@@ -93,7 +94,7 @@ public class ReadCoreExcelMergeWithNewFuncTest extends AbstractExcelReadBuilder 
 				} else {
 					logger.debug("error " + vo);
 				}
-				
+
 				String desc = DomainTypeUtil.getDescriptionByDomainValue(vo.getBusinessName(), vo.getDomainValue());
 				if (StringUtils.isNotBlank(desc)) {
 					// logger.info("changing desc {}", desc);
@@ -103,6 +104,8 @@ public class ReadCoreExcelMergeWithNewFuncTest extends AbstractExcelReadBuilder 
 			logger.info("=====>{} active line {}", xlsxFile, activeCnt);
 		}
 
+		Map<String,String> namePathSet = new HashMap<String,String>();
+		
 		apiNameToApiDataMapFromExcel.forEach((key, list) -> {
 			if (list != null && list.size() > 0) {
 				MVPScopeVO vo = list.get(0);
