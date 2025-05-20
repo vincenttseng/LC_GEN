@@ -5,6 +5,7 @@ import static com.vincent.coretest.util.TextUtil.removeEndingSemicolonAndDash;
 
 import java.util.Collection;
 import java.util.Map;
+import java.util.StringTokenizer;
 
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -122,7 +123,8 @@ public class MVPScopeVO implements Cloneable {
 
 		index = headerMap.get("Field Name");
 		if (index != null) {
-			description = getValueFromMap(rowData, index, "");
+			String tmp = getValueFromMap(rowData, index, "");
+			description = concateLineRemoveParenthesis(tmp);
 		}
 
 		index = headerMap.get("Data type");
@@ -143,6 +145,7 @@ public class MVPScopeVO implements Cloneable {
 			businessName = getValueFromMap(rowData, index, "");
 		}
 		businessName = formatVariableLowerAndDash(businessName);
+		businessName = concateLineRemoveParenthesis(businessName);
 
 		index = headerMap.get("Domain values");
 		if (index != null) {
@@ -191,7 +194,7 @@ public class MVPScopeVO implements Cloneable {
 		if (StringUtils.isNotBlank(httpMethod)) {
 			httpMethod = httpMethod.toUpperCase();
 		}
-		
+
 		reqPath = HttpUtils.showURIWithoutQuery(originalPathWithQuery);
 		reqPath = reqPath.toLowerCase();
 
@@ -261,5 +264,22 @@ public class MVPScopeVO implements Cloneable {
 			}
 		}
 		return (cnt > min);
+	}
+
+	public static final String concateLineRemoveParenthesis(String input) {
+		StringTokenizer st = new StringTokenizer(input, "\n");
+		StringBuilder sb = new StringBuilder();
+		boolean found = false;
+		while (st.hasMoreElements()) {
+			String token = st.nextToken();
+			if (StringUtils.isNotBlank(token)) {
+				if (found) {
+					sb.append(" ");
+				}
+				sb.append(token.trim());
+				found = true;
+			}
+		}
+		return sb.toString();
 	}
 }

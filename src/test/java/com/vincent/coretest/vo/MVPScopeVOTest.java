@@ -58,4 +58,12 @@ public class MVPScopeVOTest {
 		apiNode = "AbadA--titation";
 		logger.info("{} value {}", apiNode, MVPScopeVO.formatVariableLowerAndDash(apiNode));
 	}
+
+	@Test
+	public void testA() {
+		String a = "asdfsd" + "\r" + " dsf";
+		System.out.println(a);
+		String result = MVPScopeVO.concateLineRemoveParenthesis(a);
+		logger.info("{}", result);
+	}
 }

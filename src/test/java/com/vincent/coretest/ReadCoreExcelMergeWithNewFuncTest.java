@@ -9,6 +9,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
@@ -25,7 +26,7 @@ import com.vincent.coretest.yaml.vo.RESTfulKey;
 public class ReadCoreExcelMergeWithNewFuncTest extends AbstractExcelReadBuilder {
 	protected final Logger logger = LoggerFactory.getLogger(ReadCoreExcelMergeWithNewFuncTest.class);
 
-	private String coreCategoryXlsxFromPYFile = ".\\src\\test\\input\\ref\\api_catalog_xxxx.xlsx";
+	private String coreCategoryXlsxFromPYFile = ".\\src\\test\\input\\ref\\api_catalog_RSM.xlsx";
 
 	Map<RESTfulKey, List<MVPScopeVO>> coreApiNameToApiDataMapFromExcel = null;
 
@@ -49,7 +50,7 @@ public class ReadCoreExcelMergeWithNewFuncTest extends AbstractExcelReadBuilder 
 
 		FuncGenEnum genEnum = FuncGenEnum.All; // NEW EXISTED
 
-		outputFileName = "RFM_20250519_step3_2.yaml";
+		outputFileName = "RSM_20250520_all_0.yaml";
 
 		logger.info("working on {}", genEnum);
 
@@ -106,13 +107,14 @@ public class ReadCoreExcelMergeWithNewFuncTest extends AbstractExcelReadBuilder 
 
 		Map<String, RESTfulKey> apiNamePathCheckingMap = new HashMap<String, RESTfulKey>();
 
+		AtomicBoolean withDupError = new AtomicBoolean(false);
 		apiNameToApiDataMapFromExcel.forEach((key, list) -> {
 			if (list != null && list.size() > 0) {
 				MVPScopeVO vo = list.get(0);
 				String parentPath = v2GetParentPath(vo.getPath());
 				logger.debug("key {} path {} root {} ", key, vo.getPath(), parentPath);
 				HttpMethod method = HttpMethod.valueOf(vo.getHttpMethod());
-				
+
 				RESTfulKey voRESTfulKey = new RESTfulKey(vo.getPath(), method);
 				RESTfulKey parentRESTfulKey = new RESTfulKey(parentPath, method);
 				logger.debug("  {} RESTfulKey {} existed {}", method, parentRESTfulKey, coreApiNameToApiDataMapFromExcel.containsKey(parentRESTfulKey));
@@ -169,13 +171,19 @@ public class ReadCoreExcelMergeWithNewFuncTest extends AbstractExcelReadBuilder 
 						apiNamePathCheckingMap.put(voInList.getApiName(), tmpRESTfulKey);
 					} else {
 						if (!tmpRESTfulKey.equals(voRESTfulKey)) {
-							logger.info("ERROR file {} voInList: apiName {} method {} path {} file2: {} vo: apiName {} method {} path {}", voInList.getFileName(), voInList.getApiName(),
-									tmpRESTfulKey.getMethod(), tmpRESTfulKey.getPath(), vo.getFileName(), vo.getApiName(), voRESTfulKey.getMethod(), voRESTfulKey.getPath());
+							withDupError.set(true);
+							logger.info("ERROR {} file {} voInList: apiName {} method {} path {} line {} file2: {} vo: apiName {} method {} path {}", key, voInList.getFileName(),
+									voInList.getApiName(), tmpRESTfulKey.getMethod(), tmpRESTfulKey.getPath(), voInList.getRowIndex(), vo.getFileName(), vo.getApiName(),
+									voRESTfulKey.getMethod(), voRESTfulKey.getPath());
 						}
 					}
 				}
 			}
 		});
+
+		if(withDupError.get()) {
+			System.exit(0);
+		}
 
 		coreApiNameToApiDataMapFromExcel.forEach((key, list) -> {
 			if (list != null && list.size() > 0) {
