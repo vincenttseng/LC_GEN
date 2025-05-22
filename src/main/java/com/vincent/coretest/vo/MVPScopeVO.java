@@ -102,6 +102,9 @@ public class MVPScopeVO implements Cloneable {
 		}
 
 		index = headerMap.get("Impacted API Name");
+		if(index == null) {
+			index = headerMap.get("API Name");
+		}
 		if (index != null) {
 			apiName = getValueFromMap(rowData, index, "");
 		}
@@ -116,6 +119,9 @@ public class MVPScopeVO implements Cloneable {
 		apiNode = formatVariableLowerAndDash(apiNode);
 
 		index = headerMap.get("Group Name");
+		if(index == null) {
+			index = headerMap.get("Object Reference");	 
+		}
 		if (index != null) {
 			groupName = StringUtils.lowerCase(getValueFromMap(rowData, index, ""));
 		}

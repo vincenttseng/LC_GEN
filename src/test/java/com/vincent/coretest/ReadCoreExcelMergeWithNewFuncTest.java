@@ -26,7 +26,7 @@ import com.vincent.coretest.yaml.vo.RESTfulKey;
 public class ReadCoreExcelMergeWithNewFuncTest extends AbstractExcelReadBuilder {
 	protected final Logger logger = LoggerFactory.getLogger(ReadCoreExcelMergeWithNewFuncTest.class);
 
-	private String coreCategoryXlsxFromPYFile = ".\\src\\test\\input\\ref\\api_catalog_RSM.xlsx";
+	private String coreCategoryXlsxFromPYFile = ".\\src\\test\\input\\ref\\api_catalog_CIFX.xlsx";
 
 	Map<RESTfulKey, List<MVPScopeVO>> coreApiNameToApiDataMapFromExcel = null;
 
@@ -50,7 +50,7 @@ public class ReadCoreExcelMergeWithNewFuncTest extends AbstractExcelReadBuilder 
 
 		FuncGenEnum genEnum = FuncGenEnum.All; // NEW EXISTED
 
-		outputFileName = "RSM_20250520_all_0.yaml";
+		outputFileName = "CIF_20250522_all_1.yaml";
 
 		logger.info("working on {}", genEnum);
 
