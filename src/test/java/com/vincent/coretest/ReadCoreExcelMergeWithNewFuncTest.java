@@ -26,7 +26,7 @@ import com.vincent.coretest.yaml.vo.RESTfulKey;
 public class ReadCoreExcelMergeWithNewFuncTest extends AbstractExcelReadBuilder {
 	protected final Logger logger = LoggerFactory.getLogger(ReadCoreExcelMergeWithNewFuncTest.class);
 
-	private String coreCategoryXlsxFromPYFile = ".\\src\\test\\input\\ref\\api_catalog_RSM.xlsx";
+	private String coreCategoryXlsxFromPYFile = ".\\src\\test\\input\\ref\\api_catalog_PM.xlsx";
 
 	Map<RESTfulKey, List<MVPScopeVO>> coreApiNameToApiDataMapFromExcel = null;
 
@@ -50,7 +50,7 @@ public class ReadCoreExcelMergeWithNewFuncTest extends AbstractExcelReadBuilder 
 
 		FuncGenEnum genEnum = FuncGenEnum.All; // NEW EXISTED
 
-		outputFileName = "RSM_20250526_all_0.yaml";
+		outputFileName = "PM_20250526_all_1.yaml";
 
 		logger.info("working on {}", genEnum);
 
@@ -165,26 +165,34 @@ public class ReadCoreExcelMergeWithNewFuncTest extends AbstractExcelReadBuilder 
 				}
 
 				// checking if apiname with different method and path
-//				for (MVPScopeVO voInList : list) {
-//					HttpMethod tmpHttpMethod = HttpMethod.valueOf(voInList.getHttpMethod());
-//					RESTfulKey tmpRESTfulKey = new RESTfulKey(voInList.getPath(), tmpHttpMethod);
-//					if (!apiNamePathCheckingMap.containsKey(voInList.getApiName())) {
-//						apiNamePathCheckingMap.put(voInList.getApiName(), tmpRESTfulKey);
-//					} else {
-//						if (!tmpRESTfulKey.equals(voRESTfulKey)) {
-//							withDupError.set(true);
-//							logger.info("ERROR {} file {} voInList: apiName {} method {} path {} line {} file2: {} vo: apiName {} method {} path {}", key, voInList.getFileName(),
-//									voInList.getApiName(), tmpRESTfulKey.getMethod(), tmpRESTfulKey.getPath(), voInList.getRowIndex(), vo.getFileName(), vo.getApiName(),
-//									voRESTfulKey.getMethod(), voRESTfulKey.getPath());
-//						}
-//					}
-//				}
+				for (MVPScopeVO voInList : list) {
+					HttpMethod tmpHttpMethod = HttpMethod.valueOf(voInList.getHttpMethod());
+					String path = voInList.getPath();
+					path = toPathWithoutV2(path);
+					
+					RESTfulKey tmpRESTfulKey = new RESTfulKey(path, tmpHttpMethod);
+					if (!apiNamePathCheckingMap.containsKey(voInList.getApiName())) {
+						apiNamePathCheckingMap.put(voInList.getApiName(), tmpRESTfulKey);
+					} else {
+						if (!tmpRESTfulKey.equals(voRESTfulKey)) {
+							String curPath = voRESTfulKey.getPath();
+							curPath = toPathWithoutV2(curPath);
+							RESTfulKey tmp2RESTfulKey = new RESTfulKey(curPath, voRESTfulKey.getMethod());
+							if (!tmpRESTfulKey.equals(tmp2RESTfulKey)) {
+								withDupError.set(true);
+								logger.info("ERROR {} file {} voInList: apiName {} method {} path {} line {} file2: {} vo: apiName {} method {} path {}", key, voInList.getFileName(),
+										voInList.getApiName(), tmpRESTfulKey.getMethod(), tmpRESTfulKey.getPath(), voInList.getRowIndex(), vo.getFileName(), vo.getApiName(),
+										voRESTfulKey.getMethod(), voRESTfulKey.getPath());
+							}
+						}
+					}
+				}
 			}
 		});
 
-//		if(withDupError.get()) {
-//			System.exit(0);
-//		}
+		if(withDupError.get()) {
+			System.exit(0);
+		}
 
 		coreApiNameToApiDataMapFromExcel.forEach((key, list) -> {
 			if (list != null && list.size() > 0) {

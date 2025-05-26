@@ -427,5 +427,13 @@ components:
 		}
 		return path.substring("/v2".length());
 	}
+	
+	protected static String toPathWithoutV2(String path) {
+		if (isV2(path)) {
+			return path.substring("/v2".length());
+		} else {
+			return path;
+		}
+	}
 
 }
