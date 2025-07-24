@@ -50,7 +50,7 @@ public class ReadCoreExcelMergeWithNewFuncTest extends AbstractExcelReadBuilder 
 
 		FuncGenEnum genEnum = FuncGenEnum.All; // NEW EXISTED
 
-		outputFileName = "CBR_20250723_all_0.yaml";
+		outputFileName = "TLOS_20250723_all_0.yaml";
 
 		logger.info("working on {}", genEnum);
 
