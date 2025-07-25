@@ -1,0 +1,232 @@
+﻿Code Name,Mnemonic,Description
+d_txntype,LC Bill,LC Bill
+d_txntype,DA or DP Bill,DA or DP Bill
+d_txntype,OA Bill,OA Bill
+d_txntype,UPAS with Reimbursement,UPAS with Reimbursement
+d_txntype,UPAS without Reimbursement,UPAS without Reimbursement
+d_txntype,Export Pre-shipment Loan,Export Pre-shipment Loan
+d_txntype,Export Post shipment Loan,Export Post shipment Loan
+d_PosTyp,RefinancingTxn,RefinancingTxn
+d_PosTyp,RiskParticipationTxn,RiskParticipationTxn
+d_PosTyp,ForfaitingTxn,ForfaitingTxn
+d_RefncngOrdStat,OnHold,OnHold
+d_RefncngOrdStat,Released,Released
+d_RefncngOrdStat,Executed,Executed
+d_RefncngOrdStat,Rejected,Rejected
+d_TFBankExt,Outside,Outside
+d_TFBankExt,Within,Within
+d_YesNoFlg,No,No
+d_YesNoFlg,Yes,Yes
+d_UserAction,Submit for Approval,Submit for Approval
+d_UserAction,Approve,Approve
+d_UserAction,Cancel,Cancel
+d_UserAction,Close,Close
+d_UserAction,Reject,Reject
+d_UserAction,Sendback,Sendback
+d_UserAction,Submit-for-pend-Closure,Submit-for-pend-Closure
+d_UserAction,Submit-for-pend-Reversal,Submit-for-pend-Reversal
+d_UserAction,Reverse,Reverse
+d_IntrstTyp,Upfront,Upfront
+d_IntrstTyp,Rear End,Rear End
+d_RefncngDealStat,OnHold,OnHold
+d_RefncngDealStat,Released,Released
+d_RefncngDealStat,Executed,Executed
+d_RefncngDealStat,Rejected,Rejected
+d_RefncngDealStat,Cancelled,Cancelled
+d_TFSubMsg,MT700,MT700
+d_TFSubMsg,MT701,MT701
+d_TFSubMsg,MT705,MT705
+d_TFSubMsg,MT707,MT707
+d_TFSubMsg,MT732,MT732
+d_TFSubMsg,MT734,MT734
+d_TFSubMsg,MT740,MT740
+d_TFSubMsg,MT747,MT747
+d_TFSubMsg,MT756,MT756
+d_TFSubMsg,MT760,MT760
+d_TFSubMsg,MT767,MT767
+d_TFSubMsg,MT799,MT799
+d_AcctType,SavingsAccount,SavingsAccount
+d_AcctType,CurrentAccount,CurrentAccount
+d_AcctType,CorporateCurrentAccount,CorporateCurrentAccount
+d_AcctType,ConsumerLoan,ConsumerLoan
+d_AcctType,TermLoan,TermLoan
+d_AcctType,Checking,Checking
+d_AcctType,Loan,Loan
+d_AcctType,DDA,DDA
+d_AcctType,InternalAccount,InternalAccount
+d_AcctType,LineofCredit,LineofCredit
+d_AcctType,Nostro Account,Nostro Account
+d_AcctType,Account Receivable,Account Receivable
+d_RefncngStlmntStat,OnHold,OnHold
+d_RefncngStlmntStat,Released,Released
+d_RefncngStlmntStat,Executed,Executed
+d_RefncngStlmntStat,Rejected,Rejected
+d_RefncngStlmntStat,Cancelled,Cancelled
+d_ModeOfPymnt,Nostro,Nostro
+d_ModeOfPymnt,Direct Remittance,Direct Remittance
+d_TFPayStlmntTyp,Forward,Forward
+d_TFPayStlmntTyp,NoConversion,NoConversion
+d_TFPayStlmntTyp,Ready,Ready
+d_TFPayStlmntTyp,Predeal,Predeal
+d_TFPayStlmntTyp,Manual,Manual
+d_tfacctypfx,Internal Account,Internal Account
+d_tfacctypfx,Account Receivable,Account Receivable
+d_tfacctypfx,Account Payable,Account Payable
+d_cudindicator,Create,Create
+d_cudindicator,Modify,Modify
+d_cudindicator,Delete,Delete
+d_cudIndicator,Create,Create
+d_cudIndicator,Update,Update
+d_cudIndicator,Delete,Delete
+d_SubPrps,All,All
+d_SubPrps,CapPayment,CapPayment
+d_SubPrps,CD,CD
+d_SubPrps,ChargesOnly,ChargesOnly
+d_SubPrps,ClientOffsetBooking,ClientOffsetBooking
+d_SubPrps,CounterPay,CounterPay
+d_SubPrps,Derivatives,Derivatives
+d_SubPrps,DisClsd,DisClsd
+d_SubPrps,DivPay,DivPay
+d_SubPrps,Equity,Equity
+d_SubPrps,Funds,Funds
+d_SubPrps,IncomeCA,IncomeCA
+d_SubPrps,Interest,Interest
+d_SubPrps,InterestOnly,InterestOnly
+d_SubPrps,MTN,MTN
+d_SubPrps,New_Issues,New_Issues
+d_SubPrps,Others,Others
+d_SubPrps,PrincipalOnly,PrincipalOnly
+d_SubPrps,Repayment,Repayment
+d_SubPrps,Reservation,Reservation
+d_SettTyp1,Both,Both
+d_SettTyp1,Disbursement,Disbursement
+d_SettTyp1,InterestSettlement,InterestSettlement
+d_SettTyp1,LoanDisbursement,LoanDisbursement
+d_SettTyp1,Payment,Payment
+d_SettTyp1,Procurement,Procurement
+d_SettTyp1,Repayment,Repayment
+d_SettTyp1,SecurityDeposit,SecurityDeposit
+d_PrchsSllFlg,Purchase,Purchase
+d_PrchsSllFlg,Sell,Sell
+d_FrftngNtr,Primary,Primary
+d_FrftngNtr,Secondary,Secondary
+d_blltyp,ELC,ELC
+d_blltyp,EDC,EDC
+d_FrftngTyp,Funded,Funded
+d_FrftngTyp,Non Funded,Non Funded
+d_FrftngOrdrStatus,OnHold,OnHold
+d_FrftngOrdrStatus,Released,Released
+d_FrftngOrdrStatus,Executed,Executed
+d_FrftngOrdrStatus,Rejected,Rejected
+d_FrftngOrdrStatus,Cancelled,Cancelled
+d_FrftngOrdrStatus,Ready to be processed,Ready to be processed
+d_TFTenorTyp,DeferredPayment,Deferred Payment
+d_TFTenorTyp,MixedPayment,Mixed Payment
+d_TFTenorTyp,Sight,Sight
+d_TFTenorTyp,Usance,Usance
+d_FrftngDlStatus,OnHold,OnHold
+d_FrftngDlStatus,Released,Released
+d_FrftngDlStatus,Executed,Executed
+d_FrftngDlStatus,Rejected,Rejected
+d_PymntTyp,Full Payment,Full Payment
+d_PymntTyp,Partial Payment,Partial Payment
+d_PymntTyp,Full Payment Outside Trade,Full Payment Outside Trade
+d_Status,ACK,ACK
+d_Status,Active,Active
+d_Status,ActivePndngAuth,Active Pending Auth
+d_Status,Applied,Charge have been applied
+d_Status,Authorise,Authorize
+d_Status,Authorised,Authorised
+d_Status,Authorized,Authorized
+d_Status,Cancelled,Cancelled
+d_Status,CancelledNotUsed,CancelledNotUsed
+d_Status,Close,Closed
+d_Status,Computed,Charge have been computed.
+d_Status,Created,Created
+d_Status,Deleted,Deleted
+d_Status,Executed,Executed
+d_Status,Expired,Expired
+d_Status,HOLD,HOLD
+d_Status,Inactive,Inactive
+d_Status,MOnHold,Modify On Hold
+d_Status,MPndgAuth,MPndgAuth
+d_Status,NACK,NACK
+d_Status,NotReconciled,NotReconciled
+d_Status,OnHold,On Hold
+d_Status,Open,Open
+d_Status,Outstanding,Invoice raised but payment not made.
+d_Status,Paid,Payment received
+d_Status,PartlyExpired,PartlyExpired
+d_Status,PartlyReconciled,PartlyReconciled
+d_Status,PartProcessed,Partly Processed
+d_Status,PendingAuthoris,PendingAuthoris
+d_Status,PendingAuthorisation,Pending Authorisation
+d_Status,PendingCancel,Pending Cancel
+d_Status,PendingClosure,PendingClosure
+d_Status,PendingDebit,Charge deferred for debit
+d_Status,PendingModifica,Pending Modification
+d_Status,PendingModification,Waiting for the user to Modify
+d_Status,PendingRefund,Pending Refund
+d_Status,PendngReceived,Pending Received
+d_Status,PendngRequested,Pending Requested
+d_Status,PndInactive,PendingInactive
+d_Status,Pndng Deletion,Pending Deletion
+d_Status,PndngActiveAuth,Pending Active Authorization
+d_Status,PndngCancel,PndngCancel
+d_Status,PndngCancelAuth,Pending Cancel Auth
+d_Status,PndngReOpen,Pending ReOpen
+d_Status,Processed,Processed
+d_Status,Received,Received
+d_Status,Reconciled,Reconciled
+d_Status,ReconcileReleased,ReconcileReleased
+d_Status,Refunded,Refunded
+d_Status,Rejected,Rejected
+d_Status,Released,Released
+d_Status,Releaseed,Releaseed
+d_Status,RemovedFromCover,RemovedFromCover
+d_Status,ReOpen,ReOpen
+d_Status,Requested,Requested
+d_Status,Settled,Settled
+d_Status,SettledPndngAuth,SettledPendingAuth
+d_Status,ToBeProcessed,To Be Processed
+d_Status,Update,Update
+d_FrftngSttlmntStatus,OnHold,OnHold
+d_FrftngSttlmntStatus,Released,Released
+d_FrftngSttlmntStatus,Executed,Executed
+d_FrftngSttlmntStatus,Rejected,Rejected
+d_TFBlPayTyp,Sight,Sight
+d_TFBlPayTyp,Usance,Usance
+d_TFDCPayMode,FreeOfpay,FreeOfpay
+d_TFDCPayMode,PayRefused,PayRefused
+d_AccLayerStat,Accounted,Accounted
+d_AccLayerStat,Cancelled,Cancelled
+d_AccLayerStat,Pending,Accounting Pending
+d_AccLayerStat,RateProvided,Rate Provided
+d_AccLayerStat,ReadyForAcntng,ReadyForAcntng
+d_AccLayerStat,SentForAcntng,SentForAcntng
+d_AccLayerStat,Treasury_to_be_Processes,Treasury to be Processes
+d_AccLayerStat,TRProcessed,Treasury Processed
+d_AccLayerStat,WaitingForRate,Waiting for FX Rate
+d_RiskType,GeneralRisk,General Risk
+d_RiskType,SpecificRisk,Specific Risk
+d_TFRPStatus,OnHold,OnHold
+d_TFRPStatus,Released,Released
+d_TFRPStatus,Executed,Executed
+d_TFRPStatus,Rejected,Rejected
+d_TFRPStatus,Cancelled,Cancelled
+d_TFRPStatus,Ready to be processed,Ready to be processed
+d_TFRPStatus,Pending Settlement,Pending Settlement
+d_BusType,Risk Sharing,Risk Sharing
+d_BusType,Risk Taking,Risk Taking
+d_ParticipationTyp,Funded,Funded
+d_ParticipationTyp,Non Funded,Non Funded
+d_Number08,Limit Reference,Limit Reference
+d_Rejectionreason,TypingError,TypingError
+d_Rejectionreason,CustomerRequest,CustomerRequest
+d_Rejectionreason,Others,Others
+d_PrdcChrgTyp,RearEnd,RearEnd
+d_PrdcChrgTyp,Upfront,Upfront
+d_SwftMsg,MT799,MT799
+d_SwftMsg,MT499,MT499
+d_SwftMsg,MT999,MT999
+d_SwftMsg,No Message,No Message
