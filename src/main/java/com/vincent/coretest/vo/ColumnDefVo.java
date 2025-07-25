@@ -79,9 +79,13 @@ public class ColumnDefVo {
 	static final Map<String, String> swaggerTypeMap = new HashMap<String, String>();
 	static {
 		swaggerTypeMap.put("String", "string");
+		swaggerTypeMap.put("string", "string");
 		swaggerTypeMap.put("Numeric", "number");
+		swaggerTypeMap.put("numeric", "number");
 		swaggerTypeMap.put("Number", "number");
+		swaggerTypeMap.put("number", "number");
 		swaggerTypeMap.put("Date", "string");
+		swaggerTypeMap.put("date", "string");
 	}
 
 	public static String convertType(String type) {
