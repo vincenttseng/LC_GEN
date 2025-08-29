@@ -1,0 +1,110 @@
+﻿Code Name,Mnemonic,Description
+twctd-trust-type,Specific trust,"CTBC will use the trust type field, Frontend will provide the value"
+twctd-trust-type,Designated trust,"CTBC will use the trust type field, Frontend will provide the value"
+twctd-trust-type,B2B,"CTBC will use the trust type field, Frontend will provide the value"
+twctd-trust-type,Securities ,"CTBC will use the trust type field, Frontend will provide the value"
+twct-business-type,Normal SIP,Business type
+twct-business-type,piggy wallet,Business type
+twctd-Agent-Authorization-lvl,"Adult without agent 
+","GSP has to validate according to customer ID+proxy agent ID+proxy start/end date+business type:investment and customer age, provide the follwoing value:
+1. Adult without agent 
+2. Minor without agent 
+3. Adult with agent in authorized period
+4. Adult with agent with one-time authorization  
+5. Minor with agent with one time authorization 
+6. Minor with agent in authorized period
+7. Corporate customer with agent in authorized period 
+8. Corporate customer with agent with one-time authorization
+for pre check system return the value
+Record the data at the time of SIP creation or modification into the history log"
+twctd-Agent-Authorization-lvl,Minor without agent ,
+twctd-Agent-Authorization-lvl,Adult with agent in authorized period,
+twctd-Agent-Authorization-lvl,Adult with agent with one-time authorization  ,
+twctd-Agent-Authorization-lvl,Minor with agent with one time authorization ,
+twctd-Agent-Authorization-lvl,Minor with agent in authorized period,
+twctd-Agent-Authorization-lvl,Corporate customer with agent in authorized period ,
+twctd-Agent-Authorization-lvl,Corporate customer with agent with one-time authorization,
+twctd-Debit-method,"CTBC Bank branch
+",Debit method -Branch
+twctd-Debit-method,Post office account,Debit method -Post office account
+twctd-Debit-method,Credit Card,Debit method -Credit card
+order-status,Active,Active Status
+order-status,Inactive,Inactive Status
+twctd-debiting-status,SIP created but no debit yet,0.SIP created but no debit yet
+twctd-debiting-status,under debit,"1.under debit(No matter first debit is successful or unsuccesful, always update as 'under debit')"
+twctd-debiting-status,Closed,"2.Closed(When SIP setting or redeem all, could update to closed or when position is 0, could be update as closed.)"
+twctd-debiting-status,Closed,"3.Closed by system(CA delisting[record date??]etc, update as ""closed by system"", required to update details)"
+twctd-debiting-status,suspend debit by customer,"4.suspend debit by customer(when customer modify SIP as suspend debit, or system status when partial switch)"
+twctd-debiting-status,suspend debit by system,"5.suspend debit by system(When continued unsuccesful debit counts are more than 3) When in hertit, merger, swicth, duplicate from existing SIP. "
+,,
+twct_d_sipmethodstatus,Active,Denotes Active Status of Record
+twct_d_sipmethodstatus,InActive,Denotes Inactive Status of Record
+twct_d_subchannel,FPS,Denotes the Sub Channel
+twct_d_subchannel,IPAD-internal WIFI,Denotes the Sub Channel
+twct_d_subchannel,IPAD-internal 4G,Denotes the Sub Channel
+twct_d_subchannel,IPAD-external 4G,Denotes the Sub Channel
+twct_d_subchannel,FAX,Denotes the Sub Channel
+twct_d_subchannel,Outbound,Denotes the Sub Channel
+twct_d_subchannel,CTBC call customer,Denotes the Sub Channel
+twct_d_subchannel,Customer call CTBC,Denotes the Sub Channel
+twct_d_subchannel,Online Banking,Denotes the Sub Channel
+twct_d_subchannel,Mobile Banking,Denotes the Sub Channel
+twct_d_subchannel,One Click,Denotes the Sub Channel
+twct_d_subchannel,System,Denotes the Sub Channel
+twct_d_PortfUsage,DPM,Denotes the Sub Channel
+twct_d_PortfUsage,FX,Denotes the Sub Channel
+twct_d_PortfUsage,ROBO,Denotes the Sub Channel
+twct_d_PortfUsage,NonDiscretionary,Denotes the Sub Channel
+twct_d_PortfUsage,Trading,Denotes the Sub Channel
+twct_d_PortfUsage,Available for Sale,Denotes the Sub Channel
+twct_d_PortfUsage,Investment,Denotes the Sub Channel
+twct_d_PortfUsage,Execution,Denotes the Sub Channel
+twct_d_PortfUsage,MM,Denotes the Sub Channel
+twct_d_PortfUsage,SMT,Denotes the Sub Channel
+twct_d_PortfUsage,Model,Denotes the Sub Channel
+twct_d_PortfUsage,SI_DCI,Denotes the Sub Channel
+twct_d_PortfUsage,Held to Maturity,Denotes the Sub Channel
+,,
+twctd-customer-individual-vip-level, Zhen,Customer level at trading
+twctd-customer-individual-vip-level,Chuan,Customer level at trading
+twctd-customer-individual-vip-level,Ding,Customer level at trading
+twctd-customer-individual-vip-level,First,Customer level at trading
+twctd-customer-individual-vip-level,Chuang,Customer level at trading
+twctd_InstrSubTyp,MF,Instrument Sub type
+twctd_InstrSubTyp,ETF,Instrument Sub type
+twctd_InstrSubTyp,Equity,Instrument Sub type
+twctd_InstrSubTyp,ADR,Instrument Sub type
+twctd_InstrSubTyp,Preference Stock,Instrument Sub type
+twctd_InstrTyp,Fund,Type of instrument
+twctd_InstrTyp,Equity,Type of instrument
+twctd_status,P1A,Customer P1 level 
+twctd_status,P1B,Customer P1 level 
+twctd_status,P2A,Customer P1 level 
+twctd_status,P2B,Customer P1 level 
+twctd_status,blank,Customer P1 level 
+twctd_recommendation_cd,P1A,Adjusted P1 level of the customer
+twctd_recommendation_cd,P1B,Adjusted P1 level of the customer
+twctd_recommendation_cd,P2A,Adjusted P1 level of the customer
+twctd_recommendation_cd,P2B,Adjusted P1 level of the customer
+twctd_recommendation_cd,blank,Adjusted P1 level of the customer
+twctd_statusflag,Active,HNW flag of CIF
+twctd_statusflag,Expired,HNW flag of CIF
+twctd_statusflag,Inactive,HNW flag of CIF
+twctd_statusflag,Deleted,HNW flag of CIF
+twctd_statusflag,About-to-Expire,HNW flag of CIF
+twctd_RiskLabel,V01,V01
+twctd_RiskLabel,V02,V02
+twctd_RiskLabel,V03,V03
+twctd_RiskLabel,V04,V04
+twctd_RiskLabel,V05,V05
+twctd_RiskLabel,V06,V06
+twctd_RiskLabel,V07,V07
+twctd_RiskLabel,V08,V08
+twctd_RiskLabel,V09,V09
+twctd_RiskLabel,V10,V10
+twctd_RiskLabel,V11,V11
+twctd_RiskLabel,V12,V12
+twctd_RiskLabel,V13,V13
+twctd_TrustCustomerType,OBU,Customer trust type
+twctd_TrustCustomerType,DBU,Customer trust type
+twctd_ChargeItemId,TBD,TBD
