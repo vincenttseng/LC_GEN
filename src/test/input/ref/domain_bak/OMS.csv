@@ -37,8 +37,8 @@ twctd-debiting-status,Closed,"3.Closed by system(CA delisting[record date??]etc,
 twctd-debiting-status,suspend debit by customer,"4.suspend debit by customer(when customer modify SIP as suspend debit, or system status when partial switch)"
 twctd-debiting-status,suspend debit by system,"5.suspend debit by system(When continued unsuccesful debit counts are more than 3) When in hertit, merger, swicth, duplicate from existing SIP. "
 ,,
-twct_d_sipmethodstatus,Active,Denotes Active Status of Record
-twct_d_sipmethodstatus,InActive,Denotes Inactive Status of Record
+twctd_sipmethodstatus,Active,Denotes Active Status of Record
+twctd_sipmethodstatus,InActive,Denotes Inactive Status of Record
 twct_d_subchannel,FPS,Denotes the Sub Channel
 twct_d_subchannel,IPAD-internal WIFI,Denotes the Sub Channel
 twct_d_subchannel,IPAD-internal 4G,Denotes the Sub Channel

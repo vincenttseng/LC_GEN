@@ -49,7 +49,7 @@ public class TextUtil {
 	}
 
 	/**
-	 * a-b-c to A B C
+	 * a-b-c to a b c
 	 * 
 	 * @param phase
 	 */
@@ -62,7 +62,7 @@ public class TextUtil {
 			if (found) {
 				sb.append(" ");
 			}
-			sb.append(part.toUpperCase());
+			sb.append(part);
 			found = true;
 		}
 		return sb.toString();
