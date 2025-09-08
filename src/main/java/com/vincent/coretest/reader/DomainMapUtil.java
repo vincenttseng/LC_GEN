@@ -109,7 +109,7 @@ public class DomainMapUtil {
 						map.put(key, value1 + ":" + value2);
 					} else {
 						String value = map.get(key);
-						map.put(key, value + "," + value1 + ":" + value1);
+						map.put(key, value + "," + value1 + ":" + value2);
 					}
 				}
 			}
