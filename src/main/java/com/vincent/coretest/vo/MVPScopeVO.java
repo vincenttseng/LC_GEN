@@ -35,6 +35,8 @@ public class MVPScopeVO implements Cloneable {
 	String apiType = "";
 	String apiName = "";
 	String apiNode = "";
+	String apiDesc = "";
+	String apiSummary = "";
 	String path = "";
 	GenTypeEnum direction = null;
 
@@ -102,7 +104,7 @@ public class MVPScopeVO implements Cloneable {
 		}
 
 		index = headerMap.get("Impacted API Name");
-		if(index == null) {
+		if (index == null) {
 			index = headerMap.get("API Name");
 		}
 		if (index != null) {
@@ -115,22 +117,41 @@ public class MVPScopeVO implements Cloneable {
 		if (index != null) {
 			apiNode = getValueFromMap(rowData, index, "");
 		}
-
 		apiNode = formatVariableLowerAndDash(apiNode);
 
+		index = headerMap.get("API Description");
+		if (index != null) {
+			apiDesc = getValueFromMap(rowData, index, "");
+		}
+		apiDesc = formatVariableLowerAndDash(apiDesc);
+
+		index = headerMap.get("API Summary");
+		if (index != null) {
+			apiSummary = getValueFromMap(rowData, index, "");
+		}
+		apiSummary = formatVariableLowerAndDash(apiSummary);
+
 		index = headerMap.get("Group Name");
-		if(index == null) {
-			index = headerMap.get("Object Reference");	 
+		if (index == null) {
+			index = headerMap.get("Object Reference");
 		}
 		if (index != null) {
 			groupName = StringUtils.lowerCase(getValueFromMap(rowData, index, ""));
 		}
 		groupName = correctGroupName(groupName);
 
-		index = headerMap.get("Field Name");
+		index = headerMap.get("Field description");
 		if (index != null) {
 			String tmp = getValueFromMap(rowData, index, "");
 			description = concateLineRemoveParenthesis(tmp);
+		}
+
+		index = headerMap.get("Field Name");
+		if (index != null) {
+			String tmp = getValueFromMap(rowData, index, "");
+			if (StringUtils.isBlank(description)) {
+				description = concateLineRemoveParenthesis(tmp);
+			}
 		}
 
 		index = headerMap.get("Data type");

@@ -131,7 +131,7 @@ public abstract class AbstractExcelReadBuilder {
 			reqRespParamVOMap.put(key, vo);
 		});
 	}
-	
+
 	// output block
 	public void printDefOfApi() {
 		appendOutputToFile("paths:");
@@ -160,8 +160,8 @@ public abstract class AbstractExcelReadBuilder {
 				appendOutputToFile("    " + method + ":");
 				appendOutputToFile("      tags:");
 				appendOutputToFile("        - " + vo.getApiNode());
-				appendOutputToFile("      summary: " + vo.getApiName());
-				appendOutputToFile("      description: " + vo.getApiName().toUpperCase());
+				appendOutputToFile("      summary: " + vo.getApiSummary());
+				appendOutputToFile("      description: " + vo.getApiDesc());
 				appendOutputToFile("      operationId: " + vo.getApiName().toUpperCase());
 				appendOutputToFile("      parameters:");
 				appendOutputToFile(HeaderUtil.getMethodHeadersString());
@@ -406,10 +406,21 @@ components:
 				if (useNameSet.contains(defVO.getName()) == false) {
 					appendOutputToFile("        " + defVO.getName() + ":");
 					appendOutputToFile("          type: " + defVO.getType());
+
+					appendOutputToFile("          format: " + defVO.getFormat());
 					if (defVO.getMaxLength() > 0) {
 						appendOutputToFile("          maxLength: " + defVO.getMaxLength());
 					}
-					appendOutputToFile("          format: " + defVO.getFormat());
+
+					if (defVO.getDecialDigits() > 0) {
+						String fractionString = "0.";
+						for (int i = 1; i < defVO.getDecialDigits(); i++) {
+							fractionString += "0";
+						}
+						fractionString += "1";
+
+						appendOutputToFile("          multipleOf: " + fractionString);
+					}
 					appendOutputToFile("          description: \"" + defVO.getDesc() + "\"");
 					useNameSet.add(defVO.getName());
 				}
@@ -427,7 +438,7 @@ components:
 		}
 		return path.substring("/v2".length());
 	}
-	
+
 	protected static String toPathWithoutV2(String path) {
 		if (isV2(path)) {
 			return path.substring("/v2".length());

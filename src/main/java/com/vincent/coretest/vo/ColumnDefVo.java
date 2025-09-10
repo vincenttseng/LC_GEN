@@ -27,6 +27,7 @@ public class ColumnDefVo {
 	public boolean required = false;
 	public boolean isDate = false;
 	public int maxLength;
+	public int decialDigits = 0;
 	public String format;
 	private int lineIndex;
 	public String srcFile;
@@ -133,6 +134,7 @@ public class ColumnDefVo {
 						vo.setType("number");
 						vo.setFormat("float");
 						vo.setMaxLength(data.get(0));
+						vo.setDecialDigits(data.get(1));
 					} else {
 						vo.setType("integer"); // format: int32
 						vo.setFormat("int32");
