@@ -405,21 +405,77 @@ components:
 			for (ColumnDefVo defVO : variables) {
 				if (useNameSet.contains(defVO.getName()) == false) {
 					appendOutputToFile("        " + defVO.getName() + ":");
-					appendOutputToFile("          type: " + defVO.getType());
 
-					appendOutputToFile("          format: " + defVO.getFormat());
-					if (defVO.getMaxLength() > 0) {
-						appendOutputToFile("          maxLength: " + defVO.getMaxLength());
-					}
+					if (defVO.isTypeValueByDomain()) {
+						String value = defVO.getDomainValue().toLowerCase();
+						if (value.startsWith("d_alpha")) {
+							int length = TextUtil.getOneValueAfterPrefix(value, "d_alpha");
+							appendOutputToFile("          type: string");
+							if (length > 0) {
+								appendOutputToFile("          maxLength: " + length);
+								if (defVO.isRequired()) {
+									appendOutputToFile("          minLength: 1");
+								}
+							}
+						} else if (value.startsWith("d_number")) {
+							int length = TextUtil.getOneValueAfterPrefix(value, "d_alpha");
+							appendOutputToFile("          type: integer");
+							if (length > 0) {
+								appendOutputToFile("          maxLength: " + length);
+							}
+							appendOutputToFile("          format: int32");
+						} else if (value.startsWith("d_amountunsigned") || value.startsWith("d_amountsigned")) {
+							List<Integer> data = TextUtil.getNumberFromParentheses(value);
 
-					if (defVO.getDecialDigits() > 0) {
-						String fractionString = "0.";
-						for (int i = 1; i < defVO.getDecialDigits(); i++) {
-							fractionString += "0";
+							int intVal = 26;
+							int fracVal = 9;
+							if (data.size() > 0) {
+								intVal = data.get(0);
+							}
+							if (data.size() > 1) {
+								fracVal = data.get(1);
+							}
+
+							appendOutputToFile("          type: number");
+							appendOutputToFile("          format: integralLength=" + intVal + ",fractionalLength=" + fracVal);
+						} else if (value.startsWith("d_datetime")) {
+							appendOutputToFile("          type: string");
+							appendOutputToFile("          format: date-time");
+							appendOutputToFile("          pattern: yyyy/mm/dd HH:mm:ss");
+							appendOutputToFile("          maxLength: 20");
+
+							if (defVO.isRequired()) {
+								appendOutputToFile("          minLength: 1");
+							} else {
+								appendOutputToFile("          minLength: 0");
+							}
+						} else if (value.startsWith("d_date")) {
+							appendOutputToFile("          type: string");
+							appendOutputToFile("          format: date");
+							appendOutputToFile("          maxLength: 8");
+							appendOutputToFile("          pattern: yyyymmdd");
+							if (defVO.isRequired()) {
+								appendOutputToFile("          minLength: 1");
+							} else {
+								appendOutputToFile("          minLength: 0");
+							}
 						}
-						fractionString += "1";
+					} else {
+						appendOutputToFile("          type: " + defVO.getType());
+						appendOutputToFile("          format: " + defVO.getFormat());
+						if (defVO.getMaxLength() > 0) {
+							appendOutputToFile("          maxLength: " + defVO.getMaxLength());
+						}
 
-						appendOutputToFile("          multipleOf: " + fractionString);
+						if (defVO.getDecialDigits() > 0) {
+							String fractionString = "0.";
+							for (int i = 1; i < defVO.getDecialDigits(); i++) {
+								fractionString += "0";
+							}
+							fractionString += "1";
+
+							appendOutputToFile("          multipleOf: " + fractionString);
+						}
 					}
 					appendOutputToFile("          description: \"" + defVO.getDesc() + "\"");
 					useNameSet.add(defVO.getName());

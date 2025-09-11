@@ -81,7 +81,7 @@ public class ExcelReadFolderBuilderTest extends AbstractExcelReadBuilder {
 					logger.debug("error " + vo);
 				}
 
-				String desc = DomainTypeUtil.getDescriptionByDomainValue(vo.getBusinessName(), vo.getDomainValue());
+				String desc = DomainTypeUtil.getDescriptionByDomainValue(vo.getDescription(), vo.getDomainValue());
 				if (StringUtils.isNotBlank(desc)) {
 					// logger.info("changing desc {}", desc);
 					vo.setDescription(desc);

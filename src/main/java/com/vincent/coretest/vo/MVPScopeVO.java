@@ -241,6 +241,30 @@ public class MVPScopeVO implements Cloneable {
 		}
 	}
 
+	/**
+	 * d_Alpha4, d_Alpha35, d_Number09, d_Number12, d_AmountSigned(a,b),
+	 * d_AmountUnsigned(a)
+	 */
+	public boolean isTypeValueByDomain() {
+		if (StringUtils.isNotBlank(domainValue)) {
+			String tmp = domainValue.toLowerCase();
+			if (tmp.startsWith("d_alpha")) {
+				return true;
+			} else if (tmp.startsWith("d_number")) {
+				return true;
+			} else if (tmp.startsWith("d_amountsigned")) {
+				return true;
+			} else if (tmp.startsWith("d_amountunsigned")) {
+				return true;
+			} else if (tmp.startsWith("d_date")) {
+				return true;
+			} else if (tmp.startsWith("d_datetime")) {
+				return true;
+			}
+		}
+		return false;
+	}
+
 	// Override clone method
 	@Override
 	public MVPScopeVO clone() throws CloneNotSupportedException {

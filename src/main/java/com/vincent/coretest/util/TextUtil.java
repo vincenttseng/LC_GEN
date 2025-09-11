@@ -27,6 +27,18 @@ public class TextUtil {
 		return tokens;
 	}
 
+	public static int getOneValueAfterPrefix(String value, String prefix) {
+		if (StringUtils.isNotBlank(value) && StringUtils.isNotBlank(prefix) && value.startsWith(prefix)) {
+			String token = value.substring(prefix.length());
+			try {
+				return Integer.parseInt(token);
+			} catch (Exception e) {
+				return 0;
+			}
+		}
+		return 0;
+	}
+
 	public static String nameToLowerCaseAndDash(String name) {
 		if (name == null) {
 			return "";

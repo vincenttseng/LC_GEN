@@ -26,6 +26,8 @@ public class ColumnDefVo {
 	public boolean groupRequired = false;
 	public boolean required = false;
 	public boolean isDate = false;
+	public boolean typeValueByDomain;
+	public String domainValue;
 	public int maxLength;
 	public int decialDigits = 0;
 	public String format;
@@ -106,6 +108,8 @@ public class ColumnDefVo {
 		vo.setLineIndex(cellVO.getRowIndex());
 
 		vo.setName(cellVO.getBusinessName());
+		vo.setDomainValue(cellVO.getDomainValue());
+		vo.setTypeValueByDomain(cellVO.isTypeValueByDomain());
 		String type = cellVO.getDataType();
 
 		if (type != null) {

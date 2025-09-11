@@ -48,9 +48,9 @@ public class RefDefDetailUtil {
 					if (!domainToTypesMap.containsKey(domainName)) {
 						System.out.println("          description: " + vo.desc);
 					} else {
-						String showName = vo.name.toUpperCase();
+						String desc = vo.getDesc().toUpperCase();
 						StringBuilder sb = new StringBuilder();
-						sb.append("description: '" + showName + " Allowed values:");
+						sb.append("description: '" + desc + " Allowed values:");
 						sb.append(domainToTypesMap.get(domainName));
 						sb.append(";'");
 

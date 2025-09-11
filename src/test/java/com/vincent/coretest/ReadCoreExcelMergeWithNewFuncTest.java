@@ -50,7 +50,7 @@ public class ReadCoreExcelMergeWithNewFuncTest extends AbstractExcelReadBuilder 
 
 		FuncGenEnum genEnum = FuncGenEnum.All; // NEW EXISTED
 
-		outputFileName = "OMS_20250901_all_0.yaml";
+		outputFileName = "OMS_20250911_1.yaml";
 
 		logger.info("working on {}", genEnum);
 
@@ -96,7 +96,7 @@ public class ReadCoreExcelMergeWithNewFuncTest extends AbstractExcelReadBuilder 
 					logger.debug("error " + vo);
 				}
 
-				String desc = DomainTypeUtil.getDescriptionByDomainValue(vo.getBusinessName(), vo.getDomainValue());
+				String desc = DomainTypeUtil.getDescriptionByDomainValue(vo.getDescription(), vo.getDomainValue());
 				if (StringUtils.isNotBlank(desc)) {
 					// logger.info("changing desc {}", desc);
 					vo.setDescription(desc);
@@ -225,7 +225,7 @@ public class ReadCoreExcelMergeWithNewFuncTest extends AbstractExcelReadBuilder 
 
 			logger.debug("{}", vo);
 
-			String domainDesc = DomainTypeUtil.getDescriptionByDomainValue(vo.getBusinessName(), vo.getDomainValue());
+			String domainDesc = DomainTypeUtil.getDescriptionByDomainValue(vo.getDescription(), vo.getDomainValue());
 			if (StringUtils.isNotBlank(domainDesc)) {
 				// logger.info("changing desc {}", desc);
 				vo.setDescription(domainDesc);

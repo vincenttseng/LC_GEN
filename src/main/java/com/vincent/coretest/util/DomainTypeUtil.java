@@ -21,14 +21,14 @@ public class DomainTypeUtil {
 
 	public static final String ALLOWED_VALUES = "Allowed values";
 	
-	public static String getDescriptionByDomainValue(String businessName, String domainValue) {
+	public static String getDescriptionByDomainValue(String descStr, String domainValue) {
 		String description = null;
 		if (domainValue != null) {
 			String domainValueArr[] = domainValue.split("[\\r\\n]+");
 
 			if (domainValueArr.length > 1) {
 				StringBuilder sb = new StringBuilder();
-				sb.append(businessName);
+				sb.append(descStr);
 				sb.append(" ").append(ALLOWED_VALUES).append(":");
 				boolean existed = false;
 				for (int i = 1; i < domainValueArr.length; i++) {
@@ -44,7 +44,7 @@ public class DomainTypeUtil {
 				String key = domainValueArr[0].trim();
 				if (domainToTypesMap.containsKey(key)) {
 					StringBuilder sb = new StringBuilder();
-					sb.append(businessName);
+					sb.append(descStr);
 					sb.append(" ").append(ALLOWED_VALUES).append(":");
 					sb.append(domainToTypesMap.get(key));
 					description = sb.toString();
